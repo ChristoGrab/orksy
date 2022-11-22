@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux'
-import { LoginFormModal } from '../auth/LoginFormModal/index.js'
+import LoginFormModal from '../auth/LoginFormModal'
 import LogoutButton from '../auth/LogoutButton';
 import "./Navbar.css"
 
