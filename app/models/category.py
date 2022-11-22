@@ -10,11 +10,11 @@ class Category(db.Model):
   name = db.Column(db.String(50), nullable=False)
   
   # Relationships
-  product = db.relationship("Product", back_populates='category')
+  # product = db.relationship("Product", back_populates='category')
 
   def to_dict(self):
     return {
       "id": self.id,
       "name": self.name,
-      "product": self.product.to_dict()
+      # "product": self.product.to_dict()
     }

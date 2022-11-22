@@ -1,1 +1,6 @@
 /* TODO Add site wide styles */
+body::before {
+  display:block;
+  content: '';
+  height: 3em;
+}

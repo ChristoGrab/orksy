@@ -9,13 +9,13 @@ class Product(db.Model):
   name = db.Column(db.String(50), nullable=False)
   description = db.Column(db.Text, nullable=False)
   price = db.Column(db.Float, nullable=False)
-  owner_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+  # owner_id = db.Column(db.Integer, db.ForeignKey("users.id"))
   store_id = db.Column(db.Integer, db.ForeignKey("stores.id"))
-  category_id = db.Column(db.Integer, db.ForeignKey("categories.id"))
+  # category_id = db.Column(db.Integer, db.ForeignKey("categories.id"))
 
   # Relationships
   store = db.relationship("Store", back_populates="products")
-
+  
   def to_dict(self):
     return {
       'id': self.id,
