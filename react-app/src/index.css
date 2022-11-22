@@ -2,5 +2,5 @@
 body::before {
   display:block;
   content: '';
-  height: 3em;
+  height: 4em;
 }

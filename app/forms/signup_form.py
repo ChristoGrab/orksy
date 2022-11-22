@@ -9,7 +9,7 @@ def user_exists(form, field):
     email = field.data
     user = User.query.filter(User.email == email).first()
     if user:
-        raise ValidationError('Email address is already in use.')
+        raise ValidationError('Yer already an Orksy user, dimwit')
 
 
 def username_exists(form, field):
@@ -17,11 +17,17 @@ def username_exists(form, field):
     username = field.data
     user = User.query.filter(User.username == username).first()
     if user:
-        raise ValidationError('Username is already in use.')
+        raise ValidationError('Dat uzername is already claimed')
+        
+def is_email(form, field):
+    email = field.data
+    if "@" not in email:
+        raise ValidationError("Oi, dat's not a valid email address")
+
 
 
 class SignUpForm(FlaskForm):
     username = StringField(
-        'username', validators=[DataRequired(), username_exists])
-    email = StringField('email', validators=[DataRequired(), user_exists])
-    password = StringField('password', validators=[DataRequired()])
+        'username', validators=[DataRequired("Yer gotta provide an Orksy username"), username_exists])
+    email = StringField('email', validators=[DataRequired("Yer gotta provide an email, ya hear?"), user_exists, is_email])
+    password = StringField('password', validators=[DataRequired("Yer gotta make a super secret password")])
