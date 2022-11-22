@@ -13,6 +13,9 @@ class Product(db.Model):
   store_id = db.Column(db.Integer, db.ForeignKey("stores.id"))
   category_id = db.Column(db.Integer, db.ForeignKey("categories.id"))
 
+  # Relationships
+  store = db.relationship("Store", back_populates="products")
+
   def to_dict(self):
     return {
       'id': self.id,
