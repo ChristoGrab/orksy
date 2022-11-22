@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import LoginFormModal from '../auth/LoginFormModal'
 import LogoutButton from '../auth/LogoutButton';
 import "./Navbar.css"
+import SignupFormModal from '../auth/SignupFormModal';
 
 const NavBar = () => {
   
@@ -20,11 +21,7 @@ const NavBar = () => {
     sessionLinks = (
       <div className="navbar-right">
         <LoginFormModal />
-        <li>
-          <NavLink to='/sign-up' exact={true} activeClassName='active'>
-            Sign Up
-          </NavLink>
-        </li>
+        <SignupFormModal />
       </div>
     )
   }

@@ -1,6 +1,35 @@
-/* TODO Add site wide styles */
+/* Site-wite styles here */
+
 body::before {
   display:block;
   content: '';
   height: 4em;
+}
+
+input {
+  border: none;
+}
+
+.required-star,
+.error-message {
+  color: red;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.error-message::before {
+  content: "☠️ ";
+}
+
+.error-message::after {
+  content: " ☠️";
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: "OrkFont";
+  src: url("../public/OrcHordeBb-y2Pq.ttf")
 }

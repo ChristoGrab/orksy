@@ -14,6 +14,9 @@ const SignUpForm = () => {
 
   const onSignUp = async (e) => {
     e.preventDefault();
+    if (password !== repeatPassword) {
+      setErrors(["Yer passwords don't match, ya git"])
+    }
     if (password === repeatPassword) {
       const data = await dispatch(signUp(username, email, password));
       if (data) {
@@ -43,50 +46,48 @@ const SignUpForm = () => {
   }
 
   return (
-    <form onSubmit={onSignUp}>
-      <div>
-        {errors.map((error, ind) => (
-          <div key={ind}>{error}</div>
-        ))}
+    <form className="authentication-form" onSubmit={onSignUp}>
+      <div className="auth-form-title">
+        Wanna Join the Warband, do ya?
       </div>
-      <div>
-        <label>User Name</label>
+      {errors.map((error, ind) => (
+          <div className="error-message" key={ind}>{error}</div>
+        ))}
+      <div className='auth-form-fields'>
+        <label className="auth-label">User Name <span className="required-star">*</span></label>
         <input
+          className="auth-input"
           type='text'
           name='username'
           onChange={updateUsername}
           value={username}
         ></input>
-      </div>
-      <div>
-        <label>Email</label>
+        <label className="auth-label">Email <span className="required-star">*</span></label>
         <input
+          className='auth-input'
           type='text'
           name='email'
           onChange={updateEmail}
           value={email}
         ></input>
-      </div>
-      <div>
-        <label>Password</label>
+        <label className="auth-label">Password <span className="required-star">*</span></label>
         <input
+          className="auth-input"
           type='password'
           name='password'
           onChange={updatePassword}
           value={password}
         ></input>
-      </div>
-      <div>
-        <label>Repeat Password</label>
+        <label className="auth-label">Repeat Password <span className="required-star">*</span></label>
         <input
+          className="auth-input"
           type='password'
           name='repeat_password'
           onChange={updateRepeatPassword}
           value={repeatPassword}
-          required={true}
         ></input>
       </div>
-      <button type='submit'>Sign Up</button>
+      <button className="auth-submit-button" type='submit'>Sign Up</button>
     </form>
   );
 };
