@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux'
+import { LoginFormModal } from '../auth/LoginFormModal/index.js'
 import LogoutButton from '../auth/LogoutButton';
 import "./Navbar.css"
 
@@ -18,11 +19,7 @@ const NavBar = () => {
   } else {
     sessionLinks = (
       <div className="navbar-right">
-                <li>
-          <NavLink to='/login' exact={true} activeClassName='active'>
-            Login
-          </NavLink>
-        </li>
+        <LoginFormModal />
         <li>
           <NavLink to='/sign-up' exact={true} activeClassName='active'>
             Sign Up

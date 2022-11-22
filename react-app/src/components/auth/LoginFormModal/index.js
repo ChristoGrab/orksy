@@ -1,5 +1,5 @@
 import { Modal } from '../../context/Modal';
-import LoginForm from '../auth/LoginForm';
+import LoginForm from './LoginForm';
 
 function LoginFormModal() {
   const [showModal, setShowModal] = useState(false);
