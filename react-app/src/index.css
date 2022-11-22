@@ -29,7 +29,3 @@ button:hover {
   cursor: pointer;
 }
 
-@font-face {
-  font-family: "OrkFont";
-  src: url("../public/OrcHordeBb-y2Pq.ttf")
-}
