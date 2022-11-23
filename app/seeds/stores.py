@@ -5,33 +5,39 @@ def seed_stores():
   snagrod = Store(
     name="Snagrod'z Sweet & Sour Squigz",
     description="Oi, you lot. We've got da best tasting squiz in da 'ole sector. Fresh as a newly-flailed humie. No refundz.",
-    owner_id=6
+    owner_id=6,
+    banner_image="https://orksybucket.s3.us-east-2.amazonaws.com/squig-store.jpg"
   )
   mekkz = Store(
     name="Da Iron Mekkworkz",
     description="If yer lookin to git in a good roight tumble wif som puny humies, da best way ter get to 'em is wiv our shiny, fast mekkz.  Guaranteed ta take ya straight into the thikk of it, but not back out.",
-    owner_id=7
+    owner_id=7,
+    banner_image="https://orksybucket.s3.us-east-2.amazonaws.com/mek-shop.jpg"
   )
   gork = Store(
     name="Gork's Dakka Dealers",
     description="Sometimes yer just lookin to git in a good old scruff, up close an' personal.  For the rest of the time, Gork's Dakka Dealers 'as you covered.  Only the finest boomsticks, burnas and big shootas for the lads.  Slugz sold separately.",
-    owner_id=2
+    owner_id=2,
+    banner_image="https://orksybucket.s3.us-east-2.amazonaws.com/dakka-store.jpg"
   )
   buzzgob = Store(
     name="Rokkit Retail",
     description="Orks is made for two fingz, and flyin' may not be one of 'em, but it's a one-of-a-kind experienz that'll keep ya coming back for more. Unless yer unlucky and the rokkit blows up in midair. That 'appens sometimez.",
-    owner_id=10
+    owner_id=10,
+    banner_image="https://orksybucket.s3.us-east-2.amazonaws.com/flight-store.jpg"
   )
   mork = Store(
     name="Mork's Choppa Chain",
     description="Don't lissen to 'em nobz at Gork's Dakka Dealers. Orkz was made for getting stuck up in da middle of a scrap, and there's nowhere dat gets ya right and ready for a scrap like Mork's Choppaz.  All bladez 'as been foroughly tested on captured humies and those pointy-ear Eldar gits.",
-    owner_id=3
+    owner_id=3,
+    banner_image="https://orksybucket.s3.us-east-2.amazonaws.com/Choppa-store.jpg"
   )
 
   db.session.add(snagrod)
   db.session.add(mekkz)
   db.session.add(gork)
   db.session.add(buzzgob)
+  db.session.add(mork)
   db.session.commit()
 
 
