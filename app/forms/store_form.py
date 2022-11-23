@@ -19,7 +19,7 @@ def store_exists(form, field):
 
 
 class StoreForm(FlaskForm):
-  name = StringField(validators=[DataRequired("Ye've gotta give yer store a name"), store_exists])
+  name = StringField(validators=[DataRequired("Ye've gotta give yer store a name")])
   description = TextAreaField(validators=[DataRequired("Let da boyz know wut yer store's all about, would ya?")])
   owner_id = IntegerField(validators=[DataRequired(), no_owner])
   banner_image = StringField()

@@ -1,11 +1,11 @@
 from flask import Blueprint, request
-from flask_login import login_required
+from flask_login import login_required, current_user
 from app.models import Store, db
 from app.forms import StoreForm
 
 store_routes = Blueprint('stores', __name__)
 
-
+# GET ALL STORES
 @store_routes.route('/')
 def all_stores():
   """
@@ -14,7 +14,7 @@ def all_stores():
   stores = Store.query.all()
   return {'stores': [store.to_dict() for store in stores]}
 
-
+# GET ONE STORE
 @store_routes.route('/<int:id>')
 def store(id):
     """
@@ -26,7 +26,7 @@ def store(id):
     else:
       return {"error": "This store does not exist"}
 
-
+# CREATE A STORE
 @store_routes.route('/new', methods=["POST"])
 @login_required
 def create_store():
@@ -49,3 +49,27 @@ def create_store():
     return new_store.to_dict()
   else:
     return form.errors
+
+# UPDATE A STORE
+@store_routes.route('/<int:id>/edit', methods=["PUT"])
+@login_required
+def update_store(id):
+  """
+  Update the current user's store information
+  """
+  store = Store.query.get(id)
+  new_name = request.json["name"]
+  new_description = request.json["description"]
+  new_banner = request.json["banner_image"]
+  
+  if store:
+    if store.owner_id == current_user.id:
+      store.name = new_name
+      store.description = new_description
+      store.banner_image = new_banner
+      db.session.commit()
+      return store.to_dict()
+    else:
+      return {"message": "Cannot edit a store you do not own"}
+  else:
+    return {"message": "Could not find the store you requested"}
