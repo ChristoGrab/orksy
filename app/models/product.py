@@ -1,7 +1,8 @@
-from .db import db, environment, SCHEMA
+from .db import db, environment, SCHEMA, add_prefix_for_prod
 
 class Product(db.Model):
   __tablename__ = "products"
+  
   if environment == "production":
     __table_args__ = {'schema': SCHEMA}
   
@@ -10,7 +11,7 @@ class Product(db.Model):
   description = db.Column(db.Text, nullable=False)
   price = db.Column(db.Float, nullable=False)
   # owner_id = db.Column(db.Integer, db.ForeignKey("users.id"))
-  store_id = db.Column(db.Integer, db.ForeignKey("stores.id"))
+  store_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("stores.id")))
   # category_id = db.Column(db.Integer, db.ForeignKey("categories.id"))
 
   # Relationships
