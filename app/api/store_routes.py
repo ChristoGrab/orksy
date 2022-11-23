@@ -25,6 +25,19 @@ def store(id):
       return store.to_dict()
     else:
       return {"error": "This store does not exist"}
+      
+# GET CURRENT USER'S STORE
+@store_routes.route('/my-store')
+@login_required
+def my_store():
+  """
+  Query for the store owned by the current user
+  """
+  store = Store.query.filter(Store.owner_id == current_user.id).first()
+  if store:
+    return store.to_dict()
+  else:
+    return {"error": "Current user does not own a store."}
 
 # CREATE A STORE
 @store_routes.route('/new', methods=["POST"])
