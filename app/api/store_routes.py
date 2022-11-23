@@ -55,7 +55,7 @@ def create_store():
 @login_required
 def update_store(id):
   """
-  Update the current user's store information
+  Update the store at given id
   """
   store = Store.query.get(id)
   new_name = request.json["name"]
@@ -73,3 +73,21 @@ def update_store(id):
       return {"message": "Cannot edit a store you do not own"}
   else:
     return {"message": "Could not find the store you requested"}
+
+# DELETE A STORE
+@store_routes.route('/<int:id>', methods=["DELETE"])
+@login_required
+def delete_store(id):
+  """
+  Delete the store at given id
+  """
+  store = Store.query.get(id)
+  if store:
+    if store.owner_id == current_user.id:
+      db.session.delete(store)
+      db.session.commit()
+      return {"message": "deletion successful"}
+    else:
+      return {"message": "cannot delete a store you do not own"}
+  else:
+    return {"message": "could not find the requested resource"}
