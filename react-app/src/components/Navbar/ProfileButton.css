@@ -1,0 +1,87 @@
+.profile-dropdown {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 55px;
+  right: 6%;
+  width: 225px;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 9999;
+  border: 1px solid #efefef;
+  box-shadow: 1px 1px 3px lightgray;
+  border-radius: .5em;
+}
+
+#profile-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 50px;
+  height: 35px;
+  margin-right: 55px;
+  background-color: white;
+  border: 1.5px solid #efefef;
+  border-radius: 15em;
+  box-shadow: .5px 1px #efefef;
+}
+
+#profile-button:hover {
+  box-shadow: 1px 1px 3px lightgray;
+  cursor: pointer;
+}
+
+.profile-dropdown-link {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+}
+
+.profile-dropdown-link:hover {
+  background-color: #f4f4f4;
+}
+
+.manage-account-link {
+  text-decoration: none;
+  color: black;
+  box-sizing: border-box;
+  font-size: 13px;
+}
+
+#profile-pic {
+  font-size: 26px;
+  color: #d3d3d3;
+}
+
+#profile-dropdown-user-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#profile-dropdown-username {
+  color: black;
+  font-size: 16px;
+}
+
+#logout-button {
+  background-color: white;
+  border: none;
+}
+
+#logout-button:hover {
+  cursor: pointer;
+}
+
+.fa-caret-down {
+  color: #d3d3d3;
+}
+
+.fa-arrow-right-from-bracket {
+  transform: rotate(180deg);
+}
