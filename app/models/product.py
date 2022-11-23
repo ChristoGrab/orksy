@@ -11,11 +11,11 @@ class Product(db.Model):
   description = db.Column(db.Text, nullable=False)
   price = db.Column(db.Float, nullable=False)
   # owner_id = db.Column(db.Integer, db.ForeignKey("users.id"))
-  store_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("stores.id")))
+  # store_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("stores.id")))
   # category_id = db.Column(db.Integer, db.ForeignKey("categories.id"))
 
   # Relationships
-  store = db.relationship("Store", back_populates="products")
+  # store = db.relationship("Store", back_populates="products")
   
   def to_dict(self):
     return {
