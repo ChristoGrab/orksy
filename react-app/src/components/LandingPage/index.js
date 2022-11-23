@@ -6,8 +6,18 @@ import './LandingPage.css'
 const LandingPage = () => {
   return (
     <div className="landing-page-container">
+      <div className="categories-container">
+        Katergories
+      </div>
       <div className="landing-page-grid">
-        
+        <div>piktures an such</div>
+        <div>piktures an such</div>
+        <div>piktures an such</div>
+        <div>piktures an such</div>
+        <div>piktures an such</div>
+        <div>piktures an such</div>
+        <div>piktures an such</div>
+        <div>piktures an such</div>
       </div>
     </div>
   )

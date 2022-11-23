@@ -38,7 +38,7 @@ function ProfileButton({ user }) {
           <div className="profile-dropdown-link">
             <div id="profile-dropdown-user-box">
             <div id="profile-dropdown-username">{user.username}</div>
-            <Link to='/user/profile' className="manage-account-link">Manage Profile</Link>
+            <Link to='/profile' className="manage-account-link">Manage Profile</Link>
             </div>
           </div>
           <div className="profile-dropdown-link">
