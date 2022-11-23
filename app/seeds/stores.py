@@ -17,10 +17,21 @@ def seed_stores():
     description="Sometimes yer just lookin to git in a good old scruff, up close an' personal.  For the rest of the time, Gork's Dakka Dealers 'as you covered.  Only the finest boomsticks, burnas and big shootas for the lads.  Slugz sold separately.",
     owner_id=2
   )
+  buzzgob = Store(
+    name="Rokkit Retail",
+    description="Orks is made for two fingz, and flyin' may not be one of 'em, but it's a one-of-a-kind experienz that'll keep ya coming back for more. Unless yer unlucky and the rokkit blows up in midair. That 'appens sometimez.",
+    owner_id=10
+  )
+  mork = Store(
+    name="Mork's Choppa Chain",
+    description="Don't lissen to 'em nobz at Gork's Dakka Dealers. Orkz was made for getting stuck up in da middle of a scrap, and there's nowhere dat gets ya right and ready for a scrap like Mork's Choppaz.  All bladez 'as been foroughly tested on captured humies and those pointy-ear Eldar gits.",
+    owner_id=3
+  )
 
   db.session.add(snagrod)
   db.session.add(mekkz)
   db.session.add(gork)
+  db.session.add(buzzgob)
   db.session.commit()
 
 
