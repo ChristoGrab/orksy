@@ -12,9 +12,15 @@ def seed_stores():
     description="If yer lookin to git in a good roight tumble wif som puny humies, da best way ter get to 'em is wiv our shiny, fast mekkz.  Guaranteed ta take ya straight into the thikk of it, but not back out.",
     owner_id=7
   )
+  gork = Store(
+    name="Gork's Dakka Dealers",
+    description="Sometimes yer just lookin to git in a good old scruff, up close an' personal.  For the rest of the time, Gork's Dakka Dealers 'as you covered.  Only the finest boomsticks, burnas and big shootas for the lads.  Slugz sold separately.",
+    owner_id=2
+  )
 
   db.session.add(snagrod)
   db.session.add(mekkz)
+  db.session.add(gork)
   db.session.commit()
 
 
