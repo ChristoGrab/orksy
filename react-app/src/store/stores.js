@@ -4,6 +4,7 @@ const CREATE_STORE = 'stores/create';
 const DELETE_STORE = 'stores/delete';
 const UPDATE_STORE = 'stores/update';
 const GET_STORE = 'stores/getOne';
+const GET_MY_STORE = "store/getMine"
 const ADD_IMAGE = 'stores/addImage';
 const CLEAR_STORE = 'stores/clear';
 
@@ -25,6 +26,13 @@ const createStore = (store) => {
 const getStore = (store) => {
   return {
     type: GET_STORE,
+    store
+  }
+}
+
+const getMyStore = (store) => {
+  return {
+    type: GET_MY_STORE,
     store
   }
 }
@@ -71,6 +79,14 @@ export const getStoreThunk = (id) => async (dispatch) => {
 
   const data = await response.json();
   dispatch(getStore(data))
+  return data;
+}
+
+export const getMyStoreThunk = () => async (dispatch) => {
+  const response = await fetch('/api/stores/my-store');
+  
+  const data = await response.json();
+  dispatch(getMyStore(data))
   return data;
 }
 
@@ -158,6 +174,22 @@ const storesReducer = (state = initialState, action) => {
         stores: allStoresObject
       }
     }
+    
+    case GET_STORE: {
+
+      return {
+        ...state,
+        singleStore: action.store
+      }
+    }
+    
+    case GET_MY_STORE: {
+      
+      return {
+        ...state,
+        singleStore: action.store
+      }
+    }
 
     // case CREATE_SPOT: {
       
@@ -176,13 +208,7 @@ const storesReducer = (state = initialState, action) => {
     //   }
     // }
 
-    case GET_STORE: {
 
-      return {
-        ...state,
-        singleStore: action.store
-      }
-    }
     
   //   case UPDATE_SPOT: {
   //     const allSpotsObject = {
