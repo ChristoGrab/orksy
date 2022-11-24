@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { createStoreThunk } from '../../store/stores'
 
 function CreateStoreForm() {
+  
+  const sessionUser = useSelector(state => state.session.user)
   
   // list of state variables
   const dispatch = useDispatch();
@@ -10,6 +13,20 @@ function CreateStoreForm() {
   
   const [name, setName] = useState("")
   const [description, setDescription] = useState("")
+  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    const new_store = {
+      name,
+      description,
+      owner_id: sessionUser.id
+    }
+    
+    console.log(new_store)
+    dispatch(createStoreThunk(new_store))
+    .then(data => history.push('/profile'))
+  }
   
   return (
     <div className="store-form-container">
@@ -24,12 +41,12 @@ function CreateStoreForm() {
             value={name}
             onChange={e => setName(e.target.value)} />
         <label>Description</label>
-          <input className="store-form-input"
+          <textarea className="store-form-input"
             type="text"
             required
             value={description}
             onChange={e => setDescription(e.target.value)} />
-        <button>Add your listing!</button>
+        <button onClick={handleSubmit}>Join the WAAAAAGH!!</button>
       </form>
     </div>
   )

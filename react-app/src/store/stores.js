@@ -191,22 +191,22 @@ const storesReducer = (state = initialState, action) => {
       }
     }
 
-    // case CREATE_SPOT: {
+    case CREATE_STORE: {
       
-    //   // create object to update list in allspots
-    //   const allSpotsObject = { 
-    //     ...state.spots, 
-    //     [action.spot.id]: action.spot 
-    //   }
+      // create object to update list in allspots
+      const allStores = { 
+        ...state.stores, 
+        [action.store.id]: action.store 
+      }
       
-    //   // return copy of state with spots set to allSpots object 
-    //   // and singleSpot set to the action spot.
-    //   return {
-    //     ...state,
-    //     spots: allSpotsObject,
-    //     singleSpot: action.spot
-    //   }
-    // }
+      // return copy of state with spots set to allSpots object 
+      // and singleSpot set to the action spot.
+      return {
+        ...state,
+        stores: allStores,
+        singleSpot: action.store
+      }
+    }
 
 
     
