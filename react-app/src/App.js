@@ -6,6 +6,7 @@ import SignUpForm from './components/auth/SignupFormModal/SignUpForm';
 import ProfilePage from './components/Profile';
 import StoreFront from './components/Storefront'
 import CreateStoreForm from './components/CreateStoreForm';
+import DeleteStore from './components/DeleteStore'
 import NavBar from './components/Navbar';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import { authenticate } from './store/session';
@@ -46,8 +47,14 @@ function App() {
         <Route path="/store/create" exact={true}>
           <CreateStoreForm />
         </Route>
-        <Route path="/store/:storeId">
+        <Route path="/store/:storeId" exact={true}>
           <StoreFront />
+        </Route>
+        {/* <Route path="/store/:storeId/edit" exact={true}>
+          <EditStoreForm />
+        </Route> */}
+        <Route path="/store/:storeId/delete" exact={true}>
+          <DeleteStore />
         </Route>
       </Switch>
     </BrowserRouter>

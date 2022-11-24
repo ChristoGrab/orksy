@@ -192,13 +192,12 @@ const storesReducer = (state = initialState, action) => {
     }
 
     case CREATE_STORE: {
-      
       // create object to update list in allspots
-      const allStores = { 
-        ...state.stores, 
-        [action.store.id]: action.store 
+      const allStores = {
+        ...state.stores,
+        [action.store.id]: action.store
       }
-      
+
       // return copy of state with spots set to allSpots object 
       // and singleSpot set to the action spot.
       return {
@@ -223,17 +222,17 @@ const storesReducer = (state = initialState, action) => {
   //   }
   // }
   
-  // case DELETE_SPOT: {
-  //   const allSpotsObject = {
-  //     ...state.spots
-  //   }
-  //   delete allSpotsObject[action.id]
-  //   return {
-  //     ...state,
-  //       spots: allSpotsObject,
-  //       singleSpot: {}
-  //   }
-  // }
+  case DELETE_STORE: {
+    const allStores = {
+      ...state.stores
+    }
+    delete allStores[action.id]
+    return {
+      ...state,
+        stores: allStores,
+        singleStore: {}
+    }
+  }
 
   //   case ADD_IMAGE: {
       

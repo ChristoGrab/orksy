@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
-import { useHistory, Link } from 'react-router-dom'
+import { useHistory, Link, Redirect } from 'react-router-dom'
 import { getMyStoreThunk } from "../../store/stores";
 
 const ProfilePage = () => {
@@ -23,8 +23,8 @@ const ProfilePage = () => {
     storeLinks = (
       <div className="profile-store-functions">
         {store.name}
-        <button>Edit Yer Store</button>
-        <button>Delete Yer Store</button>
+        <Link to={`/store/${store.id}/edit`}>Edit Yer Store</Link>
+        <Link to={`/store/${store.id}/delete`}>Delete Yer Store</Link>
       </div>
     )
   } else {
