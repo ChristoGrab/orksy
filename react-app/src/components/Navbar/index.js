@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux'
 import LoginFormModal from '../auth/LoginFormModal'
 import ProfileButton from './ProfileButton';
@@ -29,9 +29,7 @@ const NavBar = () => {
   return (
     <nav className="navbar-container">
       <div className="navbar-left">
-      <div className="navbar-logo">
-        Orksy
-      </div>
+        <Link to="/" id="navbar-logo">Orksy</Link>
     </div>
     {sessionLinks}
     </nav>
