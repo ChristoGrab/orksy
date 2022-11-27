@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { ReactReduxContext, useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { createStoreThunk } from '../../store/stores'
 import "./StoreForm.css"
@@ -8,16 +8,29 @@ function CreateStoreForm() {
   
   const sessionUser = useSelector(state => state.session.user)
   
-  // list of state variables
+
   const dispatch = useDispatch();
   const history = useHistory();
   
+  // list of state variables
   const [name, setName] = useState("")
   const [description, setDescription] = useState("")
+  const [errors, setErrors] = useState([])
   
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
+    const errorList = []
+    if (!name.length) errorList.push("Yer gotta give da store a name")
+    if (name.length > 70) errorList.push("Dat namez too long 'n komplex for da boyz ta rememba'")
+    if (!description.length) errorList.push("Yer gotta share some intel on da store for da boyz")
+
+    setErrors(errorList)
+
+    if (errorList.length) {
+      return
+    }
+
     const new_store = {
       name,
       description,
@@ -38,6 +51,8 @@ function CreateStoreForm() {
         <div className="store-form-intro">
           So yer wanna make yer own storefront for da boyz to peruse, eh? Wot you got in mind?
           </div>
+          {errors.map((error, idx) => 
+          <div key={idx} className="error-message">{error}</div>)}
         <label>Name</label>
           <input className="store-form-input"
             type="text"

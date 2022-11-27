@@ -112,9 +112,7 @@ export const createStoreThunk = (store) => async (dispatch) => {
 export const updateStoreThunk = (storeData, storeId) => async (dispatch) => {
   const response = await fetch(`/api/stores/${storeId}`, {
     method: "PUT",
-    headers: {
-      "Content-Type": "application/json"
-    },
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify(storeData)
   })
 

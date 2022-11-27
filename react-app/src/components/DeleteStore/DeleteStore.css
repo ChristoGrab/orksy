@@ -8,7 +8,7 @@
 
 #delete-spot-warning-logo {
   font-size: 100px;
-  color: #e21b5f;
+  color: #4b0007;
 }
 
 .delete-page-buttons {
@@ -20,7 +20,7 @@
 }
 
 .confirm-delete-button {
-  background-color: #e21b5f;
+  background-color: #4b0007;
   height: 50px;
   width: 250px;
   border-radius: 15px;
@@ -31,7 +31,7 @@
 
 .confirm-delete-button:hover {
   box-shadow: 1px 1px 3px lightslategray;
-  background-color: #e21b5f;
+  background-color: #6b010c;
   cursor: pointer;
 }
 

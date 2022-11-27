@@ -64,7 +64,7 @@ def create_store():
     return form.errors
 
 # UPDATE A STORE
-@store_routes.route('/<int:id>/edit', methods=["PUT"])
+@store_routes.route('/<int:id>', methods=["PUT"])
 @login_required
 def update_store(id):
   """
