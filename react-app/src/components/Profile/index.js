@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, Link, Redirect } from 'react-router-dom'
 import { getMyStoreThunk } from "../../store/stores";
+import userAvatar from "../../assets/user-avatar.png"
+import "./Profile.css"
 
 const ProfilePage = () => {
   
@@ -38,7 +40,10 @@ const ProfilePage = () => {
   return (
     <div className="profile-page-container">
       <div className="profile-page-userinfo">
+      <img id="profile-page-avatar" src={userAvatar}></img>
+      <div id="profile-page-username">
       {sessionUser.username}
+      </div>
       </div>
       <div className="profile-store-functions">
         { storeLinks }

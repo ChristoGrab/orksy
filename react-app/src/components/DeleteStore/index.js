@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { getStoreThunk } from '../../store/stores';
 import { deleteStoreThunk } from '../../store/stores';
+import './DeleteStore.css'
 
 function DeleteStore() {
   

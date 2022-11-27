@@ -1,17 +1,18 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
-import { createStoreThunk } from '../../store/stores'
-import "./StoreForm.css"
+import { useHistory, useParams } from 'react-router-dom';
+import { updateStoreThunk } from '../../store/stores'
+import "../CreateStoreForm/StoreForm.css"
 
-function CreateStoreForm() {
+function EditStoreForm() {
   
   const sessionUser = useSelector(state => state.session.user)
   
   // list of state variables
   const dispatch = useDispatch();
   const history = useHistory();
-  
+  const { projectId } = useParams();
+
   const [name, setName] = useState("")
   const [description, setDescription] = useState("")
   
@@ -25,7 +26,7 @@ function CreateStoreForm() {
     }
     
     console.log(new_store)
-    dispatch(createStoreThunk(new_store))
+    dispatch(updateStoreThunk(new_store, projectId))
     .then(data => history.push('/profile'))
   }
   
@@ -33,11 +34,8 @@ function CreateStoreForm() {
     <div className="store-form-container">
       <form className="store-form">
         <div className="store-form-greeting">
-          Create Store
+          Wanna give da store a shiny new coat of paint, do yer? Wot you got in mind, guv?
         </div>
-        <div className="store-form-intro">
-          So yer wanna make yer own storefront for da boyz to peruse, eh? Wot you got in mind?
-          </div>
         <label>Name</label>
           <input className="store-form-input"
             type="text"
@@ -50,10 +48,10 @@ function CreateStoreForm() {
             required
             value={description}
             onChange={e => setDescription(e.target.value)} />
-        <button className="store-form-button" onClick={handleSubmit}>Join the WAAAAAGH!!</button>
+        <button className="store-form-button" onClick={handleSubmit}>Update Store</button>
       </form>
     </div>
   )
 }
 
-export default CreateStoreForm;
+export default EditStoreForm;

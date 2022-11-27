@@ -1,0 +1,8 @@
+.storefront-info-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.storefront-info-name {
+  font-size: 24px;
+}

@@ -203,24 +203,24 @@ const storesReducer = (state = initialState, action) => {
       return {
         ...state,
         stores: allStores,
-        singleSpot: action.store
+        singleStore: action.store
       }
     }
 
 
     
-  //   case UPDATE_SPOT: {
-  //     const allSpotsObject = {
-  //       ...state.spots,
-  //       [action.spot.id]: action.spot
-  //     }
+    case UPDATE_STORE: {
+      const allStores = {
+        ...state.stores,
+        [action.store.id]: action.store
+      }
     
-  //   return {
-  //     ...state,
-  //     spots: allSpotsObject,
-  //     singleSpot: action.spot
-  //   }
-  // }
+    return {
+      ...state,
+      stores: allStores,
+      singleStore: action.store
+    }
+  }
   
   case DELETE_STORE: {
     const allStores = {
