@@ -1,5 +1,10 @@
 /* Site-wite styles here */
 
+body {
+  width: 100%;
+  margin-left: 0;
+}
+
 body::before {
   display:block;
   content: '';

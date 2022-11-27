@@ -1,8 +1,46 @@
-.storefront-info-box {
+
+#storefront-banner {
+  height: 325px;
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+}
+
+.storefront-owner-links {
+  margin: 10px auto;
+  display: flex;
+  flex-direction: row;
+}
+
+
+#edit-store-link,
+#delete-store-link {
+  font-weight: bold; 
+  text-decoration: none;
+  height: 40px;
+  width: 140px;
+  border-radius: 5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin: 0 5px;
+}
+
+#edit-store-link {
+  background-color: #1f5429;
+}
+
+#delete-store-link {
+  background-color: #4b0007;
+}
+
+#edit-store-link:hover,
+#delete-store-link:hover {
+  box-shadow: 2px 2px 5px lightgray;
 }
 
 .storefront-info-name {
-  font-size: 24px;
+  font-size: 32px;
+  margin: 10px auto;
 }
