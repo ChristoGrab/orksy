@@ -1,0 +1,50 @@
+.delete-page-container {
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#delete-spot-warning-logo {
+  font-size: 100px;
+  color: #4b0007;
+}
+
+.delete-page-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 2%;
+  gap: 5%;
+}
+
+.confirm-delete-button {
+  background-color: #4b0007;
+  height: 50px;
+  width: 250px;
+  border-radius: 15px;
+  font-size: 15px;
+  border: none;
+  color: white;
+}
+
+.confirm-delete-button:hover {
+  box-shadow: 1px 1px 3px lightslategray;
+  background-color: #6b010c;
+  cursor: pointer;
+}
+
+.abort-delete-button {
+  background-color: white;
+  height: 50px;
+  width: 250px;
+  border-radius: 15px;
+  font-size: 15px;
+  border: 1px solid darkgrey;
+}
+
+.abort-delete-button:hover {
+  box-shadow: 1px 1px 3px lightslategray;
+  cursor: pointer;
+}

@@ -14,13 +14,14 @@ class Store(db.Model):
 
   # Relationships
   owner = db.relationship("User", back_populates="store")
-  products = db.relationship("Product", back_populates="store")
+  # products = db.relationship("Product", back_populates="store")
 
   def to_dict(self):
-    return {
+    store = {
       'id': self.id,
       'name': self.name,
       'description': self.description,
       'banner_image': self.banner_image,
       'owner_id': self.owner_id
     }
+    return store

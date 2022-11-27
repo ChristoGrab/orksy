@@ -3,10 +3,13 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import LoginForm from './components/auth/LoginFormModal/LoginForm';
 import SignUpForm from './components/auth/SignupFormModal/SignUpForm';
+import ProfilePage from './components/Profile';
+import StoreFront from './components/Storefront'
+import CreateStoreForm from './components/CreateStoreForm';
+import EditStoreForm from './components/EditStoreForm';
+import DeleteStore from './components/DeleteStore'
 import NavBar from './components/Navbar';
 import ProtectedRoute from './components/auth/ProtectedRoute';
-import UsersList from './components/UsersList';
-import User from './components/User';
 import { authenticate } from './store/session';
 import "./index.css"
 import LandingPage from './components/LandingPage';
@@ -16,7 +19,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    (async() => {
+    (async () => {
       await dispatch(authenticate());
       setLoaded(true);
     })();
@@ -30,20 +33,29 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <Switch>
+        <Route path='/' exact={true} >
+          <LandingPage />
+        </Route>
         <Route path='/login' exact={true}>
           <LoginForm />
         </Route>
         <Route path='/sign-up' exact={true}>
           <SignUpForm />
         </Route>
-        <ProtectedRoute path='/users' exact={true} >
-          <UsersList/>
-        </ProtectedRoute>
-        <ProtectedRoute path='/users/:userId' exact={true} >
-          <User />
-        </ProtectedRoute>
-        <Route path='/' exact={true} >
-          <LandingPage />
+        <Route path='/profile'>
+          <ProfilePage />
+        </Route>
+        <Route path="/store/create" exact={true}>
+          <CreateStoreForm />
+        </Route>
+        <Route path="/store/:storeId" exact={true}>
+          <StoreFront />
+        </Route>
+        <Route path="/store/:storeId/edit" exact={true}>
+          <EditStoreForm />
+        </Route>
+        <Route path="/store/:storeId/delete" exact={true}>
+          <DeleteStore />
         </Route>
       </Switch>
     </BrowserRouter>

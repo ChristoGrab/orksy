@@ -25,6 +25,19 @@ def store(id):
       return store.to_dict()
     else:
       return {"error": "This store does not exist"}
+      
+# GET CURRENT USER'S STORE
+@store_routes.route('/my-store')
+@login_required
+def my_store():
+  """
+  Query for the store owned by the current user
+  """
+  store = Store.query.filter(Store.owner_id == current_user.id).first()
+  if store:
+    return store.to_dict()
+  else:
+    return {"error": "Current user does not own a store."}
 
 # CREATE A STORE
 @store_routes.route('/new', methods=["POST"])
@@ -51,11 +64,11 @@ def create_store():
     return form.errors
 
 # UPDATE A STORE
-@store_routes.route('/<int:id>/edit', methods=["PUT"])
+@store_routes.route('/<int:id>', methods=["PUT"])
 @login_required
 def update_store(id):
   """
-  Update the current user's store information
+  Update the store at given id
   """
   store = Store.query.get(id)
   new_name = request.json["name"]
@@ -73,3 +86,21 @@ def update_store(id):
       return {"message": "Cannot edit a store you do not own"}
   else:
     return {"message": "Could not find the store you requested"}
+
+# DELETE A STORE
+@store_routes.route('/<int:id>', methods=["DELETE"])
+@login_required
+def delete_store(id):
+  """
+  Delete the store at given id
+  """
+  store = Store.query.get(id)
+  if store:
+    if store.owner_id == current_user.id:
+      db.session.delete(store)
+      db.session.commit()
+      return {"message": "deletion successful"}
+    else:
+      return {"message": "cannot delete a store you do not own"}
+  else:
+    return {"message": "could not find the requested resource"}

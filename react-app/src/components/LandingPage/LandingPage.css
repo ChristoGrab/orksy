@@ -2,3 +2,9 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
+
+.categories-container {
+  display: flex;
+  justify-content: space-evenly;
+  height: 200px;
+}
