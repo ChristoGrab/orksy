@@ -12,7 +12,7 @@ body::before {
 }
 
 input {
-  border: none;
+  border: 1px solid lightgray;
 }
 
 .required-star,

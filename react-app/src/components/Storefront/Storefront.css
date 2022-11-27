@@ -7,7 +7,7 @@
 }
 
 .storefront-owner-links {
-  margin: 10px auto;
+  margin: 10px 0px 10px 40px;
   display: flex;
   flex-direction: row;
 }
@@ -40,7 +40,22 @@
   box-shadow: 2px 2px 5px lightgray;
 }
 
+.storefront-info-container {
+  margin-left: 40px;
+}
+
 .storefront-info-name {
   font-size: 32px;
   margin: 10px auto;
+}
+
+.storefront-info-description {
+  display: flex;
+  justify-content: center;
+  width: 66%;
+  margin: auto;
+}
+
+.storefront-item-container {
+  margin: 20px 200px;
 }
