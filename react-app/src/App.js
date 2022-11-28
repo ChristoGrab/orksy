@@ -9,10 +9,12 @@ import CreateStoreForm from './components/CreateStoreForm';
 import EditStoreForm from './components/EditStoreForm';
 import DeleteStore from './components/DeleteStore'
 import NavBar from './components/Navbar';
+import LandingPage from './components/LandingPage';
+import ProductPage from './components/ProductPage';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import { authenticate } from './store/session';
 import "./index.css"
-import LandingPage from './components/LandingPage';
+
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -56,6 +58,9 @@ function App() {
         </Route>
         <Route path="/store/:storeId/delete" exact={true}>
           <DeleteStore />
+        </Route>
+        <Route path="/products/:productId" exact={true}>
+          <ProductPage />
         </Route>
       </Switch>
     </BrowserRouter>
