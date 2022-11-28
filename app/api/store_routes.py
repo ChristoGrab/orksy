@@ -1,5 +1,6 @@
-from flask import Blueprint, request
+from flask import Blueprint, request, jsonify
 from flask_login import login_required, current_user
+from sqlalchemy.orm import joinedload
 from app.models import Store, db
 from app.forms import StoreForm
 
@@ -22,10 +23,10 @@ def store(id):
     """
     store = Store.query.get(id)
     if store:
-      return store.to_dict()
+      return store.to_dict(products=True)
     else:
       return {"error": "This store does not exist"}
-      
+
 # GET CURRENT USER'S STORE
 @store_routes.route('/my-store')
 @login_required
@@ -48,7 +49,7 @@ def create_store():
   """
   form = StoreForm()
   form['csrf_token'].data = request.cookies['csrf_token']
-  
+
   if form.validate_on_submit():
     new_store = Store(
       name = form.data["name"],
@@ -58,7 +59,7 @@ def create_store():
     )
     db.session.add(new_store)
     db.session.commit()
-    
+
     return new_store.to_dict()
   else:
     return form.errors
@@ -74,7 +75,7 @@ def update_store(id):
   new_name = request.json["name"]
   new_description = request.json["description"]
   new_banner = request.json["banner_image"]
-  
+
   if store:
     if store.owner_id == current_user.id:
       store.name = new_name

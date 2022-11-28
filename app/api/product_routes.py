@@ -26,6 +26,8 @@ def one_product(id):
   else:
     return {"error": "This product does not exist"}
 
+
+
 # CREATE A PRODUCT
 @product_routes.route('/new', methods=["POST"])
 @login_required
