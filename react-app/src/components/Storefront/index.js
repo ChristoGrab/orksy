@@ -19,9 +19,9 @@ const StoreFront = () => {
   useEffect(() => {
 
     dispatch(storeActions.getStoreThunk(storeId))
-  }, [dispatch])
 
-
+    return (() => dispatch(storeActions.clearStore()))
+  }, [dispatch, storeId])
 
   return (
     <div className="storefront-container">
