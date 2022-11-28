@@ -12,7 +12,7 @@ def all_products():
   Query for all products and return them as a list of dictionaries
   """
   products = Product.query.all()
-  return {"products": [product.to_dict() for product in products]}
+  return {"Products": [product.to_dict() for product in products]}
 
 # GET ONE PRODUCT
 @product_routes.route("/<int:id>")
