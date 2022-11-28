@@ -3,11 +3,10 @@ import { useDispatch } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { getStoreThunk } from '../../store/stores';
 import { deleteStoreThunk } from '../../store/stores';
+import boomPik from "../../assets/delete-store.jpg"
 import './DeleteStore.css'
 
 function DeleteStore() {
-  
-  
 
   const { storeId } = useParams();
   const dispatch = useDispatch();
@@ -39,11 +38,8 @@ function DeleteStore() {
   return (
     <div className='delete-page-container'>
       <h2>Wot, yer tryna git rid of yer store now?</h2>
-
-      <i className="fa-solid fa-circle-exclamation"
-      
-      id="delete-spot-warning-logo"></i>
-            <p>Give us the word and the weirdboyz'll zap it to a right crisp</p>
+      <div id="boompik-flava-text">Give us da word and da weirdboyz'll zap it to a right crisp</div>
+      <img src={boomPik} id="boompik" />
       <div className='delete-page-buttons'>
         <button
           className="confirm-delete-button"
