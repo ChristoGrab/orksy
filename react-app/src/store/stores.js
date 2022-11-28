@@ -8,7 +8,7 @@ const GET_MY_STORE = "store/getMine"
 const ADD_IMAGE = 'stores/addImage';
 const CLEAR_STORE = 'stores/clear';
 
-// ------ SESSION ACTION CREATORS ------ //
+// ------ STORE ACTION CREATORS ------ //
 const loadStores = (stores) => {
   return {
     type: LOAD_STORES,
