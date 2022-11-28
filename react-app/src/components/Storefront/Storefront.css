@@ -59,3 +59,9 @@
 .storefront-item-container {
   margin: 20px 200px;
 }
+
+.storefront-item-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: auto;
+}

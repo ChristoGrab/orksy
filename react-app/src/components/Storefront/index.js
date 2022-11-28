@@ -45,13 +45,11 @@ const StoreFront = () => {
       <div className="storefront-item-container">
         All Itemz
         <div className='storefront-item-grid'>
-          <div className='storefront-item-card'>
             {store.products?.map(product => (
               <div key={product.id}>
                 <ProductCard product={product} />
               </div>
             ))}
-          </div>
         </div>
       </div>
     </div>

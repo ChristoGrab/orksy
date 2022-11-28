@@ -17,8 +17,8 @@ class Product(db.Model):
   # Relationships
   store = db.relationship("Store", back_populates="products")
   
-  def to_dict(self):
-    return {
+  def to_dict(self, store=False):
+    product = {
       'id': self.id,
       'name': self.name,
       'description': self.description,
@@ -27,4 +27,7 @@ class Product(db.Model):
       'image': self.image
       # 'category_id': self.category_id
     }
+    if store:
+      product["store"] = self.store.to_dict()
     
+    return product

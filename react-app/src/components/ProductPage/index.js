@@ -30,7 +30,7 @@ const ProductPage = () => {
       </div>
       <div className="product-page-details-container">
         <Link to={`/store/${product.store_id}`}
-        className="product-page-store-link">Check out da store
+        className="product-page-store-link">{product.store?.name}
         </Link>
         <div className="product-page-name">{product.name}</div>
         <div className="product-page-price"><i className="fa-solid fa-tooth" />{product.price}</div>

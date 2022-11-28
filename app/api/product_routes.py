@@ -22,7 +22,7 @@ def one_product(id):
   """
   product = Product.query.get(id)
   if product:
-    return product.to_dict()
+    return product.to_dict(store=True)
   else:
     return {"error": "This product does not exist"}
 
