@@ -12,6 +12,13 @@ const loadProducts = (products) => {
   }
 }
 
+const getProduct = (product) => {
+  return {
+    type: GET_PRODUCT,
+    product
+  }
+}
+
 // PRODUCT THUNKS CREATORS //
 export const loadProductsThunk = () => async (dispatch) => {
   const response = await fetch('/api/products');
@@ -21,12 +28,20 @@ export const loadProductsThunk = () => async (dispatch) => {
   return data;
 }
 
+export const getProductThunk = (id) => async (dispatch) => {
+  const response = await fetch(`/api/products/${id}`)
+  
+  const data = await response.json();
+  dispatch(getProduct(data))
+  return data;
+}
+
 const initialState = { productList: {}, singleProduct: {} }
 
 const productsReducer = (state = initialState, action) => {
   switch (action.type) {
     
-    case LOAD_PRODUCTS:
+    case LOAD_PRODUCTS: {
       const allProducts = {}
       action.products.Products.forEach(product => {
         allProducts[product.id] = product
@@ -36,8 +51,15 @@ const productsReducer = (state = initialState, action) => {
       ...state,
       productList: allProducts
     }
+  }
 
-
+    case GET_PRODUCT: {
+      return {
+        ...state,
+        singleProduct: action.product
+      }
+    }
+    
     default:
       return state;
   }

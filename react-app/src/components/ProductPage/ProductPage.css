@@ -11,6 +11,12 @@
   border: 1px solid red;
 }
 
+.product-page-image {
+  width: 700px;
+  height: 500px;
+  object-fit: contain;
+}
+
 .product-page-details-container {
   border: 1px solid green;
   width: 400px;
@@ -18,4 +24,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+}
+
+.product-page-name {
+  line-height: 32px;
+  font-size: 26px;
+}
+
+.product-page-price {
+  font-weight: bold;
 }

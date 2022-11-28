@@ -59,7 +59,7 @@ function App() {
         <Route path="/store/:storeId/delete" exact={true}>
           <DeleteStore />
         </Route>
-        <Route path="/products/:productId" exact={true}>
+        <Route path="/products/:productId">
           <ProductPage />
         </Route>
       </Switch>
