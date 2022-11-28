@@ -1,10 +1,19 @@
+.categories-container {
+  height: 200px;
+  width: 100%;
+}
+
 .landing-page-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  width: 90%;
+  margin: auto;
 }
 
-.categories-container {
+.product-card-container {
   display: flex;
   justify-content: space-evenly;
-  height: 200px;
+  height: 250px;
+  max-width: 500px;
+  object-fit: fill;
 }

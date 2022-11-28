@@ -1,3 +1,5 @@
+import storesReducer from "./stores";
+
 // List of Actions
 const LOAD_PRODUCTS = "products/load";
 const GET_PRODUCT = "products/getOne";
@@ -25,8 +27,17 @@ const productsReducer = (state = initialState, action) => {
   switch (action.type) {
     
     case LOAD_PRODUCTS:
+      const allProducts = {}
+      action.products.Products.forEach(product => {
+        allProducts[product.id] = product
+      })
       
-    
+    return {
+      ...state,
+      productList: allProducts
+    }
+
+
     default:
       return state;
   }
