@@ -3,6 +3,7 @@ import storesReducer from "./stores";
 // List of Actions
 const LOAD_PRODUCTS = "products/load";
 const GET_PRODUCT = "products/getOne";
+const CLEAR_PRODUCT = "products/clear";
 
 // PRODUCT ACTION CREATORS //
 const loadProducts = (products) => {
@@ -16,6 +17,12 @@ const getProduct = (product) => {
   return {
     type: GET_PRODUCT,
     product
+  }
+}
+
+export const clearProduct = () => {
+  return {
+    type: CLEAR_PRODUCT
   }
 }
 
@@ -57,6 +64,13 @@ const productsReducer = (state = initialState, action) => {
       return {
         ...state,
         singleProduct: action.product
+      }
+    }
+    
+    case CLEAR_PRODUCT: {
+      return {
+        ...state,
+        singleProduct: {}
       }
     }
     

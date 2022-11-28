@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useParams, Link } from 'react-router-dom'
 import * as storeActions from "../../store/stores"
+import ProductCard from "../ProductCard"
 import "./Storefront.css"
 import orkBanner from '../../assets/red-skull.jpg'
 
@@ -12,6 +13,8 @@ const StoreFront = () => {
 
   const store = useSelector(state => state.stores.singleStore);
   const sessionUser = useSelector(state => state.session.user)
+  
+  console.log(store)
 
   useEffect(() => {
 
@@ -43,6 +46,11 @@ const StoreFront = () => {
         All Itemz
         <div className='storefront-item-grid'>
           <div className='storefront-item-card'>
+            {store.products?.map(product => (
+              <div key={product.id}>
+                <ProductCard product={product} />
+              </div>
+            ))}
           </div>
         </div>
       </div>

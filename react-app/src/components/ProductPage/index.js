@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { useParams, Link } from 'react-router-dom'
 import "./ProductPage.css"
-import { getProductThunk } from "../../store/products";
+import { getProductThunk, clearProduct } from "../../store/products";
 
 const ProductPage = () => {
 
@@ -16,6 +16,8 @@ const ProductPage = () => {
   
   useEffect(() => {
     dispatch(getProductThunk(productId))
+    
+    return (() => dispatch(clearProduct()))
   }, [dispatch, productId])
   
   if (!product) return null;
