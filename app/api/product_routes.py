@@ -2,6 +2,7 @@ from flask import Blueprint, request
 from flask_login import login_required, current_user
 from app.models import Product, db
 from app.forms import ProductForm
+from app.util.s3 import upload_file_to_s3, allowed_file, get_unique_filename
 
 product_routes = Blueprint('products', __name__)
 
@@ -68,3 +69,24 @@ def delete_product(id):
     return {"message": "deletion successful"}
   else:
     return {"message": "could not find the requested resource"}
+
+# Upload an image to S3 and 
+@product_routes.route('/upload', methods=["POST"])
+@login_required
+def upload_image():
+  print(request.files)
+  if "file" not in request.files:
+    return {"errors": "image required"}, 400
+    
+  image = request.files["file"]
+  
+  if not allowed_file(image.filename):
+    return {"errors": "file type not permitted"}, 400
+    
+  image.filename = get_unique_filename(image.filename)
+  
+  upload = upload_file_to_s3(image)
+  
+  print("upload object in backend: ", upload)
+  
+  return upload

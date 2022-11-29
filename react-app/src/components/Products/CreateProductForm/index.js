@@ -26,23 +26,37 @@ const CreateProductForm = () => {
     if (name.length > 70) errorList.push("Dat namez too long 'n komplex for da boyz ta rememba'")
     if (!description.length) errorList.push("Yer gotta share some intel on da store for da boyz")
 
+    let myImage = document.querySelector("#imageInput")
     setErrors(errorList)
 
     if (errorList.length) {
       return
     }
+    
+    console.log(myImage)
+    
+    let img = myImage.files[0]
+    console.log(img)
+    
+    formData.append('file', img)
+    
+    const picture = await fetch('/api/products/upload', {
+      method: "POST",
+      body: formData
+    })
+    
+    const urlObj = await picture.json()
 
     const new_product = {
       name,
       description,
       price,
       store_id: 1,
-      image: image
+      image: urlObj.url
     }
     
-    console.log(new_product)
-    // dispatch(createStoreThunk(new_store))
-    // .then(data => history.push('/profile'))
+    
+
   }
   
   return (
@@ -74,7 +88,7 @@ const CreateProductForm = () => {
             value={price}
             onChange={e => setPrice(e.target.value)} />
         <label>Image</label>
-            <input type="file" name="file" id="imageinput" />
+            <input type="file" name="file" id="imageInput" encType="multipart/form-data" />
         <button className="store-form-button" onClick={handleSubmit}>Join the WAAAAAGH!!</button>
       </form>
     </div>
