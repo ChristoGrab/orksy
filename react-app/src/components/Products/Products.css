@@ -1,0 +1,40 @@
+#teef-note {
+  font-size: 12px;
+}
+
+.loading-popup-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  background-color: white;
+}
+
+.loading-popup-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #5d5d5d;
+  font-weight: bold;
+}
+
+.fa-spinner {
+  color: #0057ff;
+  font-size: 30px;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+}
+
+.fa-paperclip {
+  color: #5d5d5d;
+}
+
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }

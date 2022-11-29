@@ -44,7 +44,8 @@
 
 #edit-store-link:hover,
 #delete-store-link:hover,
-#create-product-link:hover {
+#create-product-link:hover,
+#delete-product-button:hover {
   box-shadow: 1px 1px 5px #757575;
 }
 
@@ -74,4 +75,13 @@
   grid-template-columns: repeat(4, 1fr);
   margin: auto;
   column-gap: 20px;
+}
+
+#delete-product-button {
+  border-radius: 5em;
+  background-color: #832212;
+  color: white;
+  height: 30px;
+  margin-top: 5px;
+  border: none;
 }

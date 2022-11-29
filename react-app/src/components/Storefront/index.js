@@ -13,20 +13,20 @@ const StoreFront = () => {
   const { storeId } = useParams();
 
   const store = useSelector(state => state.stores.singleStore);
-  const sessionUser = useSelector(state => state.session.user)
-  
-  console.log(store)
+  const sessionUser = useSelector(state => state.session.user);
+  const [update, setUpdate] = useState(false)
 
+
+  
   useEffect(() => {
 
     dispatch(storeActions.getStoreThunk(storeId))
-
     return (() => dispatch(storeActions.clearStore()))
   }, [dispatch, storeId])
-  
+
   const handleDelete = async (e, id) => {
     e.preventDefault();
-    
+
     const response = await dispatch(productActions.deleteProductThunk(id))
   }
 
@@ -57,12 +57,20 @@ const StoreFront = () => {
           </div>
         )}
         <div className='storefront-item-grid'>
-            {store.products?.map(product => (
-              <div key={product.id}>
-                <ProductCard product={product} />
-                <button key={product.id} onClick={(e) => handleDelete(e, product.id)}>Delete Produkt</button>
-              </div>
-            ))}
+          {store.products?.map(product => (
+            <div key={product.id}>
+              <ProductCard product={product} />
+              {sessionUser && sessionUser.id === store.owner_id && (
+                <button id="delete-product-button"
+                key={product.id}
+                onClick={(e) => { 
+                  handleDelete(e, product.id)
+                  setUpdate(!update)}}>
+                  Delete Produkt
+                </button>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </div>
