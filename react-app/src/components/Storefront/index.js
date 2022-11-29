@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useHistory } from 'react-router-dom'
 import * as storeActions from "../../store/stores"
 import * as productActions from '../../store/products'
 import ProductCard from "../ProductCard"
@@ -10,6 +10,7 @@ import orkBanner from '../../assets/red-skull.jpg'
 const StoreFront = () => {
 
   const dispatch = useDispatch();
+  const history = useHistory();
   const { storeId } = useParams();
 
   const store = useSelector(state => state.stores.singleStore);
@@ -28,6 +29,12 @@ const StoreFront = () => {
     e.preventDefault();
 
     const response = await dispatch(productActions.deleteProductThunk(id))
+  }
+  
+  const handleEdit = async (e, id) => {
+    e.preventDefault();
+    
+    history.push(`/products/${id}/edit`)
   }
 
   return (
@@ -61,6 +68,14 @@ const StoreFront = () => {
             <div key={product.id}>
               <ProductCard product={product} />
               {sessionUser && sessionUser.id === store.owner_id && (
+                <div className="storefront-product-buttons">
+                <button id="edit-product-button"
+                key={product.id}
+                onClick = {(e) => {
+                  handleEdit(e, product.id)
+                }}>
+                  Edit Produkt
+                </button>
                 <button id="delete-product-button"
                 key={product.id}
                 onClick={(e) => { 
@@ -68,6 +83,7 @@ const StoreFront = () => {
                   setUpdate(!update)}}>
                   Delete Produkt
                 </button>
+                </div>
               )}
             </div>
           ))}
