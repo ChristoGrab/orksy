@@ -2,11 +2,12 @@ import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { createProductThunk } from '../../../store/products'
+import { getMyStoreThunk } from '../../../store/stores';
 
 const CreateProductForm = () => {
   
   const sessionUser = useSelector(state => state.session.user)
-  
+  const store = useSelector(state => state.stores.singleStore)
 
   const dispatch = useDispatch();
   const history = useHistory();
@@ -18,6 +19,12 @@ const CreateProductForm = () => {
   const [image, setImage] = useState('')
   const [errors, setErrors] = useState([])
   const formData = new FormData();
+  
+  useEffect(() => {
+    dispatch(getMyStoreThunk())
+  }, [dispatch])
+  
+  console.log(store)
   
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -52,7 +59,7 @@ const CreateProductForm = () => {
       name,
       description,
       price,
-      store_id: 1,
+      store_id: store.id,
       image: urlObj.url
     }
     
