@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
+import { createProductThunk } from '../../../store/products'
 
 const CreateProductForm = () => {
   
@@ -55,7 +56,9 @@ const CreateProductForm = () => {
       image: urlObj.url
     }
     
-    
+    dispatch(createProductThunk(new_product)).then((data) => {
+      history.push('/profile')
+    })
 
   }
   

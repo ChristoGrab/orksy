@@ -4,6 +4,7 @@ import storesReducer from "./stores";
 const LOAD_PRODUCTS = "products/load";
 const GET_PRODUCT = "products/getOne";
 const CLEAR_PRODUCT = "products/clear";
+const CREATE_PRODUCT = "products/create";
 
 // PRODUCT ACTION CREATORS //
 const loadProducts = (products) => {
@@ -26,6 +27,13 @@ export const clearProduct = () => {
   }
 }
 
+const createProduct = (product) => {
+  return {
+    type: CREATE_PRODUCT,
+    product
+  }
+}
+
 // PRODUCT THUNKS CREATORS //
 export const loadProductsThunk = () => async (dispatch) => {
   const response = await fetch('/api/products');
@@ -42,6 +50,25 @@ export const getProductThunk = (id) => async (dispatch) => {
   dispatch(getProduct(data))
   return data;
 }
+
+export const createProductThunk = (product) => async (dispatch) => {
+  const response = await fetch('/api/products/new', {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(product)
+  })
+  
+  if (response.ok) {
+    const newProduct = await response.json();
+    dispatch(createProduct(newProduct))
+    return newProduct
+  } else {
+    const errorData = await response.json()
+    return errorData;
+  }
+}
+
+// REDUCER //
 
 const initialState = { productList: {}, singleProduct: {} }
 
@@ -74,6 +101,19 @@ const productsReducer = (state = initialState, action) => {
       }
     }
     
+    case CREATE_PRODUCT: {
+      const allProducts = {
+        ...state.products,
+        [action.product.id]: action.product
+      }
+      
+      return {
+        ...state,
+        productList: allProducts,
+        singleProduct: action.product
+      }
+    }
+
     default:
       return state;
   }
