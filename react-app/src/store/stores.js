@@ -248,12 +248,12 @@ const storesReducer = (state = initialState, action) => {
   //     }
   //   }
     
-  //   case CLEAR_SPOT: {
-  //     return {
-  //       ...state,
-  //       singleSpot: {}
-  //     }
-  //   }
+    case CLEAR_STORE: {
+      return {
+        ...state,
+        singleStore: {}
+      }
+    }
     
     default:
       return state;

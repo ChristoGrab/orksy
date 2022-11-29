@@ -31,7 +31,7 @@ def seed_products():
   )
   flyboy = Product(
     name="Flyboy",
-    description="",
+    description="Most Orks prefer to keep their feet firmly on the ground, and believe the real fighting is done up close and personal. Ork aircraft are the ultimate expression of a particular mania that can seize an Ork's mind. The afflicted Ork seeks ever-greater thrills from speed and danger, driving or, in extreme cases, flying faster and faster. Those afflicted are called Speed Freeks, and regardless of their original klan, invariably belong to the Kult of Speed. The majority of Speed Kultists come from the Evil Sunz klan, but not all, and the mania can seize any Ork. Few actually become pilots, because most Orks have a natural distrust of flying, and much prefer to remain with their feet solidly upon the ground, where the proppa' scrappin is done.",
     price=4000,
     store_id=4,
     image="https://orksybucket.s3.us-east-2.amazonaws.com/flyboy-1.jpg"

@@ -16,7 +16,7 @@ class Store(db.Model):
   owner = db.relationship("User", back_populates="store")
   products = db.relationship("Product", back_populates="store")
 
-  def to_dict(self):
+  def to_dict(self, products=False):
     store = {
       'id': self.id,
       'name': self.name,
@@ -24,4 +24,7 @@ class Store(db.Model):
       'banner_image': self.banner_image,
       'owner_id': self.owner_id
     }
+    if products:
+      store["products"] = [product.to_dict() for product in self.products]
+
     return store

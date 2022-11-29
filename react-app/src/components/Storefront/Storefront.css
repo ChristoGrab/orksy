@@ -57,5 +57,13 @@
 }
 
 .storefront-item-container {
-  margin: 20px 200px;
+  margin: 20px auto;
+  width: 80%;
+}
+
+.storefront-item-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: auto;
+  column-gap: 20px;
 }
