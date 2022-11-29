@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useParams, Link } from 'react-router-dom'
 import * as storeActions from "../../store/stores"
+import * as productActions from '../../store/products'
 import ProductCard from "../ProductCard"
 import "./Storefront.css"
 import orkBanner from '../../assets/red-skull.jpg'
@@ -22,6 +23,12 @@ const StoreFront = () => {
 
     return (() => dispatch(storeActions.clearStore()))
   }, [dispatch, storeId])
+  
+  const handleDelete = async (e, id) => {
+    e.preventDefault();
+    
+    const response = await dispatch(productActions.deleteProductThunk(id))
+  }
 
   return (
     <div className="storefront-container">
@@ -53,6 +60,7 @@ const StoreFront = () => {
             {store.products?.map(product => (
               <div key={product.id}>
                 <ProductCard product={product} />
+                <button key={product.id} onClick={(e) => handleDelete(e, product.id)}>Delete Produkt</button>
               </div>
             ))}
         </div>
