@@ -18,17 +18,20 @@ const StoreFront = () => {
   const [update, setUpdate] = useState(false)
 
 
-  
+  // Dispatch for store
   useEffect(() => {
-
     dispatch(storeActions.getStoreThunk(storeId))
     return (() => dispatch(storeActions.clearStore()))
   }, [dispatch, storeId])
-
+  
+  
   const handleDelete = async (e, id) => {
     e.preventDefault();
-
-    const response = await dispatch(productActions.deleteProductThunk(id))
+    
+    dispatch(productActions.deleteProductThunk(id))
+    
+    console.log("this ran")
+    history.push(`/store/${storeId}`)
   }
   
   const handleEdit = async (e, id) => {
@@ -78,9 +81,8 @@ const StoreFront = () => {
                 </button>
                 <button id="delete-product-button"
                 key={product.id}
-                onClick={(e) => { 
-                  handleDelete(e, product.id)
-                  setUpdate(!update)}}>
+                onClick={(e) => {
+                  handleDelete(e, product.id)}}>
                   Delete Produkt
                 </button>
                 </div>

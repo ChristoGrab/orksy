@@ -26,8 +26,6 @@ const CreateProductForm = () => {
     dispatch(getMyStoreThunk())
   }, [dispatch])
 
-  console.log(store)
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 

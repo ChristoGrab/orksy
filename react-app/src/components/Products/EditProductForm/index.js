@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { useHistory } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import { getMyStoreThunk } from '../../../store/stores';
 import "../Products.css"
 
@@ -8,6 +8,7 @@ const EditProductForm = () => {
 
   const sessionUser = useSelector(state => state.session.user)
   const store = useSelector(state => state.stores.singleStore)
+  const { productId } = useParams();
 
   const dispatch = useDispatch();
   const history = useHistory();
@@ -24,6 +25,17 @@ const EditProductForm = () => {
   useEffect(() => {
     dispatch(getMyStoreThunk())
   }, [dispatch])
+
+  useEffect(() => {
+    (async () => {
+        const data = await fetch(`/api/products/${productId}`)
+        const res = await data.json()
+        // console.log(res)
+        setName(`${res.name}`)
+        setDescription(`${res.description}`)
+        setPrice(`${res.price}`)
+    })();
+}, [])
 
   console.log(store)
 
