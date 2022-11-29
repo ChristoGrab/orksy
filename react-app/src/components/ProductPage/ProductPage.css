@@ -1,5 +1,6 @@
 .product-page-container {
   width: 80%;
+  max-width: 1500px;
   margin: auto;
   border: 1px solid black;
   display: flex;
@@ -23,8 +24,16 @@
   height: 200px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-evenly;
+}
+
+.product-page-store-link {
+  text-decoration: none;
+}
+
+.product-page-store-link:hover {
+  text-decoration: underline;
 }
 
 .product-page-name {
@@ -35,4 +44,11 @@
 .product-page-price {
   font-weight: bold;
   font-size: 28px;
+}
+
+.product-page-description {
+  font-size: 17px;
+  width: 80%;
+  max-width: 1500px;
+  margin: auto;
 }

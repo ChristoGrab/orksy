@@ -1,19 +1,23 @@
 .categories-container {
+  display: flex;
   height: 200px;
   width: 100%;
+  justify-content: center;
 }
 
 .landing-page-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   width: 90%;
+  max-width: 1400px;
   margin: auto;
+  row-gap: 50px;
+  column-gap: 20px;
 }
 
 .product-card-container {
   display: flex;
   justify-content: space-evenly;
   height: 250px;
-  max-width: 500px;
-  object-fit: fill;
+  max-width: 400px;
 }

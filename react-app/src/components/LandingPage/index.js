@@ -7,6 +7,7 @@ import './LandingPage.css'
 
 const LandingPage = () => {
   
+  const sessionUser = useSelector(state => state.session.user)
   const products = useSelector(state => state.products.productList)
   const dispatch = useDispatch()
   const [dataLoaded, setDataLoaded] = useState(false)
@@ -23,7 +24,7 @@ const LandingPage = () => {
   return (
     <div className="landing-page-container">
       <div className="categories-container">
-        Katergories
+        {sessionUser ? <h1>Welkum Back {sessionUser.username}</h1> : <h1>Welkum to Orksy</h1>}
       </div>
       <div className="landing-page-grid">
       {productList.map(product => (

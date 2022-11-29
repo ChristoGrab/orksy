@@ -38,7 +38,8 @@ const ProductPage = () => {
 
     </div>
     <div className="product-page-description">
-        {product.description}
+      <h3 id="product-description-title">Description</h3>
+      {product.description}
       </div>
     </div>
   )

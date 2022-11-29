@@ -27,7 +27,6 @@ def one_product(id):
     return {"error": "This product does not exist"}
 
 
-
 # CREATE A PRODUCT
 @product_routes.route('/new', methods=["POST"])
 @login_required
@@ -52,3 +51,5 @@ def create_product():
     return new_product.to_dict()
   else:
     return form.errors
+
+# UPLOAD IMAGE TO AWS

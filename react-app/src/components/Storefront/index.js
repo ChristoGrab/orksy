@@ -43,7 +43,7 @@ const StoreFront = () => {
         </div>
       </div>
       <div className="storefront-item-container">
-        All Itemz
+        <h3>All Itemz</h3>
         <div className='storefront-item-grid'>
             {store.products?.map(product => (
               <div key={product.id}>

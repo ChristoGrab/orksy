@@ -11,6 +11,7 @@ import DeleteStore from './components/DeleteStore'
 import NavBar from './components/Navbar';
 import LandingPage from './components/LandingPage';
 import ProductPage from './components/ProductPage';
+import CreateProductForm from './components/Products/CreateProductForm';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import { authenticate } from './store/session';
 import "./index.css"
@@ -59,7 +60,10 @@ function App() {
         <Route path="/store/:storeId/delete" exact={true}>
           <DeleteStore />
         </Route>
-        <Route path="/products/:productId">
+        <Route path="/products/create" exact={true}>
+          <CreateProductForm />
+        </Route>
+        <Route path="/products/:productId" exact={true}>
           <ProductPage />
         </Route>
       </Switch>
