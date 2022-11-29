@@ -44,6 +44,11 @@ const StoreFront = () => {
       </div>
       <div className="storefront-item-container">
         <h3>All Itemz</h3>
+        {sessionUser && sessionUser.id === store.owner_id && (
+          <div>
+            <Link id="create-product-link" to={'/products/create'}>Add a Produkt</Link>
+          </div>
+        )}
         <div className='storefront-item-grid'>
             {store.products?.map(product => (
               <div key={product.id}>

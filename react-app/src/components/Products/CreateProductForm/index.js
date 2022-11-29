@@ -73,7 +73,7 @@ const CreateProductForm = () => {
     <div className="store-form-container">
       <form className="store-form">
         <div className="store-form-greeting">
-          Create Product
+          Create Produkt
         </div>
         <div className="store-form-intro">
           Lookin' ta earn sum extra teef? We'll get yer new shiny product on da market in no time, boss.
@@ -104,7 +104,7 @@ const CreateProductForm = () => {
     </div>
   )
 }
-  
 
+ 
 
 export default CreateProductForm;
