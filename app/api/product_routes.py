@@ -53,3 +53,18 @@ def create_product():
     return form.errors
 
 # UPLOAD IMAGE TO AWS
+
+# DELETE PRODUCT
+@product_routes.route('/<int:id>', methods=["DELETE"])
+@login_required
+def delete_product(id):
+  """
+  Delete the product at given id
+  """
+  product = Product.query.get(id)
+  if product:
+    db.session.delete(product)
+    db.session.commit()
+    return {"message": "deletion successful"}
+  else:
+    return {"message": "could not find the requested resource"}
