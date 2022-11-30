@@ -4,6 +4,9 @@
   width: 50%;
   margin-left: 50px;
   gap: 5px;
+  border: 1px solid #e4e6e3;
+  padding: 20px;
+  margin-top: 30px;
 }
 
 .store-form-greeting {
@@ -24,8 +27,13 @@
   height: 30px;
   background-color: white;
   color: #1f5429;
+  transition: all 300ms ease-in-out;
+  width: 150px;
+  align-self: flex-end;
+  margin-top: 10px;
 }
 
 .store-form-button:hover {
   box-shadow: 1px 1px 3px lightgray;
+  transform: scale(1.05);
 }

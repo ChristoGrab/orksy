@@ -20,7 +20,7 @@ input {
 .error-message {
   color: red;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 13px;
 }
 
 .error-message::before {
