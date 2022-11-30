@@ -15,6 +15,13 @@ def seed_products():
     store_id=2,
     image="https://orksybucket.s3.us-east-2.amazonaws.com/gargant.jpg"
   )
+  battlewagon = Product(
+    name="Battlewagon",
+    description="Designed to carry a whole fighting mob of Orks, plus any Gretchin, Snotlings, Squigs or shiny things that may belong to the mob, Battlewagons are typically large, heavy and noisy. Ownership of a Battlewagon marks an Ork out as particularly prestigious or 'flash'. A typical Battlewagon owner is most likely a Nob of some description, though various Oddboyz may have access to Battlewagons at certain times. Warbosses often mount themselves and their immediate retinue in Battlewagons when travelling to battle, and may have more than one if their retinue is of sufficient size.",
+    price=32000,
+    store_id=2,
+    image="https://orksybucket.s3.us-east-2.amazonaws.com/BattlewagonArt.jpg"
+  )
   squiggoth = Product(
     name="Squiggoth",
     description="Squiggoths are reptilian in nature and resemble Terran dinosaurs, although there have also been reports of mammoth-like Squiggoths adapted to cold climates that possess heavy fur and tusks. Squiggoths used for combat will have armoured barding placed around the creature's neck and head, along with a small armoured howdah (or even a fort on the largest Squiggoths) built on the creature's back. The fort carries Ork Boyz, along with powerful Ork artillery pieces such as Supa-Lobbas.",
@@ -28,6 +35,27 @@ def seed_products():
     price=20,
     store_id=1,
     image="https://orksybucket.s3.us-east-2.amazonaws.com/red+squig.jpg"
+  )
+  colossal_squig = Product(
+    name="Colossal Squig",
+    description="Colossal Squigs are enormous, improbable and quite insane. These fungoid beasts possess insatiable appetites and boundless energy which, coupled with their mountainous size, means they can unleash untold havoc in battle! Their impossibly large, fleshy mouths can messily devour swathes of foes in an instant, while their rush to eat usually means anything that escapes their grisly jaws is squashed flat by the beast as it careens headlong towards its next meal.",
+    price=3500,
+    store_id=1,
+    image="https://orksybucket.s3.us-east-2.amazonaws.com/colossal-squig.jpg"
+  )
+  boom_squig = Product(
+    name="Boom Squig",
+    description="Orks sometimes use Squigs as running explosives, exploiting their natural tendency to chase anything that moves. Explosives are strapped to their sides or gripped firmly in their teeth and when properly goaded, they run headlong at the desired target, usually enemy vehicles. The best bomb squigs will have undergone rudimentary training to hunt enemy tanks, chasing through the encampment after a looted wagon to snatch juicy Snotling rewards off its back bumper. However, these creatures are not famed for their intellect and can sometimes chase a friendly vehicle instead - a price Orks are willing to pay. Bomb squigs have been seen taking to the field strapped with everything from tankbusta bombs and pressure-mines to directionally explosive cranial transplants, but usually are equipped with as many Stikkbombs as possible. Imperial post-action reports even claim that the Ultresica Breach Disaster began with a single, mad-eyed bomb squig charging into the midst of the Corscan 3rd Artillery with a filched vortex grenade clamped between its teeth. These living weapons are usually used by Ork Tankbustas.",
+    price=130,
+    store_id=1,
+    image="https://orksybucket.s3.us-east-2.amazonaws.com/boom-squig.jpg"
+  )
+  orkeosaurus = Product(
+    name="Feral Orkeosaurus",
+    description="The rarely seen Orkeosaurus is an even larger sub-species of squig than the more infamous Squiggoth. They are used by Feral Orks as troop-transports and warmachines.",
+    price=4200,
+    store_id=1,
+    image="https://orksybucket.s3.us-east-2.amazonaws.com/orkeosaurus.jpg"
   )
   flyboy = Product(
     name="Flyboy",
@@ -46,8 +74,12 @@ def seed_products():
   
   db.session.add(meganobz)
   db.session.add(gargant)
+  db.session.add(battlewagon)
   db.session.add(squiggoth)
   db.session.add(red_squig)
+  db.session.add(colossal_squig)
+  db.session.add(boom_squig)
+  db.session.add(orkeosaurus)
   db.session.add(flyboy)
   db.session.add(burna)
   db.session.commit()
