@@ -3,6 +3,7 @@ import { useHistory, Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import LogoutButton from './LogoutButton'
 import './ProfileButton.css'
+import userAvatar from '../../assets/user-avatar.png'
 
 function ProfileButton({ user }) {
 
@@ -35,12 +36,13 @@ function ProfileButton({ user }) {
       </button>
       {showMenu && (
         <div className="profile-dropdown">
-          <div className="profile-dropdown-link">
-            <div id="profile-dropdown-user-box">
-            <div id="profile-dropdown-username">{user.username}</div>
-            <Link to='/profile' className="manage-account-link">Manage Profile</Link>
+          <Link to='/profile' id="profile-dropdown-link-1">
+            <img src={userAvatar} alt='user-avatar' id="dropdown-avatar"></img>
+            <div>
+              <div id="profile-dropdown-username">{user.username}</div>
+              <div id="manage-account-link">Manage Profile</div>
             </div>
-          </div>
+          </Link>
           <div className="profile-dropdown-link">
             <LogoutButton />
           </div>

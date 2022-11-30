@@ -1,8 +1,16 @@
-.categories-container {
+#welcome-message-container {
   display: flex;
-  height: 200px;
+  height: 72px;
   width: 100%;
   justify-content: center;
+  align-items: center;
+  background-color: #fdebd2;
+}
+
+.categories-container {
+  height: 100px;
+  background-color: #fdebd2;
+  margin-bottom: 100px;
 }
 
 .landing-page-grid {

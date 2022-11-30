@@ -12,9 +12,11 @@ import NavBar from './components/Navbar';
 import LandingPage from './components/LandingPage';
 import ProductPage from './components/ProductPage';
 import CreateProductForm from './components/Products/CreateProductForm';
+import DeleteProduct from './components/Products/DeleteProduct'
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import { authenticate } from './store/session';
 import "./index.css"
+import EditProductForm from './components/Products/EditProductForm';
 
 
 function App() {
@@ -62,6 +64,12 @@ function App() {
         </Route>
         <Route path="/products/create" exact={true}>
           <CreateProductForm />
+        </Route>
+        <Route path="/products/:productId/edit" exact={true}>
+          <EditProductForm />
+        </Route>
+        <Route path="/products/:productId/delete" exact={true}>
+          <DeleteProduct />
         </Route>
         <Route path="/products/:productId" exact={true}>
           <ProductPage />

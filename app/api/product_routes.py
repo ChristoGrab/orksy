@@ -2,6 +2,7 @@ from flask import Blueprint, request
 from flask_login import login_required, current_user
 from app.models import Product, db
 from app.forms import ProductForm
+from app.util.s3 import upload_file_to_s3, allowed_file, get_unique_filename
 
 product_routes = Blueprint('products', __name__)
 
@@ -52,4 +53,65 @@ def create_product():
   else:
     return form.errors
 
-# UPLOAD IMAGE TO AWS
+# DELETE PRODUCT
+@product_routes.route('/<int:id>', methods=["DELETE"])
+@login_required
+def delete_product(id):
+  """
+  Delete the product at given id
+  """
+  product = Product.query.get(id)
+  if product:
+    db.session.delete(product)
+    db.session.commit()
+    return {"message": "deletion successful"}
+  else:
+    return {"message": "could not find the requested resource"}
+    
+# UPDATE PRODUCT
+@product_routes.route('/<int:id>', methods=["PUT"])
+@login_required
+def update_product(id):
+  """
+  Updates the product at given id
+  """
+  product = Product.query.get(id)
+  new_name = request.json["name"]
+  new_description = request.json["description"]
+  new_price = request.json["price"]
+  new_image = request.json["image"]
+  if product:
+    product.name = new_name
+    product.description = new_description
+    product.price = new_price
+    product.image = new_image
+    db.session.commit()
+    return product.to_dict()
+  else:
+    return {
+      "message": "The requested resource could not be found"
+    }, 400
+
+# IMAGE UPLOAD TO AWS S3
+@product_routes.route('/upload', methods=["POST"])
+@login_required
+def upload_image():
+  """
+  Sends an uploaded image to S3 bucket and returns the url
+  """
+  print(request.files)
+  if "file" not in request.files:
+    return {"errors": "image required"}, 400
+    
+  image = request.files["file"]
+  
+  if not allowed_file(image.filename):
+    return {"errors": "file type not permitted"}, 400
+    
+  image.filename = get_unique_filename(image.filename)
+  
+  upload = upload_file_to_s3(image)
+  
+  print("upload object in backend: ", upload)
+  
+  return upload

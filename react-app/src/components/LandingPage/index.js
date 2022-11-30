@@ -23,9 +23,10 @@ const LandingPage = () => {
   
   return (
     <div className="landing-page-container">
-      <div className="categories-container">
+      <div id="welcome-message-container">
         {sessionUser ? <h1>Welkum Back {sessionUser.username}</h1> : <h1>Welkum to Orksy</h1>}
       </div>
+      <div className="categories-container"></div>
       <div className="landing-page-grid">
       {productList.map(product => (
         <div key={product.id} className="product-card-container">

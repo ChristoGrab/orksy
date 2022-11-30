@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { useHistory } from 'react-router-dom'
-import { createProductThunk } from '../../../store/products'
+import { useHistory, useParams } from 'react-router-dom'
 import { getMyStoreThunk } from '../../../store/stores';
 import "../Products.css"
 
-const CreateProductForm = () => {
+const EditProductForm = () => {
 
   const sessionUser = useSelector(state => state.session.user)
   const store = useSelector(state => state.stores.singleStore)
+  const { productId } = useParams();
 
   const dispatch = useDispatch();
   const history = useHistory();
@@ -25,6 +25,18 @@ const CreateProductForm = () => {
   useEffect(() => {
     dispatch(getMyStoreThunk())
   }, [dispatch])
+
+  useEffect(() => {
+    (async () => {
+        const data = await fetch(`/api/products/${productId}`)
+        const res = await data.json()
+        setName(`${res.name}`)
+        setDescription(`${res.description}`)
+        setPrice(`${res.price}`)
+    })();
+}, [])
+
+  console.log(store)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -64,27 +76,30 @@ const CreateProductForm = () => {
         name,
         description,
         price,
-        store_id: store.id,
         image: urlObj.url
       }
-
-
-
-      dispatch(createProductThunk(new_product)).then((data) => {
-        history.push('/profile')
-      })
-
-    }
+    
+    
+    const response = await fetch(`/api/products/${productId}`, {
+      method: "PUT",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(new_product)
+    }).catch(async (res) => {
+      await response.json();
+    })
+    
+    if (response) history.goBack()
+  }
   }
 
     return (
       <div className="store-form-container">
         <form className="store-form">
           <div className="store-form-greeting">
-            Create Produkt
+            Edit Produkt
           </div>
           <div className="store-form-intro">
-            Lookin' ta earn sum extra teef? We'll get yer new shiny product on da market in no time, boss.
+            Gotta make sum changes to da produkt? We've got ya covered.
           </div>
           {errors.map((error, idx) =>
             <div key={idx} className="error-message">{error}</div>)}
@@ -121,4 +136,4 @@ const CreateProductForm = () => {
 
 
 
-  export default CreateProductForm;
+  export default EditProductForm;

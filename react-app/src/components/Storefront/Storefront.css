@@ -14,7 +14,8 @@
 
 
 #edit-store-link,
-#delete-store-link {
+#delete-store-link,
+#create-product-link {
   font-weight: bold; 
   text-decoration: none;
   height: 40px;
@@ -27,17 +28,28 @@
   margin: 0 5px;
 }
 
-#edit-store-link {
+#edit-store-link,
+#edit-product-button {
   background-color: #1f5429;
 }
 
-#delete-store-link {
+#delete-store-link,
+#delete-product-button {
   background-color: #832212;
 }
 
+#create-product-link {
+  background-color: #291f54;
+  border: 1px solid black;
+  margin: 10px;
+}
+
 #edit-store-link:hover,
-#delete-store-link:hover {
-  box-shadow: 2px 2px 5px lightgray;
+#delete-store-link:hover,
+#create-product-link:hover,
+#delete-product-button:hover,
+#edit-product-button:hover {
+  box-shadow: 1px 1px 5px #757575;
 }
 
 .storefront-info-container {
@@ -66,4 +78,20 @@
   grid-template-columns: repeat(4, 1fr);
   margin: auto;
   column-gap: 20px;
+  row-gap: 10px;
+}
+
+#edit-product-button,
+#delete-product-button {
+  border-radius: 5em;
+  color: white;
+  height: 30px;
+  width: 120px;
+  margin: 5px 0;
+  border: none;
+}
+
+.storefront-product-buttons {
+  display: flex;
+  justify-content: space-around;
 }
