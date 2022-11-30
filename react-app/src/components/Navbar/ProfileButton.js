@@ -35,12 +35,10 @@ function ProfileButton({ user }) {
       </button>
       {showMenu && (
         <div className="profile-dropdown">
-          <div className="profile-dropdown-link">
-            <div id="profile-dropdown-user-box">
+          <Link to='/profile' id="profile-dropdown-link-1">
             <div id="profile-dropdown-username">{user.username}</div>
-            <Link to='/profile' className="manage-account-link">Manage Profile</Link>
-            </div>
-          </div>
+            <div className="manage-account-link">Manage Profile</div>
+            </Link>
           <div className="profile-dropdown-link">
             <LogoutButton />
           </div>
