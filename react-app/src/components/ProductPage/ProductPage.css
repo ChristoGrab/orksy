@@ -47,9 +47,44 @@
   font-size: 28px;
 }
 
-.product-page-description {
+.product-description-container {
   font-size: 17px;
   width: 80%;
   max-width: 1500px;
-  margin: auto;
+  margin: 20px auto;
+  height: 100px;
+}
+
+#show-description-button,
+#show-shipping-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  border-radius: 5em;
+  border: none;
+  height: 30px;
+  width: 300px;
+  transition: all 300ms ease-in-out;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+#show-description-button:hover,
+#show-shipping-button:hover {
+  background-color: #e4e6e3;
+}
+
+#show-description-caret {
+  color: black;
+}
+
+.product-description-text {
+  
+}
+
+.shipping-info {
+  display: flex;
+  position: relative;
 }
