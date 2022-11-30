@@ -10,7 +10,7 @@ def seed_products():
   )
   gargant = Product(
     name="Gargant",
-    description="Gargantz are da biggest and most Orky of meks, as big as a puny humie Titan and at least three times as 'ard.  Add dis jugganaut to ya arsenal an' you'll be able to wreck an entire sektor.",
+    description="Ork Gargants are the largest land-based Ork fighting machines. Effigies of the Ork Gods Gork and Mork, these towering War Engines compare in size and power to Imperial Titans, dominating the battlefield with fearsome firepower. They are constructed by a prospecting Warboss, who is visited by dreams of massive mayhem and carnage, or by orks he has bullied into doing it. This drives the Orks into a frenzy and effectively begins the Warboss' prospective Waaagh!",
     price=80000,
     store_id=2,
     image="https://orksybucket.s3.us-east-2.amazonaws.com/gargant.jpg"
@@ -57,9 +57,9 @@ def seed_products():
     store_id=1,
     image="https://orksybucket.s3.us-east-2.amazonaws.com/orkeosaurus.jpg"
   )
-  flyboy = Product(
-    name="Flyboy",
-    description="Most Orks prefer to keep their feet firmly on the ground, and believe the real fighting is done up close and personal. Ork aircraft are the ultimate expression of a particular mania that can seize an Ork's mind. The afflicted Ork seeks ever-greater thrills from speed and danger, driving or, in extreme cases, flying faster and faster. Those afflicted are called Speed Freeks, and regardless of their original klan, invariably belong to the Kult of Speed. The majority of Speed Kultists come from the Evil Sunz klan, but not all, and the mania can seize any Ork. Few actually become pilots, because most Orks have a natural distrust of flying, and much prefer to remain with their feet solidly upon the ground, where the proppa' scrappin is done.",
+  fighta = Product(
+    name="Fighta",
+    description="Ork Fightas are the smallest type of aircraft produced by Ork Mek Boyz, used for dog-fighting and ground attack. Fightas are built for speed and firepower, typically carrying Big Shootas and a small wing of bombs and rockets. Despite its crude design, a Fighta is easily a match for any Imperial Navy fighter and its engine is remarkably effective, capable of producing a huge amount of thrust. Ork Fighta Pilots love nothing more then to fly in close to enemy aircraft and tear it apart with hail of dakka.",
     price=4000,
     store_id=4,
     image="https://orksybucket.s3.us-east-2.amazonaws.com/flyboy-1.jpg"
@@ -85,6 +85,34 @@ def seed_products():
     store_id=3,
     image="https://orksybucket.s3.us-east-2.amazonaws.com/Rokkit_Launcha.jpg"
   )
+  dakkajet = Product(
+    name="Dakkajet",
+    description="A Dakkajet is an Ork fighter aircraft specializing in both air-to-air and ground attack missions. A blur of colour and noise amidst the smoke and clamour of battle, the Dakkajet is propelled by a single, massive jet engine. It roars through the sky, gunz blazing a near constant stream of bullets, tormenting fleeing infantry or enemy aircraft. Dakkajet pilots believe firmly in quantity over quality, and commonly bolt as many guns as possible to their aircraft - some of those bullets are bound to hit the target. The engines of the Dakkajet are crude and simple, but powerful and incredibly effective at producing enormous levels of thrust. In a straight line, they are more than a match for any other aircraft in the Galaxy but their maneuverability leaves much to be desired. Thus most Dakkajets are equipped with angled thrust nozzles used to change trajectory with extreme violence. Consequently, they appear to be dangerously out of control and always a millisecond away from disaster.",
+    price=5000,
+    store_id=4,
+    image="https://orksybucket.s3.us-east-2.amazonaws.com/dakkajet.jpg"
+  )
+  big_choppa = Product(
+    name="Kustom Big Choppa",
+    description="These weapons serve as the mark of a real connoisseur of brutality, even amongst Ork warriors. They can take many forms from great axes with jagged metal teeth to heavy clubs with plenty of spikes to make them more 'killy' and give them a more agressive look. Some Mekboys even make Big Choppas resembling crude Ork versions of Chainaxes. Their unsubtle design and massive weight is capable of packing a considerably harder hit than regular Choppas - wielded with a overhead swing which will turn most opponents into splutchy pancakes on hit. They are are chosen more for sheer weight than subtlety and require both hands to carry and wield them. Big Choppas are usually wielded by Ork Nobs or Warbosses who can do even more damage with it using their great strength and skill.",
+    price=320,
+    store_id=5,
+    image="https://orksybucket.s3.us-east-2.amazonaws.com/Big+Choppa-1.jpg"
+  )
+  stompa = Product(
+    name="Stompa",
+    description="Stompas are enormous walking fortresses clad in layers of scrap-iron armor and bristling with enormous amounts of firepower. They live up to their name by stomping across the battlefield and annihilating everything in their path. Every one of these vehicles is a unique creation, the product of several Mekboyz fevered brains and countless hours of Grot slave labor. However as they approach their state of completion, all Stompas begin to share a few similarities. First of these is their fat-bellied and belligerent appearance made as effigies to the Ork Gods Gork and Mork. Secondly, they are usually powered by massive internal boilers and furnances that link to a forest of smokestacks and vents. Thirdly, one arm is a hydraulic affair the size of a docking crane and ends in a monstrous Chainsaw known as a Mega-Choppa. The other arm usually consists of a mass of artillery, the largest of which is a Deffkannon. All Stompas also sport a belly-mounted Supa-Gatler.",
+    price=2700,
+    store_id=2,
+    image="https://orksybucket.s3.us-east-2.amazonaws.com/stompa.jpg"
+  )
+  chain_toof = Product(
+    name="Randum Chain Toof",
+    description="We found dis chain toof layin on da ground of a right 'ard battlefield. Pulled it out of a humie spine and put in da market, cuz why not?",
+    price=12,
+    store_id=5,
+    image="https://orksybucket.s3.us-east-2.amazonaws.com/chain-toof.jpg"
+  )
   
   db.session.add(meganobz)
   db.session.add(gargant)
@@ -94,10 +122,14 @@ def seed_products():
   db.session.add(colossal_squig)
   db.session.add(boom_squig)
   db.session.add(orkeosaurus)
-  db.session.add(flyboy)
+  db.session.add(fighta)
   db.session.add(burna)
   db.session.add(deffgun)
   db.session.add(rokkit_launcha)
+  db.session.add(dakkajet)
+  db.session.add(big_choppa)
+  db.session.add(stompa)
+  db.session.add(chain_toof)
   db.session.commit()
   
 def undo_products():
