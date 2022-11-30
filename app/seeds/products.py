@@ -71,6 +71,20 @@ def seed_products():
     store_id=3,
     image="https://orksybucket.s3.us-east-2.amazonaws.com/burna-1.jpg"
   )
+  deffgun = Product(
+    name="Deffgun",
+    description="Deffguns are heavy Ork weapons, fine examples of the Mek's craft that are made from all kinds of materials, mainly scavenged heavy weaponry of other races. Deffguns are so large they must be mounted on a special firing rig strapped to to an Ork's broad shoulders. No man could hope to fit into a Deffgun's rig without heavy augmetics or thick slabs of vat-grown muscle. This cumbersome rig is needed to absorb bone-breaking recoil each time the Deffgun is fired. They fire dakka of extremely high calibre, rounds which easily smash bikes and reliably penetrate transports' armour. Given their variable origins they may vary tremendously in properties and appearance, but a typical Deffgun is similar to an Imperial Autocannon, although much less predictable.",
+    price=140,
+    store_id=3,
+    image="https://orksybucket.s3.us-east-2.amazonaws.com/Deffgun.jpg"
+  )
+  rokkit_launcha = Product(
+    name="Rokkit Launcha",
+    description="Rokkit Launchas probably spawned from an Ork's desire to make something explode, that wasn't within easy reach of a grenade. It is a massive, but very simple weapon - usually a stout stick with a simple trigger mechanism or a tubular launcher with as many rokkits as Orks can get a hold of. Rokkits can be loaded one at a time, or loaded automatically from a magazine if the weapon is a bit more complex. Orks can use it on the move with no noticeable loss of accuracy. Its simplicity makes it very easy to manufacture and it is a fairly common Ork special weapon. It is usually mounted on vehicles such as Warbuggyz or Killa Kans, but sometimes Ork Boyz equip themselves with Rokkit Launchas, that gives their mob the ability to shoot down armoured vehicles. It is also a primary weapon of Ork Tankbustas. Due to its simplicity, it is often combined with a Shoota to make a Kombi-Weapon.",
+    price=115,
+    store_id=3,
+    image="https://orksybucket.s3.us-east-2.amazonaws.com/Rokkit_Launcha.jpg"
+  )
   
   db.session.add(meganobz)
   db.session.add(gargant)
@@ -82,6 +96,8 @@ def seed_products():
   db.session.add(orkeosaurus)
   db.session.add(flyboy)
   db.session.add(burna)
+  db.session.add(deffgun)
+  db.session.add(rokkit_launcha)
   db.session.commit()
   
 def undo_products():
