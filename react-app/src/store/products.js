@@ -121,6 +121,7 @@ const productsReducer = (state = initialState, action) => {
     case CLEAR_PRODUCT: {
       return {
         ...state,
+        productList: {},
         singleProduct: {}
       }
     }
@@ -142,7 +143,7 @@ const productsReducer = (state = initialState, action) => {
       const allProducts = {
         ...state.products
       }
-      delete allProducts[action.id]
+      delete allProducts.productsList[action.id]
       return {
         ...state,
         productList: allProducts,

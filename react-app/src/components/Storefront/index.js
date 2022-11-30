@@ -22,23 +22,25 @@ const StoreFront = () => {
   useEffect(() => {
     dispatch(storeActions.getStoreThunk(storeId))
     return (() => dispatch(storeActions.clearStore()))
-  }, [dispatch, storeId])
-  
-  
+  }, [dispatch, storeId, update])
+
+
   const handleDelete = async (e, id) => {
     e.preventDefault();
     
-    dispatch(productActions.deleteProductThunk(id))
+    history.push(`/products/${id}/delete`)
     
-    console.log("this ran")
-    history.push(`/store/${storeId}`)
+    // await fetch(`/api/products/${id}`, {
+    //   method: "DELETE"
+    // }).then(res => setUpdate(!!update))
   }
-  
+
   const handleEdit = async (e, id) => {
     e.preventDefault();
-    
+
     history.push(`/products/${id}/edit`)
   }
+
 
   return (
     <div className="storefront-container">
