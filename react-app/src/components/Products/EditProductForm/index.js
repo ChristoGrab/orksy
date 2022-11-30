@@ -30,7 +30,6 @@ const EditProductForm = () => {
     (async () => {
         const data = await fetch(`/api/products/${productId}`)
         const res = await data.json()
-        // console.log(res)
         setName(`${res.name}`)
         setDescription(`${res.description}`)
         setPrice(`${res.price}`)
@@ -77,10 +76,20 @@ const EditProductForm = () => {
         name,
         description,
         price,
-        store_id: store.id,
         image: urlObj.url
       }
-    }
+    
+    
+    const response = await fetch(`/api/products/${productId}`, {
+      method: "PUT",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(new_product)
+    }).catch(async (res) => {
+      await response.json();
+    })
+    
+    if (response) history.goBack()
+  }
   }
 
     return (
