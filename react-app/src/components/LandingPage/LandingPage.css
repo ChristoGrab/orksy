@@ -9,6 +9,15 @@
   font-weight: 300;
 }
 
+#welcome-message-link {
+  color: black;
+  transition: opacity 200ms ease-out;
+}
+
+#welcome-message-link:hover {
+  opacity: .3;
+}
+
 .categories-container {
   height: 100px;
   background-color: #fdebd2;

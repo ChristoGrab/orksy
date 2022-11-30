@@ -26,7 +26,7 @@ const LandingPage = () => {
     <div className="landing-page-container">
 
       <div id="welcome-message-container">
-        {sessionUser ? <h1>Welkum Back, {sessionUser.username}!</h1> : <h1>Welkum to Orksy</h1>}
+        {sessionUser ? <h1>Welkum Back, <Link id="welcome-message-link" to="/profile">{sessionUser.username}</Link>!</h1> : <h1>Welkum to Orksy</h1>}
       </div>
       <div className="categories-container"></div>
       <div className="landing-page-grid">
