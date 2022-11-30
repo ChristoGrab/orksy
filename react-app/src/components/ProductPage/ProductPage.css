@@ -4,6 +4,7 @@
   margin: auto;
   border: 1px solid black;
   display: flex;
+  padding-top: 30px;
 }
 
 .product-page-image-container {

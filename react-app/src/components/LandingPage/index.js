@@ -14,7 +14,8 @@ const LandingPage = () => {
   
   useEffect(() => {
     dispatch(loadProductsThunk())
-  }, [dispatch])
+    .then(res => setDataLoaded(true))
+  }, [dispatch, dataLoaded])
   
   if (!products) return null;
   
@@ -23,8 +24,9 @@ const LandingPage = () => {
   
   return (
     <div className="landing-page-container">
+
       <div id="welcome-message-container">
-        {sessionUser ? <h1>Welkum Back {sessionUser.username}</h1> : <h1>Welkum to Orksy</h1>}
+        {sessionUser ? <h1>Welkum Back, {sessionUser.username}!</h1> : <h1>Welkum to Orksy</h1>}
       </div>
       <div className="categories-container"></div>
       <div className="landing-page-grid">
