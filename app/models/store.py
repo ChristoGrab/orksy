@@ -14,7 +14,7 @@ class Store(db.Model):
 
   # Relationships
   owner = db.relationship("User", back_populates="store")
-  products = db.relationship("Product", back_populates="store")
+  products = db.relationship("Product", back_populates="store", cascade="delete")
 
   def to_dict(self, products=False):
     store = {

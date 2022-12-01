@@ -38,7 +38,11 @@ function DeleteStore() {
   return (
     <div className='delete-page-container'>
       <h2>Wot, yer tryna git rid of yer store now?</h2>
-      <div id="boompik-flava-text">Give us da word and da weirdboyz'll zap it to a right crisp</div>
+      <div id="boompik-flava-text">
+        Give us da word and da weirdboyz'll zap it to a right crisp,
+        <br />
+        but all yer associated produkts'll go bye-bye as well...
+      </div>
       <img src={boomPik} id="boompik" />
       <div className='delete-page-buttons'>
         <button

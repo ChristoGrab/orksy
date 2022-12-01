@@ -33,7 +33,8 @@ function EditStoreForm() {
     if (!name.length) errorList.push("Yer gotta give da store a name")
     if (name.length > 70) errorList.push("Dat namez too long 'n komplex for da boyz ta rememba'")
     if (!description.length) errorList.push("Yer gotta share some intel on da store for da boyz")
-
+    if (description.length > 1000) errorList.push("Yer gonna dazzle da boyz wiv such long descripshuns...")
+    
     setErrors(errorList)
 
     if (errorList.length) {
@@ -61,16 +62,14 @@ function EditStoreForm() {
         Wanna give da store a shiny new coat of paint, do yer?
         {errors.map((error, idx) =>
           <div key={idx} className="error-message">{error}</div>)}
-        <label>Name</label>
+        <label>Name - <span className="form-note">(70 chars max)</span></label>
         <input className="store-form-input"
           type="text"
-          required
           value={name}
           onChange={e => setName(e.target.value)} />
-        <label>Description</label>
+        <label>Description - <span className="form-note">(1000 chars max)</span></label>
         <textarea className="store-form-textarea"
           type="text"
-          required
           value={description}
           onChange={e => setDescription(e.target.value)} />
         <button className="store-form-button" onClick={handleSubmit}>Update Store</button>

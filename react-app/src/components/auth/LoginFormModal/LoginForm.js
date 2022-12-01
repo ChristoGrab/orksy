@@ -5,11 +5,13 @@ import { login } from '../../../store/session';
 import DemoUserButton from '../DemoUserButton';
 import SignupFormModal from '../SignupFormModal';
 import "../AuthForms.css"
+import SignUpForm from '../SignupFormModal/SignUpForm';
 
 const LoginForm = () => {
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [switchForm, setSwitchForm] = useState(false)
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
 
@@ -27,13 +29,16 @@ const LoginForm = () => {
     setEmail("gork@teef.io")
     setPassword("password2")
     
-    console.log("email", email)
-    console.log("password", password)
+    
     
     const data = await dispatch(login(email, password))
     if (data) {
       setErrors(data);
     }
+  }
+  
+  const switchToSignup = async (e) => {
+    setSwitchForm(true)
   }
 
   const updateEmail = (e) => {
@@ -49,9 +54,13 @@ const LoginForm = () => {
   }
 
   return (
+    <div>
+      {switchForm ? <SignUpForm />
+      :
     <form className="authentication-form" onSubmit={onLogin}>
       <div className="auth-form-title">
-        Log in: Orkz only
+        <div>Sign in: Orkz Only</div>
+        <div className="register-button" onClick={switchToSignup}>Register</div>
       </div>
         {errors.map((error, ind) => (
           <div className="error-message" key={ind}>{error}</div>
@@ -77,6 +86,8 @@ const LoginForm = () => {
         <DemoUserButton />
       </div>
     </form>
+    }
+    </div>
   );
 };
 

@@ -14,15 +14,21 @@
 }
 
 .navbar-right {
-  margin-right: 50px;
+  margin-right: 100px;
   display: flex;
   justify-content: space-between;
   gap: 20px;
 }
 
+@font-face {
+  font-family: "Orkish";
+  src: url('../../fonts/OrcHordeBB_Reg.otf')
+}
+
 #navbar-logo {
-  margin-left: 50px;
+  margin-left: 100px;
   font-size: 32px;
   color: #1f5429;
   text-decoration: none;
+  font-family: Orkish;
 }

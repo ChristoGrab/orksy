@@ -5,6 +5,16 @@
   justify-content: center;
   align-items: center;
   background-color: #fdebd2;
+  font-weight: 300;
+}
+
+#welcome-message-link {
+  color: black;
+  transition: opacity 200ms ease-out;
+}
+
+#welcome-message-link:hover {
+  opacity: .3;
 }
 
 .categories-container {
@@ -28,4 +38,31 @@
   justify-content: space-evenly;
   height: 250px;
   max-width: 400px;
+}
+
+.main-page-footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  margin-top: 50px;
+  background-color: #291f54;
+}
+
+#about-me {
+  color: white;
+  font-size: 12px;
+}
+
+#about-me-links {
+  font-size: 32px;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100px;
+}
+
+.fa-github,
+.fa-linkedin {
+  color: white;
 }

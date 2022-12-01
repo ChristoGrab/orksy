@@ -4,20 +4,25 @@
   flex-direction: column;
   text-decoration: none;
   color: black;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   box-sizing: border-box;
 }
 
 .product-card-image {
   height: 200px;
+  max-width: 100%;
+  border-radius: 2px;
   object-fit: cover;
 }
 
 .product-card-name {
-  font-size: 16px;
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 400;
 }
 
 .product-card-price {
-  font-weight: bold;
-  font-size: 18px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.6;
 }
