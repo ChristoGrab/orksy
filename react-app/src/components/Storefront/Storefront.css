@@ -1,4 +1,3 @@
-
 #storefront-banner {
   height: 325px;
   width: 100%;
@@ -13,7 +12,8 @@
 }
 
 .storefront-owner-links {
-  margin: 10px 0px 10px 40px;
+  padding-top: 20px;
+  margin: 0px 0px 10px 40px;
   display: flex;
   flex-direction: row;
 }
@@ -74,8 +74,11 @@
 .storefront-info-description {
   display: flex;
   justify-content: center;
-  width: 66%;
+  width: 70%;
   margin: auto;
+  font-size: 13px;
+  line-height: 1.6;
+  padding-bottom: 5px;
 }
 
 .storefront-item-container {
