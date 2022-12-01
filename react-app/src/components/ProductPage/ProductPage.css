@@ -61,6 +61,12 @@
   position: relative;
   top: 10px;
   width: 100%;
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 #show-description-button,
@@ -94,6 +100,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  animation: fadeIn 1s;
 }
 
 #arrival-estimate-text,
@@ -119,3 +126,4 @@
   font-size: 13px;
   line-height: 16px;
 }
+
