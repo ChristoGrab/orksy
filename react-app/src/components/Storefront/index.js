@@ -27,9 +27,9 @@ const StoreFront = () => {
 
   const handleDelete = async (e, id) => {
     e.preventDefault();
-    
+
     history.push(`/products/${id}/delete`)
-    
+
     // await fetch(`/api/products/${id}`, {
     //   method: "DELETE"
     // }).then(res => setUpdate(!!update))
@@ -47,12 +47,16 @@ const StoreFront = () => {
       <div className="storefront-banner-container">
         <img id="storefront-banner" src={orkBanner}></img>
       </div>
+      
+      <div className="storefront-under-banner">
+      
       {sessionUser && sessionUser.id === store.owner_id && (
         <div className="storefront-owner-links">
           <Link id="edit-store-link" to={`/store/${store.id}/edit`}>Edit Yer Store</Link>
           <Link id="delete-store-link" to={`/store/${store.id}/delete`}>Delete Yer Store</Link>
         </div>
       )}
+      
       <div className="storefront-info-container">
         <div className="storefront-info-name">
           {store.name}
@@ -60,6 +64,8 @@ const StoreFront = () => {
         <div className="storefront-info-description">
           {store.description}
         </div>
+      </div>
+      
       </div>
       <div className="storefront-item-container">
         <h3>All Itemz</h3>
@@ -74,19 +80,20 @@ const StoreFront = () => {
               <ProductCard product={product} />
               {sessionUser && sessionUser.id === store.owner_id && (
                 <div className="storefront-product-buttons">
-                <button id="edit-product-button"
-                key={product.id}
-                onClick = {(e) => {
-                  handleEdit(e, product.id)
-                }}>
-                  Edit Produkt
-                </button>
-                <button id="delete-product-button"
-                key={product.id}
-                onClick={(e) => {
-                  handleDelete(e, product.id)}}>
-                  Delete Produkt
-                </button>
+                  <button id="edit-product-button"
+                    key={product.id}
+                    onClick={(e) => {
+                      handleEdit(e, product.id)
+                    }}>
+                    Edit Produkt
+                  </button>
+                  <button id="delete-product-button"
+                    key={product.id}
+                    onClick={(e) => {
+                      handleDelete(e, product.id)
+                    }}>
+                    Delete Produkt
+                  </button>
                 </div>
               )}
             </div>

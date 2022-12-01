@@ -24,10 +24,13 @@ def is_email(form, field):
     if "@" not in email:
         raise ValidationError("Oi, dat's not a valid email address")
 
-
+def username_length(form, field):
+    username = field.data
+    if len(username) > 40:
+        raise ValidationError("No self-respectin' Ork picks a name dat long...")
 
 class SignUpForm(FlaskForm):
     username = StringField(
-        'username', validators=[DataRequired("Yer gotta provide an Orksy username"), username_exists])
+        'username', validators=[DataRequired("Yer gotta provide an Orksy username"), username_exists, username_length])
     email = StringField('email', validators=[DataRequired("Yer gotta provide an email, ya hear?"), user_exists, is_email])
     password = StringField('password', validators=[DataRequired("Yer gotta make a super secret password")])

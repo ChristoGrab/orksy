@@ -18,7 +18,6 @@
   flex-direction: row;
 }
 
-
 #edit-store-link,
 #delete-store-link,
 #create-product-link {
@@ -58,8 +57,13 @@
   box-shadow: 1px 1px 5px #757575;
 }
 
+.storefront-under-banner {
+  background-color: #fafafa;
+}
+
 .storefront-info-container {
   margin-left: 40px;
+
 }
 
 .storefront-info-name {
