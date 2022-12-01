@@ -4,6 +4,12 @@
   width: 100%;
   display: flex;
   align-items: center;
+  object-fit: contain;
+}
+
+.storefront-banner-container {
+  width: 100%;
+  background-color: #4b0007;
 }
 
 .storefront-owner-links {
