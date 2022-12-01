@@ -23,6 +23,8 @@ const LandingPage = () => {
   console.log(productList)
 
   return (
+    <div>
+      {dataLoaded === true && (
     <div className="landing-page-container">
       <div id="welcome-message-container">
         {sessionUser ? <h1>Welkum Back, <Link id="welcome-message-link" to="/profile">{sessionUser.username}</Link>!</h1> : <h1>Welkum to Orksy</h1>}
@@ -46,6 +48,8 @@ const LandingPage = () => {
           </a>
         </div>
       </div>
+    </div>
+    )}
     </div>
   )
 }

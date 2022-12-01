@@ -53,13 +53,13 @@ function CreateStoreForm() {
           </div>
           {errors.map((error, idx) => 
           <div key={idx} className="error-message">{error}</div>)}
-        <label>Name</label>
+        <label className="form-label">Name</label>
           <input className="store-form-input"
             type="text"
             required
             value={name}
             onChange={e => setName(e.target.value)} />
-        <label>Description</label>
+        <label className="form-label">Description</label>
           <textarea className="store-form-textarea"
             type="text"
             required

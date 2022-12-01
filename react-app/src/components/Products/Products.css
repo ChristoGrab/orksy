@@ -2,6 +2,13 @@
   font-size: 12px;
 }
 
+input[type=file]::file-selector-button {
+  background: #faf9f5;
+  height: 80px;
+  width: 100px;
+  cursor: pointer;
+}
+
 .loading-popup-container {
   position: absolute;
   display: flex;

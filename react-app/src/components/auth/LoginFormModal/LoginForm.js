@@ -59,7 +59,7 @@ const LoginForm = () => {
       :
     <form className="authentication-form" onSubmit={onLogin}>
       <div className="auth-form-title">
-        <div>Log in: Orkz only</div>
+        <div>Sign in: Orkz Only</div>
         <div className="register-button" onClick={switchToSignup}>Register</div>
       </div>
         {errors.map((error, ind) => (

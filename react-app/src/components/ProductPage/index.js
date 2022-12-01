@@ -43,18 +43,27 @@ const ProductPage = () => {
         <div className="product-page-image-container">
           <img className="product-page-image" src={product.image} alt={product.name} />
         </div>
+        
         <div className="product-page-details-container">
           <Link to={`/store/${product.store_id}`}
             className="product-page-store-link">{product.store?.name}
           </Link>
           <div className="product-page-name">{product.name}</div>
           <div className="product-page-price"><i className="fa-solid fa-tooth" />{product.price}</div>
+          
           <div className="product-description-container">
-            <button id="show-description-button" onClick={showDescription}><span>Description</span><span><i className="fa-solid product-details-caret fa-caret-down" /></span></button>
+            <button id="show-description-button" onClick={showDescription}>
+              <span>Description</span>
+              <span><i className="fa-solid product-details-caret fa-caret-down" /></span>
+            </button>
             {descrip === true && (
               <div className="product-description-text">{product.description}</div>
             )}
-            <button id="show-shipping-button" onClick={showShipping}><span>Shipping and return policies</span><span><i className="fa-solid product-details-caret fa-caret-down" /></span></button>
+            
+            <button id="show-shipping-button" onClick={showShipping}>
+              <span>Shipping and return policies</span>
+              <span><i className="fa-solid product-details-caret fa-caret-down" /></span>
+            </button>
             {shipping === true && (
               <div className="product-shipping-info">
                 <div id="arrival-estimate-text">Estimated Arrival</div>
@@ -64,9 +73,8 @@ const ProductPage = () => {
                 <div id="carbon-message">Orksy proudly kontributes to carbon emissions by using da finest pollutants in da sektor.</div>
               </div>
             )}
+            
           </div>
-          
-      
         </div>
       </div>
     </div>

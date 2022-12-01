@@ -18,12 +18,24 @@
   font-size: 16px;
 }
 
+.store-form-input {
+  height: 38px;
+}
+
+.store-form-input:hover,
+.store-form-textarea:hover {
+  border: 1px solid #1f5429;
+}
+
 .store-form-textarea {
   height: 125px;
   min-height: 125px;
   min-width: 75%;
   max-width: 100%;
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  border: 1px solid rgba(34, 34, 34, 0.15);
+  box-shadow: 0 1px 4px rgb(34 34 34 / 10%);
 }
 
 .store-form-button {
@@ -41,3 +53,4 @@
   box-shadow: 1px 1px 3px lightgray;
   transform: scale(1.05);
 }
+

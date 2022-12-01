@@ -21,7 +21,6 @@ const NavBar = () => {
     sessionLinks = (
       <div className="navbar-right">
         <LoginFormModal />
-        <SignupFormModal />
       </div>
     )
   }
