@@ -2,7 +2,7 @@
   width: 80%;
   max-width: 1500px;
   margin: auto;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   display: flex;
   padding-top: 30px;
 }
@@ -10,7 +10,7 @@
 .product-page-image-container {
   width: 700px;
   height: 500px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   padding: 0 20px;
 }
 
@@ -21,7 +21,7 @@
 }
 
 .product-page-details-container {
-  border: 1px solid green;
+  /* border: 1px solid green; */
   width: 400px;
   display: flex;
   flex-direction: column;
