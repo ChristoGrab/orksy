@@ -40,3 +40,10 @@ label {
   font-size: 14px;
   line-height: 1.4;
 }
+
+#no-page-message {
+  font-size: 150px;
+  margin-top: 150px;
+  text-align: center;
+  color: #1f5429;
+}

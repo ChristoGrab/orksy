@@ -23,14 +23,14 @@
   gap: 50px;
   height: 180px;
   margin-bottom: 20px;
-  background: linear-gradient(#fdebd2 35%, white 35%);
+  background: linear-gradient(#fdebd2 41%, white 41%);
 }
 
 .category-link {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   height: 174px;
   font-weight: 700;
   font-size: 16px;
