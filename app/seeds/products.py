@@ -71,6 +71,13 @@ def seed_products():
     store_id=3,
     image="https://orksybucket.s3.us-east-2.amazonaws.com/burna-1.jpg"
   )
+  big_shoota = Product(
+    name="Big Shoota",
+    description="A Big Shoota is a loud, heavy, large-calibre machine gun that bucks and sparks like crazy when the trigger is pulled. Big Shootas are usually bolted on vehicles - from Grot Tanks to Stompas for anti-personnel support, but sometimes a Shoota Boy manages to acquire a big shoota that gives his mob some real anti-infantry power, causing envy among other Boys. Big shootas are fed from chunky magazines of ammo by crank handles, motors or some other clever mechanisms. They are often 'kustomized' to have multiple barrels, big crosshair sights, longer ammo belts and such.",
+    price=95,
+    store_id=3,
+    image="https://orksybucket.s3.us-east-2.amazonaws.com/big-shoota.jpg"
+  )
   deffgun = Product(
     name="Deffgun",
     description="Deffguns are heavy Ork weapons, fine examples of the Mek's craft that are made from all kinds of materials, mainly scavenged heavy weaponry of other races. Deffguns are so large they must be mounted on a special firing rig strapped to to an Ork's broad shoulders. No man could hope to fit into a Deffgun's rig without heavy augmetics or thick slabs of vat-grown muscle. This cumbersome rig is needed to absorb bone-breaking recoil each time the Deffgun is fired. They fire dakka of extremely high calibre, rounds which easily smash bikes and reliably penetrate transports' armour. Given their variable origins they may vary tremendously in properties and appearance, but a typical Deffgun is similar to an Imperial Autocannon, although much less predictable.",
@@ -113,23 +120,64 @@ def seed_products():
     store_id=5,
     image="https://orksybucket.s3.us-east-2.amazonaws.com/chain-toof.jpg"
   )
+  power_klaw = Product(
+    name="Power Klaw",
+    description="It is similar in characteristics to an Imperial Power Fist, being an armoured, powered gauntlet, strapped to an Ork's arm with a piston-driven pincer comprising two to three snapping blades. These are sheathed in energy the same way a Power Fist is, and so can effortlessly rip through any armour, tearing any enemy into bloody paste. It is particularly effective against vehicles. These weapons are amongst the biggest and choppiest an Ork can possess and often serve as symbol of status as well as a weapon. As such, many of them are owned by Warbosses or by particularly brutish Nobs, in which hands Power Klaws become even more effective, due to their skill and strength. Orks often amputate their own arms, taking the weapon as an augmetic implant. Power Klaws are most often found incorporated into Mega Armour.",
+    price=230,
+    store_id=5,
+    image="https://orksybucket.s3.us-east-2.amazonaws.com/power-klaw.jpg"
+  )
+  hammer_kroozer = Product(
+    name="Hammer Kroozer",
+    description="Like its smaller cousins (the Kill Kroozer and Terror Ship) the Hammer is built on the salvaged hulks of other destroyed cruisers. Hammers, however, are specifically built from the hulks of ships armed with Nova Cannons, the parts of which have been rigged up into a truly ingenious weapon: a launcher capable of being loaded with either torpedoes or bombardment cannon shells. Other commonl weapons are Kannonz. Over time, through salvage and impromptu refits, a handful of Hammers have grown to truly massive sizes comparable to Imperial Battleships. Luckily, these Ork 'Battleships' are few in number. Hammer-class Battlekroozers are a favorite among Ork Warbosses, who often take them as their flagships. This high status ensures that the Hammers get the best weapons and crews in the Ork fleet, making them even more powerful opponents in a battle.[1]",
+    price=85000,
+    store_id=4,
+    image="https://orksybucket.s3.us-east-2.amazonaws.com/HammerKroozer.jpg"
+  )
+  hammer_stompa = Product(
+    name="Hammer Stompa",
+    description="The Hammer Stompa is a type of large Ork vessel and a variant of the Hammer Battlekroozer. It's equipped with launch bays for Attack Craft, Torpedo launchers, and Gunz and Heavy Gunz batteries.",
+    price=60000,
+    store_id=4,
+    image="https://orksybucket.s3.us-east-2.amazonaws.com/HammerStompa.jpg"
+  )
+  slam_blasta = Product(
+    name="Slam Blasta",
+    description="Like many Ork ships, the 'Battleship' Slamblasta was built on the hulk of a destroyed Imperial vessel. In the case of the Slamblasta, the hulk was that of the Gothic Class Cruiser Pallas Imperious. Unable to properly repair the hulk's broadside lances, the Orks stripped them out and attempted to combine the parts into two larger lance-type weapons. In typical Ork fashion, the result looked more dangerous than it actually was, but it nonetheless gave the Slamblasta a lance capability that was unheard-of for Ork vessels. The Slamblasta played a crucial role in the Third Armageddon War as part of the raiding groups sent ahead of the main invasion fleet. There, its prow lances proved invaluable to the Orks' efforts to cripple the system's outmost defenses.[1]",
+    price=100000,
+    store_id=4,
+    image="https://orksybucket.s3.us-east-2.amazonaws.com/Slamblasta.jpg"
+  )
+  basha_kroozer = Product(
+    name="Basha Lite Kroozer",
+    description="The Basha Kroozer is analogous to Imperial Light Cruisers in role, these ships were first seen in large numbers during the Third War for Armageddon. Like most Ork ships Lite Kroozers are ramshackle and heavily customized, with many being equipped for ramming enemy vessels while others may sport exotic weaponry. Many are constructed from captured Dauntless and Endeavor hulls.",
+    price=48000,
+    store_id=4,
+    image="https://orksybucket.s3.us-east-2.amazonaws.com/bashakroozer.jpg"
+  )
   
   db.session.add(meganobz)
   db.session.add(gargant)
+  db.session.add(power_klaw)
   db.session.add(battlewagon)
   db.session.add(squiggoth)
+  db.session.add(basha_kroozer)
+  db.session.add(rokkit_launcha)
   db.session.add(red_squig)
+  db.session.add(burna)
   db.session.add(colossal_squig)
+  db.session.add(hammer_kroozer)
   db.session.add(boom_squig)
+  db.session.add(stompa)
   db.session.add(orkeosaurus)
   db.session.add(fighta)
-  db.session.add(burna)
+  db.session.add(chain_toof)
   db.session.add(deffgun)
-  db.session.add(rokkit_launcha)
   db.session.add(dakkajet)
   db.session.add(big_choppa)
-  db.session.add(stompa)
-  db.session.add(chain_toof)
+  db.session.add(slam_blasta)
+  db.session.add(big_shoota)
+  db.session.add(hammer_stompa)
   db.session.commit()
   
 def undo_products():
