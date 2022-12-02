@@ -19,10 +19,13 @@ Welcome to Orksy! Orksy is a fullstack clone of popular e-commerce site Etsy, th
 ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
 
 ## Landing Page
+![Landing Page Preview](https://user-images.githubusercontent.com/108154848/205359099-9069abcf-71d8-4d05-a5a9-bdecc378df19.jpg)
 
 ## Storefront
+![Storefront Preview](https://user-images.githubusercontent.com/108154848/205359149-5022c4c9-031f-49c9-984e-7ac3d9a92173.jpg)
 
 ## Product Viewer
+![Product Page Preview](https://user-images.githubusercontent.com/108154848/205359185-c60ed489-84a3-493c-bbb6-86694bc8e950.jpg)
 
 ## Wiki Links
 Use these links to navigate to the Orksy wiki for further documentation on the site's structure:
@@ -40,3 +43,6 @@ Email: christo.grab@gmail.com
 [Github Profile](https://github.com/ChristoGrab) 
 <br>
 [LinkedIn](https://www.linkedin.com/in/christo-grabowski-894a82a6/)
+
+
+
