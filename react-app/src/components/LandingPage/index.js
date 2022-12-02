@@ -33,7 +33,24 @@ const LandingPage = () => {
       <div id="welcome-message-container">
         {sessionUser ? <h1>Welkum Back, <Link id="welcome-message-link" to="/profile">{sessionUser.username}</Link>!</h1> : <h1>Welkum to Orksy</h1>}
       </div>
-      <div className="categories-container"></div>
+      <div className="categories-outer-container">
+        <Link to='/store/5' className="category-link">
+          <img className="category-pic" src={newList[0].image} />
+          Choppas</Link>
+          <Link to='/store/3' className="category-link">
+          <img className="category-pic" src={newList[1].image} />
+          Shootas</Link>
+          <Link to='/store/2' className="category-link">
+          <img className="category-pic" src={"https://orksybucket.s3.us-east-2.amazonaws.com/mek-shop.jpg"} />
+          Meks</Link>
+          <Link to='/store/1' className="category-link">
+          <img className="category-pic" src={newList[3].image} />
+          Squigs</Link>
+          <Link to='/store/4' className="category-link">
+          <img className="category-pic" src={newList[4].image} />
+          Rokkits</Link>
+      </div>
+      
       <div className="landing-page-grid">
         {newList.map(product => (
           <div key={product.id} className="product-card-container">
