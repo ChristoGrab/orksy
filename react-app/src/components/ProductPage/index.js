@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams, Link } from 'react-router-dom'
 import "./ProductPage.css"
 import { getProductThunk, clearProduct } from "../../store/products";
+import ImageModal from './ImageModal'
 
 const ProductPage = () => {
 
@@ -39,12 +40,18 @@ const ProductPage = () => {
     e.preventDefault();
     setShipping(!shipping)
   }
+  
+  const enhanceImage = async (e) => {
+    e.preventDefault();
+    
+    console.log("hello")
+  }
 
   return (
     <div>
       <div className="product-page-container">
         <div className="product-page-image-container">
-          <img className="product-page-image" src={product.image} alt={product.name} />
+          <img className="product-page-image" src={product.image} alt={product.name} onClick={enhanceImage}/>
         </div>
 
         <div className="product-page-details-container">

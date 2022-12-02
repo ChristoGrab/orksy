@@ -18,6 +18,11 @@
   width: 700px;
   height: 500px;
   object-fit: contain;
+  border-radius: 6px;
+}
+
+.product-page-image:hover {
+  cursor: zoom-in;
 }
 
 .product-page-details-container {
