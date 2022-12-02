@@ -35,19 +35,19 @@ const LandingPage = () => {
       </div>
       <div className="categories-outer-container">
         <Link to='/store/5' className="category-link">
-          <img className="category-pic" src={newList[0].image} />
+          <img className="category-pic" src={"https://orksybucket.s3.us-east-2.amazonaws.com/Choppa-store.jpg"} />
           Choppas</Link>
           <Link to='/store/3' className="category-link">
-          <img className="category-pic" src={newList[1].image} />
+          <img className="category-pic" src={"https://orksybucket.s3.us-east-2.amazonaws.com/dakka-store.jpg"} />
           Shootas</Link>
           <Link to='/store/2' className="category-link">
           <img className="category-pic" src={"https://orksybucket.s3.us-east-2.amazonaws.com/mek-shop.jpg"} />
           Meks</Link>
           <Link to='/store/1' className="category-link">
-          <img className="category-pic" src={newList[3].image} />
+          <img className="category-pic" src={"https://orksybucket.s3.us-east-2.amazonaws.com/squig-store.jpg"} />
           Squigs</Link>
           <Link to='/store/4' className="category-link">
-          <img className="category-pic" src={newList[4].image} />
+          <img className="category-pic" src={"https://orksybucket.s3.us-east-2.amazonaws.com/flight-store.jpg"} />
           Rokkits</Link>
       </div>
       
