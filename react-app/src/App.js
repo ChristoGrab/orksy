@@ -78,6 +78,9 @@ function App() {
         <Route path="/image" exact={true}>
           <ImageModal />
         </Route>
+        <Route path="*">
+        <div id="no-page-message">Nothin' here</div>
+        </Route>
       </Switch>
     </BrowserRouter>
   );
