@@ -27,8 +27,16 @@ Welcome to Orksy! Orksy is a fullstack clone of popular e-commerce site Etsy, th
 ## Wiki Links
 Use these links to navigate to the Orksy wiki for further documentation on the site's structure:
 
-
+### [Site Features](https://github.com/ChristoGrab/orksy/wiki/Site-Features)
+### [User Stories](https://github.com/ChristoGrab/orksy/wiki/User-Stories)
+### [DB Schema](https://github.com/ChristoGrab/orksy/wiki/DB-Schema)
 
 ## Contact Me
 
-Feel free to reach out with any feedback or questions regarding Orksy! at either christo.grab@gmail.com
+Feel free to reach out with any feedback or questions regarding Orksy!
+<br>
+Email: christo.grab@gmail.com
+<br>
+[Github Profile](https://github.com/ChristoGrab) 
+<br>
+[LinkedIn](https://www.linkedin.com/in/christo-grabowski-894a82a6/)
