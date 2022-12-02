@@ -15,12 +15,16 @@ const LandingPage = () => {
   useEffect(() => {
     dispatch(loadProductsThunk())
       .then(res => setDataLoaded(true))
-  }, [dispatch, dataLoaded])
+  }, [dispatch])
 
   if (!products) return null;
 
   let productList = Object.values(products)
   console.log(productList)
+  
+  const shuffle = arr => [...arr].sort(() => Math.random() - 0.5);
+  
+  let newList = shuffle(productList)
 
   return (
     <div>
@@ -31,7 +35,7 @@ const LandingPage = () => {
       </div>
       <div className="categories-container"></div>
       <div className="landing-page-grid">
-        {productList.map(product => (
+        {newList.map(product => (
           <div key={product.id} className="product-card-container">
             <ProductCard product={product} />
           </div>

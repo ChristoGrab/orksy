@@ -96,7 +96,7 @@ const ProductPage = () => {
                     <span className="shipping-tracker-text">Order Placed</span>
                   </div>
                   <div className="shipping-tracker" id="st-2">
-                    <i className="fa-brands fa-space-awesome ship-i"></i>
+                    <i className="fa-solid fa-rocket ship-i"></i>
                     {shippingDate.toLocaleDateString('en-US')}
                     <span className="shipping-tracker-text">Rokkit Leaves</span>
                   </div>
