@@ -2,9 +2,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { useParams, Link } from 'react-router-dom'
 import { Modal } from '../../context/Modal'
-import "./ProductPage.css"
 import { getProductThunk, clearProduct } from "../../store/products";
 import ImageModal from './ImageModal'
+import "./ProductPage.css"
 
 const ProductPage = () => {
 
