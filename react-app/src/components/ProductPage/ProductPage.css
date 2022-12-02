@@ -25,10 +25,15 @@
   cursor: zoom-in;
 }
 
-#image-modal {
-  height: 100;
-  width: 100%;
-  background-color: blue;
+.image-modal-container {
+  display: flex;
+  border: 3px solid green;
+  height: 90vh;
+  width: auto;
+}
+
+.image-modal {
+  object-fit: fill;
 }
 
 .product-page-details-container {

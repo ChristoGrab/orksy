@@ -3,13 +3,11 @@ import "./ProductPage.css"
 
 
 const ImageModal = ({image}) => {
-  
-  console.log(image)
 
   return (
-    <>
-    <img src={image} />
-    </>
+    <div className="image-modal-container">
+    <img className="image-modal" src={image} alt="product-image" />
+    </div>
   );
 }
 
