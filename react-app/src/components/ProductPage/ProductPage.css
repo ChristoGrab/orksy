@@ -1,6 +1,6 @@
 .product-page-container {
   width: 80%;
-  max-width: 1500px;
+  max-width: 1400px;
   margin: auto;
   /* border: 1px solid black; */
   display: flex;
@@ -18,11 +18,23 @@
   width: 700px;
   height: 500px;
   object-fit: contain;
+  border-radius: 6px;
+}
+
+.product-page-image:hover {
+  cursor: zoom-in;
+}
+
+#image-modal {
+  height: 100;
+  width: 100%;
+  background-color: blue;
 }
 
 .product-page-details-container {
   /* border: 1px solid green; */
-  width: 400px;
+  min-width: 300px;
+  width: 500px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -52,7 +64,7 @@
   font-size: 17px;
   width: 80%;
   max-width: 1500px;
-  margin: 20px auto;
+  margin: 20px 0;
   position: relative;
   height: 200px;
 }
@@ -61,6 +73,17 @@
   position: relative;
   top: 10px;
   width: 100%;
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0;}
+  100% { opacity: 1;}
+}
+
+@keyframes caret-flip {
+  0% { transform: rotate(180deg);}
+  100% { transform: rotate(0deg);}
 }
 
 #show-description-button,
@@ -73,7 +96,7 @@
   border-radius: 5em;
   border: none;
   height: 30px;
-  width: 300px;
+  width: 100%;
   transition: all 300ms ease-in-out;
   font-size: 16px;
   font-weight: bold;
@@ -93,23 +116,62 @@
 .product-shipping-info {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
+  animation: fadeIn 1s;
 }
 
 #arrival-estimate-text,
 #shipping-cost-message {
+  margin-top: 5px;
   font-size: 13px;
   line-height: 18px;
   color: #757575;
-  margin-left: 6px;
 }
 
 #arrival-date-text,
 #shipping-cost {
-  margin-left: 7px;
   font-size: 26px;
   line-height: 32px;
   font-weight: 100;
+}
+
+#shipping-tracker-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.shipping-tracker {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: 13px;
+  line-height: 18px;
+  height: 80px;
+}
+
+#st-1 {
+  align-items: flex-start
+}
+
+#st-2 {
+  align-items: center;
+}
+
+#st-3 {
+  align-items: flex-end;
+}
+
+.ship-i {
+  font-size: 14px;
+  padding: 6px;
+  background: #eaeaea;
+  border-radius: 3em;
+}
+
+.shipping-tracker-text {
+  color: #757575;
 }
 
 #carbon-message {

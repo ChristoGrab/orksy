@@ -1,6 +1,5 @@
 .profile-page-container {
-  margin-top: 30px;
-  margin-left: 30px;
+  margin: 30px;
 }
 
 .profile-page-userinfo {
@@ -25,3 +24,49 @@
   font-size: 18px;
   margin: 0 5px;
 }
+
+.profile-page-quotes {
+  position: absolute;
+  bottom: 50px;
+  right: 25%;
+  font-size: 14px;
+  width: 400px;
+  border: 1px solid #7f7f7f;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #ddebe3;
+}
+
+#inspiration-quote-message {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.orksy-explanation-container {
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: #ddebe3;
+  border-radius: 14px;
+  gap: 10px;
+  box-shadow: 2px 2px 5px lightgray;
+  border: 1px solid ;
+}
+
+.orksy-explanation-title {
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.orksy-explanation-text {
+  font-size: 14px;
+  line-height: 1.5
+}
+
+#orkish-facts {
+  list-style: upper-roman;
+  padding-left: 20px;
+}
+

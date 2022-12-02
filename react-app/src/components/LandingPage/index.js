@@ -15,12 +15,16 @@ const LandingPage = () => {
   useEffect(() => {
     dispatch(loadProductsThunk())
       .then(res => setDataLoaded(true))
-  }, [dispatch, dataLoaded])
+  }, [dispatch])
 
   if (!products) return null;
 
   let productList = Object.values(products)
   console.log(productList)
+  
+  const shuffle = arr => [...arr].sort(() => Math.random() - 0.5);
+  
+  let newList = shuffle(productList)
 
   return (
     <div>
@@ -31,7 +35,7 @@ const LandingPage = () => {
       </div>
       <div className="categories-container"></div>
       <div className="landing-page-grid">
-        {productList.map(product => (
+        {newList.map(product => (
           <div key={product.id} className="product-card-container">
             <ProductCard product={product} />
           </div>
@@ -40,10 +44,10 @@ const LandingPage = () => {
       <div className="main-page-footer">
         <div id="about-me">Made by Christo Grabowski. Orksy is a fullstack clone of Etsy inspired by the wild wackiness of the Orks in Warhammer 40K.</div>
         <div id="about-me-links">
-          <a href="https://github.com/ChristoGrab">
+          <a href="https://github.com/ChristoGrab" target="_blank">
             <i className="fa-brands fa-github"></i>
           </a>
-          <a href="https://www.linkedin.com/in/christo-grabowski-894a82a6/">
+          <a href="https://www.linkedin.com/in/christo-grabowski-894a82a6/" target="_blank">
             <i className="ourIco fa-brands fa-linkedin"></i>
           </a>
         </div>

@@ -1,17 +1,22 @@
-
 #storefront-banner {
   height: 325px;
   width: 100%;
   display: flex;
   align-items: center;
+  object-fit: contain;
+}
+
+.storefront-banner-container {
+  width: 100%;
+  background-color: #4b0007;
 }
 
 .storefront-owner-links {
-  margin: 10px 0px 10px 40px;
+  padding-top: 20px;
+  margin: 0px 0px 10px 40px;
   display: flex;
   flex-direction: row;
 }
-
 
 #edit-store-link,
 #delete-store-link,
@@ -52,8 +57,13 @@
   box-shadow: 1px 1px 5px #757575;
 }
 
+.storefront-under-banner {
+  background-color: #fafafa;
+}
+
 .storefront-info-container {
   margin-left: 40px;
+
 }
 
 .storefront-info-name {
@@ -64,8 +74,11 @@
 .storefront-info-description {
   display: flex;
   justify-content: center;
-  width: 66%;
+  width: 70%;
   margin: auto;
+  font-size: 13px;
+  line-height: 1.6;
+  padding-bottom: 5px;
 }
 
 .storefront-item-container {

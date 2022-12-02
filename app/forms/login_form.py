@@ -20,7 +20,7 @@ def password_matches(form, field):
     if not user:
         raise ValidationError("No such user in Orksy")
     if not user.check_password(password):
-        raise ValidationError('Yer password was wrong, you naff')
+        raise ValidationError('Yer kredentials were wrong. Are you a humie spy?')
 
 
 class LoginForm(FlaskForm):
