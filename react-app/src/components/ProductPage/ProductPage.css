@@ -25,6 +25,12 @@
   cursor: zoom-in;
 }
 
+#image-modal {
+  height: 100;
+  width: 100%;
+  background-color: blue;
+}
+
 .product-page-details-container {
   /* border: 1px solid green; */
   min-width: 300px;

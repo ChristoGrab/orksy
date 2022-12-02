@@ -1,7 +1,16 @@
-const ImageModal = () => {
+import { useState } from 'react'
+import "./ProductPage.css"
+
+
+const ImageModal = ({image}) => {
+  
+  console.log(image)
+
   return (
-    <h1>Fuck you</h1>
-  )
+    <>
+    <img src={image} />
+    </>
+  );
 }
 
 export default ImageModal;

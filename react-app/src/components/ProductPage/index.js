@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { useParams, Link } from 'react-router-dom'
+import { Modal } from '../../context/Modal'
 import "./ProductPage.css"
 import { getProductThunk, clearProduct } from "../../store/products";
 import ImageModal from './ImageModal'
@@ -11,6 +12,7 @@ const ProductPage = () => {
 
   const dispatch = useDispatch()
   const { productId } = useParams();
+  const [showModal, setShowModal] = useState(false)
   const [descrip, setDescrip] = useState(true)
   const [shipping, setShipping] = useState(true)
 
@@ -40,19 +42,25 @@ const ProductPage = () => {
     e.preventDefault();
     setShipping(!shipping)
   }
-  
+
   const enhanceImage = async (e) => {
     e.preventDefault();
     
-    console.log("hello")
+    return setShowModal(true)
   }
 
   return (
     <div>
       <div className="product-page-container">
         <div className="product-page-image-container">
-          <img className="product-page-image" src={product.image} alt={product.name} onClick={enhanceImage}/>
+          <img className="product-page-image" src={product.image} alt={product.name} onClick={enhanceImage} />
         </div>
+        
+        {showModal === true && (
+          <Modal onClose={() => setShowModal(false)}>
+            <ImageModal setShowModal={setShowModal} image={product.image}/>
+          </Modal>
+        )}
 
         <div className="product-page-details-container">
           <Link to={`/store/${product.store_id}`}
@@ -72,7 +80,7 @@ const ProductPage = () => {
                 <span><i className="fa-solid product-details-caret fa-caret-down" /></span>
               </button>
             }
-            
+
             {descrip === true
               ? <div className="product-description-text">{product.description}</div>
               : <div className="product-description-text-closed"></div>
@@ -81,14 +89,14 @@ const ProductPage = () => {
             {shipping === true
               ? <button id="show-shipping-button" onClick={showShipping}>
                 <span>Shipping and return policies</span>
-                <span><i className="fa-solid product-details-caret fa-caret-up" id="up"/></span>
+                <span><i className="fa-solid product-details-caret fa-caret-up" id="up" /></span>
               </button>
               : <button id="show-shipping-button" onClick={showShipping}>
                 <span>Shipping and return policies</span>
-                <span><i className="fa-solid product-details-caret fa-caret-down" id="down"/></span>
+                <span><i className="fa-solid product-details-caret fa-caret-down" id="down" /></span>
               </button>
             }
-            
+
             {shipping === true && (
               <div className="product-shipping-info">
                 <div>

@@ -17,6 +17,7 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import { authenticate } from './store/session';
 import "./index.css"
 import EditProductForm from './components/Products/EditProductForm';
+import ImageModal from './components/ProductPage/ImageModal';
 
 
 function App() {
@@ -73,6 +74,9 @@ function App() {
         </Route>
         <Route path="/products/:productId" exact={true}>
           <ProductPage />
+        </Route>
+        <Route path="/image" exact={true}>
+          <ImageModal />
         </Route>
       </Switch>
     </BrowserRouter>
