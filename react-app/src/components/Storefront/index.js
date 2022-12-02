@@ -25,16 +25,14 @@ const StoreFront = () => {
   }, [dispatch, storeId, update])
 
 
+  // Redirect to delete confirmation page
   const handleDelete = async (e, id) => {
     e.preventDefault();
 
     history.push(`/products/${id}/delete`)
-
-    // await fetch(`/api/products/${id}`, {
-    //   method: "DELETE"
-    // }).then(res => setUpdate(!!update))
   }
 
+  // Redirect to edit product form
   const handleEdit = async (e, id) => {
     e.preventDefault();
 
@@ -42,6 +40,8 @@ const StoreFront = () => {
   }
 
 
+  console.log("store object:", store)
+  
   return (
     <div className="storefront-container">
       <div className="storefront-banner-container">
