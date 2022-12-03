@@ -77,11 +77,19 @@
   height: 200px;
 }
 
+.fa-caret-up {
+  transition: transform .5s;
+}
+
 .product-description-text {
   position: relative;
   top: 10px;
   width: 100%;
-  animation: fadeIn 1s;
+  animation: fadeIn 1.5s;
+}
+
+.reverse {
+  transform: rotate(180deg)
 }
 
 @keyframes fadeIn {
@@ -119,6 +127,7 @@
 
 .product-details-caret {
   color: black;
+  animation: caret-flip .5s;
 }
 
 .product-shipping-info {
