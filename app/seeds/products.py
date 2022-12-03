@@ -2,8 +2,8 @@ from app.models import db, Product, SCHEMA, environment
 
 def seed_products():
   meganobz = Product(
-    name="Meganob Armur",
-    description="Meganobz are da richest 'n most battle-'ardened Nobz around. Klad in Mek-built mega armur (wif enuf platin' to turn any nob into a smaller, less mekky Killa Kan)",
+    name="Meganob Armour",
+    description="Meganobz are da richest 'n most battle-'ardened Nobz around. Klad in Mek-built mega armour (wif enuf platin' to turn any nob into a smaller, less mekky Killa Kan)",
     price=65,
     store_id=2,
     image="https://orksybucket.s3.us-east-2.amazonaws.com/meganob-1.jpg"
@@ -155,6 +155,42 @@ def seed_products():
     store_id=4,
     image="https://orksybucket.s3.us-east-2.amazonaws.com/bashakroozer.jpg"
   )
+  chain_choppa = Product(
+    name="Chain Choppa Set",
+    description="Some shoppas are nore advanced than the others and feature a chain mechanism. Known as chain-choppas they are basically crude Ork equivalents of other races' chainswords or chain axes. These weapons are more effective than normal choppas as long as they still function and the user remembers to turn the chain mechanism on. However, despite their ease of manufacture, these weapons require some maintenance that Orks are often too lazy to provide. Therefore chain-choppas, especially those with chain-teeth made from the alien 'ivory' of an Ork's own sharpened fangs, are especially vulnerable to losing weapon's 'teeth'. Other issues such as fuel consumption and the speed with which they get blunted against enemy armour make many Orks choose good old choppas as their weapon of choice, although chain-choppas are inarguably deadly in combat - once their teeth even graze flesh, their motorised bite hooks deeper and saws through muscle, sinew and bone with the same, surgical ease. Wounds inflicted by these weapons are equally horrifying as the weapons turn bodies into uncauterised, mangled mass of flesh.",
+    price=360,
+    store_id=5,
+    image="https://orksybucket.s3.us-east-2.amazonaws.com/chain-choppas.jpg"
+  )
+  mork_gaze = Product(
+    name="Gaze of Mork",
+    description="It varies in design but is usually mounted to fire from Stompa's eyes. In characteristics it is similar to Zzap Gun, but much more powerful then even a Big Zzappa. They are just as unpredictable, with the beam that can melt a Baneblade with its first shot, and fail to kill a Guardsman with the next- or do anything in between. Meks often delight in diverting the power of the Stompas roaring engines, giving them enormous power. Such devastating power can tear even the mighty Titans of the Adeptus Mechanicus asunder in a storm of energy so all Orks' enemies are right to fear the mighty gaze of their gods.",
+    price=13000,
+    store_id=3,
+    image="https://orksybucket.s3.us-east-2.amazonaws.com/Gaze+of+Mork.jpg"
+  )
+  deff_dread = Product(
+    name="Deff Dread",
+    description="Belching smoke as they charge across the battlefield, Deff Dreads are deadly Ork walkers. In a similar way to Space Marine Dreadnoughts, a Deff Dread's pilot must be permanently wired into the machine, Deff Dreads require the skills of both a Mekboy and a Painboy to construct. Aside from basic design elements, Deff Dreads are decorated, armed, and configured in countless ways, each one reflecting the tastes and vision of the Mek who designed it. As for the pilot of a Deff Dread, as is the case with Killa Kans, the Ork volunteers are permanently hard-wired directly into the walker itself. Installing a pilot into a Deff Dread involves surgically implanting numerous tubes, nerve probes, cranial jacks, and other, more esoteric bits of mechanical devices plugged directly into his brain and spinal column.",
+    price=5000,
+    store_id=2,
+    image="https://orksybucket.s3.us-east-2.amazonaws.com/Big_Mek_Dread.jpg"
+  )
+  mega_armor = Product(
+    name="Mega Armour",
+    description="Its weight (a ton or more) and complexity make it difficult to move and slow down its user, but it can withstand insane amounts of punishment, almost as much as Imperial Terminator Armour. Piston-enchased metal limbs of mega armour give the wearer phenomenal strength, and it incorporates fearsome weapons: a Power Klaw and Kombi-Weapon or twin-linked Shootaz. It often involves the use of built-in bionics and is very complex, which makes it very hard to manufacture, so it is a rare sight in Ork armies. Usually only Nobs (who like to call themselves 'Meganobs' after acquiring Mega Armour) and Warbosses can afford such armour.",
+    price=3300,
+    store_id=2,
+    image="https://orksybucket.s3.us-east-2.amazonaws.com/powa+armur.jpg"
+  )
+  tellyport_blasta = Product(
+    name="Tellyport Blasta",
+    description="Based on Tellyporta technology the weapon folds its target in a Warpspace bubble and displaces it at random. Victims will only travel a short distance before they reappear again, so the Meks use the weapon to rematerialise them high in the air, or inside a solid object. Thus a Tellyport Blasta tends to be unpredictable, but, as many other Ork weapons, still effective.",
+    price=3850,
+    store_id=3,
+    image="https://orksybucket.s3.us-east-2.amazonaws.com/963px-Bigmek-tellyportblasta.png"
+  )
+  
   
   db.session.add(meganobz)
   db.session.add(gargant)
@@ -178,6 +214,11 @@ def seed_products():
   db.session.add(slam_blasta)
   db.session.add(big_shoota)
   db.session.add(hammer_stompa)
+  db.session.add(chain_choppa)
+  db.session.add(deff_dread)
+  db.session.add(mork_gaze)
+  db.session.add(mega_armor)
+  db.session.add(tellyport_blasta)
   db.session.commit()
   
 def undo_products():

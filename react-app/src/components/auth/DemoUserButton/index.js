@@ -9,7 +9,7 @@ const DemoUserButton = () => {
         
         
         
-        dispatch(login('gork@teef.io', 'password2'))
+        dispatch(login('demo@teef.io', 'password'))
     }
 
     return (
