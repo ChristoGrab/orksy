@@ -85,7 +85,7 @@
   position: relative;
   top: 10px;
   width: 100%;
-  animation: fadeIn 1.5s;
+  animation: fadeIn 1s, grow .5s;
 }
 
 .reverse {
@@ -95,6 +95,11 @@
 @keyframes fadeIn {
   0% { opacity: 0;}
   100% { opacity: 1;}
+}
+
+@keyframes grow {
+  0% { transform: scaleY(0.8);}
+  100% { transform: scaleY(1);}
 }
 
 @keyframes caret-flip {
@@ -111,7 +116,7 @@
   background-color: transparent;
   border-radius: 5em;
   border: none;
-  height: 30px;
+  padding: 12px;
   width: 100%;
   transition: all 300ms ease-in-out;
   font-size: 16px;
@@ -134,7 +139,7 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-  animation: fadeIn 1s;
+  animation: fadeIn 1s, grow .5s;
 }
 
 #arrival-estimate-text,
