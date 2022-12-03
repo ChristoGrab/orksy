@@ -26,6 +26,9 @@ const LoginForm = () => {
   const demoLogin = async (e) => {
     e.preventDefault();
     
+    
+    setErrors([])
+    
     setEmail("gork@teef.io")
     setPassword("password2")
     

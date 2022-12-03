@@ -6,23 +6,23 @@ def seed_users():
     demo = User(
         username='Demo', email='demo@teef.io', password='password')
     gork = User(
-        username='Gork', email='gork@teef.io', password='password2')
+        username='Gork', email='gork@teef.io', password='myNameisGork')
     mork = User(
-        username='Mork', email='mork@teef.io', password='password3')
+        username='Mork', email='mork@teef.io', password='myNameisMork')
     thrakka = User(
-        username="Thrakka", email="thrak@teef.io", password='password4')
+        username="Thrakka", email="thrak@teef.io", password='myNameisThrakka')
     grog = User(
-        username="Grog", email="brog@teef.io", password='password5')
+        username="Grog", email="brog@teef.io", password='myNameisGrog')
     snagrod = User(
-        username="Snagrod", email="snagrod@teef.io", password='password6')
+        username="Snagrod", email="snagrod@teef.io", password='myNameisSnagrod')
     klawjaw = User(
-        username="KlawJaw", email="klaws@teef.io", password="password7")
+        username="KlawJaw", email="klaws@teef.io", password="myNameisKlawJaw")
     blackfang = User(
-        username="BlackFang", email="fangs@teef.io", password="password8")
+        username="BlackFang", email="fangs@teef.io", password="myNameisBlackFang")
     tuska = User(
-        username="Tuska", email="tusks@teef.io", password="password9")
+        username="Tuska", email="tusks@teef.io", password="myNameisTuska")
     buzzgob = User(
-        username="Buzzgob", email="buzzgob@teef.io", password="password10")
+        username="Buzzgob", email="buzzgob@teef.io", password="myNameisBuzzgob")
     
 
     db.session.add(demo)
