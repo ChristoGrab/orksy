@@ -1,5 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, IntegerField
+from wtforms.validators import DataRequired
 
 class ReviewForm(FlaskForm):
   rating = IntegerField(validators=[DataRequired("Not much of a review wivout a rating, is it nob?")])

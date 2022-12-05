@@ -7,7 +7,7 @@ review_routes = Blueprint("reviews", __name__)
 
 # GET ALL REVIEWS FOR A PRODUCT
 @review_routes.route("/<int:id>")
-def product_reviews():
+def product_reviews(id):
   """
   Query for all reviews from a specific product
   """
