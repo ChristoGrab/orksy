@@ -34,6 +34,7 @@ const ProductPage = () => {
   //function to toggle showing product description
   const showDescription = async (e) => {
     e.preventDefault();
+    
     setDescrip(!descrip)
   }
 
@@ -77,7 +78,7 @@ const ProductPage = () => {
               </button>
               : <button id="show-description-button" onClick={showDescription}>
                 <span>Description</span>
-                <span><i className="fa-solid product-details-caret fa-caret-down" /></span>
+                <span><i className="fa-solid product-details-caret fa-caret-up reverse"/></span>
               </button>
             }
 
@@ -89,11 +90,11 @@ const ProductPage = () => {
             {shipping === true
               ? <button id="show-shipping-button" onClick={showShipping}>
                 <span>Shipping and return policies</span>
-                <span><i className="fa-solid product-details-caret fa-caret-up" id="up" /></span>
+                <span><i className="fa-solid product-details-caret fa-caret-up" /></span>
               </button>
               : <button id="show-shipping-button" onClick={showShipping}>
                 <span>Shipping and return policies</span>
-                <span><i className="fa-solid product-details-caret fa-caret-down" id="down" /></span>
+                <span><i className="fa-solid product-details-caret fa-caret-up reverse" /></span>
               </button>
             }
 

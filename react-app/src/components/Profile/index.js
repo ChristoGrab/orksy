@@ -51,10 +51,10 @@ const ProfilePage = () => {
         </div>
       </div>
       
-      <div className="profile-page-quotes">
+      {/* <div className="profile-page-quotes">
         <div id="inspiration-quote-message">Orkish inspiration of da day:</div>
         {quotes[Math.floor(Math.random()*quotes.length)]}
-      </div>
+      </div> */}
       
       <div className="orksy-explanation-container">
         <div className="orksy-explanation-title">
@@ -72,7 +72,7 @@ const ProfilePage = () => {
           Once you have a store up and running, you'll be able to start adding, editing or deleting products that will be viewable to you or any other visitors to the site!
           <br />
           <br />
-          <ul id="orkish-facts">Some Orkish facts to note:
+          <ul id="orkish-facts">Some Ork facts to note:
            
           <li>Orks in the Warhammer 40K universe are green, mean, and thick as bricks.</li>
           <li>All Orks speak with an exagerrated Cockney accent.</li>  
