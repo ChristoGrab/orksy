@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { ReactReduxContext, useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { createStoreThunk } from '../../store/stores'
 import "./StoreForm.css"
@@ -7,7 +7,6 @@ import "./StoreForm.css"
 function CreateStoreForm() {
   
   const sessionUser = useSelector(state => state.session.user)
-  
 
   const dispatch = useDispatch();
   const history = useHistory();

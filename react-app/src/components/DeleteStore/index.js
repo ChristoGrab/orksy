@@ -43,7 +43,7 @@ function DeleteStore() {
         <br />
         but all yer associated produkts'll go bye-bye as well...
       </div>
-      <img src={boomPik} id="boompik" />
+      <img src={boomPik} id="boompik" alt="Are you sure?" />
       <div className='delete-page-buttons'>
         <button
           className="confirm-delete-button"

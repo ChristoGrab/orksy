@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux'
-import LoginFormModal from '../auth/LoginFormModal'
+import { useSelector } from 'react-redux';
+import LoginFormModal from '../auth/LoginFormModal';
 import ProfileButton from './ProfileButton';
-import "./Navbar.css"
-import SignupFormModal from '../auth/SignupFormModal';
+import "./Navbar.css";
 
 const NavBar = () => {
   
