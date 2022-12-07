@@ -3,12 +3,14 @@ import { useState, useEffect } from "react";
 import { useParams, Link } from 'react-router-dom'
 import { Modal } from '../../context/Modal'
 import { getProductThunk, clearProduct } from "../../store/products";
+import { loadReviewsThunk } from "../../store/reviews";
 import ImageModal from './ImageModal'
 import "./ProductPage.css"
 
 const ProductPage = () => {
 
   const product = useSelector(state => state.products.singleProduct)
+  const reviews = useSelector(state => state.reviews.allReviews)
 
   const dispatch = useDispatch()
   const { productId } = useParams();
@@ -26,6 +28,7 @@ const ProductPage = () => {
   // get product and clear state
   useEffect(() => {
     dispatch(getProductThunk(productId))
+    dispatch(loadReviewsThunk(productId))
     return (() => dispatch(clearProduct()))
   }, [dispatch, productId])
 
@@ -48,11 +51,6 @@ const ProductPage = () => {
     e.preventDefault();
     
     return setShowModal(true)
-  }
-  
-  let reviewDiv;
-  if (!product.reviews) {
-    reviewDiv = <h1>Hello</h1>
   }
 
   return (
