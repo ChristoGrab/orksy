@@ -36,18 +36,6 @@
   object-fit: fill;
 }
 
-.product-page-review {
-  margin: 10px 0;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 28px;
-}
-
-.product-reviews-number {
-  font-size: 26px;
-  line-height: 42px;
-}
-
 .product-page-details-container {
   /* border: 2px solid green; */
   min-width: 300px;

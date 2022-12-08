@@ -6,11 +6,11 @@ import { getProductThunk, clearProduct } from "../../store/products";
 import { loadReviewsThunk } from "../../store/reviews";
 import ImageModal from './ImageModal'
 import "./ProductPage.css"
+import ProductReviews from "../Reviews/ProductReviews";
 
 const ProductPage = () => {
 
   const product = useSelector(state => state.products.singleProduct)
-  const reviews = useSelector(state => Object.values(state.reviews.allReviews))
 
   const dispatch = useDispatch()
   const { productId } = useParams();
@@ -28,7 +28,6 @@ const ProductPage = () => {
   // get product and clear state
   useEffect(() => {
     dispatch(getProductThunk(productId))
-    dispatch(loadReviewsThunk(productId))
     return (() => dispatch(clearProduct()))
   }, [dispatch, productId])
 
@@ -52,28 +51,13 @@ const ProductPage = () => {
   }
 
   if (!product) return null;
-  console.log("reviews from redux store", reviews)
 
   return (
     <div>
       <div className="product-page-container">
         <div className="product-page-image-container">
           <img className="product-page-image" src={product.image} alt={product.name} onClick={enhanceImage} />
-          <div className="product-page-reviews-container">
-            {reviews.length
-              ? <div className="product-reviews-number">{reviews.length} reviewz</div>
-              : <div className="product-reviews-number">Be da first to review dis shiny produkt!</div>
-            }
-            {reviews.length
-              ? <div>{reviews.map(review => 
-                  <div className="product-page-review" key={review.id}>
-                    {review.review}
-                  </div>
-                  )}
-                </div>
-              : <div></div>
-            }
-          </div>
+          <ProductReviews productId={productId}/>
         </div>
 
 
