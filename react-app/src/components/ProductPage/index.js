@@ -62,7 +62,7 @@ const ProductPage = () => {
           <div className="product-page-reviews-container">
             {reviews.length
               ? <div className="product-reviews-number">{reviews.length} reviewz</div>
-              : <div className="product-reviews-number">Looks like dis produkt 'asn't been reviewed yet</div>
+              : <div className="product-reviews-number">Be da first to review dis shiny produkt!</div>
             }
             {reviews.length
               ? <div>{reviews.map(review => 
@@ -71,7 +71,7 @@ const ProductPage = () => {
                   </div>
                   )}
                 </div>
-              : <div>Be da first ta review dis shiny produkt</div>
+              : <div></div>
             }
           </div>
         </div>
