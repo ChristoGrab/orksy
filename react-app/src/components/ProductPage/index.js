@@ -10,7 +10,7 @@ import "./ProductPage.css"
 const ProductPage = () => {
 
   const product = useSelector(state => state.products.singleProduct)
-  const reviews = useSelector(state => state.reviews.allReviews)
+  const reviews = useSelector(state => Object.values(state.reviews.allReviews))
 
   const dispatch = useDispatch()
   const { productId } = useParams();
@@ -32,12 +32,10 @@ const ProductPage = () => {
     return (() => dispatch(clearProduct()))
   }, [dispatch, productId])
 
-  if (!product) return null;
-
   //function to toggle showing product description
   const showDescription = async (e) => {
     e.preventDefault();
-    
+
     setDescrip(!descrip)
   }
 
@@ -49,20 +47,39 @@ const ProductPage = () => {
 
   const enhanceImage = async (e) => {
     e.preventDefault();
-    
+
     return setShowModal(true)
   }
+
+  if (!product) return null;
+  console.log("reviews from redux store", reviews)
 
   return (
     <div>
       <div className="product-page-container">
         <div className="product-page-image-container">
           <img className="product-page-image" src={product.image} alt={product.name} onClick={enhanceImage} />
+          <div className="product-page-reviews-container">
+            {reviews.length
+              ? <div className="product-reviews-number">{reviews.length} reviewz</div>
+              : <div className="product-reviews-number">Looks like dis produkt 'asn't been reviewed yet</div>
+            }
+            {reviews.length
+              ? <div>{reviews.map(review => 
+                  <div className="product-page-review" key={review.id}>
+                    {review.review}
+                  </div>
+                  )}
+                </div>
+              : <div>Be da first ta review dis shiny produkt</div>
+            }
+          </div>
         </div>
-        
+
+
         {showModal === true && (
           <Modal onClose={() => setShowModal(false)}>
-            <ImageModal setShowModal={setShowModal} image={product.image}/>
+            <ImageModal setShowModal={setShowModal} image={product.image} />
           </Modal>
         )}
 
@@ -81,7 +98,7 @@ const ProductPage = () => {
               </button>
               : <button id="show-description-button" onClick={showDescription}>
                 <span>Description</span>
-                <span><i className="fa-solid product-details-caret fa-caret-up reverse"/></span>
+                <span><i className="fa-solid product-details-caret fa-caret-up reverse" /></span>
               </button>
             }
 

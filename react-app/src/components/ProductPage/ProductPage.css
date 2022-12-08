@@ -19,6 +19,7 @@
   height: 500px;
   object-fit: contain;
   border-radius: 6px;
+  margin-bottom: 30px;
 }
 
 .product-page-image:hover {
@@ -33,6 +34,15 @@
 
 .image-modal {
   object-fit: fill;
+}
+
+.product-page-review {
+  margin: 10px 0;
+}
+
+.product-reviews-number {
+  font-size: 26px;
+  line-height: 42px;
 }
 
 .product-page-details-container {
