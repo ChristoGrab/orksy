@@ -29,5 +29,5 @@ class Product(db.Model):
     }
     if store:
       product["store"] = self.store.to_dict()
-    
+      
     return product
