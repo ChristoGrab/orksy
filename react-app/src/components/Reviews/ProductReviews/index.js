@@ -12,7 +12,7 @@ const ProductReviews = ({ productId }) => {
 
   useEffect(() => {
     dispatch(loadReviewsThunk(productId))
-  })
+  }, [dispatch])
 
   return (
     <div className="product-page-reviews-container">
@@ -22,9 +22,11 @@ const ProductReviews = ({ productId }) => {
       }
       {reviews.length
         ? <div>{reviews.map(review =>
-          <div className="product-page-review" key={review.id}>
-            {review.rating}
-            {review.review}
+          <div className="product-page-review-card" key={review.id}>
+            <div>
+              {[...Array(review?.rating)].map((star) => (<i className="fa-solid fa-star"></i>))}
+            </div>
+            <div>{review.review}</div>
             { sessionUser && sessionUser.id === review.reviewer_id && (
               <div>
                 <button>Edit</button>

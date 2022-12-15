@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { useParams, Link } from 'react-router-dom'
 import { Modal } from '../../context/Modal'
 import { getProductThunk, clearProduct } from "../../store/products";
-import { loadReviewsThunk } from "../../store/reviews";
 import ImageModal from './ImageModal'
 import "./ProductPage.css"
 import ProductReviews from "../Reviews/ProductReviews";
