@@ -1,6 +1,8 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { loadReviewsThunk } from "../../../store/reviews"
+import { Modal } from '../../../context/Modal'
+import ReviewModal from "./ReviewModal"
 import './ProductReviews.css'
 
 const ProductReviews = ({ productId }) => {
@@ -10,9 +12,20 @@ const ProductReviews = ({ productId }) => {
   const sessionUser = useSelector(state => state.session.user)
   const reviews = useSelector(state => Object.values(state.reviews.allReviews))
 
+  const [reviewModal, setReviewModal] = useState(false)
+  
   useEffect(() => {
     dispatch(loadReviewsThunk(productId))
   }, [dispatch])
+  
+  
+  const showReviewForm = async (e) => {
+    e.preventDefault();
+    
+    return setReviewModal(true)
+  }
+  
+  console.log(reviews)
 
   return (
     <div className="product-page-reviews-container">
@@ -20,6 +33,17 @@ const ProductReviews = ({ productId }) => {
         ? <div className="product-reviews-number">{reviews.length} reviewz</div>
         : <div className="product-reviews-number">Be da first to review dis shiny produkt!</div>
       }
+      {sessionUser && (
+        <button className="product-page-button" onClick={showReviewForm}>Leave a Review</button>
+      )}
+      
+      {reviewModal === true && (
+          <Modal onClose={() => setReviewModal(false)}>
+            <ReviewModal setReviewModal={setReviewModal} />
+          </Modal>
+        )}
+        
+        
       {reviews.length
         ? <div>{reviews.map(review =>
           <div className="product-page-review-card" key={review.id}>
