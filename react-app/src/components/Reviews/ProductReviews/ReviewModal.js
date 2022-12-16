@@ -11,31 +11,37 @@ const ReviewModal = ( {productId, setReviewModal} ) => {
   const [rating, setRating] = useState(5)
   const [review, setReview] = useState("")
   const [errors, setErrors] = useState([])
+  const [formSubmitted, setFormSubmitted] = useState(false)
   
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    setErrors([])
+    setFormSubmitted(true)
+    
+    const errorList = []
+    if (!review.length) errorList.push("Don't be a naff leaving an empty review")
+    setErrors(errorList)
+    
+    if (errorList.length) return
     
     const newReview = {
       rating,
       review
     }
     
+    
     dispatch(createReviewThunk(newReview, productId))
     .then(response => {
-      if (response.message) {
-        errors.push(response.message)
-      }
-      else {
         return setReviewModal(false)
-      }
-    })
+      })
   }
   
   return (
       <form className="review-form">
         <h2>Let da boyz know if dis produkt is up ta snuff</h2>
         {errors.map((error, ind) => (
-          <div key={ind}>{error}</div>
+          <div className="error-message" key={ind}>{error}</div>
         )
         )}
         <label htmlFor="rating">Rating</label>
