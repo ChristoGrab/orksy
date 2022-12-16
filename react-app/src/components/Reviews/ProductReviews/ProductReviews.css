@@ -30,3 +30,8 @@
   height: 300px;
   padding: 20px;
 }
+
+.user-review-box {
+  display: flex;
+  gap: 5px;
+}

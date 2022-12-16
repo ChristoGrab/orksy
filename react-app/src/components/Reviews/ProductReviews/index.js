@@ -49,9 +49,9 @@ const ProductReviews = ({ productId }) => {
             </div>
             <div>{review.review}</div>
             { sessionUser && sessionUser.id === review.reviewer_id && (
-              <div>
-                <button>Edit</button>
-                <button>Delete</button>
+              <div className="user-review-box">
+                <i className="fa-regular fa-pen-to-square"></i>
+                <i className="fa-regular fa-trash-can"></i>
               </div>
             )}
           </div>
