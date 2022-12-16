@@ -1,24 +1,43 @@
-import { useState } from "react"
+import { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { createReviewThunk } from "../../../store/reviews";
 
-const ReviewModal = () => {
+const ReviewModal = ( {productId, setReviewModal} ) => {
+  
+  const dispatch = useDispatch()
+  const history = useHistory()
   
   const [rating, setRating] = useState(5)
   const [review, setReview] = useState("")
+  const [errors, setErrors] = useState([])
   
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    const new_review = {
+    const newReview = {
       rating,
       review
     }
     
-    console.log(new_review)
+    dispatch(createReviewThunk(newReview, productId))
+    .then(response => {
+      if (response.message) {
+        errors.push(response.message)
+      }
+      else {
+        return setReviewModal(false)
+      }
+    })
   }
   
   return (
       <form className="review-form">
         <h2>Let da boyz know if dis produkt is up ta snuff</h2>
+        {errors.map((error, ind) => (
+          <div key={ind}>{error}</div>
+        )
+        )}
         <label htmlFor="rating">Rating</label>
         <select 
         value={rating}

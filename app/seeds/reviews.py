@@ -73,6 +73,24 @@ def seed_reviews():
     product_id=6,
     reviewer_id=8
   )
+  rev_13 = Review(
+    rating=5,
+    review="Dis produkt was da very finest of da bunch",
+    product_id=7,
+    reviewer_id=10
+  )
+  rev_14 = Review(
+    rating=4,
+    review="Orkeosaurus is very cute",
+    product_id=8,
+    reviewer_id=9
+  )
+  rev_15 = Review(
+    rating=2,
+    review="It didn't even take off before exploding",
+    product_id=9,
+    reviewer_id=5
+  )
 
   db.session.add(rev_1)
   db.session.add(rev_2)
@@ -86,6 +104,9 @@ def seed_reviews():
   db.session.add(rev_10)
   db.session.add(rev_11)
   db.session.add(rev_12)
+  db.session.add(rev_13)
+  db.session.add(rev_14)
+  db.session.add(rev_15)
   db.session.commit()
   
 def undo_reviews():

@@ -24,8 +24,6 @@ const ProductReviews = ({ productId }) => {
     
     return setReviewModal(true)
   }
-  
-  console.log(reviews)
 
   return (
     <div className="product-page-reviews-container">
@@ -39,10 +37,9 @@ const ProductReviews = ({ productId }) => {
       
       {reviewModal === true && (
           <Modal onClose={() => setReviewModal(false)}>
-            <ReviewModal setReviewModal={setReviewModal} />
+            <ReviewModal setReviewModal={setReviewModal} productId={productId}/>
           </Modal>
         )}
-        
         
       {reviews.length
         ? <div>{reviews.map(review =>

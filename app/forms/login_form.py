@@ -27,3 +27,4 @@ class LoginForm(FlaskForm):
     email = StringField('email', validators=[DataRequired("Yer email is required"), user_exists])
     password = StringField('password', validators=[
                            DataRequired("Yer password is required"), password_matches])
+
