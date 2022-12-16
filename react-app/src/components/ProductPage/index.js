@@ -126,7 +126,7 @@ const ProductPage = () => {
                   </div>
                 </div>
                 <div id="shipping-cost-message">Cost to ship</div>
-                <div id="shipping-cost"><i className="fa-solid fa-tooth" />{product.price / 100}</div>
+                <div id="shipping-cost"><i className="fa-solid fa-tooth" />{Math.ceil(product.price / 100)}</div>
                 <div id="carbon-message">Orksy proudly kontributes to carbon emissions by using da finest pollutants in da sektor.</div>
               </div>
             )}
