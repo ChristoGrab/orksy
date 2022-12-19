@@ -1,13 +1,11 @@
 import { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { useHistory, useParams } from 'react-router-dom'
 import { getMyStoreThunk } from '../../../store/stores';
 import "../Products.css"
 
 const EditProductForm = () => {
-
-  const sessionUser = useSelector(state => state.session.user)
-  const store = useSelector(state => state.stores.singleStore)
+  
   const { productId } = useParams();
 
   const dispatch = useDispatch();
@@ -17,7 +15,6 @@ const EditProductForm = () => {
   const [name, setName] = useState("")
   const [description, setDescription] = useState("")
   const [price, setPrice] = useState(0)
-  const [image, setImage] = useState('')
   const [errors, setErrors] = useState([])
   const [submitted, setSubmitted] = useState(false)
   const formData = new FormData();
@@ -34,7 +31,7 @@ const EditProductForm = () => {
         setDescription(`${res.description}`)
         setPrice(`${res.price}`)
     })();
-}, [])
+}, [productId])
 
   let correctFile = true
 

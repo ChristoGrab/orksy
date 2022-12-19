@@ -13,12 +13,10 @@ import LandingPage from './components/LandingPage';
 import ProductPage from './components/ProductPage';
 import CreateProductForm from './components/Products/CreateProductForm';
 import DeleteProduct from './components/Products/DeleteProduct'
-import ProtectedRoute from './components/auth/ProtectedRoute';
 import { authenticate } from './store/session';
-import "./index.css"
 import EditProductForm from './components/Products/EditProductForm';
 import ImageModal from './components/ProductPage/ImageModal';
-
+import "./index.css"
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -79,7 +77,7 @@ function App() {
           <ImageModal />
         </Route>
         <Route path="*">
-        <div id="no-page-message">Nothin' here</div>
+        <div id="no-page-message">Nothin' here but squig droppins'</div>
         </Route>
       </Switch>
     </BrowserRouter>

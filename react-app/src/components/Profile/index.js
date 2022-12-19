@@ -1,20 +1,18 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
-import { useHistory, Link, Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { getMyStoreThunk } from "../../store/stores";
 import userAvatar from "../../assets/user-avatar.png"
 import "./Profile.css"
 
 const ProfilePage = () => {
 
-  const history = useHistory()
   const dispatch = useDispatch()
   const sessionUser = useSelector(state => state.session.user)
   const store = useSelector(state => state.stores.singleStore)
-  const [hasStore, setHasStore] = useState(false)
   
   const quotes = [
-    "Gork loves me, and Mork finks I is da best. No puny oomies is gonna kill me, not when da greenest gods in da galaxy is watchin’ me!",
+    "Gork loves me, and Mork finks I is da best. No puny oomies is gonna kill me, not when da greenest gods in da galaxy is watchin' me!",
     "We is gonna stomp da universe flat and kill anyfink that fights back. we're da Orks, and was made ta fight and win.",
     "Right, first I'll take those teef out for yer, dat should help ease da pain in yer leg. Grokkit, hand me that wrench. Now then... Open wide, and say... AAARGH!",
     "Wot's faster than a warbuggy, more killy than a warbike, and flies through da air like a bird? I got no bleedin' idea, but I'm gonna find out."
@@ -44,7 +42,7 @@ const ProfilePage = () => {
   return (
     <div className="profile-page-container">
       <div className="profile-page-userinfo">
-        <img id="profile-page-avatar" src={userAvatar}></img>
+        <img id="profile-page-avatar" src={userAvatar} alt="user avatar"></img>
         <div id="profile-page-username">
           {sessionUser.username}
           {storeLinks}

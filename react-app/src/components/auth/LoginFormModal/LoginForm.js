@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Redirect, Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { login } from '../../../store/session';
 import DemoUserButton from '../DemoUserButton';
-import SignupFormModal from '../SignupFormModal';
 import "../AuthForms.css"
 import SignUpForm from '../SignupFormModal/SignUpForm';
 
@@ -23,22 +22,6 @@ const LoginForm = () => {
     }
   };
   
-  const demoLogin = async (e) => {
-    e.preventDefault();
-    
-    
-    setErrors([])
-    
-    setEmail("gork@teef.io")
-    setPassword("password2")
-    
-    
-    
-    const data = await dispatch(login(email, password))
-    if (data) {
-      setErrors(data);
-    }
-  }
   
   const switchToSignup = async (e) => {
     setSwitchForm(true)

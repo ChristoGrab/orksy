@@ -19,6 +19,7 @@
   height: 500px;
   object-fit: contain;
   border-radius: 6px;
+  margin-bottom: 30px;
 }
 
 .product-page-image:hover {
