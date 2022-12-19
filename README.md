@@ -1,6 +1,6 @@
 # Orksy
 
-Welcome to Orksy! Orksy is a fullstack clone of popular e-commerce site Etsy, themed around the Ork faction from the fictional Warhammer 40K universe.
+Welcome to Orksy! Orksy is a fullstack clone of popular e-commerce site Etsy, themed around the Ork faction from the fictional Warhammer 40K universe. Users on Orksy are able to set up an online storefront via their profile page. The user's store serves as their gateway to creating, editing or deleting products to display on the site.
 
 ## Tech Stacks
 
