@@ -47,3 +47,7 @@ label {
   text-align: center;
   color: #1f5429;
 }
+
+.hover-cursor:hover {
+  cursor: pointer;
+}

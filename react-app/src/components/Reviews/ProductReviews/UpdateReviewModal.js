@@ -31,11 +31,9 @@ const UpdateReviewModal = ( {reviewId, setReviewModal, prevRating, prevReview} )
     }
 
     dispatch(updateReviewThunk(newReview, reviewId))
-    .then(response => {
-        return setReviewModal(false)
-      })
+    .then(response => { window.location.reload() })
   }
-  
+
   return (
       <form className="review-form">
         <h2>Changed yer mind about this produkt, have ye?</h2>

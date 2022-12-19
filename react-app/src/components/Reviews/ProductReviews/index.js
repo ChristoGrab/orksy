@@ -58,8 +58,8 @@ const ProductReviews = ({ productId }) => {
             <div>{review.review}</div>
             { sessionUser && sessionUser.id === review.reviewer_id && (
               <div className="user-review-box">
-                <i className="fa-regular fa-pen-to-square" onClick={showUpdateReviewForm}></i>
-                <i className="fa-regular fa-trash-can"></i>
+                <i className="fa-regular fa-pen-to-square hover-cursor" onClick={showUpdateReviewForm}></i>
+                <i className="fa-regular fa-trash-can hover-cursor"></i>
               </div>
             )}
 
