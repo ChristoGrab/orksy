@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useParams, Link, useHistory } from 'react-router-dom'
 import * as storeActions from "../../store/stores"
-import * as productActions from '../../store/products'
 import ProductCard from "../ProductCard"
 import "./Storefront.css"
 import orkBanner from '../../assets/red-skull.jpg'
@@ -15,14 +14,12 @@ const StoreFront = () => {
 
   const store = useSelector(state => state.stores.singleStore);
   const sessionUser = useSelector(state => state.session.user);
-  const [update, setUpdate] = useState(false)
-
 
   // Dispatch for store
   useEffect(() => {
     dispatch(storeActions.getStoreThunk(storeId))
     return (() => dispatch(storeActions.clearStore()))
-  }, [dispatch, storeId, update])
+  }, [dispatch, storeId])
 
 
   // Redirect to delete confirmation page
@@ -38,9 +35,6 @@ const StoreFront = () => {
 
     history.push(`/products/${id}/edit`)
   }
-
-
-  console.log("store object:", store)
   
   return (
     <div className="storefront-container">

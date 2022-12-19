@@ -1,7 +1,7 @@
 from flask import Blueprint, request
 from flask_login import login_required, current_user
-from app.models import Product, db
-from app.forms import ProductForm
+from app.models import Product, Review, db
+from app.forms import ProductForm, ReviewForm
 from app.util.s3 import upload_file_to_s3, allowed_file, get_unique_filename
 
 product_routes = Blueprint('products', __name__)
@@ -13,7 +13,7 @@ def all_products():
   Query for all products and return them as a list of dictionaries
   """
   products = Product.query.all()
-  return {"Products": [product.to_dict() for product in products]}
+  return {"Products": [product.to_dict() for product in products]}, 200
 
 # GET ONE PRODUCT
 @product_routes.route("/<int:id>")
@@ -25,7 +25,7 @@ def one_product(id):
   if product:
     return product.to_dict(store=True)
   else:
-    return {"error": "This product does not exist"}
+    return {"error": "This product does not exist"}, 404
 
 
 # CREATE A PRODUCT
@@ -64,9 +64,9 @@ def delete_product(id):
   if product:
     db.session.delete(product)
     db.session.commit()
-    return {"message": "deletion successful"}
+    return {"message": "deletion successful"}, 200
   else:
-    return {"message": "could not find the requested resource"}
+    return {"message": "could not find the requested resource"}, 404
     
 # UPDATE PRODUCT
 @product_routes.route('/<int:id>', methods=["PUT"])
@@ -90,7 +90,7 @@ def update_product(id):
   else:
     return {
       "message": "The requested resource could not be found"
-    }, 400
+    }, 404
 
 # IMAGE UPLOAD TO AWS S3
 @product_routes.route('/upload', methods=["POST"])
@@ -99,7 +99,7 @@ def upload_image():
   """
   Sends an uploaded image to S3 bucket and returns the url
   """
-  print(request.files)
+
   if "file" not in request.files:
     return {"errors": "image required"}, 400
     
@@ -111,7 +111,43 @@ def upload_image():
   image.filename = get_unique_filename(image.filename)
   
   upload = upload_file_to_s3(image)
-  
-  print("upload object in backend: ", upload)
+
   
   return upload
+
+# CREATE REVIEW FOR PRODUCT
+@product_routes.route('/<int:product_id>/reviews', methods=["POST"])
+@login_required
+def create_review(product_id):
+  """
+  Creates a new review and associates it with product at product_id
+  """
+  form = ReviewForm()
+  form['csrf_token'].data = request.cookies['csrf_token']
+  
+  product = Product.query.get(product_id)
+  
+  if not product:
+    return {"message": "Product could not be found"}, 404
+    
+  # if product.store_id == current_user.store.id:
+  #   return {"message": "Cannot review your own product"}, 403
+    
+  product_reviews = Review.query.filter(Review.product_id == product_id).all()
+  for review in product_reviews:
+    if review.reviewer_id == current_user.id:
+      return {"message": "You have already left a review for this product"}, 400
+
+  if form.validate_on_submit():
+    new_review = Review(
+      rating = form.data["rating"],
+      review = form.data["review"],
+      product_id = product_id,
+      reviewer_id = current_user.id,
+    )
+    db.session.add(new_review)
+    db.session.commit()
+    
+    return new_review.to_dict()
+  else:
+    return form.errors

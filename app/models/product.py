@@ -16,6 +16,7 @@ class Product(db.Model):
 
   # Relationships
   store = db.relationship("Store", back_populates="products")
+  reviews = db.relationship("Review", back_populates="product")
   
   def to_dict(self, store=False):
     product = {
@@ -24,10 +25,9 @@ class Product(db.Model):
       'description': self.description,
       'price': self.price,
       'store_id': self.store_id,
-      'image': self.image
-      # 'category_id': self.category_id
+      'image': self.image,
     }
     if store:
       product["store"] = self.store.to_dict()
-    
+      
     return product

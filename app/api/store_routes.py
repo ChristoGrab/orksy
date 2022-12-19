@@ -100,7 +100,7 @@ def delete_store(id):
     if store.owner_id == current_user.id:
       db.session.delete(store)
       db.session.commit()
-      return {"message": "deletion successful"}
+      return {"message": "deletion successful"}, 200
     else:
       return {"message": "cannot delete a store you do not own"}
   else:

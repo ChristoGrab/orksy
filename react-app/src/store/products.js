@@ -1,5 +1,3 @@
-import storesReducer from "./stores";
-
 // List of Actions
 const LOAD_PRODUCTS = "products/load";
 const GET_PRODUCT = "products/getOne";

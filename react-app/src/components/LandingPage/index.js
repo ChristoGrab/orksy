@@ -35,19 +35,19 @@ const LandingPage = () => {
       </div>
       <div className="categories-outer-container">
         <Link to='/store/5' className="category-link">
-          <img className="category-pic" src={"https://orksybucket.s3.us-east-2.amazonaws.com/Choppa-store.jpg"} />
+          <img className="category-pic" alt="Choppas" src={"https://orksybucket.s3.us-east-2.amazonaws.com/Choppa-store.jpg"} />
           Choppas</Link>
           <Link to='/store/3' className="category-link">
-          <img className="category-pic" src={"https://orksybucket.s3.us-east-2.amazonaws.com/dakka-store.jpg"} />
+          <img className="category-pic" alt="Shootas" src={"https://orksybucket.s3.us-east-2.amazonaws.com/dakka-store.jpg"} />
           Shootas</Link>
           <Link to='/store/2' className="category-link">
-          <img className="category-pic" src={"https://orksybucket.s3.us-east-2.amazonaws.com/mek-shop.jpg"} />
+          <img className="category-pic" alt="Meks" src={"https://orksybucket.s3.us-east-2.amazonaws.com/mek-shop.jpg"} />
           Meks</Link>
           <Link to='/store/1' className="category-link">
-          <img className="category-pic" src={"https://orksybucket.s3.us-east-2.amazonaws.com/squig-store.jpg"} />
+          <img className="category-pic" alt="Squigs" src={"https://orksybucket.s3.us-east-2.amazonaws.com/squig-store.jpg"} />
           Squigs</Link>
           <Link to='/store/4' className="category-link">
-          <img className="category-pic" src={"https://orksybucket.s3.us-east-2.amazonaws.com/flight-store.jpg"} />
+          <img className="category-pic" alt="Rokkits" src={"https://orksybucket.s3.us-east-2.amazonaws.com/flight-store.jpg"} />
           Rokkits</Link>
       </div>
       
@@ -61,10 +61,10 @@ const LandingPage = () => {
       <div className="main-page-footer">
         <div id="about-me">Made by Christo Grabowski. Orksy is a fullstack clone of Etsy inspired by the wild wackiness of the Orks in Warhammer 40K.</div>
         <div id="about-me-links">
-          <a href="https://github.com/ChristoGrab" target="_blank">
+          <a href="https://github.com/ChristoGrab" target="_blank" rel="noreferrer">
             <i className="fa-brands fa-github"></i>
           </a>
-          <a href="https://www.linkedin.com/in/christo-grabowski-894a82a6/" target="_blank">
+          <a href="https://www.linkedin.com/in/christo-grabowski-894a82a6/" target="_blank" rel="noreferrer">
             <i className="ourIco fa-brands fa-linkedin"></i>
           </a>
         </div>

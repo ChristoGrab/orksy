@@ -5,6 +5,7 @@ import { Modal } from '../../context/Modal'
 import { getProductThunk, clearProduct } from "../../store/products";
 import ImageModal from './ImageModal'
 import "./ProductPage.css"
+import ProductReviews from "../Reviews/ProductReviews";
 
 const ProductPage = () => {
 
@@ -29,12 +30,10 @@ const ProductPage = () => {
     return (() => dispatch(clearProduct()))
   }, [dispatch, productId])
 
-  if (!product) return null;
-
   //function to toggle showing product description
   const showDescription = async (e) => {
     e.preventDefault();
-    
+
     setDescrip(!descrip)
   }
 
@@ -46,20 +45,24 @@ const ProductPage = () => {
 
   const enhanceImage = async (e) => {
     e.preventDefault();
-    
+
     return setShowModal(true)
   }
+
+  if (!product) return null;
 
   return (
     <div>
       <div className="product-page-container">
         <div className="product-page-image-container">
           <img className="product-page-image" src={product.image} alt={product.name} onClick={enhanceImage} />
+          <ProductReviews productId={productId}/>
         </div>
-        
+
+
         {showModal === true && (
           <Modal onClose={() => setShowModal(false)}>
-            <ImageModal setShowModal={setShowModal} image={product.image}/>
+            <ImageModal setShowModal={setShowModal} image={product.image} />
           </Modal>
         )}
 
@@ -78,7 +81,7 @@ const ProductPage = () => {
               </button>
               : <button id="show-description-button" onClick={showDescription}>
                 <span>Description</span>
-                <span><i className="fa-solid product-details-caret fa-caret-up reverse"/></span>
+                <span><i className="fa-solid product-details-caret fa-caret-up reverse" /></span>
               </button>
             }
 
@@ -123,7 +126,7 @@ const ProductPage = () => {
                   </div>
                 </div>
                 <div id="shipping-cost-message">Cost to ship</div>
-                <div id="shipping-cost"><i className="fa-solid fa-tooth" />{product.price / 100}</div>
+                <div id="shipping-cost"><i className="fa-solid fa-tooth" />{Math.ceil(product.price / 100)}</div>
                 <div id="carbon-message">Orksy proudly kontributes to carbon emissions by using da finest pollutants in da sektor.</div>
               </div>
             )}

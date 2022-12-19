@@ -6,8 +6,7 @@ import { getMyStoreThunk } from '../../../store/stores';
 import "../Products.css"
 
 const CreateProductForm = () => {
-
-  const sessionUser = useSelector(state => state.session.user)
+  
   const store = useSelector(state => state.stores.singleStore)
 
   const dispatch = useDispatch();
@@ -17,7 +16,6 @@ const CreateProductForm = () => {
   const [name, setName] = useState("")
   const [description, setDescription] = useState("")
   const [price, setPrice] = useState(0)
-  const [image, setImage] = useState('')
   const [errors, setErrors] = useState([])
   const [submitted, setSubmitted] = useState(false)
   const formData = new FormData();

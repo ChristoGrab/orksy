@@ -1,14 +1,11 @@
 import { useState, useEffect } from 'react'
-import { useHistory, Link } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
 import LogoutButton from './LogoutButton'
 import './ProfileButton.css'
 import userAvatar from '../../assets/user-avatar.png'
 
 function ProfileButton({ user }) {
 
-  const dispatch = useDispatch();
-  const history = useHistory();
   const [showMenu, setShowMenu] = useState(false);
 
   const openMenu = () => {
