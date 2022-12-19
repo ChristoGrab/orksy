@@ -22,10 +22,14 @@ def update_review(id):
   """
   review = Review.query.get(id)
   
+  print(review.to_dict())
+  
   if not review:
     return {"message": "This review does not exist"}, 404
   
   if current_user.id != review.reviewer_id:
+    print("Current user_id: ", current_user.id)
+    print("Previous user_id: ", review.reviewer_id)
     return {"message": "You cannot edit reviews that do not belong to you"}, 403
 
   if review:

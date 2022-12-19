@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { loadReviewsThunk } from "../../../store/reviews"
 import { Modal } from '../../../context/Modal'
 import ReviewModal from "./ReviewModal"
+import UpdateReviewModal from "./UpdateReviewModal"
 import './ProductReviews.css'
 
 const ProductReviews = ({ productId }) => {
@@ -10,19 +11,26 @@ const ProductReviews = ({ productId }) => {
   const dispatch = useDispatch()
 
   const sessionUser = useSelector(state => state.session.user)
-  const reviews = useSelector(state => Object.values(state.reviews.allReviews))
+  const reviews = useSelector(state => Object.values(state.reviews.product))
 
-  const [reviewModal, setReviewModal] = useState(false)
+  const [createReviewModal, setCreateReviewModal] = useState(false)
+  const [updateReviewModal, setUpdateReviewModal] = useState(false)
   
   useEffect(() => {
     dispatch(loadReviewsThunk(productId))
   }, [dispatch])
   
-  
+
   const showReviewForm = async (e) => {
     e.preventDefault();
-    
-    return setReviewModal(true)
+
+    return setCreateReviewModal(true)
+  }
+  
+  const showUpdateReviewForm = async (e) => {
+    e.preventDefault();
+
+    return setUpdateReviewModal(true)
   }
 
   return (
@@ -35,9 +43,9 @@ const ProductReviews = ({ productId }) => {
         <button className="product-page-button" onClick={showReviewForm}>Leave a Review</button>
       )}
       
-      {reviewModal === true && (
-          <Modal onClose={() => setReviewModal(false)}>
-            <ReviewModal setReviewModal={setReviewModal} productId={productId}/>
+      {createReviewModal === true && (
+          <Modal onClose={() => setCreateReviewModal(false)}>
+            <ReviewModal setReviewModal={setCreateReviewModal} productId={productId}/>
           </Modal>
         )}
         
@@ -50,10 +58,17 @@ const ProductReviews = ({ productId }) => {
             <div>{review.review}</div>
             { sessionUser && sessionUser.id === review.reviewer_id && (
               <div className="user-review-box">
-                <i className="fa-regular fa-pen-to-square"></i>
+                <i className="fa-regular fa-pen-to-square" onClick={showUpdateReviewForm}></i>
                 <i className="fa-regular fa-trash-can"></i>
               </div>
             )}
+
+            {updateReviewModal === true && (
+          <Modal onClose={() => setUpdateReviewModal(false)}>
+            <UpdateReviewModal setReviewModal={setUpdateReviewModal} reviewId={review.id} prevRating={review.rating} prevReview={review.review}/>
+          </Modal>
+        )}
+
           </div>
         )}
         </div>

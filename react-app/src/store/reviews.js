@@ -53,6 +53,7 @@ export const createReviewThunk = (review, productId) => async (dispatch) => {
 }
 
 export const updateReviewThunk = (review, reviewId) => async (dispatch) => {
+  console.log("review in thunk: ", review)
   const response = await fetch(`/api/reviews/${reviewId}`, {
     method: "PUT",
     headers: {
@@ -71,7 +72,7 @@ export const updateReviewThunk = (review, reviewId) => async (dispatch) => {
   }
 }
 
-const initialState = { allReviews: {}, oneReview: {} }
+const initialState = { product: {}, user: {} }
 
 // Reviews Reducer //
 
@@ -87,17 +88,17 @@ const reviewsReducer = (state = initialState, action) => {
 
       return {
         ...state,
-        allReviews: productReviews
+        product: productReviews
       }
     }
     
     case CREATE_REVIEW: {
       const newReviewObject = {
         ...state,
-        allReviews: {...state.allReviews}
+        product: {...state.product}
       };
 
-      newReviewObject.allReviews[action.review.id] = action.review
+      newReviewObject.product[action.review.id] = action.review
       return newReviewObject;
 
     }
@@ -105,10 +106,10 @@ const reviewsReducer = (state = initialState, action) => {
     case UPDATE_REVIEW: {
       const newReviewObject = {
         ...state,
-        allReviews: {...state.allReviews}
+        product: {...state.product}
       }
       
-      newReviewObject.allReviews[action.review.id] = action.review
+      newReviewObject.product[action.review.id] = action.review
       return newReviewObject;
 
     }

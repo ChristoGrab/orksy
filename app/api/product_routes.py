@@ -146,6 +146,8 @@ def create_review(product_id):
       reviewer_id = current_user.id,
     )
     db.session.add(new_review)
+    print("Current user id for create: ", current_user.id)
+    print("Reviewer id in review: ", new_review.reviewer_id)
     db.session.commit()
     
     return new_review.to_dict()

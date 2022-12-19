@@ -77,7 +77,7 @@ function App() {
           <ImageModal />
         </Route>
         <Route path="*">
-        <div id="no-page-message">Nothin' here</div>
+        <div id="no-page-message">Nothin' here but squig droppins'</div>
         </Route>
       </Switch>
     </BrowserRouter>
