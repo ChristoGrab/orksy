@@ -22,12 +22,12 @@ def update_review(id):
   """
   review = Review.query.get(id)
   
-  if current_user.id != review.reviewer_id:
-    return {"message": "You cannot edit reviews that do not belong to you"}, 403
-    
   if not review:
     return {"message": "This review does not exist"}, 404
-    
+  
+  if current_user.id != review.reviewer_id:
+    return {"message": "You cannot edit reviews that do not belong to you"}, 403
+
   if review:
     review.rating = request.json["rating"]
     review.review = request.json["review"]
@@ -43,12 +43,13 @@ def delete_review(id):
   
   review = Review.query.get(id)
   
-  if current_user.id != review.reviewer_id:
-    return {"message": "You cannot edit reviews that do not belong to you"}, 403
-    
   if not review:
     return {"message": "This review does not exist"}, 404
+  
+  if current_user.id != review.reviewer_id:
+    return {"message": "You cannot delete reviews that do not belong to you"}, 403
     
+
   if review:
     db.session.delete(review)
     db.session.commit()
