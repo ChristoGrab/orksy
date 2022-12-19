@@ -29,9 +29,14 @@
   flex-direction: column;
   height: 300px;
   padding: 20px;
+  gap: 10px;
 }
 
 .user-review-box {
   display: flex;
   gap: 5px;
+}
+
+#delete-review-modal {
+  padding: 40px;
 }
