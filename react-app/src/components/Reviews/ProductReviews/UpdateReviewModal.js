@@ -31,7 +31,7 @@ const UpdateReviewModal = ( {reviewId, setReviewModal, prevRating, prevReview} )
     }
 
     dispatch(updateReviewThunk(newReview, reviewId))
-    .then(response => { window.location.reload() })
+    .then(response => setReviewModal(false))
   }
 
   return (

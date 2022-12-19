@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { loadReviewsThunk } from "../../../store/reviews"
 import { Modal } from '../../../context/Modal'
-import ReviewModal from "./ReviewModal"
+import ReviewModal from "./CreateReviewModal"
 import UpdateReviewModal from "./UpdateReviewModal"
 import './ProductReviews.css'
 
@@ -18,7 +18,7 @@ const ProductReviews = ({ productId }) => {
   
   useEffect(() => {
     dispatch(loadReviewsThunk(productId))
-  }, [dispatch])
+  }, [dispatch, updateReviewModal])
   
 
   const showReviewForm = async (e) => {
@@ -40,7 +40,7 @@ const ProductReviews = ({ productId }) => {
         : <div className="product-reviews-number">Be da first to review dis shiny produkt!</div>
       }
       {sessionUser && (
-        <button className="product-page-button" onClick={showReviewForm}>Leave a Review</button>
+        <button className="product-page-button green" onClick={showReviewForm}>Leave a Review</button>
       )}
       
       {createReviewModal === true && (

@@ -51,3 +51,7 @@ label {
 .hover-cursor:hover {
   cursor: pointer;
 }
+
+.green {
+  background-color: #1f5429;
+}
