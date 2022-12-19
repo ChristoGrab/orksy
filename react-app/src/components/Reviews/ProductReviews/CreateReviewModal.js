@@ -1,12 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { createReviewThunk } from "../../../store/reviews";
 
-const ReviewModal = ( {productId, setReviewModal} ) => {
+const CreateReviewModal = ( {productId, setReviewModal} ) => {
   
   const dispatch = useDispatch()
-  const history = useHistory()
   
   const [rating, setRating] = useState(5)
   const [review, setReview] = useState("")
@@ -66,4 +65,4 @@ const ReviewModal = ( {productId, setReviewModal} ) => {
   )
 }
 
-export default ReviewModal;
+export default CreateReviewModal;

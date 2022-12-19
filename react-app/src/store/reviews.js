@@ -24,6 +24,13 @@ const updateReview = (review) => {
   }
 }
 
+const deleteReview = (id) => {
+  return {
+    type: DELETE_REVIEW,
+    id
+  }
+}
+
 export const loadReviewsThunk = (id) => async (dispatch) => {
   const response = await fetch(`/api/reviews/product/${id}`)
 
@@ -53,7 +60,6 @@ export const createReviewThunk = (review, productId) => async (dispatch) => {
 }
 
 export const updateReviewThunk = (review, reviewId) => async (dispatch) => {
-  console.log("review in thunk: ", review)
   const response = await fetch(`/api/reviews/${reviewId}`, {
     method: "PUT",
     headers: {
@@ -69,6 +75,18 @@ export const updateReviewThunk = (review, reviewId) => async (dispatch) => {
   else {
     const errorData = await response.json()
     return errorData;
+  }
+}
+
+export const deleteReviewThunk = (id) => async (dispatch) => {
+  const response = await fetch(`/api/reviews/${id}`, {
+    method: "DELETE"
+  })
+  
+  if (response.ok) {
+    const data = await response.json();
+    dispatch(deleteReview(id))
+    return data;
   }
 }
 
@@ -112,6 +130,18 @@ const reviewsReducer = (state = initialState, action) => {
       newReviewObject.product[action.review.id] = action.review
       return newReviewObject;
 
+    }
+    
+    case DELETE_REVIEW: {
+      const newReviewObject = {
+        ...state.product
+      }
+      delete newReviewObject[action.id]
+      return {
+        ...state,
+        product: newReviewObject,
+        user: {}
+      }
     }
 
     default:
