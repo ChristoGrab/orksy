@@ -15,7 +15,7 @@ const DeleteReviewModal = ({ reviewId, setReviewModal }) => {
     e.preventDefault();
     
     const response = await dispatch(deleteReviewThunk(reviewId))
-    
+
     if (response) {
     setReviewModal(false)
     }

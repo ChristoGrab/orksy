@@ -14,15 +14,18 @@ const ProductReviews = ({ productId }) => {
   const sessionUser = useSelector(state => state.session.user)
   const reviews = useSelector(state => Object.values(state.reviews.product))
 
+  // Modal state variables //
   const [createReviewModal, setCreateReviewModal] = useState(false)
   const [updateReviewModal, setUpdateReviewModal] = useState(false)
   const [deleteReviewModal, setDeleteReviewModal] = useState(false)
 
+  // Fetch product reviews //
   useEffect(() => {
     dispatch(loadReviewsThunk(productId))
   }, [dispatch, updateReviewModal])
 
 
+  // Functions to handle opening each review modal //
   const showCreateReviewForm = async (e) => {
     e.preventDefault();
 
