@@ -43,9 +43,11 @@ const CreateReviewModal = ( {productId, setReviewModal} ) => {
           <div className="error-message" key={ind}>{error}</div>
         )
         )}
-        <label htmlFor="rating">Rating</label>
+        <div className="auth-form-fields">
+        <label className="auth-label" htmlFor="rating">Rating</label>
         <select 
         value={rating}
+        className="auth-input"
         onChange={e => setRating(e.target.value)}
         >
           <option>5</option>
@@ -54,13 +56,14 @@ const CreateReviewModal = ( {productId, setReviewModal} ) => {
           <option>2</option>
           <option>1</option>
         </select>
-        <label htmlFor="review">Review</label>
+        <label className="auth-label" htmlFor="review">Review</label>
         <textarea 
         type="text"
         value={review}
         onChange={e => setReview(e.target.value)}
         />
-        <button onClick={handleSubmit}>Submit Review</button>
+        <button className="auth-submit-button green" onClick={handleSubmit}>Submit Review</button>
+        </div>
       </form>
   )
 }

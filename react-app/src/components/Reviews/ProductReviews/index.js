@@ -45,7 +45,7 @@ const ProductReviews = ({ productId }) => {
     <div className="product-page-reviews-container">
       {reviews.length
         ? <div className="product-reviews-number">{reviews.length} reviewz</div>
-        : <div className="product-reviews-number">Be da first to review dis shiny produkt!</div>
+        : <div className="product-reviews-number">Dis produkt 'asn't got any reviewz yet</div>
       }
       {sessionUser && (
         <button className="product-page-button green" onClick={showCreateReviewForm}>Leave a Review</button>

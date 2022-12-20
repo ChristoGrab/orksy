@@ -41,8 +41,9 @@ const UpdateReviewModal = ( {reviewId, setReviewModal, prevRating, prevReview} )
           <div className="error-message" key={ind}>{error}</div>
         )
         )}
-        <label htmlFor="rating">Rating</label>
+        <label className="auth-label" htmlFor="rating">Rating</label>
         <select 
+        className="auth-input"
         value={rating}
         onChange={e => setRating(e.target.value)}
         >
@@ -52,13 +53,13 @@ const UpdateReviewModal = ( {reviewId, setReviewModal, prevRating, prevReview} )
           <option>2</option>
           <option>1</option>
         </select>
-        <label htmlFor="review">Review</label>
+        <label className="auth-label" htmlFor="review">Review</label>
         <textarea 
         type="text"
         value={review}
         onChange={e => setReview(e.target.value)}
         />
-        <button onClick={handleSubmit}>Submit Review</button>
+        <button className= "auth-submit-button green" onClick={handleSubmit}>Submit Review</button>
       </form>
   )
 }
