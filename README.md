@@ -1,6 +1,6 @@
 # Orksy
 
-Welcome to Orksy! Orksy is a fullstack clone of popular e-commerce site Etsy, themed around the Ork faction from the fictional Warhammer 40K universe. Users on Orksy are able to set up an online storefront via their profile page. The user's store serves as their gateway to creating, editing or deleting products to display on the site.
+Welcome to Orksy! Orksy is a fullstack clone of popular e-commerce site Etsy, themed around the Ork faction from the fictional Warhammer 40K universe. Users on Orksy are able to set up an online storefront via their profile page. The user's store serves as their gateway to creating, editing or deleting products to display on the site. Once a product has been listed, it can be reviewed by other users, who are also able to later edit or delete any reviews they have written.  The next planned feature is a persistent shopping cart!
 
 ## Tech Stacks
 
@@ -36,13 +36,16 @@ Use these links to navigate to the Orksy wiki for further documentation on the s
 
 ## Contact Me
 
-Feel free to reach out with any feedback or questions regarding Orksy!
-<br>
-Email: christo.grab@gmail.com
-<br>
-[Github Profile](https://github.com/ChristoGrab) 
-<br>
-[LinkedIn](https://www.linkedin.com/in/christo-grabowski-894a82a6/)
-
-
+<div id="header" align="center">
+  <div id="badges">
+  
+  <a href="https://www.linkedin.com/in/christo-grabowski-894a82a6" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
+  </a>
+    
+  <a href="mailto:christo.grab@gmail.com" target="_blank">
+    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail Badge"/>
+  </a>
+  </div>
+</div>
 
