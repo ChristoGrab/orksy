@@ -50,6 +50,7 @@ const ProductReviews = ({ productId }) => {
         ? <div className="product-reviews-number">{reviews.length} reviewz</div>
         : <div className="product-reviews-number">Dis produkt 'asn't got any reviewz yet</div>
       }
+
       {sessionUser && (
         <button className="product-page-button green" onClick={showCreateReviewForm}>Leave a Review</button>
       )}

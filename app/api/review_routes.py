@@ -13,6 +13,19 @@ def product_reviews(id):
   """
   reviews = Review.query.filter(Review.product_id == id).all()
   return {"Reviews": [review.to_dict() for review in reviews]}
+  
+# GET ALL REVIEWS FOR CURRENT USER
+@review_routes.route('/user/<int:id>')
+def user_reviews(id):
+  """
+  Query for all reviews associated with user at id
+  """
+  user_reviews = Review.query.filter(Review.reviewer_id == current_user.id).all()
+  
+  if len(user_reviews) == 0:
+    return {"message": "You 'aven't reviewed any produktz yet"}
+  
+  return {"Reviews": [review.to_dict() for review in user_reviews]}
 
 # UPDATE A REVIEW
 @review_routes.route('/<int:id>', methods=["PUT"])

@@ -66,7 +66,7 @@
   border-radius: 5em;
   border: none;
   color: white;
-  background-color: #1f5429;
+  /* background-color: #1f5429; */
   font-weight: bold;
   transition: transform 250ms ease-in-out;
 }

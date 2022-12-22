@@ -13,7 +13,7 @@ const DemoUserButton = () => {
     }
 
     return (
-        <button className='auth-submit-button' onClick={demoLogin}>
+        <button className='auth-submit-button green' onClick={demoLogin}>
              Demo User
         </button>);
 };
