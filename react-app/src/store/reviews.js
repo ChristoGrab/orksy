@@ -1,4 +1,5 @@
 const LOAD_REVIEWS = "reviews/load"
+const USER_REVIEWS = "reviews/user"
 const CREATE_REVIEW = "reviews/create"
 const UPDATE_REVIEW = "reviews/update"
 const DELETE_REVIEW = "reviews/delete"
@@ -6,6 +7,13 @@ const DELETE_REVIEW = "reviews/delete"
 const loadReviews = (reviews) => {
   return {
     type: LOAD_REVIEWS,
+    reviews
+  }
+}
+
+const userReviews = (reviews) => {
+  return {
+    type: USER_REVIEWS,
     reviews
   }
 }
@@ -32,10 +40,18 @@ const deleteReview = (id) => {
 }
 
 export const loadReviewsThunk = (id) => async (dispatch) => {
-  const response = await fetch(`/api/reviews/product/${id}`)
+  const response = await fetch(`/api/reviews/product/${id}`);
 
   const data = await response.json();
   dispatch(loadReviews(data));
+  return data;
+}
+
+export const userReviewsThunk = () => async (dispatch) => {
+  const response = await fetch('/api/reviews/user');
+  
+  const data = await response.json();
+  dispatch(userReviews(data));
   return data;
 }
 
@@ -107,6 +123,18 @@ const reviewsReducer = (state = initialState, action) => {
       return {
         ...state,
         product: productReviews
+      }
+    }
+    
+    case USER_REVIEWS: {
+      const userReviews = {};
+      action.reviews.Reviews.forEach(review => {
+        userReviews[review.id] = review;
+      })
+      
+      return {
+        ...state,
+        user: userReviews
       }
     }
     

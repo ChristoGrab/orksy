@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom'
 import { getMyStoreThunk } from "../../store/stores";
+import UserReviews from "../Reviews/UserReviews/index.js"
 import userAvatar from "../../assets/user-avatar.png"
 import "./Profile.css"
 
@@ -46,6 +47,7 @@ const ProfilePage = () => {
         <div id="profile-page-username">
           {sessionUser.username}
           {storeLinks}
+          <UserReviews />
         </div>
       </div>
       
