@@ -15,8 +15,8 @@ def product_reviews(id):
   return {"Reviews": [review.to_dict() for review in reviews]}
   
 # GET ALL REVIEWS FOR CURRENT USER
-@review_routes.route('/user/<int:id>')
-def user_reviews(id):
+@review_routes.route('/user')
+def user_reviews():
   """
   Query for all reviews associated with user at id
   """
@@ -25,7 +25,7 @@ def user_reviews(id):
   if len(user_reviews) == 0:
     return {"message": "You 'aven't reviewed any produktz yet"}
   
-  return {"Reviews": [review.to_dict() for review in user_reviews]}
+  return {"Reviews": [review.user_reviews_to_dict() for review in user_reviews]}
 
 # UPDATE A REVIEW
 @review_routes.route('/<int:id>', methods=["PUT"])

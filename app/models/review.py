@@ -26,3 +26,19 @@ class Review(db.Model):
     }
     
     return review;
+    
+  def user_reviews_to_dict(self):
+    review = {
+      "id": self.id,
+      "rating": self.rating,
+      "review": self.review,
+      "Product": {
+        "id": self.product.id,
+        "name": self.product.name,
+        "price": self.product.price,
+        "store_id": self.product.store_id,
+        "image": self.product.image
+      }
+    }
+    
+    return review;
