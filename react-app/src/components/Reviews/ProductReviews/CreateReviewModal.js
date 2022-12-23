@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { createReviewThunk } from "../../../store/reviews";
 
-const CreateReviewModal = ({ productId, setReviewModal }) => {
+const CreateReviewModal = ({ productId, setCreateReviewModal }) => {
 
   const dispatch = useDispatch()
 
@@ -32,7 +32,7 @@ const CreateReviewModal = ({ productId, setReviewModal }) => {
 
     dispatch(createReviewThunk(newReview, productId))
       .then(response => {
-        return setReviewModal(false)
+        return setCreateReviewModal(false)
       })
   }
 

@@ -2,9 +2,8 @@ import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { loadReviewsThunk } from "../../../store/reviews"
 import { Modal } from '../../../context/Modal'
+import ReviewCard from '../index'
 import CreateReviewModal from "./CreateReviewModal"
-import UpdateReviewModal from "./UpdateReviewModal"
-import DeleteReviewModal from "./DeleteReviewModal"
 import './ProductReviews.css'
 
 const ProductReviews = ({ productId }) => {
@@ -16,13 +15,12 @@ const ProductReviews = ({ productId }) => {
 
   // Modal state variables //
   const [createReviewModal, setCreateReviewModal] = useState(false)
-  const [updateReviewModal, setUpdateReviewModal] = useState(false)
-  const [deleteReviewModal, setDeleteReviewModal] = useState(false)
+
 
   // Fetch product reviews //
   useEffect(() => {
     dispatch(loadReviewsThunk(productId))
-  }, [dispatch, updateReviewModal])
+  }, [dispatch])
 
 
   // Functions to handle opening each review modal //
@@ -30,18 +28,6 @@ const ProductReviews = ({ productId }) => {
     e.preventDefault();
 
     return setCreateReviewModal(true)
-  }
-
-  const showUpdateReviewForm = async (e) => {
-    e.preventDefault();
-
-    return setUpdateReviewModal(true)
-  }
-  
-  const confirmDelete = async (e) => {
-    e.preventDefault();
-    
-    return setDeleteReviewModal(true)
   }
 
   return (
@@ -57,36 +43,14 @@ const ProductReviews = ({ productId }) => {
 
       {createReviewModal === true && (
         <Modal onClose={() => setCreateReviewModal(false)}>
-          <CreateReviewModal setReviewModal={setCreateReviewModal} productId={productId} />
+          <CreateReviewModal setCreateReviewModal={setCreateReviewModal} productId={productId} />
         </Modal>
       )}
 
       {reviews.length
         ? <div>{reviews.map(review =>
           <div className="product-page-review-card" key={review.id}>
-            <div>
-              {[...Array(review?.rating)].map((star) => (<i className="fa-solid fa-star"></i>))}
-            </div>
-            <div>{review.review}</div>
-            {sessionUser && sessionUser.id === review.reviewer_id && (
-              <div className="user-review-box">
-                <i className="fa-regular fa-pen-to-square hover-cursor" onClick={showUpdateReviewForm}></i>
-                <i className="fa-regular fa-trash-can hover-cursor" onClick={confirmDelete}></i>
-              </div>
-            )}
-
-            {updateReviewModal === true && (
-              <Modal onClose={() => setUpdateReviewModal(false)}>
-                <UpdateReviewModal setReviewModal={setUpdateReviewModal} reviewId={review.id} prevRating={review.rating} prevReview={review.review} />
-              </Modal>
-            )}
-
-            {deleteReviewModal === true && (
-              <Modal onClose={() => setDeleteReviewModal(false)}>
-                <DeleteReviewModal setReviewModal={setDeleteReviewModal} reviewId={review.id} />
-              </Modal>
-            )}
-
+            < ReviewCard review={review} sessionUser={sessionUser}/>
           </div>
         )}
         </div>

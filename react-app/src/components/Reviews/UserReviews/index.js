@@ -15,15 +15,17 @@ const UserReviews = () => {
   console.log(reviews)
 
   return (
-    <>
+    <div className="user-reviews-container">
+      Your reviewz:
       {reviews.map(review =>
         <div key={review.id}>
           {review.Product.name}
+          <img src={review.Product.image} />
           {review.rating}
           {review.review}
         </div>
       )}
-    </>
+    </div>
   )
 }
 export default UserReviews;

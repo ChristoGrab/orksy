@@ -25,7 +25,7 @@ def user_reviews():
   if len(user_reviews) == 0:
     return {"message": "You 'aven't reviewed any produktz yet"}
   
-  return {"Reviews": [review.user_reviews_to_dict() for review in user_reviews]}
+  return {"Reviews": [review.user_reviews_to_dict() for review in user_reviews]}, 200
 
 # UPDATE A REVIEW
 @review_routes.route('/<int:id>', methods=["PUT"])

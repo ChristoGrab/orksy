@@ -3,10 +3,12 @@ import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { updateReviewThunk } from "../../../store/reviews";
 
-const UpdateReviewModal = ( {reviewId, setReviewModal, prevRating, prevReview} ) => {
+const UpdateReviewModal = ( {reviewId, setUpdateReviewModal, prevRating, prevReview} ) => {
   
   const dispatch = useDispatch()
   const history = useHistory()
+  
+  console.log(reviewId)
   
   const [rating, setRating] = useState(prevRating)
   const [review, setReview] = useState(prevReview)
@@ -31,7 +33,7 @@ const UpdateReviewModal = ( {reviewId, setReviewModal, prevRating, prevReview} )
     }
 
     dispatch(updateReviewThunk(newReview, reviewId))
-    .then(response => setReviewModal(false))
+    .then(response => setUpdateReviewModal(false))
   }
 
   return (

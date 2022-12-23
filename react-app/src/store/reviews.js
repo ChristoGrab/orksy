@@ -130,6 +130,7 @@ const reviewsReducer = (state = initialState, action) => {
       const userReviews = {};
       action.reviews.Reviews.forEach(review => {
         userReviews[review.id] = review;
+        console.log(review)
       })
       
       return {

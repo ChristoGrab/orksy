@@ -9,8 +9,8 @@ class Review(db.Model):
   id = db.Column(db.Integer, primary_key=True)
   rating = db.Column(db.Integer, nullable=False)
   review = db.Column(db.String(255), nullable=False)
-  product_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")))
-  reviewer_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("products.id")))
+  product_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("products.id")))
+  reviewer_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")))
 
   # Relationships
   product = db.relationship("Product", back_populates="reviews")
