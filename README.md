@@ -1,6 +1,8 @@
 # Orksy
 
-Welcome to Orksy! Orksy is a fullstack clone of popular e-commerce site Etsy, themed around the Ork faction from the fictional Warhammer 40K universe. Users on Orksy are able to set up an online storefront via their profile page. The user's store serves as their gateway to creating, editing or deleting products to display on the site. Once a product has been listed, it can be reviewed by other users, who are also able to later edit or delete any reviews they have written.  The next planned feature is a persistent shopping cart!
+Welcome to Orksy! Orksy is a fullstack clone of popular e-commerce site Etsy, themed around the Ork faction from the fictional Warhammer 40K universe. 
+
+Users on Orksy are able to set up an online storefront via their profile page. The user's store serves as their gateway to creating, editing or deleting products to display on the site. Once a product has been listed, it can be reviewed by other users, who are also able to later edit or delete any reviews they have written.  The next planned feature is a persistent shopping cart!
 
 ## Tech Stacks
 
@@ -21,11 +23,17 @@ Welcome to Orksy! Orksy is a fullstack clone of popular e-commerce site Etsy, th
 ## Landing Page
 ![Landing Page Preview](https://user-images.githubusercontent.com/108154848/205359099-9069abcf-71d8-4d05-a5a9-bdecc378df19.jpg)
 
+The landing page consists of a grid of all products on the site.  The display order is randomized on each viewing for a more dynamic user experience.  The welcome message uses conditional rendering to provide a link for logged in users to their profile page.
+
 ## Storefront
 ![Storefront Preview](https://user-images.githubusercontent.com/108154848/205359149-5022c4c9-031f-49c9-984e-7ac3d9a92173.jpg)
 
+This is the user's hub for product functionality.  From here users can add a new product to their store, as well as edit and delete any products they have already posted on the site.
+
 ## Product Viewer
 ![Product Page Preview](https://user-images.githubusercontent.com/108154848/205359185-c60ed489-84a3-493c-bbb6-86694bc8e950.jpg)
+
+The page for viewing individual products is probably the component I'm most proud of.  It contains a number of hand-made animations using CSS with Javascript to conditionally render the product's description and shipping info.  The dates for the shipping and delivery are randomized based on the current date, adding a little programmatic flair to the page!
 
 ## Wiki Links
 Use these links to navigate to the Orksy wiki for further documentation on the site's structure:
