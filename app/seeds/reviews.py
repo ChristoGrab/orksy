@@ -28,19 +28,19 @@ def seed_reviews():
   wagon_1 = Review(
     rating=4,
     review="Riding around in my battlewagon, I kin feel da breeze caressing my soft Orkish skin as I trample dozens of innocent 'umies at a time. It's a lovely experienz.",
-    product_id=3,
+    product_id=4,
     reviewer_id=3
   )
   squiggoth_1 = Review(
     rating=5,
     review="If ya didn't already love squigs, da squiggoth is sure ta tickle yer fancy.  It can smash, it can roar, and best of all, it comes wiv a big old blasta ta melt even da toufest of foes.",
-    product_id=4,
+    product_id=5,
     reviewer_id=1
   )
   red_squig_1 = Review(
     rating=2,
     review="I wuz under the impression dis squig would come wiv some sort of special abilities, but it's just a regualar old squig.",
-    product_id=5,
+    product_id=8,
     reviewer_id=2
   )
   garg_2 = Review(
@@ -52,13 +52,13 @@ def seed_reviews():
   wagon_2 = Review(
     rating=4,
     review="Da battlewagon is a great kombination of firepower and speed. Everything an ork could possibly 'ope for in a ve'icle.",
-    product_id=3,
+    product_id=4,
     reviewer_id=4
   )
   squiggoth_2 = Review(
     rating=4,
     review="Almost perfekt.  Da squiggoth is a fine weapon of war, wiv colossal power. Sometimes it makes awkward gurgling noises, but not a major problem.",
-    product_id=4,
+    product_id=5,
     reviewer_id=5
   )
   rev_10 = Review(
@@ -88,7 +88,7 @@ def seed_reviews():
   rev_14 = Review(
     rating=4,
     review="Orkeosaurus is very cute",
-    product_id=8,
+    product_id=14,
     reviewer_id=9
   )
   rev_15 = Review(
@@ -115,7 +115,7 @@ def seed_reviews():
   db.session.add(rev_14)
   db.session.add(rev_15)
   db.session.commit()
-  
+
 def undo_reviews():
   if environment == "production":
     db.session.execute(f"TRUNCATE table {SCHEMA}.reviews RESTART IDENTITY CASCADE;")
