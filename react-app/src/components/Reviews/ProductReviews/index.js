@@ -4,7 +4,7 @@ import { loadReviewsThunk } from "../../../store/reviews"
 import { Modal } from '../../../context/Modal'
 import ReviewCard from '../index'
 import CreateReviewModal from "./CreateReviewModal"
-import './ProductReviews.css'
+import '../Reviews.css'
 
 const ProductReviews = ({ productId }) => {
 

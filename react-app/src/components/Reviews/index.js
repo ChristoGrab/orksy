@@ -2,12 +2,15 @@ import { useState } from "react"
 import { Modal } from "../../context/Modal"
 import UpdateReviewModal from "./ProductReviews/UpdateReviewModal"
 import DeleteReviewModal from "./ProductReviews/DeleteReviewModal"
+import "./Reviews.css"
 
 const ReviewCard = ({ review, sessionUser }) => {
   
+  // State variables for opening and closing review modals
   const [updateReviewModal, setUpdateReviewModal] = useState(false)
   const [deleteReviewModal, setDeleteReviewModal] = useState(false)
   
+  // onClick functions for modals
   const showUpdateReviewForm = async (e) => {
     e.preventDefault();
 
@@ -29,8 +32,8 @@ const ReviewCard = ({ review, sessionUser }) => {
       {
         sessionUser && sessionUser.id === review.reviewer_id && (
           <div className="user-review-box">
-            <i className="fa-regular fa-pen-to-square hover-cursor" onClick={showUpdateReviewForm}></i>
-            <i className="fa-regular fa-trash-can hover-cursor" onClick={confirmDelete}></i>
+            <i className="fa-regular fa-pen-to-square hover-cursor" onClick={showUpdateReviewForm} />
+            <i className="fa-regular fa-trash-can hover-cursor" onClick={confirmDelete} />
           </div>
         )
       }
@@ -38,7 +41,11 @@ const ReviewCard = ({ review, sessionUser }) => {
       {
         updateReviewModal === true && (
           <Modal onClose={() => setUpdateReviewModal(false)}>
-            <UpdateReviewModal setUpdateReviewModal={setUpdateReviewModal} reviewId={review.id} prevRating={review.rating} prevReview={review.review} />
+            <UpdateReviewModal 
+            setUpdateReviewModal={setUpdateReviewModal} 
+            reviewId={review.id} 
+            prevRating={review.rating} 
+            prevReview={review.review} />
           </Modal>
         )
       }
@@ -46,7 +53,9 @@ const ReviewCard = ({ review, sessionUser }) => {
       {
         deleteReviewModal === true && (
           <Modal onClose={() => setDeleteReviewModal(false)}>
-            <DeleteReviewModal setReviewModal={setDeleteReviewModal} reviewId={review.id} />
+            <DeleteReviewModal 
+            setReviewModal={setDeleteReviewModal} 
+            reviewId={review.id} />
           </Modal>
         )
       }

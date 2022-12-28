@@ -25,7 +25,7 @@ const DeleteReviewModal = ({ reviewId, setReviewModal }) => {
     <div id="delete-review-modal">
       <h2>Are ya sure, boss?</h2>
       <button className="auth-submit-button red" onClick={deleteReview}>Stomp on Review</button>
-      <button className="auth-submit-button" onClick={goBack}>Go Back</button>
+      <button className="auth-submit-button green" onClick={goBack}>Go Back</button>
     </div>
   )
 }

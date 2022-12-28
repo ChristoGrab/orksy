@@ -40,3 +40,22 @@
 #delete-review-modal {
   padding: 40px;
 }
+
+.rating-radio {
+  display: none;
+}
+
+/* USER REVIEWS */
+
+.user-reviews-container {
+  display: grid;
+  grid-template-columns: repeat (2, 1fr);
+  width: 80%;
+  justify-items: center;
+  gap: 5px;
+}
+
+.user-review-card {
+  border: 1px solid black;
+  width: 100%;
+}

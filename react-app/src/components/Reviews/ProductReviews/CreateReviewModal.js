@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { createReviewThunk } from "../../../store/reviews";
+import ReviewStars from '../ReviewStars'
 
 const CreateReviewModal = ({ productId, setCreateReviewModal }) => {
 
@@ -45,7 +46,10 @@ const CreateReviewModal = ({ productId, setCreateReviewModal }) => {
       )}
       <div className="auth-form-fields">
         <label className="auth-label" htmlFor="rating">Rating</label>
-        <select
+        <div className="create-hover">
+          <ReviewStars stars={rating} setStars={setRating} />
+        </div>
+        {/* <select
           value={rating}
           className="auth-input"
           onChange={e => setRating(e.target.value)}
@@ -55,7 +59,7 @@ const CreateReviewModal = ({ productId, setCreateReviewModal }) => {
           <option>3</option>
           <option>2</option>
           <option>1</option>
-        </select>
+        </select> */}
         <label className="auth-label" htmlFor="review">Review</label>
         <textarea
           type="text"
