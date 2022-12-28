@@ -24,17 +24,23 @@
   transform: scaleX(1.1) scaleY(1.1);
 }
 
+.review-crud-box {
+  display: flex;
+  gap: 5px;
+}
+
+.reviewer-name {
+  font-size: 11px;
+}
+
+/* REVIEW FORMS */
+
 .review-form {
   display: flex;
   flex-direction: column;
   height: 300px;
   padding: 20px;
   gap: 10px;
-}
-
-.user-review-box {
-  display: flex;
-  gap: 5px;
 }
 
 #delete-review-modal {

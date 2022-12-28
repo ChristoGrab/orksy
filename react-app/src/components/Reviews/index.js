@@ -29,9 +29,10 @@ const ReviewCard = ({ review, sessionUser }) => {
         {[...Array(review?.rating)].map((star) => (<i className="fa-solid fa-star"></i>))}
       </div>
       <div>{review.review}</div>
+      <div className="reviewer-name">{review.reviewer_name}</div>
       {
         sessionUser && sessionUser.id === review.reviewer_id && (
-          <div className="user-review-box">
+          <div className="review-crud-box">
             <i className="fa-regular fa-pen-to-square hover-cursor" onClick={showUpdateReviewForm} />
             <i className="fa-regular fa-trash-can hover-cursor" onClick={confirmDelete} />
           </div>
