@@ -1,13 +1,11 @@
-import { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { updateReviewThunk } from "../../../store/reviews";
 import ReviewStars from "../ReviewStars";
 
 const UpdateReviewModal = ( {reviewId, setUpdateReviewModal, prevRating, prevReview} ) => {
   
   const dispatch = useDispatch()
-  const history = useHistory()
   
   console.log(reviewId)
   

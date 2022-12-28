@@ -22,7 +22,7 @@ const ReviewCard = ({ review, sessionUser }) => {
 
     return setDeleteReviewModal(true)
   }
-  
+
   return (
     <div>
       <div>

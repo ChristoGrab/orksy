@@ -11,13 +11,13 @@ const ProfilePage = () => {
   const dispatch = useDispatch()
   const sessionUser = useSelector(state => state.session.user)
   const store = useSelector(state => state.stores.singleStore)
-  
-  const quotes = [
-    "Gork loves me, and Mork finks I is da best. No puny oomies is gonna kill me, not when da greenest gods in da galaxy is watchin' me!",
-    "We is gonna stomp da universe flat and kill anyfink that fights back. we're da Orks, and was made ta fight and win.",
-    "Right, first I'll take those teef out for yer, dat should help ease da pain in yer leg. Grokkit, hand me that wrench. Now then... Open wide, and say... AAARGH!",
-    "Wot's faster than a warbuggy, more killy than a warbike, and flies through da air like a bird? I got no bleedin' idea, but I'm gonna find out."
-  ]
+
+  // const quotes = [
+  //   "Gork loves me, and Mork finks I is da best. No puny oomies is gonna kill me, not when da greenest gods in da galaxy is watchin' me!",
+  //   "We is gonna stomp da universe flat and kill anyfink that fights back. we're da Orks, and was made ta fight and win.",
+  //   "Right, first I'll take those teef out for yer, dat should help ease da pain in yer leg. Grokkit, hand me that wrench. Now then... Open wide, and say... AAARGH!",
+  //   "Wot's faster than a warbuggy, more killy than a warbike, and flies through da air like a bird? I got no bleedin' idea, but I'm gonna find out."
+  // ]
 
   useEffect(() => {
     dispatch(getMyStoreThunk())
@@ -47,15 +47,19 @@ const ProfilePage = () => {
         <div id="profile-page-username">
           {sessionUser.username}
           {storeLinks}
-          <UserReviews />
         </div>
       </div>
-      
+
+      <div>
+        Your reviewz:
+        <UserReviews />
+      </div>
+
       {/* <div className="profile-page-quotes">
         <div id="inspiration-quote-message">Orkish inspiration of da day:</div>
         {quotes[Math.floor(Math.random()*quotes.length)]}
       </div> */}
-      
+
       <div className="orksy-explanation-container">
         <div className="orksy-explanation-title">
           Note to the User:
@@ -73,11 +77,11 @@ const ProfilePage = () => {
           <br />
           <br />
           <ul id="orkish-facts">Some Ork facts to note:
-           
-          <li>Orks in the Warhammer 40K universe are green, mean, and thick as bricks.</li>
-          <li>All Orks speak with an exagerrated Cockney accent.</li>  
-          <li>Orks are like sharks in that their teeth will regularly fall out and grow back in.  "Teef" have become the Orks' form of currency, so the prices on Orksy are all listed as such.</li>
-          <li>Orks are made for two things: fighting, and winning.</li>
+
+            <li>Orks in the Warhammer 40K universe are green, mean, and thick as bricks.</li>
+            <li>All Orks speak with an exagerrated Cockney accent.</li>
+            <li>Orks are like sharks in that their teeth will regularly fall out and grow back in.  "Teef" have become the Orks' form of currency, so the prices on Orksy are all listed as such.</li>
+            <li>Orks are made for two things: fighting, and winning.</li>
           </ul>
         </div>
       </div>

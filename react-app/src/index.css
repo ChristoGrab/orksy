@@ -31,10 +31,6 @@ input {
   content: " ☠️";
 }
 
-button:hover {
-  cursor: pointer;
-}
-
 label {
   font-weight: 500;
   font-size: 14px;
@@ -61,4 +57,6 @@ label {
   background-color: #832212;
 }
 
-
+button:hover {
+  cursor: pointer;
+}

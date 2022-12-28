@@ -66,7 +66,6 @@ export const createReviewThunk = (review, productId) => async (dispatch) => {
   
   if (response.ok) {
     const data = await response.json()
-    console.log(data)
     dispatch(createReview(data))
     return data
   } else {
@@ -86,7 +85,7 @@ export const updateReviewThunk = (review, reviewId) => async (dispatch) => {
   
   if (response.ok) {
     const data = await response.json();
-    dispatch(updateReview(review))
+    dispatch(updateReview(data))
   }
   else {
     const errorData = await response.json()

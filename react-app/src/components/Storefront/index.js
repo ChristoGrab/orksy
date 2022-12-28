@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useParams, Link, useHistory } from 'react-router-dom'
 import * as storeActions from "../../store/stores"
@@ -39,7 +39,7 @@ const StoreFront = () => {
   return (
     <div className="storefront-container">
       <div className="storefront-banner-container">
-        <img id="storefront-banner" src={orkBanner}></img>
+        <img id="storefront-banner" alt="an imposing orkish banner" src={orkBanner}></img>
       </div>
       
       <div className="storefront-under-banner">

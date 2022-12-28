@@ -15,20 +15,45 @@ const ProductReviews = ({ productId }) => {
 
   // Modal state variables //
   const [createReviewModal, setCreateReviewModal] = useState(false)
-
+  const [userHasReviewed, setUserHasReviewed] = useState(false)
+  
+    // Function to check if user has left a review
+    const checkForUserReview = (reviews) => {
+    
+      console.log(reviews)
+      if (!reviews.length) return
+      reviews.forEach(review => {
+        console.log(review.reviewer_id)
+        if (review.reviewer_id === sessionUser.id) {
+          console.log("reviewer id match")
+          return setUserHasReviewed(true)
+        }
+      })
+    }
 
   // Fetch product reviews //
   useEffect(() => {
     dispatch(loadReviewsThunk(productId))
-  }, [dispatch])
+  }, [dispatch, productId])
+  
+  useEffect(() => {
+    if (sessionUser) {
+      checkForUserReview(reviews)
+    }
+  }, [dispatch, reviews, sessionUser])
 
 
-  // Functions to handle opening each review modal //
+  // Function to handle review modal //
   const showCreateReviewForm = async (e) => {
     e.preventDefault();
 
     return setCreateReviewModal(true)
   }
+  
+
+
+  
+  console.log("User has left review status: ", userHasReviewed)
 
   return (
     <div className="product-page-reviews-container">
@@ -37,7 +62,7 @@ const ProductReviews = ({ productId }) => {
         : <div className="product-reviews-number">Dis produkt 'asn't got any reviewz yet</div>
       }
 
-      {sessionUser && (
+      {sessionUser && !userHasReviewed && (
         <button className="product-page-button green" onClick={showCreateReviewForm}>Leave a Review</button>
       )}
 
