@@ -1,11 +1,23 @@
 from app.models import db, Review, environment, SCHEMA
 
 def seed_reviews():
-  rev_1 = Review(
+  meg_1 = Review(
     rating=4,
-    review="Liked it",
+    review="Dis armour is 'ard, just as advertized.",
     product_id=1,
     reviewer_id=1
+  )
+  meg_2 = Review(
+    rating=4,
+    review="I like ta use dis armor ta smash my puny enemiez ta bitz!",
+    product_id=1,
+    reviewer_id=2
+  )
+  meg_3 = Review(
+    rating=1,
+    review="Dis armour wuz terrible, I tested it wiv a rokkit launcha and da whole fing wuz 'sploded instantly. Not worf da teef.",
+    product_id=1,
+    reviewer_id=3
   )
   rev_2 = Review(
     rating=3,
@@ -30,12 +42,6 @@ def seed_reviews():
     review="Disliked it",
     product_id=5,
     reviewer_id=2
-  )
-  rev_6 = Review(
-    rating=1,
-    review="Hated it",
-    product_id=1,
-    reviewer_id=3
   )
   rev_7 = Review(
     rating=5,
@@ -92,12 +98,13 @@ def seed_reviews():
     reviewer_id=5
   )
 
-  db.session.add(rev_1)
+  db.session.add(meg_1)
+  db.session.add(meg_2)
+  db.session.add(meg_3)
   db.session.add(rev_2)
   db.session.add(rev_3)
   db.session.add(rev_4)
   db.session.add(rev_5)
-  db.session.add(rev_6)
   db.session.add(rev_7)
   db.session.add(rev_8)
   db.session.add(rev_9)
