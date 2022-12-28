@@ -1,63 +1,63 @@
 from app.models import db, Review, environment, SCHEMA
 
 def seed_reviews():
-  meg_1 = Review(
+  meganob_1 = Review(
     rating=4,
     review="Dis armour is 'ard, just as advertized.",
     product_id=1,
     reviewer_id=1
   )
-  meg_2 = Review(
+  meganob_2 = Review(
     rating=4,
     review="I like ta use dis armor ta smash my puny enemiez ta bitz!",
     product_id=1,
     reviewer_id=2
   )
-  meg_3 = Review(
+  meganob_3 = Review(
     rating=1,
     review="Dis armour wuz terrible, I tested it wiv a rokkit launcha and da whole fing wuz 'sploded instantly. Not worf da teef.",
     product_id=1,
     reviewer_id=3
   )
-  rev_2 = Review(
+  garg_1 = Review(
     rating=3,
-    review="It was ok",
+    review="Overall I 'ad a mixed time wiv diz produkt. Da gargant is indeed an impressive beast by nature. 'owever, I tried fighting a humie titan wiv it, and suffice to say, da rezults were not convincing.",
     product_id=2,
     reviewer_id=2
   )
-  rev_3 = Review(
+  wagon_1 = Review(
     rating=4,
-    review="Liked it",
+    review="Riding around in my battlewagon, I kin feel da breeze caressing my soft Orkish skin as I trample dozens of innocent 'umies at a time. It's a lovely experienz.",
     product_id=3,
     reviewer_id=3
   )
-  rev_4 = Review(
+  squiggoth_1 = Review(
     rating=5,
-    review="Loved it",
+    review="If ya didn't already love squigs, da squiggoth is sure ta tickle yer fancy.  It can smash, it can roar, and best of all, it comes wiv a big old blasta ta melt even da toufest of foes.",
     product_id=4,
     reviewer_id=1
   )
-  rev_5 = Review(
+  red_squig_1 = Review(
     rating=2,
-    review="Disliked it",
+    review="I wuz under the impression dis squig would come wiv some sort of special abilities, but it's just a regualar old squig.",
     product_id=5,
     reviewer_id=2
   )
-  rev_7 = Review(
+  garg_2 = Review(
     rating=5,
-    review="Loved it",
+    review="It's da biggest and baddest mek in town. As advertised, der is nuffin ya can't krush wiv a good old gargant under yer control. Would blast my enemies again.",
     product_id=2,
     reviewer_id=1
   )
-  rev_8 = Review(
+  wagon_2 = Review(
     rating=4,
-    review="Liked it",
+    review="Da battlewagon is a great kombination of firepower and speed. Everything an ork could possibly 'ope for in a ve'icle.",
     product_id=3,
     reviewer_id=4
   )
-  rev_9 = Review(
+  squiggoth_2 = Review(
     rating=4,
-    review="Liked it",
+    review="Almost perfekt.  Da squiggoth is a fine weapon of war, wiv colossal power. Sometimes it makes awkward gurgling noises, but not a major problem.",
     product_id=4,
     reviewer_id=5
   )
@@ -98,16 +98,16 @@ def seed_reviews():
     reviewer_id=5
   )
 
-  db.session.add(meg_1)
-  db.session.add(meg_2)
-  db.session.add(meg_3)
-  db.session.add(rev_2)
-  db.session.add(rev_3)
-  db.session.add(rev_4)
-  db.session.add(rev_5)
-  db.session.add(rev_7)
-  db.session.add(rev_8)
-  db.session.add(rev_9)
+  db.session.add(meganob_1)
+  db.session.add(meganob_2)
+  db.session.add(meganob_3)
+  db.session.add(wagon_1)
+  db.session.add(garg_1)
+  db.session.add(squiggoth_1)
+  db.session.add(red_squig_1)
+  db.session.add(garg_2)
+  db.session.add(wagon_2)
+  db.session.add(squiggoth_2)
   db.session.add(rev_10)
   db.session.add(rev_11)
   db.session.add(rev_12)
