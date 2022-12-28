@@ -12,7 +12,7 @@ def product_reviews(id):
   Query for all reviews from a specific product
   """
   reviews = Review.query.filter(Review.product_id == id).all()
-  return {"Reviews": [review.to_dict() for review in reviews]}
+  return {"Reviews": [review.product_review_to_dict() for review in reviews]}, 200
   
 # GET ALL REVIEWS FOR CURRENT USER
 @review_routes.route('/user')
@@ -25,7 +25,7 @@ def user_reviews():
   if len(user_reviews) == 0:
     return {"message": "You 'aven't reviewed any produktz yet"}
   
-  return {"Reviews": [review.user_reviews_to_dict() for review in user_reviews]}, 200
+  return {"Reviews": [review.user_review_to_dict() for review in user_reviews]}, 200
 
 # UPDATE A REVIEW
 @review_routes.route('/<int:id>', methods=["PUT"])
@@ -61,7 +61,6 @@ def delete_review(id):
 
   if current_user.id != review.reviewer_id:
     return {"message": "You cannot delete reviews that do not belong to you"}, 403
-
 
   if review:
     db.session.delete(review)

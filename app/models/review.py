@@ -15,8 +15,9 @@ class Review(db.Model):
   # Relationships
   product = db.relationship("Product", back_populates="reviews")
   reviewer = db.relationship("User", back_populates="reviews")
-  
-  def to_dict(self):
+
+  # to_dict method for fetching product
+  def product_review_to_dict(self):
     review = {
       "id": self.id,
       "rating": self.rating,
@@ -25,10 +26,10 @@ class Review(db.Model):
       "reviewer_id": self.reviewer_id,
       "reviewer_name": self.reviewer.username
     }
-    
+
     return review;
-    
-  def user_reviews_to_dict(self):
+
+  def user_review_to_dict(self):
     review = {
       "id": self.id,
       "rating": self.rating,
@@ -41,5 +42,5 @@ class Review(db.Model):
         "image": self.product.image
       }
     }
-    
+
     return review;
