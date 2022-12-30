@@ -50,7 +50,7 @@ const ProfilePage = () => {
         </div>
       </div>
 
-      <div>
+      <div className="profile-page-review-container">
         Your reviewz:
         <UserReviews />
       </div>

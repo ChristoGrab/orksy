@@ -55,7 +55,7 @@ const UserReviews = () => {
               </Modal>
             )
           }
-
+          
           {
             deleteReviewModal === true && (
               <Modal onClose={() => setDeleteReviewModal(false)}>
@@ -65,7 +65,6 @@ const UserReviews = () => {
               </Modal>
             )
           }
-          
         </div>
       )}
     </div>
