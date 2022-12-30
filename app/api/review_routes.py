@@ -45,7 +45,7 @@ def update_review(id):
     review.rating = request.json["rating"]
     review.review = request.json["review"]
     db.session.commit()
-    return review.to_dict()
+    return review.product_review_to_dict()
     
 # DELETE A REVIEW
 @review_routes.route('/<int:id>', methods=["DELETE"])

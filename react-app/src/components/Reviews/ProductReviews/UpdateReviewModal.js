@@ -21,6 +21,7 @@ const UpdateReviewModal = ( {reviewId, setUpdateReviewModal, prevRating, prevRev
     setFormSubmitted(true)
     
     const errorList = []
+    if (rating < 1) errorList.push("Don't forget ta leave a rating by clickin' on da shiny starz")
     if (!review.length) errorList.push("Don't be a naff leaving an empty review")
     setErrors(errorList)
     

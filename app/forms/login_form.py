@@ -9,7 +9,7 @@ def user_exists(form, field):
     email = field.data
     user = User.query.filter(User.email == email).first()
     if not user:
-        raise ValidationError("Yer email ain't in our recordz")
+        raise ValidationError("Yer kredentials were wrong. Are you a humie spy?")
 
 
 def password_matches(form, field):
@@ -17,11 +17,8 @@ def password_matches(form, field):
     password = field.data
     email = form.data['email']
     user = User.query.filter(User.email == email).first()
-    if not user:
-        raise ValidationError("No such user in Orksy")
-    if not user.check_password(password):
+    if not user or not user.check_password(password):
         raise ValidationError('Yer kredentials were wrong. Are you a humie spy?')
-
 
 class LoginForm(FlaskForm):
     email = StringField('email', validators=[DataRequired("Yer email is required"), user_exists])

@@ -7,7 +7,7 @@ const CreateReviewModal = ({ productId, setCreateReviewModal }) => {
 
   const dispatch = useDispatch()
 
-  const [rating, setRating] = useState(5)
+  const [rating, setRating] = useState(0)
   const [review, setReview] = useState("")
   const [errors, setErrors] = useState([])
   const [formSubmitted, setFormSubmitted] = useState(false)
@@ -19,6 +19,7 @@ const CreateReviewModal = ({ productId, setCreateReviewModal }) => {
     setFormSubmitted(true)
 
     const errorList = []
+    if (rating < 1) errorList.push("Don't forget ta leave a rating by clickin' on da shiny starz")
     if (!review.length) errorList.push("Don't be a naff leaving an empty review")
     setErrors(errorList)
 

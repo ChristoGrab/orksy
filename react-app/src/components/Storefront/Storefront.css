@@ -31,6 +31,7 @@
   align-items: center;
   color: white;
   margin: 0 5px;
+  transition: all 200ms ease-in;
 }
 
 #edit-store-link,
@@ -55,6 +56,7 @@
 #delete-product-button:hover,
 #edit-product-button:hover {
   box-shadow: 1px 1px 5px #757575;
+  transform: scale(1.1, 1.1)
 }
 
 .storefront-under-banner {

@@ -148,6 +148,6 @@ def create_review(product_id):
     db.session.add(new_review)
     db.session.commit()
     
-    return new_review.to_dict(), 200
+    return new_review.product_review_to_dict(), 200
   else:
     return form.errors

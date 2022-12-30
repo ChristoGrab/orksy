@@ -5,7 +5,7 @@ def seed_reviews():
     rating=4,
     review="Dis armour is 'ard, just as advertized.",
     product_id=1,
-    reviewer_id=1
+    reviewer_id=9
   )
   meganob_2 = Review(
     rating=4,
@@ -35,7 +35,7 @@ def seed_reviews():
     rating=5,
     review="If ya didn't already love squigs, da squiggoth is sure ta tickle yer fancy.  It can smash, it can roar, and best of all, it comes wiv a big old blasta ta melt even da toufest of foes.",
     product_id=5,
-    reviewer_id=1
+    reviewer_id=8
   )
   red_squig_1 = Review(
     rating=2,
@@ -47,7 +47,7 @@ def seed_reviews():
     rating=5,
     review="It's da biggest and baddest mek in town. As advertised, der is nuffin ya can't krush wiv a good old gargant under yer control. Would blast my enemies again.",
     product_id=2,
-    reviewer_id=1
+    reviewer_id=4
   )
   wagon_2 = Review(
     rating=4,

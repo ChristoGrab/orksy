@@ -63,7 +63,7 @@ const ProductReviews = ({ productId }) => {
       }
 
       {sessionUser && !userHasReviewed && (
-        <button className="product-page-button green" onClick={showCreateReviewForm}>Leave a Review</button>
+       <button className="product-page-button green" onClick={showCreateReviewForm}>Leave a Review</button>
       )}
 
       {createReviewModal === true && (

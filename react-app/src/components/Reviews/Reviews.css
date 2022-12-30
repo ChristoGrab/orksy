@@ -38,7 +38,7 @@
 .review-form {
   display: flex;
   flex-direction: column;
-  height: 300px;
+  min-height: 340px;
   padding: 20px;
   gap: 10px;
 }
