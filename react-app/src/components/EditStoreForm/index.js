@@ -62,12 +62,16 @@ function EditStoreForm() {
         Wanna give da store a shiny new coat of paint, do yer?
         {errors.map((error, idx) =>
           <div key={idx} className="error-message">{error}</div>)}
-        <label>Name - <span className="form-note">(70 chars max)</span></label>
+        <label>Name - 
+          <span className="form-note">(70 chars max)</span>
+        </label>
         <input className="store-form-input"
           type="text"
           value={name}
           onChange={e => setName(e.target.value)} />
-        <label>Description - <span className="form-note">(1000 chars max)</span></label>
+        <label>Description - 
+          <span className="form-note">(1000 chars max)</span>
+        </label>
         <textarea className="store-form-textarea"
           type="text"
           value={description}

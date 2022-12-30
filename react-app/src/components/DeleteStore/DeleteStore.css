@@ -27,30 +27,27 @@
 
 .confirm-delete-button {
   background-color: #832212;
-  height: 50px;
-  width: 250px;
-  border-radius: 24px;
-  font-size: 15px;
   border: none;
   color: white;
 }
 
-.confirm-delete-button:hover {
-  box-shadow: 1px 1px 3px lightslategray;
-  background-color: #6b010c;
-  cursor: pointer;
-}
-
+.confirm-delete-button,
 .abort-delete-button {
-  background-color: white;
   height: 50px;
   width: 250px;
   border-radius: 24px;
   font-size: 15px;
-  border: 1px solid darkgrey;
+  transition: 200ms ease-out;
 }
 
+.confirm-delete-button:hover,
 .abort-delete-button:hover {
   box-shadow: 1px 1px 3px lightslategray;
-  cursor: pointer;
+  transform: scale(1.05)
+}
+
+.abort-delete-button {
+  color: #1f5429;
+  background-color: white;
+  border: 1px solid darkgrey;
 }
