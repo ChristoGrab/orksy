@@ -13,7 +13,6 @@ function EditStoreForm() {
   const history = useHistory();
   const { storeId } = useParams();
 
-
   const [name, setName] = useState("")
   const [description, setDescription] = useState("")
   const [errors, setErrors] = useState([])
@@ -48,7 +47,6 @@ function EditStoreForm() {
       banner_image: ""
     }
 
-    console.log(new_store)
     dispatch(updateStoreThunk(new_store, storeId))
       .then(data => history.push('/profile'))
   }

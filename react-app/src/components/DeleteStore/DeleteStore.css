@@ -17,18 +17,14 @@
   border-radius: 5px;
 }
 
+/* Buttons */
+
 .delete-page-buttons {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   padding-top: 2%;
   gap: 5%;
-}
-
-.confirm-delete-button {
-  background-color: #832212;
-  border: none;
-  color: white;
 }
 
 .confirm-delete-button,
@@ -44,6 +40,12 @@
 .abort-delete-button:hover {
   box-shadow: 1px 1px 3px lightslategray;
   transform: scale(1.05)
+}
+
+.confirm-delete-button {
+  background-color: #832212;
+  border: none;
+  color: white;
 }
 
 .abort-delete-button {
