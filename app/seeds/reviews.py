@@ -61,41 +61,77 @@ def seed_reviews():
     product_id=5,
     reviewer_id=5
   )
-  rev_10 = Review(
+  squiggoth_3 = Review(
     rating=3,
-    review="Mediocre",
+    review="Mediocre. My squiggoth managed to run about 300 yardz before gettin' it's head 'sploded by an Eldar mage git.  Now I'm in teef debt wiv nothin' ta show for it.",
     product_id=5,
     reviewer_id=6
   )
-  rev_11 = Review(
+  mega_armor_1 = Review(
     rating=2,
-    review="Disliked it",
-    product_id=1,
+    review="Meganobz should be da 'ardest of da bunch, but a humie Terminator wiped out a whole squad of 'em right in front of my eyez.",
+    product_id=26,
     reviewer_id=7
   )
-  rev_12 = Review(
+  basha_kroozer_1 = Review(
     rating=2,
-    review="Disliked it",
+    review="Disliked it. Shoulda bought a hamma stompa instead.",
     product_id=6,
     reviewer_id=8
   )
-  rev_13 = Review(
+  rokkit_1 = Review(
     rating=5,
-    review="Dis produkt was da very finest of da bunch",
+    review="Dis produkt was da very finest of da bunch. It 'splodes stuff left and right at will, it does.",
     product_id=7,
     reviewer_id=10
   )
-  rev_14 = Review(
+  saurus_1 = Review(
     rating=4,
-    review="Orkeosaurus is very cute",
+    review="Orkeosaurus is very cute. I like to play wiv his widdle teef, yes I do, yes I do.",
     product_id=14,
     reviewer_id=9
   )
-  rev_15 = Review(
+  fighta_1 = Review(
     rating=2,
-    review="It didn't even take off before exploding",
-    product_id=9,
+    review="It didn't even take off before exploding. Wanted to at least get in the air first...",
+    product_id=15,
     reviewer_id=5
+  )
+  chain_choppa_1 = Review(
+    rating=5,
+    review="It's an 'ard axe wiv some 'ard teef. What more could an Ork possibly want in life?",
+    product_id=23,
+    reviewer_id=10
+  )
+  deff_dread_1 = Review(
+    rating=4,
+    review="Highly recommend, even more fun to pilot than a killa kan. And I love piloting killa kans.",
+    product_id=24,
+    reviewer_id=9
+  )
+  big_shoota_1 = Review(
+    rating=3,
+    review="Lots of firepower, which is good, but it kept jammin' on me, which is not good.",
+    product_id=21,
+    reviewer_id=8
+  )
+  mork_gaze_1 = Review(
+    rating=5,
+    review="All hail da mighty gaze of da mighty mork, who is definitely more mighty than Gork.  Or was it da other way around?",
+    product_id=25,
+    reviewer_id=10
+  )
+  chain_toof_1 = Review(
+    rating=1,
+    review="I'm not even sure why dis is listed 'ere?  It's just a toof dat costs more teef to buy.",
+    product_id=16,
+    reviewer_id=7
+  )
+  dakkajet_1 = Review(
+    rating=4,
+    review="Dakkajet's 'ave a lot of firepower, and dis model doesn't disappoint.  I was able ta shoot down multiple 'umie battlecraft at a time in dis.  Good times all around.",
+    product_id=18,
+    reviewer_id=9
   )
 
   db.session.add(meganob_1)
@@ -108,12 +144,18 @@ def seed_reviews():
   db.session.add(garg_2)
   db.session.add(wagon_2)
   db.session.add(squiggoth_2)
-  db.session.add(rev_10)
-  db.session.add(rev_11)
-  db.session.add(rev_12)
-  db.session.add(rev_13)
-  db.session.add(rev_14)
-  db.session.add(rev_15)
+  db.session.add(squiggoth_3)
+  db.session.add(mega_armor_1)
+  db.session.add(basha_kroozer_1)
+  db.session.add(rokkit_1)
+  db.session.add(saurus_1)
+  db.session.add(fighta_1)
+  db.session.add(chain_choppa_1)
+  db.session.add(deff_dread_1)
+  db.session.add(big_shoota_1)
+  db.session.add(mork_gaze_1)
+  db.session.add(chain_toof_1)
+  db.session.add(dakkajet_1)
   db.session.commit()
 
 def undo_reviews():
