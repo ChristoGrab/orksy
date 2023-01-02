@@ -49,6 +49,7 @@ const UpdateReviewModal = ( {reviewId, setUpdateReviewModal, prevRating, prevRev
         </div>
         <label className="auth-label" htmlFor="review">Review</label>
         <textarea 
+        className="review-textarea"
         type="text"
         value={review}
         onChange={e => setReview(e.target.value)}

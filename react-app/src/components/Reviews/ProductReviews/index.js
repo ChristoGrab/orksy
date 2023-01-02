@@ -19,13 +19,10 @@ const ProductReviews = ({ productId }) => {
   
     // Function to check if user has left a review
     const checkForUserReview = (reviews) => {
-    
-      console.log(reviews)
       if (!reviews.length) return
+      
       reviews.forEach(review => {
-        console.log(review.reviewer_id)
         if (review.reviewer_id === sessionUser.id) {
-          console.log("reviewer id match")
           return setUserHasReviewed(true)
         }
       })
@@ -62,8 +59,9 @@ const ProductReviews = ({ productId }) => {
         : <div className="product-reviews-number">Dis produkt 'asn't got any reviewz yet</div>
       }
 
+
       {sessionUser && !userHasReviewed && (
-       <button className="product-page-button green" onClick={showCreateReviewForm}>Leave a Review</button>
+       <button className="product-page-button green" id="leave-review-button" onClick={showCreateReviewForm}>Leave a Review</button>
       )}
 
       {createReviewModal === true && (

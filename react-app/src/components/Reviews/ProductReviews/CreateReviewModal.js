@@ -62,6 +62,7 @@ const CreateReviewModal = ({ productId, setCreateReviewModal }) => {
         </select> */}
         <label className="auth-label" htmlFor="review">Review</label>
         <textarea
+          className="review-textarea"
           type="text"
           value={review}
           onChange={e => setReview(e.target.value)}
