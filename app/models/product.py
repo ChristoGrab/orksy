@@ -12,12 +12,11 @@ class Product(db.Model):
   price = db.Column(db.Integer, nullable=False)
   store_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("stores.id")))
   image = db.Column(db.String)
-  # category_id = db.Column(db.Integer, db.ForeignKey("categories.id"))
 
   # Relationships
   store = db.relationship("Store", back_populates="products")
   reviews = db.relationship("Review", back_populates="product", cascade="delete")
-  
+
   def to_dict(self, store=False):
     product = {
       'id': self.id,
