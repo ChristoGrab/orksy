@@ -20,6 +20,15 @@ Users on Orksy are able to set up an online storefront via their profile page. T
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
 
+### Database:
+
+![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+
+### Hosting:
+
+![Render](https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white)
+
+
 ## Landing Page
 ![Landing Page Preview](https://user-images.githubusercontent.com/108154848/205359099-9069abcf-71d8-4d05-a5a9-bdecc378df19.jpg)
 
@@ -41,6 +50,7 @@ Use these links to navigate to the Orksy wiki for further documentation on the s
 ### [Site Features](https://github.com/ChristoGrab/orksy/wiki/Site-Features)
 ### [User Stories](https://github.com/ChristoGrab/orksy/wiki/User-Stories)
 ### [DB Schema](https://github.com/ChristoGrab/orksy/wiki/DB-Schema)
+### [Instructions for local hosting]
 
 ## Contact Me
 
