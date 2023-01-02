@@ -50,7 +50,7 @@ Use these links to navigate to the Orksy wiki for further documentation on the s
 ### [Site Features](https://github.com/ChristoGrab/orksy/wiki/Site-Features)
 ### [User Stories](https://github.com/ChristoGrab/orksy/wiki/User-Stories)
 ### [DB Schema](https://github.com/ChristoGrab/orksy/wiki/DB-Schema)
-### [Instructions for local hosting]
+### [Instructions for local hosting](https://github.com/ChristoGrab/orksy/wiki/Instructions-for-Running-App-Locally)
 
 ## Contact Me
 
