@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
+import { Link } from "react-router-dom"
 import { Modal } from '../../../context/Modal'
 import UpdateReviewModal from '../ProductReviews/UpdateReviewModal'
 import DeleteReviewModal from "../ProductReviews/DeleteReviewModal"
@@ -22,10 +23,10 @@ const UserReviewCard = ({ review }) => {
 
   return (
     <div className="user-review-card" key={review.id}>
-      <div className="user-review-card-box-1">
+      <Link to="/products/{review.Product.id}" className="user-review-card-box-1">
         <img className="review-card-image" alt={review.Product.name} src={review.Product.image} />
         <h3>{review.Product.name}</h3>
-      </div>
+      </Link>
       <div className="user-review-card-box-2">
         <div>{[...Array(review?.rating)].map((star) => (<i className="fa-solid fa-star"></i>))}</div>
         <div>{review.review}</div>

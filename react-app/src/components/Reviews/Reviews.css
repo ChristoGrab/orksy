@@ -99,6 +99,12 @@
   width: 100%;
   padding: 10px 0;
   border-bottom: 1px solid #d2d2d2;
+  text-decoration: none;
+  color: black;
+}
+
+.user-review-card-box-1:hover {
+  text-decoration: underline;
 }
 
 .user-review-card-box-2 {
