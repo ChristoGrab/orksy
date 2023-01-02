@@ -14,10 +14,13 @@ const UserReviews = () => {
   )
 
   return (
-    <div className="user-reviews-container">
-      {reviews.map(review =>
+    <div>
+      {reviews.length 
+      ? <div className="user-reviews-container">{reviews.map(review =>
         < UserReviewCard review={review} />
-      )}
+        )}</div>
+      : <div>You have no reviews yet.</div>
+      }
     </div>
   )
 }

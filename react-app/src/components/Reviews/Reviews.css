@@ -73,11 +73,11 @@
 /* USER REVIEWS */
 
 .user-reviews-container {
-  display: grid;
-  grid-template-columns: repeat (2, 1fr);
-  width: 80%;
+  display: flex;
+  flex-direction: column;
+  width: auto;
   justify-items: center;
-  gap: 5px;
+  gap: 30px;
 }
 
 .user-review-card {
@@ -87,8 +87,9 @@
   flex-wrap: no-wrap;
   background: #ffffff;
   border: 1px solid #d2d2d2;
-  width: 75%;
+  width: 780px;
   border-radius: 3px;
+  box-shadow: 0 3px 0 #e6e6e5;
 }
 
 .user-review-card-box-1 {

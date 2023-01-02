@@ -51,7 +51,7 @@ const ProfilePage = () => {
       </div>
 
       <div className="profile-page-review-container">
-        Your reviewz:
+        <h3>Your reviewz</h3>
         <UserReviews />
       </div>
 

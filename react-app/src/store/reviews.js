@@ -127,10 +127,12 @@ const reviewsReducer = (state = initialState, action) => {
     
     case USER_REVIEWS: {
       const userReviews = {};
+      
+      if (action.reviews.Reviews) {
       action.reviews.Reviews.forEach(review => {
         userReviews[review.id] = review;
-        console.log(review)
       })
+    }
       
       return {
         ...state,
