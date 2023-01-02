@@ -39,7 +39,7 @@ const CreateReviewModal = ({ productId, setCreateReviewModal }) => {
 
   return (
     <form className="review-form">
-      <h2>Let da boyz know if dis produkt is up ta snuff</h2>
+      <h2>Let da Orks know if dis produkt is up ta snuff</h2>
       {errors.map((error, ind) => (
         <div className="error-message" key={ind}>{error}</div>
       )
