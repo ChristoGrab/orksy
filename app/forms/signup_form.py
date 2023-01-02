@@ -9,7 +9,7 @@ def user_exists(form, field):
     email = field.data
     user = User.query.filter(User.email == email).first()
     if user:
-        raise ValidationError('Yer already an Orksy user, dimwit')
+        raise ValidationError('Dis email already belongs to an Orksy user, dimwit')
 
 
 def username_exists(form, field):

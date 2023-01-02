@@ -25,7 +25,7 @@ class Product(db.Model):
       'description': self.description,
       'price': self.price,
       'store_id': self.store_id,
-      'image': self.image,
+      'image': self.image
     }
     if store:
       product["store"] = self.store.to_dict()

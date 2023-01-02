@@ -5,7 +5,7 @@ const DELETE_STORE = 'stores/delete';
 const UPDATE_STORE = 'stores/update';
 const GET_STORE = 'stores/getOne';
 const GET_MY_STORE = "store/getMine"
-const ADD_IMAGE = 'stores/addImage';
+// const ADD_IMAGE = 'stores/addImage';
 const CLEAR_STORE = 'stores/clear';
 
 // ------ STORE ACTION CREATORS ------ //

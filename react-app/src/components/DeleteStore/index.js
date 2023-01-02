@@ -11,13 +11,14 @@ function DeleteStore() {
   const { storeId } = useParams();
   const dispatch = useDispatch();
   const history = useHistory();
-  // Use parseInt so thunk can interpret Id
-  const deleteId = storeId
+  const deleteId = storeId;
 
   useEffect(() => {
     dispatch(getStoreThunk(deleteId))
   }, [dispatch, deleteId])
 
+  
+  // functions to handle either confirming or aborting deletion of store
   const confirmDelete = async (e) => {
     e.preventDefault();
 

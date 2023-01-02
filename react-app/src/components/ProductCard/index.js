@@ -3,8 +3,6 @@ import "./ProductCard.css"
 
 const ProductCard = ({ product }) => {
   
-  
-  
   return (
     <Link to={`/products/${product.id}`} className="product-card">
       <img src={product.image} className="product-card-image" alt={product.name} />

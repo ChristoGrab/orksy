@@ -1,15 +1,16 @@
 import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
-import ProductCard from '../ProductCard'
 import { loadProductsThunk } from '../../store/products'
+import ProductCard from '../ProductCard'
 import './LandingPage.css'
 
 const LandingPage = () => {
 
+  const dispatch = useDispatch()
+
   const sessionUser = useSelector(state => state.session.user)
   const products = useSelector(state => state.products.productList)
-  const dispatch = useDispatch()
   const [dataLoaded, setDataLoaded] = useState(false)
 
   useEffect(() => {
@@ -20,10 +21,9 @@ const LandingPage = () => {
   if (!products) return null;
 
   let productList = Object.values(products)
-  console.log(productList)
-  
+
   const shuffle = arr => [...arr].sort(() => Math.random() - 0.5);
-  
+
   let newList = shuffle(productList)
 
   return (
@@ -50,7 +50,6 @@ const LandingPage = () => {
           <img className="category-pic" alt="Rokkits" src={"https://orksybucket.s3.us-east-2.amazonaws.com/flight-store.jpg"} />
           Rokkits</Link>
       </div>
-      
       <div className="landing-page-grid">
         {newList.map(product => (
           <div key={product.id} className="product-card-container">

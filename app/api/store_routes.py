@@ -13,7 +13,7 @@ def all_stores():
   Query for all stores and returns them in a list of dictionaries
   """
   stores = Store.query.all()
-  return {'stores': [store.to_dict() for store in stores]}
+  return {'stores': [store.to_dict() for store in stores]}, 200
 
 # GET ONE STORE
 @store_routes.route('/<int:id>')
@@ -25,7 +25,7 @@ def store(id):
     if store:
       return store.to_dict(products=True)
     else:
-      return {"error": "This store does not exist"}
+      return {"error": "This store does not exist"}, 404
 
 # GET CURRENT USER'S STORE
 @store_routes.route('/my-store')
@@ -38,7 +38,7 @@ def my_store():
   if store:
     return store.to_dict()
   else:
-    return {"error": "Current user does not own a store."}
+    return {"error": "Current user does not own a store."}, 400
 
 # CREATE A STORE
 @store_routes.route('/new', methods=["POST"])
@@ -60,7 +60,7 @@ def create_store():
     db.session.add(new_store)
     db.session.commit()
 
-    return new_store.to_dict()
+    return new_store.to_dict(), 200
   else:
     return form.errors
 
@@ -84,9 +84,9 @@ def update_store(id):
       db.session.commit()
       return store.to_dict()
     else:
-      return {"message": "Cannot edit a store you do not own"}
+      return {"message": "Cannot edit a store you do not own"}, 403
   else:
-    return {"message": "Could not find the store you requested"}
+    return {"message": "Could not find the store you requested"}, 404
 
 # DELETE A STORE
 @store_routes.route('/<int:id>', methods=["DELETE"])
@@ -102,6 +102,6 @@ def delete_store(id):
       db.session.commit()
       return {"message": "deletion successful"}, 200
     else:
-      return {"message": "cannot delete a store you do not own"}
+      return {"message": "cannot delete a store you do not own"}, 403
   else:
-    return {"message": "could not find the requested resource"}
+    return {"message": "could not find the requested resource"}, 404

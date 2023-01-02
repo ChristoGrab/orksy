@@ -17,6 +17,8 @@
   border-radius: 5px;
 }
 
+/* Buttons */
+
 .delete-page-buttons {
   display: flex;
   flex-direction: row;
@@ -25,32 +27,29 @@
   gap: 5%;
 }
 
-.confirm-delete-button {
-  background-color: #832212;
+.confirm-delete-button,
+.abort-delete-button {
   height: 50px;
   width: 250px;
   border-radius: 24px;
   font-size: 15px;
+  transition: 200ms ease-out;
+}
+
+.confirm-delete-button:hover,
+.abort-delete-button:hover {
+  box-shadow: 1px 1px 3px lightslategray;
+  transform: scale(1.05)
+}
+
+.confirm-delete-button {
+  background-color: #832212;
   border: none;
   color: white;
 }
 
-.confirm-delete-button:hover {
-  box-shadow: 1px 1px 3px lightslategray;
-  background-color: #6b010c;
-  cursor: pointer;
-}
-
 .abort-delete-button {
+  color: #1f5429;
   background-color: white;
-  height: 50px;
-  width: 250px;
-  border-radius: 24px;
-  font-size: 15px;
   border: 1px solid darkgrey;
-}
-
-.abort-delete-button:hover {
-  box-shadow: 1px 1px 3px lightslategray;
-  cursor: pointer;
 }

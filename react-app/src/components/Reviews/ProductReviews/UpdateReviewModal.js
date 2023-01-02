@@ -1,12 +1,13 @@
-import { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { updateReviewThunk } from "../../../store/reviews";
+import ReviewStars from "../ReviewStars";
 
-const UpdateReviewModal = ( {reviewId, setReviewModal, prevRating, prevReview} ) => {
+const UpdateReviewModal = ( {reviewId, setUpdateReviewModal, prevRating, prevReview} ) => {
   
   const dispatch = useDispatch()
-  const history = useHistory()
+  
+  console.log(reviewId)
   
   const [rating, setRating] = useState(prevRating)
   const [review, setReview] = useState(prevReview)
@@ -20,6 +21,7 @@ const UpdateReviewModal = ( {reviewId, setReviewModal, prevRating, prevReview} )
     setFormSubmitted(true)
     
     const errorList = []
+    if (rating < 1) errorList.push("Don't forget ta leave a rating by clickin' on da shiny starz")
     if (!review.length) errorList.push("Don't be a naff leaving an empty review")
     setErrors(errorList)
     
@@ -31,7 +33,7 @@ const UpdateReviewModal = ( {reviewId, setReviewModal, prevRating, prevReview} )
     }
 
     dispatch(updateReviewThunk(newReview, reviewId))
-    .then(response => setReviewModal(false))
+    .then(response => setUpdateReviewModal(false))
   }
 
   return (
@@ -42,19 +44,12 @@ const UpdateReviewModal = ( {reviewId, setReviewModal, prevRating, prevReview} )
         )
         )}
         <label className="auth-label" htmlFor="rating">Rating</label>
-        <select 
-        className="auth-input"
-        value={rating}
-        onChange={e => setRating(e.target.value)}
-        >
-          <option>5</option>
-          <option>4</option>
-          <option>3</option>
-          <option>2</option>
-          <option>1</option>
-        </select>
+        <div className="create-hover">
+          <ReviewStars stars={rating} setStars={setRating} />
+        </div>
         <label className="auth-label" htmlFor="review">Review</label>
         <textarea 
+        className="review-textarea"
         type="text"
         value={review}
         onChange={e => setReview(e.target.value)}

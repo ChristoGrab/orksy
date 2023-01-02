@@ -2,10 +2,9 @@ import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { loadReviewsThunk } from "../../../store/reviews"
 import { Modal } from '../../../context/Modal'
+import ReviewCard from '../index'
 import CreateReviewModal from "./CreateReviewModal"
-import UpdateReviewModal from "./UpdateReviewModal"
-import DeleteReviewModal from "./DeleteReviewModal"
-import './ProductReviews.css'
+import '../Reviews.css'
 
 const ProductReviews = ({ productId }) => {
 
@@ -14,32 +13,44 @@ const ProductReviews = ({ productId }) => {
   const sessionUser = useSelector(state => state.session.user)
   const reviews = useSelector(state => Object.values(state.reviews.product))
 
+  // Modal state variables //
   const [createReviewModal, setCreateReviewModal] = useState(false)
-  const [updateReviewModal, setUpdateReviewModal] = useState(false)
-  const [deleteReviewModal, setDeleteReviewModal] = useState(false)
+  const [userHasReviewed, setUserHasReviewed] = useState(false)
+  
+    // Function to check if user has left a review
+    const checkForUserReview = (reviews) => {
+      if (!reviews.length) return
+      
+      reviews.forEach(review => {
+        if (review.reviewer_id === sessionUser.id) {
+          return setUserHasReviewed(true)
+        }
+      })
+    }
 
+  // Fetch product reviews //
   useEffect(() => {
     dispatch(loadReviewsThunk(productId))
-  }, [dispatch, updateReviewModal])
+  }, [dispatch, productId])
+  
+  useEffect(() => {
+    if (sessionUser) {
+      checkForUserReview(reviews)
+    }
+  }, [dispatch, reviews, sessionUser])
 
 
+  // Function to handle review modal //
   const showCreateReviewForm = async (e) => {
     e.preventDefault();
 
     return setCreateReviewModal(true)
   }
-
-  const showUpdateReviewForm = async (e) => {
-    e.preventDefault();
-
-    return setUpdateReviewModal(true)
-  }
   
-  const confirmDelete = async (e) => {
-    e.preventDefault();
-    
-    return setDeleteReviewModal(true)
-  }
+
+
+  
+  console.log("User has left review status: ", userHasReviewed)
 
   return (
     <div className="product-page-reviews-container">
@@ -47,42 +58,22 @@ const ProductReviews = ({ productId }) => {
         ? <div className="product-reviews-number">{reviews.length} reviewz</div>
         : <div className="product-reviews-number">Dis produkt 'asn't got any reviewz yet</div>
       }
-      {sessionUser && (
-        <button className="product-page-button green" onClick={showCreateReviewForm}>Leave a Review</button>
+
+
+      {sessionUser && !userHasReviewed && (
+       <button className="product-page-button green" id="leave-review-button" onClick={showCreateReviewForm}>Leave a Review</button>
       )}
 
       {createReviewModal === true && (
         <Modal onClose={() => setCreateReviewModal(false)}>
-          <CreateReviewModal setReviewModal={setCreateReviewModal} productId={productId} />
+          <CreateReviewModal setCreateReviewModal={setCreateReviewModal} productId={productId} />
         </Modal>
       )}
 
       {reviews.length
         ? <div>{reviews.map(review =>
           <div className="product-page-review-card" key={review.id}>
-            <div>
-              {[...Array(review?.rating)].map((star) => (<i className="fa-solid fa-star"></i>))}
-            </div>
-            <div>{review.review}</div>
-            {sessionUser && sessionUser.id === review.reviewer_id && (
-              <div className="user-review-box">
-                <i className="fa-regular fa-pen-to-square hover-cursor" onClick={showUpdateReviewForm}></i>
-                <i className="fa-regular fa-trash-can hover-cursor" onClick={confirmDelete}></i>
-              </div>
-            )}
-
-            {updateReviewModal === true && (
-              <Modal onClose={() => setUpdateReviewModal(false)}>
-                <UpdateReviewModal setReviewModal={setUpdateReviewModal} reviewId={review.id} prevRating={review.rating} prevReview={review.review} />
-              </Modal>
-            )}
-
-            {deleteReviewModal === true && (
-              <Modal onClose={() => setDeleteReviewModal(false)}>
-                <DeleteReviewModal setReviewModal={setDeleteReviewModal} reviewId={review.id} />
-              </Modal>
-            )}
-
+            < ReviewCard review={review} sessionUser={sessionUser}/>
           </div>
         )}
         </div>

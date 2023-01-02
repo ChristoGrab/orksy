@@ -49,7 +49,7 @@ def create_product():
     db.session.add(new_product)
     db.session.commit()
     
-    return new_product.to_dict()
+    return new_product.to_dict(), 200
   else:
     return form.errors
 
@@ -148,6 +148,6 @@ def create_review(product_id):
     db.session.add(new_review)
     db.session.commit()
     
-    return new_review.to_dict()
+    return new_review.product_review_to_dict(), 200
   else:
     return form.errors
