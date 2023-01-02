@@ -24,8 +24,8 @@ def upgrade():
     sa.Column('review', sa.String(length=255), nullable=False),
     sa.Column('product_id', sa.Integer(), nullable=True),
     sa.Column('reviewer_id', sa.Integer(), nullable=True),
-    sa.ForeignKeyConstraint(['product_id'], ['users.id'], ),
-    sa.ForeignKeyConstraint(['reviewer_id'], ['products.id'], ),
+    sa.ForeignKeyConstraint(['product_id'], ['products.id'], ),
+    sa.ForeignKeyConstraint(['reviewer_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
     # ### end Alembic commands ###
