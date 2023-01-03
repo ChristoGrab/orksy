@@ -10,7 +10,7 @@ class Order(db.Model):
   id = db.Column(db.Integer, primary_key=True)
   user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")))
   total = db.Column(db.Integer, nullable=False)
-  createdAt = db.Column(db.DateTime, default=datetime.datetime.now)
+  timestamp = db.Column(db.DateTime, default=datetime.datetime.now)
   
   # Relationships
   order_items = db.relationship("OrderItem", back_populates="order")
@@ -21,5 +21,6 @@ class Order(db.Model):
       "id": self.id,
       "user_id": self.user_id,
       "total": self.total,
-      "items": [item.to_dict() for item in self.order_items]
+      "items": [item.to_dict() for item in self.order_items],
+      "timestamp": self.timestamp
     }
