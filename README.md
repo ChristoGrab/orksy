@@ -43,7 +43,7 @@ This is the user's hub for product functionality.  From here users can add a new
 ## Product Viewer
 ![Product Page Preview](https://user-images.githubusercontent.com/108154848/210399094-7c897577-e445-41ee-9835-d7125167bdf5.jpg)
 
-The page for viewing individual products is probably the component I'm most proud of.  It contains a number of hand-made animations using CSS with Javascript to conditionally render the product's description and shipping info.  The dates for the shipping and delivery are randomized based on the current date, adding a little programmatic flair to the page!  This page also contains a list of reviews associated with the product, and allows a logged in user to create, edit or delete their own review.
+The page for viewing individual products is probably the component I'm most proud of.  It contains a number of hand-made animations using CSS with Javascript to allow a user to toggle the rendering of the product's description and shipping info.  The dates for the shipping and delivery are randomized based on the current date, adding a little programmatic flair to the page!  This page also contains a list of reviews associated with the product, and allows a logged in user to create, edit or delete their own review.
 
 ## Wiki Links
 Use these links to navigate to the Orksy wiki for further documentation on the site's structure:
