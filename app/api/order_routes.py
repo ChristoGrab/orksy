@@ -17,7 +17,7 @@ def user_orders():
     return {"Orders": [order.to_dict() for order in orders]}, 200
 
 # ADD AN ORDER
-@order_routes.route("/new")
+@order_routes.route("/new", methods=["POST"])
 def new_order():
   """
   POST a new order to the user's order history
@@ -27,10 +27,9 @@ def new_order():
   new_order = Order(
     user_id=data["user_id"],
     total=data["total"],
-    items=data["items"]
   )
   
-  db.session.add(new_order)
-  db.session.commit()
-  
+  # db.session.add(new_order)
+  # db.session.commit()
+  print(new_order)
   return {"message": "Your order has been processed successfully"}, 200

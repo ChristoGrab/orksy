@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import LoginFormModal from '../auth/LoginFormModal';
 import ProfileButton from './ProfileButton';
+import ShoppingCart from './ShoppingCart';
 import "./Navbar.css";
 
 const NavBar = () => {
@@ -14,6 +15,7 @@ const NavBar = () => {
     sessionLinks = (
       <div className='navbar-right'>
         <ProfileButton user={sessionUser} />
+        <ShoppingCart />
       </div>
     )
   } else {

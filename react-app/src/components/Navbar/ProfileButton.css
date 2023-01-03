@@ -23,11 +23,11 @@
   justify-content: space-evenly;
   width: 66px;
   height: 48px;
-  margin-right: 55px;
+  margin-right: 20px;
   background-color: white;
   border: none;
   border-radius: 15em;
-  transition: background-color 400ms ease-out;
+  transition: background-color 280ms ease-out;
 }
 
 #profile-button:hover {

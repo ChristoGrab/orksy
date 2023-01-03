@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { authenticate } from './store/session';
 import LoginForm from './components/auth/LoginFormModal/LoginForm';
 import SignUpForm from './components/auth/SignupFormModal/SignUpForm';
 import ProfilePage from './components/Profile';
@@ -13,9 +14,9 @@ import LandingPage from './components/LandingPage';
 import ProductPage from './components/ProductPage';
 import CreateProductForm from './components/Products/CreateProductForm';
 import DeleteProduct from './components/Products/DeleteProduct'
-import { authenticate } from './store/session';
 import EditProductForm from './components/Products/EditProductForm';
 import ImageModal from './components/ProductPage/ImageModal';
+import CartPage from './components/CartPage';
 import "./index.css"
 
 function App() {
@@ -75,6 +76,9 @@ function App() {
         </Route>
         <Route path="/image" exact={true}>
           <ImageModal />
+        </Route>
+        <Route path="/cart" exact={true}>
+          <CartPage />
         </Route>
         <Route path="*">
         <div id="no-page-message">Nothin' here but squig droppins'</div>

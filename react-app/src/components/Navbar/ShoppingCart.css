@@ -1,0 +1,11 @@
+.fa-cart-shopping {
+  font-size: 24px;
+  padding: 10px;
+  border-radius: 24px;
+  transition: background-color 280ms ease-out;
+}
+
+.fa-cart-shopping:hover {
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
