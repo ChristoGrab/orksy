@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { authenticate } from './store/session';
+import ProtectedRoute from "./components/auth/ProtectedRoute"
 import LoginForm from './components/auth/LoginFormModal/LoginForm';
 import SignUpForm from './components/auth/SignupFormModal/SignUpForm';
 import ProfilePage from './components/Profile';
@@ -77,9 +78,9 @@ function App() {
         <Route path="/image" exact={true}>
           <ImageModal />
         </Route>
-        <Route path="/cart" exact={true}>
+        <ProtectedRoute path="/cart" exact={true}>
           <CartPage />
-        </Route>
+        </ProtectedRoute>
         <Route path="*">
         <div id="no-page-message">Nothin' here but squig droppins'</div>
         </Route>

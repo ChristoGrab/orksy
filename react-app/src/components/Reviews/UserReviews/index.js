@@ -10,7 +10,7 @@ const UserReviews = () => {
 
   useEffect(() => {
     dispatch(userReviewsThunk())
-  }, [dispatch, reviews]
+  }, [dispatch]
   )
 
   return (
