@@ -1,0 +1,9 @@
+#add-to-cart-button {
+  width: 80%;
+  transition: all 200ms;
+}
+
+#add-to-cart-button:hover {
+  opacity: .9;
+  transform: scale(1.03)
+}

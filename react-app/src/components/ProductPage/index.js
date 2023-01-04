@@ -6,6 +6,7 @@ import { getProductThunk, clearProduct } from "../../store/products";
 import ImageModal from './ImageModal'
 import "./ProductPage.css"
 import ProductReviews from "../Reviews/ProductReviews";
+import AddToCart from "./AddToCart";
 
 const ProductPage = () => {
 
@@ -72,6 +73,8 @@ const ProductPage = () => {
           </Link>
           <div className="product-page-name">{product.name}</div>
           <div className="product-page-price"><i className="fa-solid fa-tooth" />{product.price}</div>
+          
+          <AddToCart product={product}/>
 
           <div className="product-description-container">
             {descrip === true

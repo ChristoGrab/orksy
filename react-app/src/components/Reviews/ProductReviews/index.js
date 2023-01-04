@@ -46,11 +46,7 @@ const ProductReviews = ({ productId }) => {
 
     return setCreateReviewModal(true)
   }
-  
 
-
-  
-  console.log("User has left review status: ", userHasReviewed)
 
   return (
     <div className="product-page-reviews-container">
