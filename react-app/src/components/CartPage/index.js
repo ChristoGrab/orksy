@@ -24,7 +24,7 @@ const CartPage = () => {
           <h2>Itemz in yer kart:</h2>
           <div className="cart-items-list">
             {cartItems.map((item, index) => (
-              <CartItemCard key={index} product={item} />
+              <CartItemCard key={index} index={index} product={item} />
             ))}
           </div>
           <div className="place-order-box">
