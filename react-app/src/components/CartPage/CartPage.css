@@ -35,3 +35,9 @@
 #cart-discover-link:hover {
   opacity: .3;
 }
+
+.cart-items-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
