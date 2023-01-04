@@ -7,3 +7,44 @@
   opacity: .9;
   transform: scale(1.03)
 }
+
+.added-to-cart-popup {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 25px;
+}
+
+.cart-popup-box-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.cart-popup-box-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  gap: 10px;
+  width: 90%;
+}
+
+.added-to-cart-image {
+  width: 120px;
+  height: 100px;
+  object-fit: fill;
+  border-radius: 6px;
+}
+
+.fa-check {
+  color: white;
+  background: green;
+  border-radius: 22px;
+  position: relative;
+  bottom: 46px;
+  right: 10px;
+  font-size: 17px;
+  border: 2px solid white;
+}

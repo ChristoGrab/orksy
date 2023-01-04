@@ -30,7 +30,8 @@
 }
 
 .product-page-button:hover {
-  transform: scaleX(1.1) scaleY(1.1);
+  opacity: .9;
+  transform: scale(1.03)
 }
 
 #leave-review-button {

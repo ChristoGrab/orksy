@@ -6,6 +6,10 @@ body {
   font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;;
 }
 
+html {
+  overflow-y: scroll;
+}
+
 body::before {
   display:block;
   content: '';
