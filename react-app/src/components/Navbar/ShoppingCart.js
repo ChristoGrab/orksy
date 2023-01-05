@@ -16,7 +16,7 @@ const ShoppingCart = () => {
     if (itemsInCart) setCartSize(itemsInCart.length)
     setCartSizeHasChanged(!cartSizeHasChanged)
 
-  })
+  }, [])
   
   const openCartPage = async (e) => {
     e.preventDefault();

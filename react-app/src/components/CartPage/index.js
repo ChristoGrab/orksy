@@ -10,7 +10,7 @@ const CartPage = () => {
   useEffect(() => {
     setCartItems(JSON.parse(localStorage.getItem("cart")))
 
-  }, [cartItems])
+  }, [])
 
   return (
     <div className="cart-page-container">
