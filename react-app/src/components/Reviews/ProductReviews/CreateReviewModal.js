@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { AiOutlineReload } from "react-icons/ai";
 import { useDispatch } from "react-redux";
 import { createReviewThunk } from "../../../store/reviews";
 import ReviewStars from '../ReviewStars'
@@ -6,17 +7,16 @@ import ReviewStars from '../ReviewStars'
 const CreateReviewModal = ({ productId, setCreateReviewModal }) => {
 
   const dispatch = useDispatch()
+  const reload = () => window.location.reload()
 
   const [rating, setRating] = useState(0)
   const [review, setReview] = useState("")
   const [errors, setErrors] = useState([])
-  const [formSubmitted, setFormSubmitted] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     setErrors([])
-    setFormSubmitted(true)
 
     const errorList = []
     if (rating < 1) errorList.push("Don't forget ta leave a rating by clickin' on da shiny starz")
@@ -32,9 +32,7 @@ const CreateReviewModal = ({ productId, setCreateReviewModal }) => {
 
 
     dispatch(createReviewThunk(newReview, productId))
-      .then(response => {
-        return setCreateReviewModal(false)
-      })
+      .then(reload())
   }
 
   return (

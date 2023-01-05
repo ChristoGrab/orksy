@@ -56,7 +56,7 @@ const ProductPage = () => {
       <div className="product-page-container">
         <div className="product-page-image-container">
           <img className="product-page-image" src={product.image} alt={product.name} onClick={enhanceImage} />
-          <ProductReviews productId={productId}/>
+          <ProductReviews productId={productId} averageRating={product.average_rating}/>
         </div>
 
 
