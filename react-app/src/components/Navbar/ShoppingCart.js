@@ -7,13 +7,16 @@ const ShoppingCart = () => {
   const history = useHistory();
   const [cartSize, setCartSize] = useState(0)
   const [cartSizeHasChanged, setCartSizeHasChanged] = useState(false)
+  let itemsInCart;
+  
   
   useEffect(() => {
-    let itemsInCart = JSON.parse(localStorage.getItem('cart'))
-    if (itemsInCart) setCartSize(itemsInCart.length)
-    setCartSizeHasChanged(true)
     
-  }, [localStorage.length])
+    itemsInCart = JSON.parse(localStorage.getItem('cart'))
+    if (itemsInCart) setCartSize(itemsInCart.length)
+    setCartSizeHasChanged(!cartSizeHasChanged)
+
+  })
   
   const openCartPage = async (e) => {
     e.preventDefault();
