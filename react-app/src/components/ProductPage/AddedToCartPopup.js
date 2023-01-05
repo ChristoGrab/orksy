@@ -13,6 +13,7 @@ const AddedToCartPopup = ({ product }) => {
   
   const keepShopping = async (e) => {
     e.preventDefault();
+    
     history.push('/')
   }
   

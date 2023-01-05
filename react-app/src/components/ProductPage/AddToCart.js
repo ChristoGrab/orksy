@@ -18,7 +18,7 @@ const AddToCart = ({ product }) => {
       localStorage.setItem("cart", JSON.stringify(cart))
     }
     
-    setShowModal(true)
+    // return setShowModal(true)
   }
   
   return (
