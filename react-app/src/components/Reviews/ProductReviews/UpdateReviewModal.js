@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { updateReviewThunk } from "../../../store/reviews";
 import ReviewStars from "../ReviewStars";
@@ -6,8 +6,7 @@ import ReviewStars from "../ReviewStars";
 const UpdateReviewModal = ( {reviewId, setUpdateReviewModal, prevRating, prevReview} ) => {
   
   const dispatch = useDispatch()
-  
-  console.log(reviewId)
+  const reload = () => window.location.reload();
   
   const [rating, setRating] = useState(prevRating)
   const [review, setReview] = useState(prevReview)
@@ -33,7 +32,7 @@ const UpdateReviewModal = ( {reviewId, setUpdateReviewModal, prevRating, prevRev
     }
 
     dispatch(updateReviewThunk(newReview, reviewId))
-    .then(response => setUpdateReviewModal(false))
+    .then(reload())
   }
 
   return (

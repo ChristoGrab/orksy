@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { Modal } from '../../../context/Modal'
 import UpdateReviewModal from '../ProductReviews/UpdateReviewModal'
@@ -49,7 +49,7 @@ const UserReviewCard = ({ review }) => {
 
       {
         deleteReviewModal === true && (
-          <Modal onClose={() => setDeleteReviewModal(false)}>
+          <Modal onClose={() => {setDeleteReviewModal(false)}}>
             <DeleteReviewModal
               setReviewModal={setDeleteReviewModal}
               reviewId={review.id} />

@@ -5,7 +5,7 @@ import DeleteReviewModal from "./ProductReviews/DeleteReviewModal"
 import "./Reviews.css"
 
 const ReviewCard = ({ review, sessionUser }) => {
-  
+
   // State variables for opening and closing review modals
   const [updateReviewModal, setUpdateReviewModal] = useState(false)
   const [deleteReviewModal, setDeleteReviewModal] = useState(false)

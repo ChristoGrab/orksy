@@ -6,7 +6,7 @@ import ReviewCard from '../index'
 import CreateReviewModal from "./CreateReviewModal"
 import '../Reviews.css'
 
-const ProductReviews = ({ productId }) => {
+const ProductReviews = ({ productId, averageRating }) => {
 
   const dispatch = useDispatch()
 
@@ -16,6 +16,7 @@ const ProductReviews = ({ productId }) => {
   // Modal state variables //
   const [createReviewModal, setCreateReviewModal] = useState(false)
   const [userHasReviewed, setUserHasReviewed] = useState(false)
+  const [ratingDisplay, setRatingDisplay] = useState(averageRating)
   
     // Function to check if user has left a review
     const checkForUserReview = (reviews) => {
@@ -32,12 +33,16 @@ const ProductReviews = ({ productId }) => {
   useEffect(() => {
     dispatch(loadReviewsThunk(productId))
   }, [dispatch, productId])
-  
+
   useEffect(() => {
     if (sessionUser) {
       checkForUserReview(reviews)
     }
   }, [dispatch, reviews, sessionUser])
+  
+  useEffect(() => {
+    setRatingDisplay(averageRating)
+  }, [averageRating])
 
 
   // Function to handle review modal //
@@ -46,16 +51,11 @@ const ProductReviews = ({ productId }) => {
 
     return setCreateReviewModal(true)
   }
-  
-
-
-  
-  console.log("User has left review status: ", userHasReviewed)
 
   return (
     <div className="product-page-reviews-container">
       {reviews.length
-        ? <div className="product-reviews-number">{reviews.length} reviewz</div>
+        ? <div className="product-reviews-number">{reviews.length} reviewz - <i className="fa-solid fa-star" /> {ratingDisplay}</div>
         : <div className="product-reviews-number">Dis produkt 'asn't got any reviewz yet</div>
       }
 
