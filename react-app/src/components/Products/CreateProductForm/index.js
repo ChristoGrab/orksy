@@ -11,6 +11,7 @@ const CreateProductForm = () => {
 
   const dispatch = useDispatch();
   const history = useHistory();
+  const reload = () => window.location.reload();
 
   // list of state variables
   const [name, setName] = useState("")
@@ -65,7 +66,7 @@ const CreateProductForm = () => {
         method: "POST",
         body: formData
       })
-
+      
       const urlObj = await picture.json()
 
       const new_product = {
@@ -76,12 +77,10 @@ const CreateProductForm = () => {
         image: urlObj.url
       }
 
+      
 
-
-      dispatch(createProductThunk(new_product)).then((data) => {
-        history.push('/profile')
-      })
-
+      dispatch(createProductThunk(new_product))
+      .then(history.goBack())
     }
   }
 

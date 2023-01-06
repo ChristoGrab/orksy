@@ -17,6 +17,7 @@ import DeleteProduct from './components/Products/DeleteProduct'
 import { authenticate } from './store/session';
 import EditProductForm from './components/Products/EditProductForm';
 import ImageModal from './components/ProductPage/ImageModal';
+import PageNotFound from './components/PageNotFound'
 import "./index.css"
 
 function App() {
@@ -81,7 +82,7 @@ function App() {
           <ImageModal />
         </Route>
         <Route path="*">
-        <div id="no-page-message">Nothin' here but squig droppins'</div>
+         <PageNotFound />
         </Route>
       </Switch>
     </BrowserRouter>

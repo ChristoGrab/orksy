@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom'
 import { getMyStoreThunk } from "../../store/stores";
@@ -11,6 +11,7 @@ const ProfilePage = () => {
   const dispatch = useDispatch()
   const sessionUser = useSelector(state => state.session.user)
   const store = useSelector(state => state.stores.singleStore)
+  const [dataLoaded, setDataLoaded] = useState(false)
 
   // const quotes = [
   //   "Gork loves me, and Mork finks I is da best. No puny oomies is gonna kill me, not when da greenest gods in da galaxy is watchin' me!",
@@ -21,8 +22,11 @@ const ProfilePage = () => {
 
   useEffect(() => {
     dispatch(getMyStoreThunk())
+    .then(setDataLoaded(true))
   }, [dispatch])
-
+  
+  
+  if (!dataLoaded) return null;
   if (!sessionUser) return null;
   let storeLinks;
 
@@ -50,11 +54,6 @@ const ProfilePage = () => {
         </div>
       </div>
 
-      <div className="profile-page-review-container">
-        <h3>Your reviewz</h3>
-        <UserReviews />
-      </div>
-
       {/* <div className="profile-page-quotes">
         <div id="inspiration-quote-message">Orkish inspiration of da day:</div>
         {quotes[Math.floor(Math.random()*quotes.length)]}
@@ -76,14 +75,21 @@ const ProfilePage = () => {
           Once you have a store up and running, you'll be able to start adding, editing or deleting products that will be viewable to you or any other visitors to the site!
           <br />
           <br />
-          <ul id="orkish-facts">Some Ork facts to note:
+          <ul id="orkish-facts"><strong>Some Ork facts to keep in mind:</strong>
 
             <li>Orks in the Warhammer 40K universe are green, mean, and thick as bricks.</li>
             <li>All Orks speak with an exagerrated Cockney accent.</li>
-            <li>Orks are like sharks in that their teeth will regularly fall out and grow back in.  "Teef" have become the Orks' form of currency, so the prices on Orksy are all listed as such.</li>
+            <li>Orks are like sharks in that their teeth will regularly fall out and grow back in.  "Teef" have become the Orks' form of currency, so the prices on Orksy are all listed as <i className="fa-solid fa-tooth" />.</li>
             <li>Orks are made for two things: fighting, and winning.</li>
           </ul>
         </div>
+        
+        
+      </div>
+      
+      <div className="profile-page-review-container">
+        <h2>Your reviewz</h2>
+        <UserReviews />
       </div>
     </div>
   )

@@ -14,8 +14,8 @@ const SearchPage = () => {
   const [queryReturned, setQueryReturned] = useState(false)
   
   useEffect(() => {
-    dispatch(getSearchProducts(keyword)).
-    then(setQueryReturned(true))
+    dispatch(getSearchProducts(keyword))
+    .then(setQueryReturned(true))
   }, [dispatch, keyword])
   
   
