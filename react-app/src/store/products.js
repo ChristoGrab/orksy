@@ -57,6 +57,14 @@ export const getProductThunk = (id) => async (dispatch) => {
   return data;
 }
 
+export const getSearchProducts = (keyword) => async (dispatch) => {
+  const response = await fetch(`/api/products/search/${keyword}`)
+
+  const data = await response.json();
+  dispatch(loadProducts(data))
+  
+}
+
 export const createProductThunk = (product) => async (dispatch) => {
   const response = await fetch('/api/products/new', {
     method: "POST",
