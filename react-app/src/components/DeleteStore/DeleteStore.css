@@ -33,17 +33,16 @@
   width: 250px;
   border-radius: 24px;
   font-size: 15px;
-  transition: 200ms ease-out;
+  transition: 250ms all ease-out;
 }
 
 .confirm-delete-button:hover,
 .abort-delete-button:hover {
   box-shadow: 1px 1px 3px lightslategray;
-  transform: scale(1.05)
+  transform: scale(1.03)
 }
 
 .confirm-delete-button {
-  background-color: #832212;
   border: none;
   color: white;
 }

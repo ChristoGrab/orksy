@@ -47,7 +47,7 @@ function DeleteStore() {
       <img src={boomPik} id="boompik" alt="Are you sure?" />
       <div className='delete-page-buttons'>
         <button
-          className="confirm-delete-button"
+          className="confirm-delete-button red"
           onClick={confirmDelete}>Make it go boom!!</button>
         <button
           className="abort-delete-button"

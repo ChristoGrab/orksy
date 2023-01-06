@@ -46,8 +46,8 @@ const StoreFront = () => {
       
       {sessionUser && sessionUser.id === store.owner_id && (
         <div className="storefront-owner-links">
-          <Link id="edit-store-link" to={`/store/${store.id}/edit`}>Edit Yer Store</Link>
-          <Link id="delete-store-link" to={`/store/${store.id}/delete`}>Delete Yer Store</Link>
+          <Link id="edit-store-link" className="green" to={`/store/${store.id}/edit`}>Edit Yer Store</Link>
+          <Link id="delete-store-link" className="red" to={`/store/${store.id}/delete`}>Delete Yer Store</Link>
         </div>
       )}
       

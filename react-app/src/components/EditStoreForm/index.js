@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom'
 import { getStoreThunk, updateStoreThunk } from '../../store/stores'
+import formImage from "../../assets/create-image.jpg"
 import "../CreateStoreForm/StoreForm.css"
 
 function EditStoreForm() {
@@ -74,8 +75,9 @@ function EditStoreForm() {
           type="text"
           value={description}
           onChange={e => setDescription(e.target.value)} />
-        <button className="store-form-button" onClick={handleSubmit}>Update Store</button>
+        <button className="store-form-button green" onClick={handleSubmit}>Update Store</button>
       </form>
+      <img className="form-image" src={formImage} alt="orks in a car" />
     </div>
   )
 }

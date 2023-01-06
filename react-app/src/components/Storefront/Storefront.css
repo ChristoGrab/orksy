@@ -34,12 +34,10 @@
   transition: all 200ms ease-in;
 }
 
-#edit-store-link,
 #edit-product-button {
   background-color: #1f5429;
 }
 
-#delete-store-link,
 #delete-product-button {
   background-color: #832212;
 }
