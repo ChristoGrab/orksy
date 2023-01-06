@@ -55,7 +55,7 @@ const ProductReviews = ({ productId, averageRating }) => {
   return (
     <div className="product-page-reviews-container">
       {reviews.length
-        ? <div className="product-reviews-number">{reviews.length} reviewz - <i className="fa-solid fa-star" /> {ratingDisplay}</div>
+        ? <div className="product-reviews-number">{reviews.length} review(z) - <i className="fa-solid fa-star" /> {ratingDisplay}</div>
         : <div className="product-reviews-number">Dis produkt 'asn't got any reviewz yet</div>
       }
 

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
+import "./SearchBar.css"
 
 const SearchBar = () => {
   const dispatch = useDispatch();
@@ -22,12 +23,13 @@ const SearchBar = () => {
 
   return (
     <div className="searchbar-container">
-      <form action="/" method="get" autoComplete="off" onSubmit={onSubmit}>
-        <input type="text" 
+      <form id="searchbar" action="/" method="get" autoComplete="off" onSubmit={onSubmit}>
+        <input id="searchbar-input"
+        type="text" 
         placeholder="Search for anything" 
         onChange={updateSearch} 
         value={searchInput} />
-        <button type="submit">Search the Store</button>
+        <button id="searchbar-button" type="submit"><i className="fa-solid fa-magnifying-glass"></i></button>
       </form>
     </div>
   )
