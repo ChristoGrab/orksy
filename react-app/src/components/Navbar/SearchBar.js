@@ -11,6 +11,7 @@ const SearchBar = () => {
   
   const onSubmit = (e) => {
     e.preventDefault();
+    
     let query = searchInput.toLowerCase()
 
     history.push(`/search/${query}`)
@@ -27,7 +28,7 @@ const SearchBar = () => {
         <input id="searchbar-input"
         type="text" 
         placeholder="Search for anything" 
-        onChange={updateSearch} 
+        onChange={updateSearch}
         value={searchInput} />
         <button id="searchbar-button" type="submit"><i className="fa-solid fa-magnifying-glass"></i></button>
       </form>
