@@ -1,22 +1,22 @@
 import { useEffect, useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
 import { useHistory } from "react-router-dom";
+import { loadCartThunk } from "../../store/cart";
 import "./ShoppingCart.css"
 
 const ShoppingCart = () => {
   
   const history = useHistory();
+  const dispatch = useDispatch();
+  const cart = useSelector(state => Object.values(state.cart.cart))
   const [cartSize, setCartSize] = useState(0)
-  const [cartSizeHasChanged, setCartSizeHasChanged] = useState(false)
-  let itemsInCart;
-  
   
   useEffect(() => {
-    
-    itemsInCart = JSON.parse(localStorage.getItem('cart'))
-    if (itemsInCart) setCartSize(itemsInCart.length)
-    setCartSizeHasChanged(!cartSizeHasChanged)
-
-  }, [])
+    dispatch(loadCartThunk())
+    console.log(cartSize)
+    setCartSize(cart.length)
+    console.log(cartSize)
+  }, [dispatch, cart.length])
   
   const openCartPage = async (e) => {
     e.preventDefault();

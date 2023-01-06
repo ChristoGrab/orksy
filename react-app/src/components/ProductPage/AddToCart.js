@@ -1,24 +1,21 @@
 import { useState } from 'react'
+import { useDispatch } from "react-redux"
 import { Modal } from '../../context/Modal'
 import AddedToCartPopup from './AddedToCartPopup'
+import { addToCartThunk } from '../../store/cart'
 import "./AddToCart.css"
 
 const AddToCart = ({ product }) => {
   
+  const dispatch = useDispatch()
   const [showModal, setShowModal] = useState(false)
   
   const addToCart = async (e) => {
     e.preventDefault();
     
-    if (!localStorage.getItem("cart")) {
-      localStorage.setItem("cart", JSON.stringify([product]))
-    } else {
-      let cart = JSON.parse(localStorage.getItem("cart"))
-      cart.push(product)
-      localStorage.setItem("cart", JSON.stringify(cart))
-    }
-    
-    // return setShowModal(true)
+    dispatch(addToCartThunk(product))
+    console.log("button triggered")
+    console.log(product)
   }
   
   return (
