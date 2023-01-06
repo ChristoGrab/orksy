@@ -15,7 +15,8 @@
   object-fit: cover;
 }
 
-.product-card-name {
+.product-card-name,
+.product-card-avg-rating {
   font-size: 14px;
   line-height: 1.6;
   font-weight: 400;

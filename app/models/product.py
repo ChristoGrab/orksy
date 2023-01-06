@@ -18,6 +18,13 @@ class Product(db.Model):
   reviews = db.relationship("Review", back_populates="product", cascade="delete")
   order_items = db.relationship("OrderItem", back_populates="product", cascade="delete")
 
+  def average_rating(self):
+    if len(self.reviews) > 0:
+      average = sum(review.rating for review in self.reviews) / len(self.reviews)
+      return round(average, 2)
+    else:
+      return 0
+  
   def to_dict(self, store=False):
     product = {
       'id': self.id,
@@ -25,7 +32,8 @@ class Product(db.Model):
       'description': self.description,
       'price': self.price,
       'store_id': self.store_id,
-      'image': self.image
+      'image': self.image,
+      'average_rating': self.average_rating()
     }
     if store:
       product["store"] = self.store.to_dict()

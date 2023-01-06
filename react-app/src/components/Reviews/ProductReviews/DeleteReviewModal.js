@@ -4,6 +4,7 @@ import { deleteReviewThunk } from "../../../store/reviews";
 const DeleteReviewModal = ({ reviewId, setReviewModal }) => {
   
   const dispatch = useDispatch()
+  const reload = () => window.location.reload()
   
   const goBack = async (e) => {
     e.preventDefault();
@@ -14,11 +15,8 @@ const DeleteReviewModal = ({ reviewId, setReviewModal }) => {
   const deleteReview = async (e) => {
     e.preventDefault();
     
-    const response = await dispatch(deleteReviewThunk(reviewId))
-
-    if (response) {
-    setReviewModal(false)
-    }
+    dispatch(deleteReviewThunk(reviewId))
+    .then(reload())
   }
   
   return (

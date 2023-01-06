@@ -151,3 +151,13 @@ def create_review(product_id):
     return new_review.product_review_to_dict(), 200
   else:
     return form.errors
+
+# Searchbar Query
+@product_routes.route("/search/<keyword>")
+def search_product(keyword):
+  products = Product.query.filter(Product.name.like(f"%{keyword}%")).all()
+  return {
+    "Products": [
+      product.to_dict() for product in products
+    ]
+  }, 200
