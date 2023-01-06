@@ -5,6 +5,7 @@ import LoginForm from './components/auth/LoginFormModal/LoginForm';
 import SignUpForm from './components/auth/SignupFormModal/SignUpForm';
 import ProfilePage from './components/Profile';
 import StoreFront from './components/Storefront'
+import SearchPage from './components/SearchPage'
 import CreateStoreForm from './components/CreateStoreForm';
 import EditStoreForm from './components/EditStoreForm';
 import DeleteStore from './components/DeleteStore'
@@ -39,6 +40,9 @@ function App() {
       <Switch>
         <Route path='/' exact={true} >
           <LandingPage />
+        </Route>
+        <Route path="/search/:keyword">
+          <SearchPage />
         </Route>
         <Route path='/login' exact={true}>
           <LoginForm />

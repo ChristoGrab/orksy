@@ -12,6 +12,10 @@ body::before {
   height: 4em;
 }
 
+html {
+  overflow-y: scroll;
+}
+
 h2 {
   color: #1f5429;
 }

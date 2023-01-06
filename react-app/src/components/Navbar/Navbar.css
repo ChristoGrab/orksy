@@ -14,6 +14,7 @@
 }
 
 .navbar-right {
+  width: 8%;
   margin-right: 100px;
   display: flex;
   justify-content: space-between;
