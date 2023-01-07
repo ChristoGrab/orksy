@@ -3,7 +3,7 @@
 body {
   width: 100%;
   margin: 0;
-  font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;;
+  font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
 }
 
 html {
@@ -16,12 +16,22 @@ body::before {
   height: 4em;
 }
 
+html {
+  overflow-y: scroll;
+}
+
 h2 {
   color: #1f5429;
 }
 
 input {
   border: 1px solid lightgray;
+  font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
+}
+
+textarea {
+  resize: none;
+  font-family: "Graphik Webfont",-apple-system,"Helvetica Neue","Droid Sans",Arial,sans-serif;
 }
 
 .required-star,
@@ -43,13 +53,6 @@ label {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.4;
-}
-
-#no-page-message {
-  font-size: 110px;
-  margin-top: 150px;
-  text-align: center;
-  color: #1f5429;
 }
 
 .hover-cursor:hover {

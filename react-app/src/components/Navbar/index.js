@@ -4,6 +4,7 @@ import LoginFormModal from '../auth/LoginFormModal';
 import ProfileButton from './ProfileButton';
 import ShoppingCart from './ShoppingCart';
 import "./Navbar.css";
+import SearchBar from './SearchBar';
 
 const NavBar = () => {
   
@@ -31,6 +32,7 @@ const NavBar = () => {
       <div className="navbar-left">
         <Link to="/" id="navbar-logo">Orksy</Link>
     </div>
+    <SearchBar />
     {sessionLinks}
     </nav>
   );

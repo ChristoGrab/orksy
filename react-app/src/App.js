@@ -7,6 +7,7 @@ import LoginForm from './components/auth/LoginFormModal/LoginForm';
 import SignUpForm from './components/auth/SignupFormModal/SignUpForm';
 import ProfilePage from './components/Profile';
 import StoreFront from './components/Storefront'
+import SearchPage from './components/SearchPage'
 import CreateStoreForm from './components/CreateStoreForm';
 import EditStoreForm from './components/EditStoreForm';
 import DeleteStore from './components/DeleteStore'
@@ -18,6 +19,7 @@ import DeleteProduct from './components/Products/DeleteProduct'
 import EditProductForm from './components/Products/EditProductForm';
 import ImageModal from './components/ProductPage/ImageModal';
 import CartPage from './components/CartPage';
+import PageNotFound from './components/PageNotFound'
 import "./index.css"
 
 function App() {
@@ -41,6 +43,9 @@ function App() {
       <Switch>
         <Route path='/' exact={true} >
           <LandingPage />
+        </Route>
+        <Route path="/search/:keyword">
+          <SearchPage />
         </Route>
         <Route path='/login' exact={true}>
           <LoginForm />
@@ -82,7 +87,7 @@ function App() {
           <CartPage />
         </ProtectedRoute>
         <Route path="*">
-        <div id="no-page-message">Nothin' here but squig droppins'</div>
+         <PageNotFound />
         </Route>
       </Switch>
     </BrowserRouter>

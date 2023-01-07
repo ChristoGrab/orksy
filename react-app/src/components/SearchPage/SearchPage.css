@@ -1,0 +1,10 @@
+.search-page-container {
+  padding-top: 30px;
+  width: 90%;
+  margin: auto;
+}
+
+.search-page-message {
+  display: flex;
+  justify-content: center;
+}

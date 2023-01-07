@@ -23,6 +23,11 @@
   color: #7f7f7f;
   font-size: 18px;
   margin: 0 5px;
+  transition: 250ms all ease-in;
+}
+
+#profile-page-store-link:hover {
+  opacity: .6;
 }
 
 .profile-page-review-container {
@@ -63,7 +68,7 @@
 .orksy-explanation-title {
   font-size: 24px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .orksy-explanation-text {
