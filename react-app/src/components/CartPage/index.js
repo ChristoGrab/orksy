@@ -10,11 +10,10 @@ const CartPage = () => {
   const dispatch = useDispatch()
   const cartItems = useSelector(state => Object.values(state.cart.cart))
 
-  console.log(cartItems)
   useEffect(() => {
     dispatch(loadCartThunk())
 
-  }, [dispatch])
+  }, [dispatch, cartItems.length])
 
   return (
     <div className="cart-page-container">
