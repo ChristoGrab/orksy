@@ -4,14 +4,14 @@ import { useDispatch } from 'react-redux'
 import { removeFromCartThunk } from '../../store/cart'
 import './CartItemCard.css'
 
-const CartItemCard = ({ product, index }) => {
+const CartItemCard = ({ product, id }) => {
   
   const dispatch = useDispatch()
   
   const removeItemFromCart = async (e) => {
     e.preventDefault();
     
-    dispatch(removeFromCartThunk(index))
+    dispatch(removeFromCartThunk(id))
   }
 
   return (

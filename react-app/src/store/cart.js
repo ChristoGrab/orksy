@@ -17,10 +17,10 @@ const addToCart = (item) => {
   }
 }
 
-const removeFromCart = (index) => {
+const removeFromCart = (id) => {
   return {
     type: REMOVE_FROM_CART,
-    index
+    id
   }
 }
 
@@ -47,16 +47,17 @@ export const addToCartThunk = (item) => async (dispatch) => {
   return item
 }
 
-export const removeFromCartThunk = (index) => async (dispatch) => {
+export const removeFromCartThunk = (id) => async (dispatch) => {
   
+  console.log("index in thunk: ", id)
   let cart = JSON.parse(localStorage.getItem("orksycart"))
   
   for (let i = 0; i < cart.length; i++) {
-    if (i === index) cart.splice(i, 1)
+    if (cart[i].id === id) cart.splice(i, 1)
   }
   localStorage.setItem("orksycart", JSON.stringify(cart))
   
-  dispatch(removeFromCart(index))
+  dispatch(removeFromCart(id))
 }
 
 // REDUCER //
@@ -98,7 +99,8 @@ const cartReducer = (state = initialState, action) => {
       const myCart = {
         ...state.cart
       }
-      delete myCart.cart[action.index]
+      console.log(action.id)
+      delete myCart.cart[action.id]
       return {
         ...state,
         cart: myCart,

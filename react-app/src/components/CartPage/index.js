@@ -8,7 +8,7 @@ import { loadCartThunk } from '../../store/cart'
 const CartPage = () => {
 
   const dispatch = useDispatch()
-  const cartItems = useSelector(state => state.cart.cart)
+  const cartItems = useSelector(state => Object.values(state.cart.cart))
 
   console.log(cartItems)
   useEffect(() => {
@@ -29,7 +29,7 @@ const CartPage = () => {
           <h2>Itemz in yer kart:</h2>
           <div className="cart-items-list">
             {cartItems.map((item, index) => (
-              <CartItemCard key={index} index={index} product={item} />
+              <CartItemCard key={index} id={item.id} product={item} />
             ))}
           </div>
           <div className="place-order-box">
