@@ -1,16 +1,20 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useSelector, useDispatch } from "react-redux"
 import CartItemCard from './CartItemCard'
 import "./CartPage.css"
+import { loadCartThunk } from '../../store/cart'
 
 const CartPage = () => {
 
-  const [cartItems, setCartItems] = useState([])
+  const dispatch = useDispatch()
+  const cartItems = useSelector(state => state.cart.cart)
 
+  console.log(cartItems)
   useEffect(() => {
-    setCartItems(JSON.parse(localStorage.getItem("cart")))
+    dispatch(loadCartThunk())
 
-  }, [])
+  }, [dispatch])
 
   return (
     <div className="cart-page-container">

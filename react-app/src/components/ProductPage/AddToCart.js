@@ -10,12 +10,10 @@ const AddToCart = ({ product }) => {
   const dispatch = useDispatch()
   const [showModal, setShowModal] = useState(false)
   
-  const addToCart = async (e) => {
+  const addToCart = (e) => {
     e.preventDefault();
-    
+
     dispatch(addToCartThunk(product))
-    console.log("button triggered")
-    console.log(product)
   }
   
   return (

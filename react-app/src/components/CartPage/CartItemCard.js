@@ -1,17 +1,17 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { removeFromCartThunk } from '../../store/cart'
 import './CartItemCard.css'
 
 const CartItemCard = ({ product, index }) => {
   
+  const dispatch = useDispatch()
+  
   const removeItemFromCart = async (e) => {
     e.preventDefault();
     
-    let cart = JSON.parse(localStorage.getItem("cart"))
-    for (let i = 0; i < cart.length; i++) {
-      if (i === index) cart.splice(i, 1)
-    }
-    localStorage.setItem("cart", JSON.stringify(cart))
+    dispatch(removeFromCartThunk(index))
   }
 
   return (

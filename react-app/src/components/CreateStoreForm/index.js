@@ -37,7 +37,6 @@ function CreateStoreForm() {
       owner_id: sessionUser.id
     }
 
-    console.log(new_store)
     dispatch(createStoreThunk(new_store))
       .then(data => history.push('/profile'))
   }

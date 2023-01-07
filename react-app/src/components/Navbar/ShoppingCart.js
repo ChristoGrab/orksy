@@ -5,22 +5,26 @@ import { loadCartThunk } from "../../store/cart";
 import "./ShoppingCart.css"
 
 const ShoppingCart = () => {
-  
-  const history = useHistory();
+
   const dispatch = useDispatch();
-  const cart = useSelector(state => Object.values(state.cart.cart))
-  const [cartSize, setCartSize] = useState(0)
-  
+  const history = useHistory();
+  const [cartSize, setCartSize] = useState(0);
+  const cart = useSelector(state => state.cart.cartSize)
+
+
   useEffect(() => {
+
     dispatch(loadCartThunk())
-    console.log(cartSize)
-    setCartSize(cart.length)
-    console.log(cartSize)
-  }, [dispatch, cart.length])
-  
+    .then(response => {
+      setCartSize(response.length)
+    })
+
+  }, [cart])
+
+
   const openCartPage = async (e) => {
     e.preventDefault();
-    
+
     history.push("/cart")
   }
 
