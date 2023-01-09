@@ -20,18 +20,28 @@ const AddToCart = ({ product }) => {
   const addToCart = (e) => {
     e.preventDefault();
 
-    dispatch(addToCartThunk(product))
-    .then(setAddedToCartPopup(true))
+    let cart = localStorage.getItem("orksycart")
+    if (cart !== null) {
+      cart = JSON.parse(cart)
+      for (let keys of cart.itemList) {
+      if (keys["id"] === product.id) {
+        return window.alert("This item is already in your cart!")
+      }
+    }
+  }
+
+  dispatch(addToCartThunk(product))
+  .then(setAddedToCartPopup(true))
   }
   
   
   
   return (
     <>
-    <button id="add-to-cart-button" className="product-page-button green" onClick={addToCart}>
-      Add to Kart
-    </button>
-    {addedToCartPopup && (cartPopupDiv)}
+    {addedToCartPopup ? cartPopupDiv 
+    : <button id="add-to-cart-button" className="product-page-button green" onClick={addToCart}>
+    Add to Kart
+    </button>}
     </>
   )
 }

@@ -11,7 +11,7 @@
 #   user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod("users.id")))
 #   total = db.Column(db.Integer, nullable=False)
 #   timestamp = db.Column(db.DateTime, default=datetime.datetime.now)
-  
+
 #   # Relationships
 #   order_items = db.relationship("OrderItem", back_populates="order")
 #   user = db.relationship("User", back_populates="orders")

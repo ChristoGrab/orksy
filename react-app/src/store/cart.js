@@ -117,7 +117,7 @@ const cartReducer = (state = initialState, action) => {
       return {
         ...state,
         itemList: myCart,
-        cartSize: action.cart["cartSize"]
+        cartSize: action.cart["cartSize"] || 0
       }
     }
 

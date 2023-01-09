@@ -31,9 +31,9 @@ const NavBar = () => {
     <nav className="navbar-container">
       <div className="navbar-left">
         <Link to="/" id="navbar-logo">Orksy</Link>
-    </div>
-    <SearchBar />
-    {sessionLinks}
+      </div>
+      <SearchBar />
+      {sessionLinks}
     </nav>
   );
 }
