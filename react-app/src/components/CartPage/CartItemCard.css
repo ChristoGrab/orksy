@@ -16,12 +16,18 @@
   border-radius: 6px;
   object-fit: contain;
   box-sizing: border-box;
+  margin-left: 10px;
 }
 
 .cartitem-card-name {
   font-size: 14px;
   line-height: 1.6;
-  font-weight: 400;
+  font-weight: bold;
+}
+
+.cartitem-card-name:hover {
+  text-decoration: underline;
+  opacity: .5;
 }
 
 .cartitem-card-price {

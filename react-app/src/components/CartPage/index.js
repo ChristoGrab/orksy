@@ -9,17 +9,40 @@ const CartPage = () => {
 
   const dispatch = useDispatch()
   const cartItems = useSelector(state => Object.values(state.cart.itemList))
+  const [totalPrice, setTotalPrice] = useState(0)
+
 
   useEffect(() => {
     dispatch(getCartThunk())
 
   }, [dispatch, cartItems.length])
-  
-  const handleEmptyCart = (e) => {
 
+  // calculate total price of items in cart and set state
+  useEffect(() => {
+    let newTotal = calculateTotalPrice(cartItems)
+    setTotalPrice(newTotal)
+
+  }, [cartItems.length])
+
+
+  const handleEmptyCart = (e) => {
+    e.preventDefault();
+    dispatch(emptyCartThunk())
+  }
+
+  const handleCheckout = (e) => {
     e.preventDefault();
 
-    dispatch(emptyCartThunk())
+    handleEmptyCart(e);
+  }
+
+
+  const calculateTotalPrice = (cart) => {
+    let totalPrice = 0;
+    cart.forEach(item => {
+      totalPrice += item.price
+    })
+    return totalPrice;
   }
 
   return (
@@ -38,10 +61,25 @@ const CartPage = () => {
               <CartItemCard key={index} id={item.id} product={item} />
             ))}
           </div>
-          {/* <div className="place-order-box">
-              <button>Checkout</button>
-          </div> */}
-          <button onClick={handleEmptyCart}>Empty Kart</button>
+          <div className="place-order-box">
+            <div className="place-order-inner-box">
+              <div className="place-order-cost">Item(z) Total</div>
+              <i className="fa-solid fa-tooth" />
+              {totalPrice}
+            </div>
+            <div className="place-order-inner-box">
+              <div className="place-order-cost">Shipping</div> 
+              <i className="fa-solid fa-tooth" />
+              {Math.ceil(totalPrice / 100)}
+            </div>
+            <div className="place-order-inner-box">
+              <div className="place-order-cost">Total Price</div>
+              <i className="fa-solid fa-tooth" />
+              {totalPrice + Math.ceil(totalPrice / 100)}
+            </div>
+            <button className="place-order-button green" onClick={handleCheckout}>Checkout</button>
+          </div>
+          <button className="product-page-button red" onClick={handleEmptyCart}>Empty Kart</button>
         </div>
         : <div className="cart-items-box">
           <h2>Your kart is empty.</h2>
