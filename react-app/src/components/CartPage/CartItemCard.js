@@ -15,12 +15,14 @@ const CartItemCard = ({ product, id }) => {
   }
 
   return (
+    <>
     <Link to={`/products/${product.id}`} className="cartitem-card">
       <img src={product.image} className="cartitem-card-image" alt={product.name} />
       <div className="cartitem-card-name">{product.name}</div>
       <div className="cartitem-card-price"><i className="fa-solid fa-tooth" />{product.price}</div>
-      <button className="remove-from-cart-button" onClick={removeItemFromCart}>Remove</button>
     </Link>
+    <button className="remove-from-cart-button" onClick={removeItemFromCart}>Remove</button>
+    </>
   )
 }
 

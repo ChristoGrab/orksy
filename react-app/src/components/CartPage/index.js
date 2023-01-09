@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from "react-redux"
 import CartItemCard from './CartItemCard'
 import "./CartPage.css"
-import { getCartThunk } from '../../store/cart'
+import { getCartThunk, emptyCartThunk } from '../../store/cart'
 
 const CartPage = () => {
 
@@ -14,6 +14,13 @@ const CartPage = () => {
     dispatch(getCartThunk())
 
   }, [dispatch, cartItems.length])
+  
+  const handleEmptyCart = (e) => {
+
+    e.preventDefault();
+
+    dispatch(emptyCartThunk())
+  }
 
   return (
     <div className="cart-page-container">
@@ -31,9 +38,10 @@ const CartPage = () => {
               <CartItemCard key={index} id={item.id} product={item} />
             ))}
           </div>
-          <div className="place-order-box">
-            
-            </div>
+          {/* <div className="place-order-box">
+              <button>Checkout</button>
+          </div> */}
+          <button onClick={handleEmptyCart}>Empty Kart</button>
         </div>
         : <div className="cart-items-box">
           <h2>Your kart is empty.</h2>

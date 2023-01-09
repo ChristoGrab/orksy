@@ -89,6 +89,16 @@ export const removeFromCartThunk = (id) => async (dispatch) => {
   dispatch(removeFromCart(id))
 }
 
+export const emptyCartThunk = () => async (dispatch) => {
+  
+  localStorage.setItem("orksycart", JSON.stringify({
+    "itemList": [],
+    "cartSize": 0
+  }))
+    
+  dispatch(emptyCart())
+}
+
 // REDUCER //
 
 const initialState = { itemList: {}, cartSize: 0 }

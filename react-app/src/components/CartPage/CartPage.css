@@ -48,3 +48,12 @@
   gap: 20px;
   width: 50%;
 }
+
+.place-order-box {
+  border: 2px solid black;
+  position: fixed;
+  right: 10vh;
+  top: 35vh;
+  width: 30%;
+  height: 50vh;
+}
