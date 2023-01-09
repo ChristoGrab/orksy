@@ -1,0 +1,45 @@
+.cartitem-card {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  border: 1px solid black;
+  box-sizing: border-box;
+  gap: 10%;
+}
+
+.cartitem-card-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 6px;
+  object-fit: contain;
+  box-sizing: border-box;
+}
+
+.cartitem-card-name {
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.cartitem-card-price {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.remove-from-cart-button {
+  background: white;
+  border: none;
+  height: 25px;
+  padding: 6px;
+  align-self: flex-end;
+  transition: 200ms all;
+}
+
+.remove-from-cart-button:hover {
+  background: #d2d2d2;
+  border-radius: 20px;
+}

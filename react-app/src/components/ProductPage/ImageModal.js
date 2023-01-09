@@ -1,6 +1,5 @@
 import "./ProductPage.css"
 
-
 const ImageModal = ({image}) => {
 
   return (

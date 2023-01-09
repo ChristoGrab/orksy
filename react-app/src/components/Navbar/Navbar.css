@@ -18,7 +18,7 @@
   margin-right: 100px;
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  align-items: center;
 }
 
 @font-face {

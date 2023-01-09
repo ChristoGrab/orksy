@@ -1,0 +1,32 @@
+.shopping-cart-box {
+  display: flex;
+  align-items: center;
+}
+
+.fa-cart-shopping {
+  font-size: 24px;
+  padding: 10px;
+  border-radius: 24px;
+  transition: background-color 280ms ease-out;
+}
+
+.fa-cart-shopping:hover {
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+#shopping-cart-numbers {
+  background-color: #da8b68;
+  position: relative;
+  font-size: 11px;
+  bottom: 12px;
+  right: 18px;
+  border-radius: 24px;
+  padding: 4px 3px 4px 3px;
+  width: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+  z-index: 10;
+}
