@@ -7,7 +7,6 @@ import "./AddToCart.css"
 const AddToCart = ({ product }) => {
   
   const dispatch = useDispatch()
-  const [showModal, setShowModal] = useState(false)
   const [addedToCartPopup, setAddedToCartPopup] = useState(false)
   
   
@@ -34,8 +33,7 @@ const AddToCart = ({ product }) => {
   .then(setAddedToCartPopup(true))
   }
   
-  
-  
+
   return (
     <>
     {addedToCartPopup ? cartPopupDiv 

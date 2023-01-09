@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { updateReviewThunk } from "../../../store/reviews";
 import ReviewStars from "../ReviewStars";
 
-const UpdateReviewModal = ( {reviewId, setUpdateReviewModal, prevRating, prevReview} ) => {
+const UpdateReviewModal = ( {reviewId, prevRating, prevReview} ) => {
   
   const dispatch = useDispatch()
   const reload = () => window.location.reload();

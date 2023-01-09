@@ -1,10 +1,9 @@
 import { useState } from "react";
-import { AiOutlineReload } from "react-icons/ai";
 import { useDispatch } from "react-redux";
 import { createReviewThunk } from "../../../store/reviews";
 import ReviewStars from '../ReviewStars'
 
-const CreateReviewModal = ({ productId, setCreateReviewModal }) => {
+const CreateReviewModal = ({ productId }) => {
 
   const dispatch = useDispatch()
   const reload = () => window.location.reload()

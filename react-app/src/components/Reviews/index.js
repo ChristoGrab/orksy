@@ -26,7 +26,7 @@ const ReviewCard = ({ review, sessionUser }) => {
   return (
     <div>
       <div>
-        {[...Array(review?.rating)].map((star) => (<i className="fa-solid fa-star"></i>))}
+        {[...Array(review?.rating)].map((star, index) => (<i key={index} className="fa-solid fa-star"></i>))}
       </div>
       <div>{review.review}</div>
       <div className="reviewer-name">{review.reviewer_name}</div>

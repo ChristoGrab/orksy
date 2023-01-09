@@ -1,10 +1,8 @@
-import { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { useParams, useHistory } from 'react-router-dom';
+import { useState } from 'react'
+import { useHistory } from 'react-router-dom';
 import "./SearchBar.css"
 
 const SearchBar = () => {
-  const dispatch = useDispatch();
   const history = useHistory();
   
   const [searchInput, setSearchInput] = useState("");
