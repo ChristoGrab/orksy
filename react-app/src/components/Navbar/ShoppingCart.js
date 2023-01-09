@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useHistory } from "react-router-dom";
-import { loadCartThunk } from "../../store/cart";
+import { getCartThunk } from "../../store/cart";
 import "./ShoppingCart.css"
 
 const ShoppingCart = () => {
@@ -14,11 +14,10 @@ const ShoppingCart = () => {
 
   useEffect(() => {
 
-    dispatch(loadCartThunk())
+    dispatch(getCartThunk())
     .then(response => {
-      setCartSize(response.length)
+      setCartSize(response["cartSize"])
     })
-
   }, [cart])
 
 

@@ -8,7 +8,7 @@ const CartItemCard = ({ product, id }) => {
   
   const dispatch = useDispatch()
   
-  const removeItemFromCart = async (e) => {
+  const removeItemFromCart = (e) => {
     e.preventDefault();
     
     dispatch(removeFromCartThunk(id))

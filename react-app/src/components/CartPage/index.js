@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from "react-redux"
 import CartItemCard from './CartItemCard'
 import "./CartPage.css"
-import { loadCartThunk } from '../../store/cart'
+import { getCartThunk } from '../../store/cart'
 
 const CartPage = () => {
 
   const dispatch = useDispatch()
-  const cartItems = useSelector(state => Object.values(state.cart.cart))
+  const cartItems = useSelector(state => Object.values(state.cart.itemList))
 
   useEffect(() => {
-    dispatch(loadCartThunk())
+    dispatch(getCartThunk())
 
   }, [dispatch, cartItems.length])
 
