@@ -56,15 +56,26 @@ const CartPage = () => {
     <div id="checkout-popup">
       <div id="checkout-message">
         <h2>Thanks for using Orksy!</h2>
-        <p>This project is still a work in progress, and a persistent order history is next on the list of to-do features.</p>
-        <p>If you haven't already, I recommend checking out some of the other features on the site. Try creating your own store, adding some products, and maybe leaving a review or two on some of the products currently on display!</p>
-        <p>If you have any questions or feedback about this project, please feel free to reach out to me using the links below:</p>
+        <p className="user-message-text">This project is still a work in progress, and a persistent order history is next on the list of to-do features.</p>
+        <p className="user-message-text">If you haven't already, I recommend checking out some of the other features on the site. Try creating your own store, adding some products, and maybe leaving a review or two on some of the products currently on display!</p>
+        <p className="user-message-text">If you have any questions or feedback about this project, please feel free to reach out to me using the links below:</p>
+        <div className="checkout-contact-links">
         <a href="https://www.linkedin.com/in/christo-grabowski-894a82a6" target="_blank">
           <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge" />
         </a>
         <a href="mailto:christo.grab@gmail.com" target="_blank">
           <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail Badge" />
         </a>
+        </div>
+        <p className="user-message-text">If you want to get to know my work better, please check out my Github or portfolio here:</p>
+        <div className="checkout-contact-links">
+          <a href="https://github.com/ChristoGrab" target="_blank">
+            <img src="https://img.shields.io/badge/Github-000000?style=for-the-badge&logo=github&logoColor=white" alt="Github Badge" />
+          </a>
+          <a href="https://christograb.github.io/" target="_blank">
+            <img src="https://img.shields.io/badge/Portfolio-1f5429?style=for-the-badge&logo=react&logoColor=white" alt="Portfolio Badge" />
+          </a>
+          </div>
       </div>
       <button className="product-page-button green" onClick={redirectUser}>Back to Orksy</button>
     </div>

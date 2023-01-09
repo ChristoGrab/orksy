@@ -101,15 +101,29 @@
   right: 0;
   left: 0;
   bottom: 0;
-  background-color: #f3f3f3;
+  background-color: #fdebd2;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  animation: fadeIn .3s;
 }
 
 #checkout-message {
   display: flex;
   flex-direction: column;
   width: 80%;
+  margin-bottom: 40px;
+}
+
+.user-message-text {
+  line-height: 18px;
+  font-size: 15px;
+}
+
+.checkout-contact-links {
+  align-self: center;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
 }
