@@ -50,10 +50,80 @@
 }
 
 .place-order-box {
-  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 15%;
   position: fixed;
   right: 10vh;
-  top: 35vh;
+  top: 32vh;
   width: 30%;
   height: 50vh;
+  padding: 12px;
+  border-radius: 18px;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+.place-order-inner-box {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 5fr .2fr 1fr;
+  align-items: center;
+}
+
+.place-order-cost {
+  margin-left: 20px;
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: normal;
+}
+
+.place-order-button {
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: bold;
+  transition: 200ms all;
+  align-self: center;
+}
+
+.place-order-button:hover {
+  opacity: .8;
+}
+
+#checkout-popup {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #fdebd2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  animation: fadeIn .3s;
+}
+
+#checkout-message {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-bottom: 40px;
+}
+
+.user-message-text {
+  line-height: 18px;
+  font-size: 15px;
+}
+
+.checkout-contact-links {
+  align-self: center;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
 }

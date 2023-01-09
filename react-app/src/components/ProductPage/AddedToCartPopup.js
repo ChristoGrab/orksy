@@ -22,7 +22,7 @@ const AddedToCartPopup = ({ product }) => {
       <div className="cart-popup-box-1">
         <img className="added-to-cart-image" src={product.image} alt={product.name} />
         <i className="fa-solid fa-check" />
-        <h2>{product.name} added to Kart</h2>
+        <h3>{product.name} added to Kart</h3>
       </div>
       <div className="cart-popup-box-2">
       <button className="product-page-button green" onClick={viewCartPage}>View Kart</button>
