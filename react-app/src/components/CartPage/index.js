@@ -36,10 +36,10 @@ const CartPage = () => {
     setUserHasCheckedOut(true)
     handleEmptyCart(e);
   }
-  
+
   const redirectUser = (e) => {
     e.preventDefault();
-    
+
     history.push('/')
   }
 

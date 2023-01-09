@@ -12,6 +12,7 @@ const CreateReviewModal = ({ productId, setCreateReviewModal }) => {
   const [rating, setRating] = useState(0)
   const [review, setReview] = useState("")
   const [errors, setErrors] = useState([])
+  const [submitted, setSubmitted] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,18 +25,20 @@ const CreateReviewModal = ({ productId, setCreateReviewModal }) => {
     setErrors(errorList)
 
     if (errorList.length) return
+    
+    setSubmitted(true)
 
     const newReview = {
       rating,
       review
     }
 
-
     dispatch(createReviewThunk(newReview, productId))
       .then(reload())
   }
 
   return (
+    <>
     <form className="review-form">
       <h2>Let da Orks know if dis produkt is up ta snuff</h2>
       {errors.map((error, ind) => (
@@ -47,17 +50,6 @@ const CreateReviewModal = ({ productId, setCreateReviewModal }) => {
         <div className="create-hover">
           <ReviewStars stars={rating} setStars={setRating} />
         </div>
-        {/* <select
-          value={rating}
-          className="auth-input"
-          onChange={e => setRating(e.target.value)}
-        >
-          <option>5</option>
-          <option>4</option>
-          <option>3</option>
-          <option>2</option>
-          <option>1</option>
-        </select> */}
         <label className="auth-label" htmlFor="review">Review</label>
         <textarea
           className="review-textarea"
@@ -68,6 +60,13 @@ const CreateReviewModal = ({ productId, setCreateReviewModal }) => {
         <button className="auth-submit-button green" onClick={handleSubmit}>Submit Review</button>
       </div>
     </form>
+    {submitted === true && (
+        <div className="loading-popup-container">
+          <div className="loading-popup-text">Yer request is in da workz, waitin' on da gretchins to finish da job</div>
+          <div className="loading-wheel-container"><i className="fa-solid fa-spinner"></i></div>
+        </div>
+      )}
+    </>
   )
 }
 

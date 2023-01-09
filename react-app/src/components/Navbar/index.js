@@ -3,8 +3,8 @@ import { useSelector } from 'react-redux';
 import LoginFormModal from '../auth/LoginFormModal';
 import ProfileButton from './ProfileButton';
 import ShoppingCart from './ShoppingCart';
-import "./Navbar.css";
 import SearchBar from './SearchBar';
+import "./Navbar.css";
 
 const NavBar = () => {
   

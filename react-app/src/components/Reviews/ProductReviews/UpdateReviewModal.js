@@ -11,13 +11,12 @@ const UpdateReviewModal = ( {reviewId, setUpdateReviewModal, prevRating, prevRev
   const [rating, setRating] = useState(prevRating)
   const [review, setReview] = useState(prevReview)
   const [errors, setErrors] = useState([])
-  const [formSubmitted, setFormSubmitted] = useState(false)
+  const [submitted, setSubmitted] = useState(false)
   
   const handleSubmit = async (e) => {
     e.preventDefault();
     
     setErrors([])
-    setFormSubmitted(true)
     
     const errorList = []
     if (rating < 1) errorList.push("Don't forget ta leave a rating by clickin' on da shiny starz")
@@ -25,6 +24,8 @@ const UpdateReviewModal = ( {reviewId, setUpdateReviewModal, prevRating, prevRev
     setErrors(errorList)
     
     if (errorList.length) return
+    
+    setSubmitted(true)
     
     const newReview = {
       rating,
@@ -36,6 +37,7 @@ const UpdateReviewModal = ( {reviewId, setUpdateReviewModal, prevRating, prevRev
   }
 
   return (
+    <>
       <form className="review-form">
         <h2>Changed yer mind about this produkt, have ye?</h2>
         {errors.map((error, ind) => (
@@ -55,6 +57,13 @@ const UpdateReviewModal = ( {reviewId, setUpdateReviewModal, prevRating, prevRev
         />
         <button className= "auth-submit-button green" onClick={handleSubmit}>Submit Review</button>
       </form>
+          {submitted === true && (
+            <div className="loading-popup-container">
+              <div className="loading-popup-text">Yer request is in da workz, waitin' on da gretchins to finish da job</div>
+              <div className="loading-wheel-container"><i className="fa-solid fa-spinner"></i></div>
+            </div>
+          )}
+          </>
   )
 }
 
