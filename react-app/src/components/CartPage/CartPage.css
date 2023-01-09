@@ -57,7 +57,7 @@
   gap: 15%;
   position: fixed;
   right: 10vh;
-  top: 35vh;
+  top: 32vh;
   width: 30%;
   height: 50vh;
   padding: 12px;
@@ -93,4 +93,23 @@
 
 .place-order-button:hover {
   opacity: .8;
+}
+
+#checkout-popup {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #f3f3f3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#checkout-message {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
 }

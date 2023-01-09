@@ -1,13 +1,13 @@
 .cartitem-card {
   width: 100%;
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr .5fr;
   align-items: center;
   text-decoration: none;
-  color: black;
-  border: 1px solid black;
   box-sizing: border-box;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
   gap: 10%;
+  border-radius: 5px;
 }
 
 .cartitem-card-image {
@@ -23,10 +23,13 @@
   font-size: 14px;
   line-height: 1.6;
   font-weight: bold;
+  color: black;
+  text-decoration: none;
+  transition: all 200ms ease-out;
+  margin-bottom: 10%;
 }
 
 .cartitem-card-name:hover {
-  text-decoration: underline;
   opacity: .5;
 }
 
@@ -34,18 +37,20 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 1.6;
+  margin-bottom: 10%;
 }
 
 .remove-from-cart-button {
   background: white;
-  border: none;
-  height: 25px;
-  padding: 6px;
   align-self: flex-end;
-  transition: 200ms all;
+  margin-bottom: 10px;
+  margin-right: 3px;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  transition: 250ms all ease-out;
 }
 
 .remove-from-cart-button:hover {
   background: #d2d2d2;
-  border-radius: 20px;
 }
