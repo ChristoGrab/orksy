@@ -127,7 +127,7 @@ const EditProductForm = () => {
             onChange={e => setPrice(e.target.value)} />
           <label>Image - <span className='form-note'>Supported filetypes: png, jpg, gif</span></label>
           <input type="file" name="file" id="imageInput" encType="multipart/form-data" />
-          <button className="store-form-button" onClick={handleSubmit}>Join the WAAAAAGH!!</button>
+          <button className="store-form-button green" onClick={handleSubmit}>Join the WAAAAAGH!!</button>
         </form>
         {submitted === true && (
           <div className="loading-popup-container">
