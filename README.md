@@ -35,12 +35,12 @@ Users on Orksy are able to set up an online storefront via their profile page. T
 The landing page consists of a grid of all products on the site.  The display order is randomized on each viewing for a more dynamic user experience.  The welcome message uses conditional rendering to provide a link for logged in users to their profile page.
 
 ## Storefront
-![Storefront Preview](https://user-images.githubusercontent.com/108154848/205359149-5022c4c9-031f-49c9-984e-7ac3d9a92173.jpg)
+![Storefront Preview v2](https://user-images.githubusercontent.com/108154848/211596994-865ab0f1-8818-40bf-b76c-4e613f4fbd8b.jpg)
 
 This is the user's hub for product functionality.  From here users can add a new product to their store, as well as edit and delete any products they have already posted on the site.
 
 ## Product Viewer
-![Product Page Preview](https://user-images.githubusercontent.com/108154848/210399094-7c897577-e445-41ee-9835-d7125167bdf5.jpg)
+![Product Page Preview v3](https://user-images.githubusercontent.com/108154848/211597211-0b6bf00e-c090-4e39-b586-8370c37be314.jpg)
 
 The page for viewing individual products is probably the component I'm most proud of.  It contains a number of hand-made animations using CSS with Javascript to allow a user to toggle the rendering of the product's description and shipping info.  The dates for the shipping and delivery are randomized based on the current date, adding a little programmatic flair to the page!  This page also contains a list of reviews associated with the product, and allows a logged in user to create, edit or delete their own review.
 
