@@ -74,19 +74,19 @@ const StoreFront = () => {
               <ProductCard product={product} />
               {sessionUser && sessionUser.id === store.owner_id && (
                 <div className="storefront-product-buttons">
-                  <button id="edit-product-button"
+                  <button className="edit-product-button"
                     key={product.id}
                     onClick={(e) => {
                       handleEdit(e, product.id)
                     }}>
-                    Edit Produkt
+                    Edit
                   </button>
-                  <button id="delete-product-button"
+                  <button className="delete-product-button"
                     key={product.id}
                     onClick={(e) => {
                       handleDelete(e, product.id)
                     }}>
-                    Delete Produkt
+                    Remove
                   </button>
                 </div>
               )}

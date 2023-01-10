@@ -31,29 +31,30 @@
   align-items: center;
   color: white;
   margin: 0 5px;
-  transition: all 200ms ease-in;
-}
-
-#edit-product-button {
-  background-color: #1f5429;
-}
-
-#delete-product-button {
-  background-color: #832212;
+  transition: all 200ms ease-out;
 }
 
 #create-product-link {
-  border: 1px solid black;
   margin: 10px;
 }
 
 #edit-store-link:hover,
 #delete-store-link:hover,
-#create-product-link:hover,
-#delete-product-button:hover,
-#edit-product-button:hover {
+#create-product-link:hover {
   box-shadow: 1px 1px 5px #757575;
-  transform: scale(1.1, 1.1)
+  transform: scale(1.03, 1.03);
+  opacity: .9;
+}
+
+.edit-product-button,
+.delete-product-button {
+  font-weight: bold;
+  transition: all 150ms ease-out;
+}
+
+.delete-product-button:hover,
+.edit-product-button:hover {
+  background-color: #d6d6d6;
 }
 
 .storefront-under-banner {
@@ -93,14 +94,14 @@
   row-gap: 10px;
 }
 
-#edit-product-button,
-#delete-product-button {
+.edit-product-button,
+.delete-product-button {
   border-radius: 5em;
-  color: white;
   height: 30px;
-  width: 120px;
+  width: 25%;
   margin: 5px 0;
   border: none;
+  background-color: white;
 }
 
 .storefront-product-buttons {
