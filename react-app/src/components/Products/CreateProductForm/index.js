@@ -3,11 +3,13 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { createProductThunk } from '../../../store/products'
 import { getMyStoreThunk } from '../../../store/stores';
+import PageNotFound from '../../PageNotFound';
 import "../Products.css"
 
 const CreateProductForm = () => {
   
   const store = useSelector(state => state.stores.singleStore)
+  const sessionUser = useSelector(state => state.session.user)
 
   const dispatch = useDispatch();
   const history = useHistory();
@@ -24,6 +26,12 @@ const CreateProductForm = () => {
   useEffect(() => {
     dispatch(getMyStoreThunk())
   }, [dispatch])
+  
+  if (sessionUser.id !== store.owner_id) {
+    return (
+      <PageNotFound />
+    )
+  }
 
   let correctFile = true
 
@@ -114,7 +122,7 @@ const CreateProductForm = () => {
           onChange={e => setPrice(e.target.value)} />
         <label>Image - <span className='form-note'>Supported filetypes: png, jpg, gif</span></label>
         <input type="file" name="file" id="imageInput" encType="multipart/form-data" />
-        <button className="store-form-button" onClick={handleSubmit}>Join the WAAAAAGH!!</button>
+        <button className="store-form-button green" onClick={handleSubmit}>Join the WAAAAAGH!!</button>
       </form>
       {submitted === true && (
         <div className="loading-popup-container">

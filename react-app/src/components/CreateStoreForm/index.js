@@ -62,7 +62,7 @@ function CreateStoreForm() {
           type="text"
           value={description}
           onChange={e => setDescription(e.target.value)} />
-        <button className="store-form-button" onClick={handleSubmit}>Join the WAAAAAGH!!</button>
+        <button className="store-form-button green" onClick={handleSubmit}>Join the WAAAAAGH!!</button>
       </form>
       <img src={formImage} className="form-image" alt="orks in a mad max car" />
     </div>

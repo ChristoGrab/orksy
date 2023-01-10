@@ -11,6 +11,7 @@
 }
 
 .product-reviews-number {
+  width: 90%;
   font-size: 26px;
   line-height: 42px;
   margin-bottom: 6px;
@@ -72,63 +73,4 @@
   display: none;
 }
 
-/* USER REVIEWS */
 
-.user-reviews-container {
-  display: flex;
-  flex-direction: column;
-  width: auto;
-  justify-items: center;
-  gap: 30px;
-}
-
-.user-review-card {
-  margin: 10 auto;
-  display: flex;
-  flex-direction: column;
-  background: #ffffff;
-  border: 1px solid #d2d2d2;
-  width: 780px;
-  border-radius: 5px;
-  box-shadow: 1px 1px 5px 1px #e6e6e5;
-}
-
-.user-review-card-box-1 {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 100%;
-  padding: 10px 0;
-  border-bottom: 1px solid #d2d2d2;
-  text-decoration: none;
-  color: black;
-}
-
-.user-review-card-box-1:hover {
-  text-decoration: underline;
-}
-
-.user-review-card-box-2 {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 5px;
-  padding: 10px 0;
-  margin-left: 12px;
-}
-
-.review-card-image {
-  width: 107px;
-  height: 107px;
-  border: 1px solid #d2d2d2;
-  border-radius: 3px;
-  padding: 3px;
-  object-fit: contain;
-}
-
-.user-review-buttons {
-  display: flex;
-  gap: 10px;
-  margin-left: 12px;
-  padding-bottom: 5px;
-}

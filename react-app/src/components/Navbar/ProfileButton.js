@@ -14,14 +14,14 @@ function ProfileButton({ user }) {
   };
 
   useEffect(() => {
+    // if the menu is not open, do nothing
     if (!showMenu) return;
-
     const closeMenu = () => {
       setShowMenu(false);
     };
-
+    // otherwise, listen for clicks outside of the menu
     document.addEventListener('click', closeMenu);
-
+    // and clean up the event listener when the component unmounts
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
 
@@ -29,7 +29,10 @@ function ProfileButton({ user }) {
     <>
       <button id="profile-button" onClick={openMenu}>
         <i className="fas fa-user-circle" id='profile-pic' />
-        <i className="fa-solid fa-caret-down"></i>
+        {showMenu ?
+        <i className="fa-solid fa-caret-down reverse"></i>
+        : <i className="fa-solid fa-caret-down"></i>
+        }
       </button>
       {showMenu && (
         <div className="profile-dropdown">

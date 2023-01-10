@@ -73,7 +73,7 @@ const ProductReviews = ({ productId, averageRating }) => {
       {reviews.length
         ? <div>{reviews.map(review =>
           <div className="product-page-review-card" key={review.id}>
-            < ReviewCard review={review} sessionUser={sessionUser}/>
+            < ReviewCard review={review} key={review.id} sessionUser={sessionUser}/>
           </div>
         )}
         </div>

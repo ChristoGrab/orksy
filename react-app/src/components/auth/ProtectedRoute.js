@@ -1,12 +1,16 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Route, Redirect } from 'react-router-dom';
+import { Route } from 'react-router-dom';
+import LoginForm from './LoginFormModal/LoginForm';
 
 const ProtectedRoute = props => {
   const user = useSelector(state => state.session.user)
   return (
     <Route {...props}>
-      {(user)? props.children  : <Redirect to='/login' />}
+      {(user)? props.children 
+      : <div className='protected-route-container'>
+        <LoginForm />
+      </div>}
     </Route>
   )
 };

@@ -36,10 +36,10 @@ const CartPage = () => {
     setUserHasCheckedOut(true)
     handleEmptyCart(e);
   }
-  
+
   const redirectUser = (e) => {
     e.preventDefault();
-    
+
     history.push('/')
   }
 
@@ -60,19 +60,19 @@ const CartPage = () => {
         <p className="user-message-text">If you haven't already, I recommend checking out some of the other features on the site. Try creating your own store, adding some products, and maybe leaving a review or two on some of the products currently on display!</p>
         <p className="user-message-text">If you have any questions or feedback about this project, please feel free to reach out to me using the links below:</p>
         <div className="checkout-contact-links">
-        <a href="https://www.linkedin.com/in/christo-grabowski-894a82a6" target="_blank">
+        <a href="https://www.linkedin.com/in/christo-grabowski-894a82a6" target="_blank" rel="noreferrer">
           <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge" />
         </a>
-        <a href="mailto:christo.grab@gmail.com" target="_blank">
+        <a href="mailto:christo.grab@gmail.com" target="_blank" rel="noreferrer">
           <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail Badge" />
         </a>
         </div>
         <p className="user-message-text">If you want to get to know my work better, please check out my Github or portfolio here:</p>
         <div className="checkout-contact-links">
-          <a href="https://github.com/ChristoGrab" target="_blank">
+          <a href="https://github.com/ChristoGrab" target="_blank" rel="noreferrer">
             <img src="https://img.shields.io/badge/Github-000000?style=for-the-badge&logo=github&logoColor=white" alt="Github Badge" />
           </a>
-          <a href="https://christograb.github.io/" target="_blank">
+          <a href="https://christograb.github.io/" target="_blank" rel="noreferrer">
             <img src="https://img.shields.io/badge/Portfolio-1f5429?style=for-the-badge&logo=react&logoColor=white" alt="Portfolio Badge" />
           </a>
           </div>

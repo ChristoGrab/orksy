@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { Link } from "react-router-dom"
 import { Modal } from '../../../context/Modal'
 import UpdateReviewModal from '../ProductReviews/UpdateReviewModal'
@@ -29,11 +29,11 @@ const UserReviewCard = ({ review }) => {
       </Link>
       <div className="user-review-card-box-2">
         <div>{[...Array(review?.rating)].map((star) => (<i className="fa-solid fa-star"></i>))}</div>
-        <div>{review.review}</div>
+        <div className="user-review-card-text">{review.review}</div>
       </div>
       <div className="user-review-buttons">
-      <i className="fa-regular fa-pen-to-square hover-cursor" onClick={showUpdateReviewForm} />
-      <i className="fa-regular fa-trash-can hover-cursor" onClick={confirmDelete} />
+      <button className="remove-from-cart-button" onClick={showUpdateReviewForm}>Edit</button>
+      <button className="remove-from-cart-button" onClick={confirmDelete}>Delete</button>
       </div>
       {
         updateReviewModal === true && (

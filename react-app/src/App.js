@@ -53,30 +53,30 @@ function App() {
         <Route path='/sign-up' exact={true}>
           <SignUpForm />
         </Route>
-        <Route path='/profile'>
+        <ProtectedRoute path='/profile'>
           <ProfilePage />
-        </Route>
-        <Route path="/store/create" exact={true}>
+        </ProtectedRoute>
+        <ProtectedRoute path="/store/create" exact={true}>
           <CreateStoreForm />
-        </Route>
+        </ProtectedRoute>
         <Route path="/store/:storeId" exact={true}>
           <StoreFront />
         </Route>
-        <Route path="/store/:storeId/edit" exact={true}>
+        <ProtectedRoute path="/store/:storeId/edit" exact={true}>
           <EditStoreForm />
-        </Route>
+        </ProtectedRoute>
         <Route path="/store/:storeId/delete" exact={true}>
           <DeleteStore />
         </Route>
-        <Route path="/products/create" exact={true}>
+        <ProtectedRoute path="/products/create" exact={true}>
           <CreateProductForm />
-        </Route>
+        </ProtectedRoute>
         <Route path="/products/:productId/edit" exact={true}>
           <EditProductForm />
         </Route>
-        <Route path="/products/:productId/delete" exact={true}>
+        <ProtectedRoute path="/products/:productId/delete" exact={true}>
           <DeleteProduct />
-        </Route>
+        </ProtectedRoute>
         <Route path="/products/:productId" exact={true}>
           <ProductPage />
         </Route>

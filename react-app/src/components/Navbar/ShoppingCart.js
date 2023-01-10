@@ -18,7 +18,7 @@ const ShoppingCart = () => {
     .then(response => {
       setCartSize(response["cartSize"])
     })
-  }, [cart])
+  }, [cart, dispatch])
 
 
   const openCartPage = async (e) => {

@@ -45,13 +45,14 @@
 
 .store-form-button {
   border-radius: 5em;
-  height: 30px;
+  height: 35px;
   color: white;
   transition: all 250ms ease-in-out;
   width: 180px;
   align-self: flex-end;
   margin-top: 10px;
   font-weight: bold;
+  border: none;
 }
 
 .store-form-button:hover {
