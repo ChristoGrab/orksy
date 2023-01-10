@@ -40,7 +40,7 @@ const LoginForm = () => {
   }
 
   return (
-    <div>
+    <>
       {switchForm ? <SignUpForm />
       :
     <form className="authentication-form" onSubmit={onLogin}>
@@ -73,7 +73,7 @@ const LoginForm = () => {
       </div>
     </form>
     }
-    </div>
+    </>
   );
 };
 

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import AddedToCartPopup from './AddedToCartPopup'
 import { addToCartThunk } from '../../store/cart'
 import "./AddToCart.css"
@@ -7,15 +7,16 @@ import "./AddToCart.css"
 const AddToCart = ({ product }) => {
   
   const dispatch = useDispatch()
+  const sessionUser = useSelector(state => state.session.user)
   const [addedToCartPopup, setAddedToCartPopup] = useState(false)
-  
+  let cartButton;
   
   let cartPopupDiv = (
       <div id="added-to-cart-popup">
         <AddedToCartPopup product={product} />
       </div>
     )
-  
+
   const addToCart = (e) => {
     e.preventDefault();
 
@@ -33,13 +34,22 @@ const AddToCart = ({ product }) => {
   .then(setAddedToCartPopup(true))
   }
   
+  if (sessionUser) {
+    cartButton = (
+      <button id="add-to-cart-button" className="product-page-button green" onClick={addToCart}>
+        Add to Kart
+      </button>
+    )
+  } else {
+    cartButton = (
+      <div></div>
+    )
+  }
+
 
   return (
     <>
-    {addedToCartPopup ? cartPopupDiv 
-    : <button id="add-to-cart-button" className="product-page-button green" onClick={addToCart}>
-    Add to Kart
-    </button>}
+    {addedToCartPopup ? cartPopupDiv : cartButton}
     </>
   )
 }
