@@ -43,6 +43,9 @@ function ProfileButton({ user }) {
               <div id="manage-account-link">Manage Profile</div>
             </div>
           </Link>
+          <Link to="/profile/reviews" className="profile-dropdown-link">
+          <i className="fa-solid fa-clipboard-list"></i>Your Reviewz
+          </Link>
           <div className="profile-dropdown-link">
             <LogoutButton />
           </div>

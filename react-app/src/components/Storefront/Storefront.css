@@ -1,14 +1,23 @@
 #storefront-banner {
-  height: 325px;
+  max-height: 325px;
   width: 100%;
   display: flex;
   align-items: center;
-  object-fit: contain;
+  object-fit: cover;
+}
+
+#storefront-no-banner {
+  max-height: 325px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  object-fit: fill;
 }
 
 .storefront-banner-container {
   width: 100%;
-  background-color: #4b0007;
+  height: 325px;
+  background-color: #e4e4e4;
 }
 
 .storefront-owner-links {

@@ -14,7 +14,10 @@ const UserReviews = () => {
   }, [dispatch]);
 
   return (
-    <>
+    <div className="profile-page-review-container">
+      <div className="user-reviews-header">
+      <h2>Your reviews</h2>
+      </div>
       {reviews.length
         ? <div className="user-reviews-container">
           {reviews.map(review =>
@@ -23,7 +26,7 @@ const UserReviews = () => {
         </div>
         : <div>You have no reviews yet.</div>
       }
-    </>
+    </div>
   );
 };
 
