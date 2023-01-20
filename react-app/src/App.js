@@ -6,6 +6,7 @@ import ProtectedRoute from "./components/auth/ProtectedRoute"
 import LoginForm from './components/auth/LoginFormModal/LoginForm';
 import SignUpForm from './components/auth/SignupFormModal/SignUpForm';
 import ProfilePage from './components/Profile';
+import UserReviews from './components/Reviews/UserReviews';
 import StoreFront from './components/Storefront'
 import SearchPage from './components/SearchPage'
 import CreateStoreForm from './components/CreateStoreForm';
@@ -53,9 +54,13 @@ function App() {
         <Route path='/sign-up' exact={true}>
           <SignUpForm />
         </Route>
+        <ProtectedRoute path='/profile/reviews' exact={true}>
+          <UserReviews />
+        </ProtectedRoute>
         <ProtectedRoute path='/profile'>
           <ProfilePage />
         </ProtectedRoute>
+
         <ProtectedRoute path="/store/create" exact={true}>
           <CreateStoreForm />
         </ProtectedRoute>

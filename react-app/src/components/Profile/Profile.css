@@ -30,12 +30,6 @@
   opacity: .6;
 }
 
-.profile-page-review-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .profile-page-quotes {
   position: absolute;
   bottom: 50px;

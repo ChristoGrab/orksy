@@ -57,10 +57,13 @@
 
 .profile-dropdown-link {
   display: flex;
-  align-items: center;
   width: 100%;
+  align-items: center;
   height: 30px;
+  font-size: 13px;
+  color: #8d8d8d;
   transition: background-color 400ms ease-out;
+  text-decoration: none;
 }
 
 .profile-dropdown-link:hover {
@@ -88,6 +91,12 @@
   font-size: 16px;
   font-weight: 700;
   line-height: 20px;
+}
+
+.fa-clipboard-list {
+  margin-right: 13px;
+  margin-left: 8px;
+  font-size: 18px;
 }
 
 #logout-button {

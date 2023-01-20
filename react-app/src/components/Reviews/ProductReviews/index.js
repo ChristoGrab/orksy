@@ -18,16 +18,16 @@ const ProductReviews = ({ productId, averageRating }) => {
   const [userHasReviewed, setUserHasReviewed] = useState(false)
   const [ratingDisplay, setRatingDisplay] = useState(averageRating)
   
-    // Function to check if user has left a review
-    const checkForUserReview = (reviews) => {
-      if (!reviews.length) return
+  // Function to check if user has left a review
+  const checkForUserReview = (reviews) => {
+    if (!reviews.length) return
       
-      reviews.forEach(review => {
-        if (review.reviewer_id === sessionUser.id) {
-          return setUserHasReviewed(true)
-        }
-      })
-    }
+    reviews.forEach(review => {
+      if (review.reviewer_id === sessionUser.id) {
+        return setUserHasReviewed(true)
+      }
+    })
+  }
 
   // Fetch product reviews //
   useEffect(() => {

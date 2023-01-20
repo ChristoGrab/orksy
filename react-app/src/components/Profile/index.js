@@ -13,19 +13,11 @@ const ProfilePage = () => {
   const store = useSelector(state => state.stores.singleStore)
   const [dataLoaded, setDataLoaded] = useState(false)
 
-  // const quotes = [
-  //   "Gork loves me, and Mork finks I is da best. No puny oomies is gonna kill me, not when da greenest gods in da galaxy is watchin' me!",
-  //   "We is gonna stomp da universe flat and kill anyfink that fights back. we're da Orks, and was made ta fight and win.",
-  //   "Right, first I'll take those teef out for yer, dat should help ease da pain in yer leg. Grokkit, hand me that wrench. Now then... Open wide, and say... AAARGH!",
-  //   "Wot's faster than a warbuggy, more killy than a warbike, and flies through da air like a bird? I got no bleedin' idea, but I'm gonna find out."
-  // ]
-
   useEffect(() => {
     dispatch(getMyStoreThunk())
     .then(setDataLoaded(true))
   }, [dispatch])
-  
-  
+
   if (!dataLoaded) return null;
   if (!sessionUser) return null;
   let storeLinks;
@@ -53,11 +45,6 @@ const ProfilePage = () => {
           {storeLinks}
         </div>
       </div>
-
-      {/* <div className="profile-page-quotes">
-        <div id="inspiration-quote-message">Orkish inspiration of da day:</div>
-        {quotes[Math.floor(Math.random()*quotes.length)]}
-      </div> */}
 
       <div className="orksy-explanation-container">
         <div className="orksy-explanation-title">
@@ -88,8 +75,6 @@ const ProfilePage = () => {
       </div>
       
       <div className="profile-page-review-container">
-        <h2>Your reviewz</h2>
-        <UserReviews />
       </div>
     </div>
   )
