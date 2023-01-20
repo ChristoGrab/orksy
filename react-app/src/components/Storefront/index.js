@@ -41,7 +41,7 @@ const StoreFront = () => {
     <div className="storefront-container">
       <div className="storefront-banner-container">
         {store.banner_image ? <img id="storefront-banner" alt="an imposing orkish banner" src={store.banner_image}></img>
-        : <img id="storefront-banner" alt="an imposing orkish banner" src={orkBanner}></img>}
+        : <img id="storefront-no-banner" alt="an imposing orkish banner" src={orkBanner}></img>}
         {/* {sessionUser && sessionUser.id === store.owner_id && (
         <BannerImage storeId={storeId}/>
         )} */}
