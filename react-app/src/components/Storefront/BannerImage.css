@@ -1,0 +1,49 @@
+.add-image-button {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  position: relative;
+  bottom: 55px;
+  left: 3%;
+  border: none;
+}
+
+.fa-camera {
+  font-size: 20px;
+}
+
+.banner-image-form-container {
+  position: relative;
+  width: 20%;
+  bottom: 300px;
+  left: 3%;
+  background-color: none;
+}
+
+.banner-image-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5px;
+  background: none;
+}
+
+.banner-image-input {
+  border: none;
+  background: none;
+  height: 80px;
+}
+
+.upload-banner-image-button {
+  border: none;
+  background-color: white;
+  height: 24px;
+  width: 50px;
+  border-radius: 5px;
+}
+
+.upload-banner-image-button:hover {
+  background-color: #d6d6d6;
+  
+}

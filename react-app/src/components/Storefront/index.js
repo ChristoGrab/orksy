@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useParams, Link, useHistory } from 'react-router-dom'
 import * as storeActions from "../../store/stores"
 import ProductCard from "../ProductCard"
+import BannerImage from "./BannerImage"
 import "./Storefront.css"
 import orkBanner from '../../assets/red-skull.jpg'
 
@@ -39,7 +40,11 @@ const StoreFront = () => {
   return (
     <div className="storefront-container">
       <div className="storefront-banner-container">
-        <img id="storefront-banner" alt="an imposing orkish banner" src={orkBanner}></img>
+        {store.banner_image ? <img id="storefront-banner" alt="an imposing orkish banner" src={store.banner_image}></img>
+        : <img id="storefront-banner" alt="an imposing orkish banner" src={orkBanner}></img>}
+        {/* {sessionUser && sessionUser.id === store.owner_id && (
+        <BannerImage storeId={storeId}/>
+        )} */}
       </div>
       
       <div className="storefront-under-banner">

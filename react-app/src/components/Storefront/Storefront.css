@@ -1,5 +1,5 @@
 #storefront-banner {
-  height: 325px;
+  max-height: 325px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -8,6 +8,7 @@
 
 .storefront-banner-container {
   width: 100%;
+  height: 325px;
   background-color: #4b0007;
 }
 
