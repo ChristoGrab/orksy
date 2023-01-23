@@ -4,6 +4,7 @@ import LoginFormModal from '../auth/LoginFormModal';
 import ProfileButton from './ProfileButton';
 import ShoppingCart from './ShoppingCart';
 import SearchBar from './SearchBar';
+import { getMyStoreThunk } from '../../store/stores';
 import "./Navbar.css";
 
 const NavBar = () => {
@@ -12,9 +13,13 @@ const NavBar = () => {
   
   let sessionLinks;
   
+  console.log(sessionUser)
+  
   if (sessionUser) {
     sessionLinks = (
       <div className='navbar-right'>
+        {sessionUser.store_id && 
+        <Link to={`/store/${sessionUser.store_id}`} id="navbar-store-link">Store Manager</Link>}
         <ProfileButton user={sessionUser} />
         <ShoppingCart />
       </div>
