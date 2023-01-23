@@ -15,11 +15,12 @@
   width: 90%;
   height: 34px;
   border-radius: 24px;
-  padding: 6px;
+  padding: 6px 18px;
   background-color: #f4f4f4;
   border: 2px solid black;
-  font-size: 16px;
+  font-size: 17px;
 }
+
 
 #searchbar-input:focus {
   background-color: #e7e7e7;

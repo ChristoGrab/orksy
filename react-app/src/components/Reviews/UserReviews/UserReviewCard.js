@@ -23,7 +23,8 @@ const UserReviewCard = ({ review }) => {
 
   return (
     <div className="user-review-card" key={review.id}>
-      <Link to={`/products/${review.Product.id}`} className="user-review-card-box-1">
+      <Link to={`/products/${review.Product.id}`}
+        className="user-review-card-box-1">
         <img className="review-card-image" alt={review.Product.name} src={review.Product.image} />
         <h3>{review.Product.name}</h3>
       </Link>

@@ -1,3 +1,5 @@
+/* Containers for the page with individual product details */
+
 .product-page-container {
   width: 90%;
   max-width: 1400px;
@@ -7,11 +9,13 @@
 }
 
 .product-page-image-container {
+  max-height: 80vh;
   width: 60%;
   padding: 0 30px;
 }
 
 .product-page-image {
+  max-height: 80vh;
   width: 90%;
   object-fit: contain;
   border-radius: 6px;

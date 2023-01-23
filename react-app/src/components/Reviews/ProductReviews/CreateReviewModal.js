@@ -56,8 +56,9 @@ const CreateReviewModal = ({ productId }) => {
           value={review}
           onChange={e => setReview(e.target.value)}
         />
-        <button className="auth-submit-button green" onClick={handleSubmit}>Submit Review</button>
+        
       </div>
+      <button className="auth-submit-button green" onClick={handleSubmit}>Submit Review</button>
     </form>
     {submitted === true && (
         <div className="loading-popup-container">

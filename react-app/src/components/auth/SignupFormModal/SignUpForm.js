@@ -47,12 +47,15 @@ const SignUpForm = () => {
 
   return (
     <form className="authentication-form" onSubmit={onSignUp}>
-      <div className="auth-form-title">
+      <div className="auth-form-header">
         Wanna Join the Warband, do ya?
       </div>
+      
+      <div className="auth-form-errors">
       {errors.map((error, ind) => (
           <div className="error-message" key={ind}>{error}</div>
         ))}
+      </div>
       <div className='auth-form-fields'>
         <label className="auth-label">User Name <span className="required-star">*</span></label>
         <input
