@@ -11,12 +11,11 @@ import AddToCart from "./AddToCart";
 const ProductPage = () => {
 
   const product = useSelector(state => state.products.singleProduct)
-
   const dispatch = useDispatch()
   const { productId } = useParams();
   const [showModal, setShowModal] = useState(false)
-  const [descrip, setDescrip] = useState(true)
-  const [shipping, setShipping] = useState(true)
+  const [showDescription, setShowDescription] = useState(true)
+  const [showShippingDetails, setShowShippingDetails] = useState(true)
 
   // Calculate current date and set shipping date to week from today
   let today = new Date()
@@ -32,21 +31,19 @@ const ProductPage = () => {
   }, [dispatch, productId])
 
   //function to toggle showing product description
-  const showDescription = async (e) => {
+  const toggleDescription = async (e) => {
     e.preventDefault();
-
-    setDescrip(!descrip)
+    return setShowDescription(!showDescription)
   }
 
   //function to toggle showing shipping info
-  const showShipping = async (e) => {
+  const toggleShippingDetails = async (e) => {
     e.preventDefault();
-    setShipping(!shipping)
+    return setShowShippingDetails(!showShippingDetails)
   }
 
   const enhanceImage = async (e) => {
     e.preventDefault();
-
     return setShowModal(true)
   }
 
@@ -59,7 +56,6 @@ const ProductPage = () => {
           <img className="product-page-image" src={product.image} alt={product.name} onClick={enhanceImage} />
           <ProductReviews productId={productId} averageRating={product.average_rating}/>
         </div>
-
 
         {showModal === true && (
           <Modal onClose={() => setShowModal(false)}>
@@ -77,34 +73,34 @@ const ProductPage = () => {
           <AddToCart product={product}/>
 
           <div className="product-description-container">
-            {descrip === true
-              ? <button id="show-description-button" onClick={showDescription}>
+            {showDescription === true
+              ? <button id="show-description-button" onClick={toggleDescription}>
                 <span>Description</span>
                 <span><i className="fa-solid product-details-caret fa-caret-up" /></span>
               </button>
-              : <button id="show-description-button" onClick={showDescription}>
+              : <button id="show-description-button" onClick={toggleDescription}>
                 <span>Description</span>
                 <span><i className="fa-solid product-details-caret fa-caret-up reverse" /></span>
               </button>
             }
 
-            {descrip === true
+            {showDescription === true
               ? <div className="product-description-text">{product.description}</div>
               : <div className="product-description-text-closed"></div>
             }
 
-            {shipping === true
-              ? <button id="show-shipping-button" onClick={showShipping}>
+            {showShippingDetails === true
+              ? <button id="show-shipping-button" onClick={toggleShippingDetails}>
                 <span>Shipping and return policies</span>
                 <span><i className="fa-solid product-details-caret fa-caret-up" /></span>
               </button>
-              : <button id="show-shipping-button" onClick={showShipping}>
+              : <button id="show-shipping-button" onClick={toggleShippingDetails}>
                 <span>Shipping and return policies</span>
                 <span><i className="fa-solid product-details-caret fa-caret-up reverse" /></span>
               </button>
             }
 
-            {shipping === true && (
+            {showShippingDetails === true && (
               <div className="product-shipping-info">
                 <div>
                   <div id="arrival-estimate-text">Estimated Arrival</div>
