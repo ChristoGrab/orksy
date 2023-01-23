@@ -2,7 +2,6 @@
   font-size: 12px;
 }
 
-
 input[type=file]::file-selector-button {
   background: #faf9f5;
   height: 80px;
@@ -15,37 +14,6 @@ input[type=file]::file-selector-button {
 
 input[type=file]::file-upload-button {
   background-color: #faf9f5;
-}
-
-.loading-popup-container {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 50;
-  background-color: white;
-  border-radius: 5em;
-}
-
-.loading-popup-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #5d5d5d;
-  font-weight: bold;
-}
-
-.fa-spinner {
-  color: #0057ff;
-  font-size: 30px;
-  -webkit-animation: spin 1s linear infinite;
-  animation: spin 1s linear infinite;
 }
 
 .fa-paperclip {

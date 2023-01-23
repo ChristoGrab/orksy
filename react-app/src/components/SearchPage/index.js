@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux"
-import { getSearchProducts } from "../../store/products";
+import { getSearchProducts, clearProduct } from "../../store/products";
 import "./SearchPage.css"
 import { useEffect } from "react";
 import ProductCard from "../ProductCard";
+import LoadingScreen from "../LoadingScreen";
 
 const SearchPage = () => {
   
@@ -16,10 +17,12 @@ const SearchPage = () => {
   useEffect(() => {
     dispatch(getSearchProducts(keyword))
     .then(setQueryReturned(true))
+    
+    return (() => dispatch(clearProduct()))
   }, [dispatch, keyword])
   
   
-  if (!queryReturned) return null;
+  if (!queryReturned) return <LoadingScreen />;
   
   return (
     <div className="search-page-container">

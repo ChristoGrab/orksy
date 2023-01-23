@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { loadProductsThunk } from '../../store/products'
+import { clearProduct, loadProductsThunk } from '../../store/products'
 import ProductCard from '../ProductCard'
 import Footer from "../Footer"
 import './LandingPage.css'
@@ -17,6 +17,8 @@ const LandingPage = () => {
   useEffect(() => {
     dispatch(loadProductsThunk())
       .then(res => setDataLoaded(true))
+      
+    return (() => clearProduct())
   }, [dispatch])
 
   if (!products) return null;
