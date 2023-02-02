@@ -16,6 +16,7 @@ class Product(db.Model):
   # Relationships
   store = db.relationship("Store", back_populates="products")
   reviews = db.relationship("Review", back_populates="product", cascade="delete")
+  # category = db.relationship("Category", back_populates="product")
   # cart = db.relationship("Cart", back_populates="product", cascade="delete")
 
   def average_rating(self):
@@ -33,9 +34,10 @@ class Product(db.Model):
       'price': self.price,
       'store_id': self.store_id,
       'image': self.image,
-      'average_rating': self.average_rating()
+      'average_rating': self.average_rating(),
+      # 'category': [category.to_dict() for category in self.category]
     }
     if store:
       product["store"] = self.store.to_dict()
-      
+
     return product

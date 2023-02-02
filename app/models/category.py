@@ -16,5 +16,4 @@ class Category(db.Model):
     return {
       "id": self.id,
       "name": self.name,
-      # "product": self.product.to_dict()
     }
