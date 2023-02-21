@@ -1,11 +1,10 @@
 .added-to-cart-popup {
   position: static;
-  right: 2vh;
-  top: 25vh;
   background-color: white;
   display: flex;
   flex-direction: column;
   width: 100%;
+  box-sizing: border-box;
   padding: 25px;
   z-index: 30;
   border-radius: 18px;

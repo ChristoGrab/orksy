@@ -116,7 +116,7 @@ const CreateProductForm = () => {
           value={description}
           onChange={e => setDescription(e.target.value)} />
         <label>Price - <span className="form-note">(1-10000) Note: Orks use their teeth, or 'teef', as a form of currency</span></label>
-        <input className="store-form-input"
+        <input className="store-form-input price-input"
           type="number"
           value={price}
           onChange={e => setPrice(e.target.value)} />

@@ -26,6 +26,7 @@
 
 .store-form-input {
   height: 38px;
+  padding: 0 10px;
 }
 
 .store-form-input:hover,
@@ -33,7 +34,12 @@
   border: 1px solid #1f5429;
 }
 
+.price-input {
+  width: 20%;
+}
+
 .store-form-textarea {
+  padding: 10px;
   height: 125px;
   min-height: 125px;
   min-width: 75%;
