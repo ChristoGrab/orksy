@@ -28,7 +28,7 @@ const SearchBar = () => {
         placeholder="Search for anything" 
         onChange={updateSearch}
         value={searchInput} />
-        <button id="searchbar-button" type="submit"><i className="fa-solid fa-magnifying-glass"></i></button>
+        <button id="searchbar-button" aria-label="search" type="submit"><i className="fa-solid fa-magnifying-glass"></i></button>
       </form>
     </div>
   )
