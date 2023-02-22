@@ -1,5 +1,6 @@
 from flask import Blueprint, request
 from flask_login import login_required, current_user
+from sqlalchemy.orm import joinedload
 from app.models import Product, Review, db
 from app.forms import ProductForm, ReviewForm
 from app.util.s3 import upload_file_to_s3, allowed_file, get_unique_filename
@@ -12,6 +13,7 @@ def all_products():
   """
   Query for all products and return them as a list of dictionaries
   """
+  
   products = Product.query.all()
   return {"Products": [product.to_dict() for product in products]}, 200
 
