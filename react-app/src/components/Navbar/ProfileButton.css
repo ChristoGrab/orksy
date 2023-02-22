@@ -3,7 +3,7 @@
   flex-direction: column;
   position: absolute;
   top: 71px;
-  right: 6%;
+  right: 5%;
   width: 225px;
   background-color: white;
   justify-content: center;
@@ -15,10 +15,16 @@
   box-shadow: 1px 1px 3px lightgray;
   border-radius: .5em;
   box-sizing: border-box;
-  animation: fadeIn .5s;
+  animation: fadeIn .5s, expand .5s;
+}
+
+@keyframes expand {
+  0% { width: 130px }
+  100% { width: 225px }
 }
 
 #profile-button {
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;

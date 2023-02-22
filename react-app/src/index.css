@@ -11,6 +11,7 @@ body {
 }
 
 html {
+  width: 100%;
   overflow-y: scroll;
 }
 
@@ -18,10 +19,6 @@ body::before {
   display:block;
   content: '';
   height: 4em;
-}
-
-html {
-  overflow-y: scroll;
 }
 
 h2 {

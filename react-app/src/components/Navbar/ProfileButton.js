@@ -27,7 +27,7 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <button id="profile-button" onClick={openMenu}>
+      <button id="profile-button" aria-label="profile-menu" onClick={openMenu}>
         <i className="fas fa-user-circle" id='profile-pic' />
         {showMenu ?
         <i className="fa-solid fa-caret-down reverse"></i>

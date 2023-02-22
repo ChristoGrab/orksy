@@ -1,7 +1,7 @@
 .searchbar-container {
   display: flex;
   justify-content: center;
-  width: 100%;
+  width: clamp(50px, 100%, 100%);
 }
 
 #searchbar {
@@ -21,7 +21,6 @@
   font-size: 17px;
 }
 
-
 #searchbar-input:focus {
   background-color: #e7e7e7;
 }
@@ -32,6 +31,12 @@
   border: none;
   height: 75%;
   background: none;
+}
+
+@media screen and (max-width: 960px) {
+  #searchbar-button {
+    right: 10%;
+  }
 }
 
 #searchbar-button:hover {

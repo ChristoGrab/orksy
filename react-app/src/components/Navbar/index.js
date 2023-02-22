@@ -12,9 +12,7 @@ const NavBar = () => {
   const sessionUser = useSelector(state => state.session.user)
   
   let sessionLinks;
-  
-  console.log(sessionUser)
-  
+    
   if (sessionUser) {
     sessionLinks = (
       <div className='navbar-right'>
