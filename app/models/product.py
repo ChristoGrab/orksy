@@ -15,7 +15,7 @@ class Product(db.Model):
 
   # Relationships
   store = db.relationship("Store", back_populates="products")
-  reviews = db.relationship("Review", back_populates="product", cascade="delete")
+  reviews = db.relationship("Review", back_populates="product", cascade="delete", lazy="joined")
   # category = db.relationship("Category", back_populates="product")
   # cart = db.relationship("Cart", back_populates="product", cascade="delete")
 

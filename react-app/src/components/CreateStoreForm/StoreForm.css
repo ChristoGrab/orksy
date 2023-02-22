@@ -27,6 +27,7 @@
 .store-form-input {
   height: 38px;
   padding: 0 10px;
+  border-radius: 5px;
 }
 
 .store-form-input:hover,
@@ -34,8 +35,15 @@
   border: 1px solid #1f5429;
 }
 
+.store-form-input:focus,
+.store-form-textarea:focus {
+  outline: 2px solid #1f5429;
+  outline-offset: 2px;
+}
+
 .price-input {
   width: 20%;
+  box-shadow: inset 1px 1px 5px #e4e6e3;
 }
 
 .store-form-textarea {
@@ -47,6 +55,7 @@
   font-size: 14px;
   border: 1px solid rgba(34, 34, 34, 0.15);
   box-shadow: 0 1px 4px rgb(34 34 34 / 10%);
+  border-radius: 3px;
 }
 
 .store-form-button {

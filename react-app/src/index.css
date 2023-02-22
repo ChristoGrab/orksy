@@ -1,5 +1,9 @@
 /* Site-wite styles here */
 
+:root {
+  --ork-green: #1f5429;
+}
+
 body {
   width: 100%;
   margin: 0;
@@ -21,7 +25,7 @@ html {
 }
 
 h2 {
-  color: #1f5429;
+  color: var(--ork-green);
 }
 
 input {
@@ -61,7 +65,7 @@ label {
 
 /* Buttons */
 .green {
-  background-color: #1f5429;
+  background-color: var(--ork-green);
 }
 
 .red {
