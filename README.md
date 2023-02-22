@@ -4,6 +4,8 @@ Welcome to Orksy! Orksy is a fullstack clone of popular e-commerce site Etsy, th
 
 Users on Orksy are able to set up an online storefront via their profile page. The user's store serves as their gateway to creating, editing or deleting products to display on the site. Once a product has been listed, it can be reviewed by other users, who are also able to later edit or delete any reviews they have written.  The next planned feature is a persistent shopping cart.
 
+[Check out the live site here](https://orksy.onrender.com)
+
 ## Tech Stacks
 
 ### Backend:
