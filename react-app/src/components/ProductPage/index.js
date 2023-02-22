@@ -16,6 +16,7 @@ const ProductPage = () => {
   const [showModal, setShowModal] = useState(false)
   const [showDescription, setShowDescription] = useState(true)
   const [showShippingDetails, setShowShippingDetails] = useState(true)
+  const [pageLoaded, setPageLoaded] = useState(false)
 
   // Calculate current date and set shipping date to week from today
   let today = new Date()
@@ -27,6 +28,7 @@ const ProductPage = () => {
   // get product and clear state
   useEffect(() => {
     dispatch(getProductThunk(productId))
+    .then(setPageLoaded(true))
     return (() => dispatch(clearProduct()))
   }, [dispatch, productId])
 
@@ -47,7 +49,7 @@ const ProductPage = () => {
     return setShowModal(true)
   }
 
-  if (!product) return null;
+  if (!pageLoaded || !product) return null;
 
   return (
     <div>

@@ -23,7 +23,7 @@ def one_product(id):
   """
   Query for a single product by id and return it as a dictionary
   """
-  product = Product.query.get(id)
+  product = Product.query.options(joinedload(Product.store)).options(joinedload(Product.reviews)).get(id)
   if product:
     return product.to_dict(store=True)
   else:
