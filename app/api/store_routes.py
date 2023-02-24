@@ -12,7 +12,7 @@ def all_stores():
   """
   Query for all stores and returns them in a list of dictionaries
   """
-  stores = Store.query.all()
+  stores = Store.query.options(joinedload(Store.products)).all()
   return {'stores': [store.to_dict() for store in stores]}, 200
 
 # GET ONE STORE
