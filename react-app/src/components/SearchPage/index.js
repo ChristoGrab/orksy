@@ -1,11 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux"
 import { getSearchProducts, clearProduct } from "../../store/products";
-import "./SearchPage.css"
-import { useEffect } from "react";
 import ProductCard from "../ProductCard";
 import LoadingScreen from "../LoadingScreen";
+import "./SearchPage.css"
 
 const SearchPage = () => {
   

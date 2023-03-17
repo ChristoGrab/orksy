@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { createStoreThunk } from '../../store/stores'
@@ -7,6 +7,7 @@ import "./StoreForm.css"
 
 function CreateStoreForm() {
 
+  // Get current user from redux store
   const sessionUser = useSelector(state => state.session.user)
 
   const dispatch = useDispatch();
@@ -27,6 +28,7 @@ function CreateStoreForm() {
     if (description.length > 1000) errorList.push("Yer gonna dazzle da boyz wiv such long descripshuns...")
     setErrors(errorList)
 
+    // If there are any errors, exit function
     if (errorList.length) {
       return
     }
@@ -50,20 +52,29 @@ function CreateStoreForm() {
         <div className="store-form-intro">
           So yer wanna make yer own storefront for da boyz to peruse, eh? Wot you got in mind?
         </div>
+        
         {errors.map((error, idx) =>
           <div key={idx} className="error-message">{error}</div>)}
+
         <label className="form-label">Name - <span className="form-note">(70 chars max)</span></label>
-        <input className="store-form-input"
+        <input 
+          className="store-form-input"
           type="text"
           value={name}
-          onChange={e => setName(e.target.value)} />
-        <label>Description - <span className="form-note">(1000 chars max)</span></label>
-        <textarea className="store-form-textarea"
+          onChange={e => setName(e.target.value)} 
+        />
+        
+        <label htmlFor="description">Description - <span className="form-note">(1000 chars max)</span></label>
+        <textarea
+          className="store-form-textarea"
           type="text"
           value={description}
-          onChange={e => setDescription(e.target.value)} />
+          onChange={e => setDescription(e.target.value)}
+        />
+        
         <button className="store-form-button green" onClick={handleSubmit}>Join the WAAAAAGH!!</button>
       </form>
+      
       <img src={formImage} className="form-image" alt="orks in a mad max car" />
     </div>
   )

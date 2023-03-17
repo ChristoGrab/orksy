@@ -31,7 +31,7 @@
 
 #navbar-logo {
   font-size: 32px;
-  color: #1f5429;
+  color: var(--ork-green);
   text-decoration: none;
   font-family: Orkish;
 }

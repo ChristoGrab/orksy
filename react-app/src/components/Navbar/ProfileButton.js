@@ -30,8 +30,8 @@ function ProfileButton({ user }) {
       <button id="profile-button" aria-label="profile-menu" onClick={openMenu}>
         <i className="fas fa-user-circle" id='profile-pic' />
         {showMenu ?
-        <i className="fa-solid fa-caret-down reverse"></i>
-        : <i className="fa-solid fa-caret-down"></i>
+          <i className="fa-solid fa-caret-down reverse"></i>
+          : <i className="fa-solid fa-caret-down"></i>
         }
       </button>
       {showMenu && (
@@ -44,7 +44,7 @@ function ProfileButton({ user }) {
             </div>
           </Link>
           <Link to="/profile/reviews" className="profile-dropdown-link">
-          <i className="fa-solid fa-clipboard-list"></i>Your Reviewz
+            <i className="fa-solid fa-clipboard-list"></i>Your Reviewz
           </Link>
           <div className="profile-dropdown-link">
             <LogoutButton />

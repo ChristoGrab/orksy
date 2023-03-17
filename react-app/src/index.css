@@ -2,6 +2,7 @@
 
 :root {
   --ork-green: #1f5429;
+  --ork-red: #832212;
 }
 
 body {
@@ -66,7 +67,7 @@ label {
 }
 
 .red {
-  background-color: #832212;
+  background-color: var(--ork-red);
 }
 
 button:hover {
