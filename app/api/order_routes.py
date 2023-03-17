@@ -6,6 +6,7 @@ order_routes = Blueprint('orders', __name__)
 
 # GET ALL USER'S ORDERS
 @order_routes.route("/user")
+@login_required
 def user_orders():
   """
   Query for all orders made by the logged-in user

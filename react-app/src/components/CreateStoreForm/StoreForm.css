@@ -17,7 +17,7 @@
 
 .store-form-greeting {
   font-size: 44px;
-  color: #1f5429;
+  color: var(--ork-green);
 }
 
 .store-form-intro {
@@ -32,12 +32,12 @@
 
 .store-form-input:hover,
 .store-form-textarea:hover {
-  border: 1px solid #1f5429;
+  border: 1px solid var(--ork-green);
 }
 
 .store-form-input:focus,
 .store-form-textarea:focus {
-  outline: 2px solid #1f5429;
+  outline: 2px solid var(--ork-green);
   outline-offset: 2px;
 }
 

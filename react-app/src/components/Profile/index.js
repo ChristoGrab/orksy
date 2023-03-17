@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom'
 import { getMyStoreThunk } from "../../store/stores";
-import UserReviews from "../Reviews/UserReviews/index.js"
 import userAvatar from "../../assets/user-avatar.png"
 import "./Profile.css"
 
@@ -48,10 +47,10 @@ const ProfilePage = () => {
 
       <div className="orksy-explanation-container">
         <div className="orksy-explanation-title">
-          Note to the User:
+          Welcome to Orksy!
         </div>
         <div className="orksy-explanation-text">
-          Welcome to Orksy!  Orksy is a fullstack project built to emulate the popular e-commerce platform "Etsy".
+          Orksy is a fullstack project built to emulate the popular e-commerce platform "Etsy".
           <br />
           Orksy is themed after the Ork faction from the fictional Warhammer 40K universe.
           If you are familiar with this setting, you probably know what to expect from a site made for everyone's favourite intergalactic fungoids.
@@ -70,8 +69,6 @@ const ProfilePage = () => {
             <li>Orks are made for two things: fighting, and winning.</li>
           </ul>
         </div>
-        
-        
       </div>
       
       <div className="profile-page-review-container">
