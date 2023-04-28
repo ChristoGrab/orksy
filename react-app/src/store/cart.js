@@ -33,10 +33,18 @@ const emptyCart = () => {
 
 export const getCartThunk = () => async (dispatch) => {
   
-  let data;
+  
+  // If local storage is empty, create a new empty cart
+  if (!localStorage.getItem("orksycart")) {
+    localStorage.setItem("orksycart", JSON.stringify({
+      "itemList": [],
+      "cartSize": 0
+    }))
+  }
+  
   const response = localStorage.getItem("orksycart")
   
-  if (response) data = JSON.parse(response)
+  const data = JSON.parse(response)
   
   dispatch(getCart(data))
   return data;
@@ -46,6 +54,7 @@ export const getCartThunk = () => async (dispatch) => {
 export const addToCartThunk = (item) => async (dispatch) => {
   
   let cart;
+  
   // If local storage is empty, create a new cart
   // place the item in the cart, and set the cart size to 1
   if (!localStorage.getItem("orksycart")) {
@@ -108,6 +117,7 @@ const cartReducer = (state = initialState, action) => {
     
     case GET_CART: {
       const myCart = {}
+      
       if (action.cart) {
       action.cart.itemList.forEach(item => {
         myCart[item.id] = item
