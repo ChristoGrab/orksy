@@ -56,7 +56,7 @@ const LoginForm = () => {
           </div>
           
           <div className="auth-form-fields">
-            <label className="auth-label" htmlFor='email'>Email Address <span className="required-star">*</span></label>
+            <label className="auth-label" htmlFor='email'>Email Address</label>
             <input
               className="auth-input"
               name='email'
@@ -64,7 +64,7 @@ const LoginForm = () => {
               value={email}
               onChange={updateEmail}
             />
-            <label className="auth-label" htmlFor='password'>Password <span className="required-star">*</span></label>
+            <label className="auth-label" htmlFor='password'>Password</label>
             <input
               className="auth-input"
               name='password'
@@ -76,6 +76,7 @@ const LoginForm = () => {
 
           <div className="auth-form-footer">
             <button className="auth-submit-button green" type='submit'>Sign In</button>
+            <div id="or-line">OR</div>
             <DemoUserButton />
           </div>
 

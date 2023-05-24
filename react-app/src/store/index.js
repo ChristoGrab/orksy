@@ -6,6 +6,8 @@ import products from './products'
 import reviews from './reviews'
 import cart from './cart'
 
+// The root reducer will contain all of the reducer slices
+
 const rootReducer = combineReducers({
   session,
   stores,
@@ -16,6 +18,9 @@ const rootReducer = combineReducers({
 
 
 let enhancer;
+
+// If the environment is in production, then we will only apply the thunk middleware
+// Otherwise, we will apply the thunk middleware and the logger middleware for easier debugging
 
 if (process.env.NODE_ENV === 'production') {
   enhancer = applyMiddleware(thunk);
