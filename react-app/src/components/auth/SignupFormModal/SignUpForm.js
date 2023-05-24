@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../../store/session';
+import DemoUserButton from '../DemoUserButton';
 
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
@@ -90,7 +91,9 @@ const SignUpForm = () => {
           value={repeatPassword}
         ></input>
       </div>
-      <button className="auth-submit-button green" type='submit'>Sign Up</button>
+      <button className="auth-submit-button green" type='submit'>Register</button>
+      <div id="or-line">OR</div>
+      <DemoUserButton />
     </form>
   );
 };
