@@ -3,7 +3,7 @@
   height: 36px;
   width: 72px;
   background-color: white;
-  color: #1f5429;
+  color: var(--ork-green);
   border: none;
   font-weight: bold;
   border-radius: 5em;
@@ -21,7 +21,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-height: 80vh;
+  max-height: 95vh;
   width: 320px;
   gap: 20px;
   padding: 20px;
@@ -31,7 +31,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #1f5429;
+  color: var(--ork-green);
   font-size: 20px;
   margin: 20px auto;
   width: 100%;
@@ -41,6 +41,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 100%;
 }
 
@@ -107,12 +108,9 @@
   padding: 0 4%;
 }
 
-.auth-input:hover {
-  border: 1px solid #1f5429;
-}
-
+.auth-input:hover,
 .auth-input:active {
-  border: 1px solid #1f5429;
+  border: 1px solid var(--ork-green);
 }
 
 #or-line {

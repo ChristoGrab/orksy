@@ -7,6 +7,7 @@ import "../AuthForms.css"
 import SignUpForm from '../SignupFormModal/SignUpForm';
 
 const LoginForm = () => {
+
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -16,10 +17,24 @@ const LoginForm = () => {
 
   const onLogin = async (e) => {
     e.preventDefault();
-    const data = await dispatch(login(email, password));
-    if (data) {
-      setErrors(data);
-    }
+    
+    dispatch(login(email, password))
+      .then((data) => {
+        
+        if (data) {
+          
+          // If the user provides both an invalid email and password, the backend will return an array of two "invalid credential" error messages that are identical.
+          // This conditional checks for that case and only sets the error state to one of the messages.
+          if (data.length === 2 && data[0] === data[1]) {
+            setErrors([data[0]])
+          } else {
+            setErrors(data)
+          }
+        }
+      })
+      .catch((error) => {
+        console.error(error)
+      })
   };
 
 
