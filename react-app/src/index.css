@@ -40,7 +40,8 @@ textarea {
 .error-message {
   color: red;
   font-weight: bold;
-  font-size: 13px;
+  text-align: center;
+  font-size: .8em;
 }
 
 .error-message::before {
