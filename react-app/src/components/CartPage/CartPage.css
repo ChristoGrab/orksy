@@ -1,5 +1,6 @@
 .cart-page-container {
   width: 90%;
+  max-width: 1400px;
   margin: 30px auto;
   display: flex;
   flex-direction: column;
@@ -54,20 +55,14 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  gap: 15%;
+  gap: .5em;
   position: fixed;
-  right: 10vh;
-  top: 32vh;
+  top: 25vh;
+  right: 10vw;
   width: 26%;
   height: 50vh;
-  padding: 12px;
-  border-radius: 18px;
-  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
-}
-
-.place-order-box :nth-child(3) {
-  padding-top: 10px;
-  border-top: 1px solid lightgray;
+  padding: 1.5em;
+  border-radius: 1em;
 }
 
 .place-order-inner-box {
@@ -77,11 +72,76 @@
   align-items: center;
 }
 
+/* Payment options */
+
+#payment-type {
+  margin-top: 1em;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+#payment-legend {
+  font-size: 1.2em;
+}
+
+.radio-container {
+  display: flex;
+  gap: 5px;
+}
+
+.payment-radio {
+  width: 30px;
+  height: 30px;
+}
+
+.payment-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5em;
+  height: 36px;
+  padding: 2px;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  background-color: #eeeeee;
+}
+
+#master-toof-label {
+  color: #eb001b;
+  font-family: "Orkish"
+}
+
+#master-toof-icon {
+  color: #f79e1b;
+}
+
+#space-pal-label {
+  color: #20274f;
+}
+
+#orkle-label {
+  color: var(--ork-green);
+  font-family: "Orkle";
+}
+
+@font-face {
+  font-family: "Orkle";
+  src: url('../../fonts/PayPalSansBig-Regular-Klim.ttf');
+}
+
 .place-order-cost {
   margin-left: 20px;
   font-size: 16px;
   line-height: 28px;
   font-weight: normal;
+}
+
+#total-price {
+  padding-top: 10px;
+  border-top: 1px solid lightgray;
 }
 
 .place-order-button {

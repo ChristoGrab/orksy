@@ -29,8 +29,7 @@ function App() {
 
   useEffect(() => {
     (async () => {
-      await dispatch(authenticate());
-      setLoaded(true);
+      dispatch(authenticate()).then(() => setLoaded(true));
     })();
   }, [dispatch]);
 

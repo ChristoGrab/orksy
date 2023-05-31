@@ -5,6 +5,71 @@ import CartItemCard from './CartItemCard'
 import { getCartThunk, emptyCartThunk } from '../../store/cart'
 import "./CartPage.css"
 
+const RadioInputs = () => {
+  const [selectedPayment, setSelectedPayment] = useState("M");
+
+  const handlePaymentChange = (event) => {
+    setSelectedPayment(event.target.value);
+  }
+
+  return (
+    <fieldset id="payment-type">
+      <legend id="payment-legend">How ye'll pay</legend>
+      <div className="radio-container">
+        <input
+          type="radio"
+          className="payment-radio"
+          name="payment"
+          id="master-toof"
+          value="M"
+          checked={selectedPayment === "M"}
+          onChange={handlePaymentChange}
+        />
+        <label
+          for="master-toof"
+          id="master-toof-label"
+          className="payment-label">
+          Master <i className="fa-solid fa-tooth" id="master-toof-icon" />
+        </label>
+      </div>
+      <div className="radio-container">
+        <input
+          type="radio"
+          className="payment-radio"
+          name="payment"
+          id="space-pal"
+          value="S"
+          checked={selectedPayment === "S"}
+          onChange={handlePaymentChange}
+        />
+        <label
+          for="space-pal"
+          className="payment-label"
+          id="space-pal-label">
+          SpacePal
+        </label>
+      </div>
+      <div className="radio-container">
+        <input
+          type="radio"
+          className="payment-radio"
+          name="payment"
+          id="orkle"
+          value="O"
+          checked={selectedPayment === "O"}
+          onChange={handlePaymentChange}
+        />
+        <label
+          for="orkle"
+          className="payment-label"
+          id="orkle-label">
+          Orkle Pay
+        </label>
+      </div>
+    </fieldset>
+  )
+}
+
 const CartPage = () => {
   const history = useHistory();
   const dispatch = useDispatch()
@@ -14,7 +79,6 @@ const CartPage = () => {
 
   useEffect(() => {
     dispatch(getCartThunk())
-
   }, [dispatch, cartItems.length])
 
   // calculate total price of items in cart and set state
@@ -43,7 +107,7 @@ const CartPage = () => {
     history.push('/')
   }
 
-
+  // This function will be run in the useEffect anytime there is a change to the cart, updating the total price
   const calculateTotalPrice = (cart) => {
     let totalPrice = 0;
     cart.forEach(item => {
@@ -52,6 +116,7 @@ const CartPage = () => {
     return totalPrice;
   }
 
+  // When a user hits check-out, this JSX will display a message linking them to my github/portfolio
   const messageAfterCheckout = (
     <div id="checkout-popup">
       <div id="checkout-message">
@@ -86,7 +151,7 @@ const CartPage = () => {
       {userHasCheckedOut && messageAfterCheckout}
       <div id="purchase-protection-box">
         <i className="fa-solid fa-handshake-simple" />
-        <strong>Orksy purchase protekshun:</strong> Shop konfidently on Orksy knowin' if somefin' goes wrong wiv an order, you kin always use da faulty produkt to whack some skulls in.
+        <p><strong>Orksy purchase protekshun:</strong> Shop konfidently on Orksy knowin' if somefin' goes wrong wiv an order, you kin always use da faulty produkt to whack some skulls in.</p>
       </div>
 
       {cartItems?.length
@@ -99,23 +164,30 @@ const CartPage = () => {
           </div>
 
           <div className="place-order-box">
+
+            <RadioInputs />
+
             <div className="place-order-inner-box">
-              <div className="place-order-cost">Item(z) Total</div>
+              <div className="place-order-cost">Item{cartItems.length > 1 && "z"} total</div>
               <i className="fa-solid fa-tooth" />
               {totalPrice}
             </div>
+
             <div className="place-order-inner-box">
               <div className="place-order-cost">Shipping</div>
               <i className="fa-solid fa-tooth" />
               {Math.ceil(totalPrice / 100)}
             </div>
-            <div className="place-order-inner-box">
-              <div className="place-order-cost">Total Price</div>
+
+            <div className="place-order-inner-box" id="total-price">
+              <div className="place-order-cost">Total ({cartItems.length} item{cartItems.length > 1 && "z"})</div>
               <i className="fa-solid fa-tooth" />
               {totalPrice + Math.ceil(totalPrice / 100)}
             </div>
+
             <button id="empty-cart-button" className="place-order-button green" onClick={handleCheckout}>Checkout</button>
           </div>
+
           <button className="product-page-button red" onClick={handleEmptyCart}>Empty Kart</button>
         </div>
 
