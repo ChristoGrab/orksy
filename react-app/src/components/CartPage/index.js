@@ -5,6 +5,56 @@ import CartItemCard from './CartItemCard'
 import { getCartThunk, emptyCartThunk } from '../../store/cart'
 import "./CartPage.css"
 
+const RadioInputs = () => {
+  const [selectedPayment, setSelectedPayment] = useState("M");
+  
+  const handlePaymentChange = (event) => {
+    setSelectedPayment(event.target.value);
+  }
+  
+  return (
+    <fieldset id="payment-type">
+      <legend id="payment-legend">How ye'll pay</legend>
+      <div className="radio-container">
+        <input 
+          type="radio" 
+          className="payment-radio" 
+          name="payment" 
+          id="master-toof" 
+          value="M"
+          checked={selectedPayment === "M"}
+          onChange={handlePaymentChange}
+        />
+        <label for="master-toof" className="payment-label">Master <i className="fa-solid fa-tooth" /></label>
+      </div>
+      <div className="radio-container">
+        <input 
+          type="radio" 
+          className="payment-radio" 
+          name="payment" 
+          id="space-pal" 
+          value="S" 
+          checked={selectedPayment === "S"}
+          onChange={handlePaymentChange}
+        />
+        <label for="space-pal" className="payment-label">SpacePal</label>
+      </div>
+      <div className="radio-container">
+        <input 
+          type="radio" 
+          className="payment-radio" 
+          name="payment" 
+          id="orkle" 
+          value="O" 
+          checked={selectedPayment === "O"}
+          onChange={handlePaymentChange}
+        />
+        <label for="orkle" className="payment-label">Orkle Pay</label>
+      </div>
+    </fieldset>
+  )
+}
+
 const CartPage = () => {
   const history = useHistory();
   const dispatch = useDispatch()
@@ -100,21 +150,7 @@ const CartPage = () => {
 
           <div className="place-order-box">
             
-              <fieldset id="payment-type">
-                <legend id="payment-legend">How ye'll pay</legend>
-                <div className="radio-container">
-                  <input type="radio" className="payment-radio" name="payment" id="master-toof" value="M" />
-                  <label for="master-toof" className="payment-label">Master<i className="fa-solid fa-tooth" /></label>
-                </div>
-                <div className="radio-container">
-                <input type="radio" className="payment-radio" name="payment" id="space-pal" value="S" />
-                <label for="space-pal" className="payment-label">SpacePal</label>
-                </div>
-                <div className="radio-container">
-                <input type="radio" className="payment-radio" name="payment" id="orkle" value="O" />
-                <label for="orkle" className="payment-label">Orkle Pay</label>
-                </div>
-              </fieldset>
+            <RadioInputs />
               
             <div className="place-order-inner-box">
               <div className="place-order-cost">Item(z) Total</div>
