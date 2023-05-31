@@ -1,5 +1,6 @@
 .cart-page-container {
   width: 90%;
+  max-width: 1400px;
   margin: 30px auto;
   display: flex;
   flex-direction: column;
@@ -56,8 +57,8 @@
   justify-content: center;
   gap: .5em;
   position: fixed;
-  right: clamp(5vw, 7vw, 10vw);
-  top: 30vh;
+  top: 25vh;
+  right: 10vw;
   width: 26%;
   height: 50vh;
   padding: 1.5em;
@@ -106,6 +107,29 @@
   border: 1px solid #dddddd;
   border-radius: 5px;
   background-color: #eeeeee;
+}
+
+#master-toof-label {
+  color: #eb001b;
+  font-family: "Orkish"
+}
+
+#master-toof-icon {
+  color: #f79e1b;
+}
+
+#space-pal-label {
+  color: #20274f;
+}
+
+#orkle-label {
+  color: var(--ork-green);
+  font-family: "Orkle";
+}
+
+@font-face {
+  font-family: "Orkle";
+  src: url('../../fonts/PayPalSansBig-Regular-Klim.ttf');
 }
 
 .place-order-cost {
