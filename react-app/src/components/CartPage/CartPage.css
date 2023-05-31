@@ -56,16 +56,16 @@
   justify-content: center;
   gap: 15%;
   position: fixed;
-  right: 10vh;
-  top: 32vh;
+  right: 5vw;
+  top: 30vh;
   width: 26%;
   height: 50vh;
-  padding: 12px;
-  border-radius: 18px;
+  padding: 1.5em;
+  border-radius: 1em;
   box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
 }
 
-.place-order-box :nth-child(3) {
+.place-order-box :nth-child(4) {
   padding-top: 10px;
   border-top: 1px solid lightgray;
 }
@@ -75,6 +75,21 @@
   width: 100%;
   grid-template-columns: 5fr .2fr 1fr;
   align-items: center;
+}
+
+/* Payment options */
+
+#payment-type {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.payment-label {
+  border: 1px solid #dddddd;
+  padding: 2px;
+  background-color: #eeeeee;
 }
 
 .place-order-cost {

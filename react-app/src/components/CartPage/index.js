@@ -14,7 +14,6 @@ const CartPage = () => {
 
   useEffect(() => {
     dispatch(getCartThunk())
-
   }, [dispatch, cartItems.length])
 
   // calculate total price of items in cart and set state
@@ -43,7 +42,7 @@ const CartPage = () => {
     history.push('/')
   }
 
-
+  // This function will be run in the useEffect anytime there is a change to the cart, updating the total price
   const calculateTotalPrice = (cart) => {
     let totalPrice = 0;
     cart.forEach(item => {
@@ -52,6 +51,7 @@ const CartPage = () => {
     return totalPrice;
   }
 
+  // When a user hits check-out, this JSX will display a message linking them to my github/portfolio
   const messageAfterCheckout = (
     <div id="checkout-popup">
       <div id="checkout-message">
@@ -86,7 +86,7 @@ const CartPage = () => {
       {userHasCheckedOut && messageAfterCheckout}
       <div id="purchase-protection-box">
         <i className="fa-solid fa-handshake-simple" />
-        <strong>Orksy purchase protekshun:</strong> Shop konfidently on Orksy knowin' if somefin' goes wrong wiv an order, you kin always use da faulty produkt to whack some skulls in.
+        <p><strong>Orksy purchase protekshun:</strong> Shop konfidently on Orksy knowin' if somefin' goes wrong wiv an order, you kin always use da faulty produkt to whack some skulls in.</p>
       </div>
 
       {cartItems?.length
@@ -99,23 +99,38 @@ const CartPage = () => {
           </div>
 
           <div className="place-order-box">
+            
+              <fieldset id="payment-type">
+                <legend>How ye'll pay</legend>
+                <input type="radio" className="payment-radio" name="payment" id="master-toof" value="M"/>
+                <label for="master-toof" className="payment-label">Master<i className="fa-solid fa-tooth" /></label>
+                <input type="radio" className="payment-radio" name="payment" id="space-pal" value="S" />
+                <label for="space-pal" className="payment-label">SpacePal</label>
+                <input type="radio" className="payment-radio" name="payment" id="orkle" value="O" />
+                <label for="orkle" className="payment-label">Orkle Pay</label>
+              </fieldset>
+              
             <div className="place-order-inner-box">
               <div className="place-order-cost">Item(z) Total</div>
               <i className="fa-solid fa-tooth" />
               {totalPrice}
             </div>
+            
             <div className="place-order-inner-box">
               <div className="place-order-cost">Shipping</div>
               <i className="fa-solid fa-tooth" />
               {Math.ceil(totalPrice / 100)}
             </div>
+            
             <div className="place-order-inner-box">
               <div className="place-order-cost">Total Price</div>
               <i className="fa-solid fa-tooth" />
               {totalPrice + Math.ceil(totalPrice / 100)}
             </div>
+            
             <button id="empty-cart-button" className="place-order-button green" onClick={handleCheckout}>Checkout</button>
           </div>
+          
           <button className="product-page-button red" onClick={handleEmptyCart}>Empty Kart</button>
         </div>
 
