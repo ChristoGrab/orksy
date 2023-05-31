@@ -168,7 +168,7 @@ const CartPage = () => {
             <RadioInputs />
 
             <div className="place-order-inner-box">
-              <div className="place-order-cost">Item(z) Total</div>
+              <div className="place-order-cost">Item{cartItems.length > 1 && "z"} total</div>
               <i className="fa-solid fa-tooth" />
               {totalPrice}
             </div>
@@ -180,7 +180,7 @@ const CartPage = () => {
             </div>
 
             <div className="place-order-inner-box" id="total-price">
-              <div className="place-order-cost">Total Price</div>
+              <div className="place-order-cost">Total ({cartItems.length} item{cartItems.length > 1 && "z"})</div>
               <i className="fa-solid fa-tooth" />
               {totalPrice + Math.ceil(totalPrice / 100)}
             </div>
