@@ -101,13 +101,19 @@ const CartPage = () => {
           <div className="place-order-box">
             
               <fieldset id="payment-type">
-                <legend>How ye'll pay</legend>
-                <input type="radio" className="payment-radio" name="payment" id="master-toof" value="M"/>
-                <label for="master-toof" className="payment-label">Master<i className="fa-solid fa-tooth" /></label>
+                <legend id="payment-legend">How ye'll pay</legend>
+                <div className="radio-container">
+                  <input type="radio" className="payment-radio" name="payment" id="master-toof" value="M" />
+                  <label for="master-toof" className="payment-label">Master<i className="fa-solid fa-tooth" /></label>
+                </div>
+                <div className="radio-container">
                 <input type="radio" className="payment-radio" name="payment" id="space-pal" value="S" />
                 <label for="space-pal" className="payment-label">SpacePal</label>
+                </div>
+                <div className="radio-container">
                 <input type="radio" className="payment-radio" name="payment" id="orkle" value="O" />
                 <label for="orkle" className="payment-label">Orkle Pay</label>
+                </div>
               </fieldset>
               
             <div className="place-order-inner-box">
@@ -122,7 +128,7 @@ const CartPage = () => {
               {Math.ceil(totalPrice / 100)}
             </div>
             
-            <div className="place-order-inner-box">
+            <div className="place-order-inner-box" id="total-price">
               <div className="place-order-cost">Total Price</div>
               <i className="fa-solid fa-tooth" />
               {totalPrice + Math.ceil(totalPrice / 100)}

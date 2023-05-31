@@ -54,20 +54,14 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  gap: 15%;
+  gap: .5em;
   position: fixed;
-  right: 5vw;
+  right: clamp(5vw, 7vw, 10vw);
   top: 30vh;
   width: 26%;
   height: 50vh;
   padding: 1.5em;
   border-radius: 1em;
-  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.2);
-}
-
-.place-order-box :nth-child(4) {
-  padding-top: 10px;
-  border-top: 1px solid lightgray;
 }
 
 .place-order-inner-box {
@@ -80,15 +74,37 @@
 /* Payment options */
 
 #payment-type {
+  margin-top: 1em;
   border: none;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: 10px;
+}
+
+#payment-legend {
+  font-size: 1.2em;
+}
+
+.radio-container {
+  display: flex;
+  gap: 5px;
+}
+
+.payment-radio {
+  width: 30px;
+  height: 30px;
 }
 
 .payment-label {
-  border: 1px solid #dddddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5em;
+  height: 36px;
   padding: 2px;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
   background-color: #eeeeee;
 }
 
@@ -97,6 +113,11 @@
   font-size: 16px;
   line-height: 28px;
   font-weight: normal;
+}
+
+#total-price {
+  padding-top: 10px;
+  border-top: 1px solid lightgray;
 }
 
 .place-order-button {
