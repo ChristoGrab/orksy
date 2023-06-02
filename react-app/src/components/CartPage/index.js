@@ -63,7 +63,7 @@ const RadioInputs = () => {
           for="orkle"
           className="payment-label"
           id="orkle-label">
-          Orkle Pay
+          Gorkle Pay
         </label>
       </div>
     </fieldset>

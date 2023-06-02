@@ -54,15 +54,14 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
   gap: .5em;
   position: fixed;
-  top: 25vh;
+  top: 10vh;
   right: 10vw;
   width: 26%;
   height: 50vh;
-  padding: 1.5em;
   border-radius: 1em;
+  transform: translateY(50%);
 }
 
 .place-order-inner-box {
