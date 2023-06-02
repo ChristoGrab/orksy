@@ -35,3 +35,23 @@
   text-decoration: none;
   font-family: Orkish;
 }
+
+@media screen and (max-width: 960px) {
+  .navbar-container {
+    grid-template-columns: 1fr 3fr 1fr;
+  }
+  
+  .navbar-left {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .navbar-container {
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+  
+  .navbar-left {
+    justify-content: center;
+  }
+}
