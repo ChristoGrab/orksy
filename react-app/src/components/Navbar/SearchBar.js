@@ -11,6 +11,10 @@ const SearchBar = () => {
     e.preventDefault();
     
     let query = searchInput.toLowerCase()
+    
+    if (query === "") {
+      return
+    }
 
     history.push(`/search/${query}`)
     setSearchInput("")

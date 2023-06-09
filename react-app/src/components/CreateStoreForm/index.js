@@ -44,7 +44,7 @@ function CreateStoreForm() {
   }
 
   return (
-    <div className="store-form-container">
+    <main className="store-form-container">
       <form className="store-form">
         <div className="store-form-greeting">
           Create Store
@@ -76,7 +76,7 @@ function CreateStoreForm() {
       </form>
       
       <img src={formImage} className="form-image" alt="orks in a mad max car" />
-    </div>
+    </main>
   )
 }
 

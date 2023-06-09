@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-evenly;
   width: 95%;
+  max-width: 1400px;
   margin: 30px auto;
 }
 
@@ -76,6 +77,12 @@
 }
 
 .form-image {
-  width: 30%;
+  width: clamp(10%, 30%, 30%);
   height: auto;
+}
+
+@media screen and (max-width: 960px) {
+  .form-image {
+    display: none;
+  }
 }

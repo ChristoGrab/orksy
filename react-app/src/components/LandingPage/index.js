@@ -30,7 +30,7 @@ const LandingPage = () => {
   let newList = shuffle(productList)
 
   return (
-    <div>
+    <>
       {dataLoaded === true && (
     <div className="landing-page-container">
       <div id="welcome-message-container">
@@ -63,7 +63,7 @@ const LandingPage = () => {
       <Footer />
     </div>
     )}
-    </div>
+    </>
   )
 }
 

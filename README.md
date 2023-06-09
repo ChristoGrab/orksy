@@ -6,6 +6,24 @@ Users on Orksy are able to set up an online storefront via their profile page. T
 
 [Check out the live site here](https://orksy.onrender.com)
 
+## MVP Features
+
+### Store
+
+Users can create a store to add and display their products to the Orksy ecosystem.  By clicking on the profile dropdown menu in the top navbar, users can select the "Manage Profile" tab, which will take them to an introductory page.  From here, they are able to click a link that will direct them to the Store creation page.  A store can be edited or deleted after creation, but each user can only own a single Store at a time.
+
+### Products
+
+Once a user has created their store, they are able to add fill out a form to add a product.  A user can also edit and delete any existing products in their store at will.
+
+### Reviews
+
+A user can add reviews to any product on Orksy that they do not own.  A user can edit or delete any reviews they have left, either via the product's display page, or the "Your Reviewz" tab in the profile dropdown menu, located in the top navbar.
+
+### Cart
+
+When viewing an individual product, users can choose to add it to their cart by clicking the "Add to Kart" button. Selecting this will add the product to the user's cart and prompt them to either proceed to checkout or return to browsing the Orksy collection.
+
 ## Tech Stacks
 
 ### Backend:
